@@ -28,7 +28,7 @@
     "dev": "NODE_ENV=development webpack-dev-server --host 0.0.0.0 --port 8000 --config webpack.dev.js --history-api-fallback --content-base example",
     "build": "npm run clean && tsc && tsc -m es6 --outDir lib-esm && NODE_ENV=production webpack",
     "clean": "shx rm -rf lib lib-esm bundles",
-    "package": "npm run build"
+    "prepublish": "npm run build"
   },
   "keywords": [
     "bulma",
