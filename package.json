@@ -1,0 +1,40 @@
+{
+  "name": "bulma-jsx",
+  "version": "0.1.0",
+  "description": "A set of React Components for Bulma CSS",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "jsnext:main": "lib-esm/index.js",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "typescript": "^2.3.2"
+  },
+  "devDependencies": {
+    "@types/classnames": "^0.0.32",
+    "@types/node": "^7.0.15",
+    "@types/react": "^15.0.23",
+    "@types/react-dom": "^15.5.0",
+    "awesome-typescript-loader": "^3.1.3",
+    "bulma": "^0.4.1",
+    "css-loader": "^0.28.1",
+    "shx": "^0.2.2",
+    "style-loader": "^0.17.0",
+    "typescript": "^2.3.2",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development webpack-dev-server --host 0.0.0.0 --port 8000 --config webpack.dev.js --history-api-fallback --content-base example",
+    "build": "npm run clean && tsc && tsc -m es6 --outDir lib-esm && NODE_ENV=production webpack",
+    "clean": "shx rm -rf lib lib-esm bundles",
+    "package": "npm run build"
+  },
+  "keywords": [
+    "bulma",
+    "react"
+  ],
+  "author": "Algus Dark",
+  "license": "MIT"
+}
