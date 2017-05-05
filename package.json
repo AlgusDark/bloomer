@@ -35,6 +35,17 @@
     "bulma",
     "react"
   ],
-  "author": "Algus Dark",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlgusDark/bulma-jsx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlgusDark/bulma-jsx/issues"
+  },
+  "author": {
+    "email": "algus.dark@gmail.com",
+    "name": "Algus Dark",
+    "url": "http://algus.ninja"
+  },
   "license": "MIT"
 }
