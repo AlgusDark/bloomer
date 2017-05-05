@@ -3,14 +3,14 @@ const webpack = require('webpack');
 
 const config = {
 	entry: {
-		'bulma-react': ['./src/index.ts'],
-		'bulma-react.min': ['./src/index.ts']
+		'bulma-jsx': ['./src/index.ts'],
+		'bulma-jsx.min': ['./src/index.ts']
 	},
 	output: {
 		path: path.resolve(__dirname, 'bundles'),
 		filename: '[name].js',
 		libraryTarget: 'umd',
-		library: 'BulmaReact',
+		library: 'BulmaJSX',
 		umdNamedDefine: true
 	},
 	resolve: {
@@ -35,8 +35,20 @@ const config = {
 		]
 	},
 	externals: {
-		"react": "React",
-		"react-dom": "ReactDOM"
+		react: {
+        root: 'React',
+        commonjs2: 'react',
+        commonjs: 'react',
+        amd: 'react',
+        umd: 'react',
+      },
+      'react-dom': {
+        root: 'ReactDOM',
+        commonjs2: 'react-dom',
+        commonjs: 'react-dom',
+        amd: 'react-dom',
+        umd: 'react-dom',
+      },
 	},
 };
 
