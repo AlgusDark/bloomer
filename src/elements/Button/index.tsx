@@ -3,15 +3,10 @@ import { Bulma } from './../../bulma';
 
 import { classNames, getHTMLProps } from './../../helpers';
 
-export interface PageLinkProps extends
-    Bulma.Render<HTMLAnchorElement>, Bulma.PageLink<HTMLAnchorElement> {
-}
+export interface ButtonProps extends Bulma.Modifiers<HTMLAnchorElement>, Bulma.Render<HTMLAnchorElement> { }
 
-export const PageLink = (props: PageLinkProps) => {
-    const className = classNames(props, {
-        'pagination-link': true
-    });
-
+export const Button = (props: ButtonProps) => {
+    const className = classNames(props, { button: true });
     const { render } = props;
     const htmlProps = getHTMLProps(props);
 

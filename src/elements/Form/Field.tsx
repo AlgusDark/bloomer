@@ -3,10 +3,11 @@ import { Bulma } from './../../bulma';
 
 import { classNames, getHTMLProps } from './../../helpers';
 
-export interface TabsProps extends Bulma.Modifiers<HTMLDivElement> { }
+export interface FieldProps extends Bulma.Field<HTMLDivElement> {
+}
 
-export const Tabs = (props: TabsProps) => {
-    const className = classNames(props, { tabs: true });
+export const Field = (props: FieldProps) => {
+    const className = classNames(props, { field: true });
     const htmlProps = getHTMLProps(props);
 
     return (

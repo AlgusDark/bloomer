@@ -1,8 +1,9 @@
 import * as classes from 'classnames';
 
-import { NonHTMLProps } from './interfaces';
+import { Bulma } from './bulma';
+import { PageControlProps } from './components/Pagination/PageControl';
 
-export interface IProps extends NonHTMLProps, React.HTMLProps<HTMLElement> { }
+export interface IProps extends Bulma.NonHTMLProps<HTMLElement> { }
 
 export function withModifiers(props: IProps, obj = {}) {
     return [
@@ -18,6 +19,22 @@ export function withModifiers(props: IProps, obj = {}) {
             'is-fullwidth': props.isFullwidth,
             'is-active': props.isActive,
             'is-current': props.isCurrent,
+            'is-primary': props.isPrimary,
+            'is-info': props.isInfo,
+            'is-success': props.isSuccess,
+            'is-warning': props.isWarning,
+            'is-danger': props.isDanger,
+            'is-hovered': props.isHovered,
+            'is-focused': props.isFocused,
+            'is-loading': props.isLoading,
+            'is-link': props.isLink,
+            'is-white': props.isWhite,
+            'is-light': props.isLight,
+            'is-dark': props.isDark,
+            'is-black': props.isBlack,
+            'is-grouped': props.isGrouped,
+            'is-grouped-centered': props.isGroupedCentered,
+            'is-grouped-right': props.isGroupedRight,
         },
         props.className
     ]
@@ -42,6 +59,22 @@ export function getHTMLProps(props: IProps): React.HTMLProps<HTMLElement> {
         isCurrent,
         isPrevious,
         isNext,
+        isPrimary,
+        isInfo,
+        isSuccess,
+        isWarning,
+        isDanger,
+        isHovered,
+        isFocused,
+        isLoading,
+        isLink,
+        isWhite,
+        isLight,
+        isDark,
+        isBlack,
+        isGrouped,
+        isGroupedCentered,
+        isGroupedRight,
         ...rest,
     } = props;
 

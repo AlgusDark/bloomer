@@ -1,19 +1,17 @@
 import * as React from 'react';
+import { Bulma } from './../../bulma';
 
-import { IModifiers } from './../../interfaces';
 import { classNames, getHTMLProps } from './../../helpers';
 
-export interface PaginationProps extends IModifiers, React.HTMLProps<HTMLElement> { }
+export interface PaginationProps extends Bulma.Modifiers<HTMLElement> { }
 
-export class Pagination extends React.Component<PaginationProps, {}> {
-    render() {
-        const className = classNames(this.props, { pagination: true });
-        const props = getHTMLProps(this.props);
+export const Pagination = (props: PaginationProps) => {
+    const className = classNames(props, { pagination: true });
+    const htmlProps = getHTMLProps(props);
 
-        return (
-            <nav {...props} className={className}>
-                {props.children}
-            </nav>
-        )
-    }
+    return (
+        <nav {...htmlProps} className={className}>
+            {props.children}
+        </nav>
+    )
 }

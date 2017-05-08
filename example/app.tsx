@@ -14,6 +14,13 @@ import {
     PageLink,
 
     Box,
+
+    Button,
+
+    Field,
+    Control,
+
+    Content,
 } from '../src/index';
 
 ReactDOM.render(
@@ -62,6 +69,36 @@ ReactDOM.render(
             <div className='section'>
                 <Box>Hello World</Box>
             </div>
+
+            <div className='section'>
+                <Field isGrouped>
+                    <Control isLoading>
+                        <Button>This is a Button</Button>
+                    </Control>
+                    <Control>
+                        <Button isPrimary>This is a Primary Button</Button>
+                    </Control>
+                    <Control>
+                        <Button isSuccess>Success ;)</Button>
+                    </Control>
+                    <Control>
+                        <Button isBlack isLoading render={(props) => <a {...props}>black magic</a>} />
+                    </Control>
+                </Field>
+            </div>
+
+            <div className='section'>
+                <Content isMedium>
+                    <ul>
+                        <li>This</li>
+                        <li>is</li>
+                        <li>a</li>
+                        <li>Content</li>
+                        <li>list</li>
+                    </ul>
+                </Content>
+            </div>
+
         </div>
     </section>,
     document.getElementById('root')

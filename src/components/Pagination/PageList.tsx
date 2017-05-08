@@ -1,23 +1,21 @@
 import * as React from 'react';
+import { Bulma } from './../../bulma';
 
-import { IModifiers } from './../../interfaces';
 import { classNames, getHTMLProps } from './../../helpers';
 
-export interface PageListProps extends IModifiers, React.HTMLProps<HTMLUListElement> {
+export interface PageListProps extends Bulma.Modifiers<HTMLUListElement> {
 }
 
-export class PageList extends React.Component<PageListProps, {}> {
-    render() {
-        const className = classNames(this.props, {
-            'pagination-list' : true
-        });
-        
-        const props = getHTMLProps(this.props);
+export const PageList = (props: PageListProps) => {
+    const className = classNames(props, {
+        'pagination-list': true
+    });
 
-        return (
-            <ul {...props} className={className}>
-                {props.children}
-            </ul>
-        )
-    }
+    const HTMLProps = getHTMLProps(props);
+
+    return (
+        <ul {...HTMLProps} className={className}>
+            {props.children}
+        </ul>
+    )
 }
