@@ -3,11 +3,12 @@ import { Bulma } from './../../bulma';
 
 import { getHTMLProps, classNames } from './../../helpers';
 
-export interface PageControlProps extends Bulma.Render<HTMLAnchorElement>,
-    Bulma.State<HTMLAnchorElement>, Bulma.PageControl<HTMLAnchorElement>{
+export interface PageControl<T> extends Bulma.Render, React.HTMLProps<T> {
+    isNext?: boolean,
+    isPrevious?: boolean,
 }
 
-export const PageControl = (props: PageControlProps) => {
+export const PageControl = (props: PageControl<HTMLAnchorElement>) => {
     const className = classNames(props, {
         'pagination-previous': !props.isNext,
         'pagination-next': !props.isPrevious,

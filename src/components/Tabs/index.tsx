@@ -3,9 +3,19 @@ import { Bulma } from './../../bulma';
 
 import { classNames, getHTMLProps } from './../../helpers';
 
-export interface TabsProps extends Bulma.Modifiers<HTMLDivElement> { }
+export interface Tabs<T> extends Bulma.Alignment, Bulma.Size, React.HTMLProps<T> {
+    isBoxed?: boolean,
+    isToggle?: boolean,
+}
 
-export const Tabs = (props: TabsProps) => {
+export function getTabsClasses(props: Tabs<HTMLDivElement>) {
+    return {
+        'is-boxed': props.isBoxed,
+        'is-toggle': props.isToggle,
+    }
+}
+
+export const Tabs = (props: Tabs<HTMLDivElement>) => {
     const className = classNames(props, { tabs: true });
     const htmlProps = getHTMLProps(props);
 

@@ -1,80 +1,71 @@
 import * as classes from 'classnames';
 
-import { Bulma } from './bulma';
-import { PageControlProps } from './components/Pagination/PageControl';
+import { Bulma, getModifiersClasses, getBulmaClasses } from './bulma';
 
-export interface IProps extends Bulma.NonHTMLProps<HTMLElement> { }
-
-export function withModifiers(props: IProps, obj = {}) {
+export function withModifiers(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}) {
     return [
         {
             ...obj,
-            'is-centered': props.isCentered,
-            'is-right': props.isRight,
-            'is-small': props.isSmall,
-            'is-medium': props.isMedium,
-            'is-large': props.isLarge,
-            'is-boxed': props.isBoxed,
-            'is-toggle': props.isToggle,
-            'is-fullwidth': props.isFullwidth,
-            'is-active': props.isActive,
-            'is-current': props.isCurrent,
-            'is-primary': props.isPrimary,
-            'is-info': props.isInfo,
-            'is-success': props.isSuccess,
-            'is-warning': props.isWarning,
-            'is-danger': props.isDanger,
-            'is-hovered': props.isHovered,
-            'is-focused': props.isFocused,
-            'is-loading': props.isLoading,
-            'is-link': props.isLink,
-            'is-white': props.isWhite,
-            'is-light': props.isLight,
-            'is-dark': props.isDark,
-            'is-black': props.isBlack,
-            'is-grouped': props.isGrouped,
-            'is-grouped-centered': props.isGroupedCentered,
-            'is-grouped-right': props.isGroupedRight,
+            ...getModifiersClasses(props),
+            ...getBulmaClasses(props),
         },
         props.className
     ]
 }
 
-export function classNames(props: IProps, obj = {}): string | undefined {
+export function classNames(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}): string | undefined {
     return classes(withModifiers(props, obj)) || undefined;
 }
 
-export function getHTMLProps(props: IProps): React.HTMLProps<HTMLElement> {
+export function getHTMLProps(props: Bulma.NonHTMLProps<HTMLElement>): React.HTMLProps<HTMLElement> {
     const {
         render,
+        // Alignment
         isCentered,
         isRight,
+        // Size
         isSmall,
         isMedium,
         isLarge,
-        isBoxed,
-        isToggle,
+        // FullWidth
         isFullwidth,
+        // State
         isActive,
-        isCurrent,
-        isPrevious,
-        isNext,
+        isFocused,
+        isHovered,
+        isLoading,
+        // Color
+        isWhite,
+        isLight,
+        isDark,
+        isBlack,
         isPrimary,
         isInfo,
         isSuccess,
         isWarning,
         isDanger,
-        isHovered,
-        isFocused,
-        isLoading,
+        // Control
+        hasIcons,
+        hasIconsLeft,
+        hasIconsRight,
+        isExpanded,
+        // Button
         isLink,
-        isWhite,
-        isLight,
-        isDark,
-        isBlack,
+        isOutlined,
+        isInverted,
+        // Tabs
+        isBoxed,
+        isToggle,
+        // PageLink
+        isCurrent,
+        // PageControl
+        isPrevious,
+        isNext,
+        // Field
         isGrouped,
         isGroupedCentered,
         isGroupedRight,
+        // HTMLProps
         ...rest,
     } = props;
 

@@ -1,11 +1,25 @@
 import * as React from 'react';
-import { Bulma } from './../../bulma';
 
 import { classNames, getHTMLProps } from './../../helpers';
 
-export interface ControlProps extends Bulma.Modifiers<HTMLParagraphElement> { }
+export interface Control<T> extends React.HTMLProps<T> {
+    hasIcons?: boolean,
+    hasIconsLeft?: boolean,
+    hasIconsRight?: boolean,
+    isLoading?: boolean,
+    isExpanded?: boolean,
+}
 
-export const Control = (props: ControlProps) => {
+export function getControlClasses(props: Control<HTMLParagraphElement>) {
+    return {
+        'has-icons-left has-icons-right': props.hasIcons,
+        'has-icons-left': props.hasIconsLeft,
+        'has-icons-right': props.hasIconsRight,
+        'is-expanded': props.isExpanded,
+    }
+}
+
+export const Control = (props: Control<HTMLParagraphElement>) => {
     const className = classNames(props, { control: true });
     const htmlProps = getHTMLProps(props);
 

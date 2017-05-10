@@ -26,7 +26,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --host 0.0.0.0 --port 8000 --config webpack.dev.js --history-api-fallback --content-base example",
+    "dev": "NODE_ENV=development webpack-dev-server --host 0.0.0.0 --port 3024 --config webpack.dev.js --history-api-fallback --content-base example",
     "build": "npm run clean && tsc && tsc -m es6 --outDir lib-esm && NODE_ENV=production webpack",
     "clean": "shx rm -rf lib lib-esm bundles",
     "prepublish": "npm run build"

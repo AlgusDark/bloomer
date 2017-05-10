@@ -3,9 +3,11 @@ import { Bulma } from './../../bulma';
 
 import { classNames, getHTMLProps } from './../../helpers';
 
-export interface TabProps extends Bulma.Modifiers<HTMLLIElement> { }
+export interface Tab<T> extends React.HTMLProps<T> {
+    isActive?: boolean,
+}
 
-export const Tab = (props: TabProps) => {
+export const Tab = (props: Tab<HTMLLIElement>) => {
     const className = classNames(props);
     const htmlProps = getHTMLProps(props);
 

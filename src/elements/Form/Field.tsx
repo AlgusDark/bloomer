@@ -1,12 +1,22 @@
 import * as React from 'react';
-import { Bulma } from './../../bulma';
 
 import { classNames, getHTMLProps } from './../../helpers';
 
-export interface FieldProps extends Bulma.Field<HTMLDivElement> {
+export interface Field<T> extends React.HTMLProps<T> {
+    isGrouped?: boolean,
+    isGroupedRight?: boolean,
+    isGroupedCentered?: boolean,
 }
 
-export const Field = (props: FieldProps) => {
+export function getFieldClasses(props: Field<HTMLDivElement>) {
+    return {
+        'is-grouped': props.isGrouped,
+        'is-grouped-centered': props.isGroupedCentered,
+        'is-grouped-right': props.isGroupedRight,
+    }
+}
+
+export const Field = (props: Field<HTMLDivElement>) => {
     const className = classNames(props, { field: true });
     const htmlProps = getHTMLProps(props);
 

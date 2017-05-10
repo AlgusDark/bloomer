@@ -1,16 +1,19 @@
 import * as React from 'react';
 import { Bulma } from './../../bulma';
-
 import { classNames, getHTMLProps } from './../../helpers';
 
-export interface PageLinkProps extends
-    Bulma.Render<HTMLAnchorElement>, Bulma.PageLink<HTMLAnchorElement> {
+export interface PageLink<T> extends Bulma.Render, React.HTMLProps<T> {
+    isCurrent?: boolean;
 }
 
-export const PageLink = (props: PageLinkProps) => {
-    const className = classNames(props, {
-        'pagination-link': true
-    });
+export function getPageLinkClasses(props: PageLink<HTMLAnchorElement>) {
+    return {
+        'is-current': props.isCurrent
+    }
+}
+
+export const PageLink = (props: PageLink<HTMLAnchorElement>) => {
+    const className = classNames(props, { 'pagination-link': true });
 
     const { render } = props;
     const htmlProps = getHTMLProps(props);
