@@ -14,7 +14,8 @@
     "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
     "declaration": true,
-    "jsx": "react"
+    "jsx": "react",
+    "importHelpers": true
   },
   "include": [
     "src/**/*"
