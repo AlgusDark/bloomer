@@ -7,6 +7,7 @@ import { PageLink, getPageLinkClasses } from './components/Pagination/PageLink';
 import { PageControl } from './components/Pagination/PageControl';
 import { Tabs, getTabsClasses } from './components/Tabs';
 import { Tab } from './components/Tabs/Tab';
+import { Container, getContainerClasses } from './layout/Container';
 
 export declare namespace Bulma {
     // Modifiers
@@ -61,7 +62,8 @@ export declare namespace Bulma {
     export interface BulmaComponents<T> extends
         Field<T>, Control<T>, Button<T>,
         PageLink<T>, PageControl<T>,
-        Tabs<T>, Tab<T> {
+        Tabs<T>, Tab<T>,
+        Container<T> {
     }
 
     // All Non HTML Props
@@ -130,5 +132,6 @@ export function getBulmaClasses(props) {
         ...getControlClasses(props),
         ...getButtonClasses(props),
         ...getPageLinkClasses(props),
+        ...getContainerClasses(props),
     }
 }

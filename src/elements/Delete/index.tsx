@@ -16,15 +16,11 @@ export const Delete = (props: Delete<HTMLButtonElement|HTMLAnchorElement>) => {
     if (render) return render({ ...htmlProps, className });
 
     const anchor = (
-        <a role='button' {...htmlProps} className={className}>
-            {props.children}
-        </a>
+        <a role='button' {...htmlProps} className={className}></a>
     )
 
     const button = (
-        <button type={props.type || 'button'} {...htmlProps} className={className}>
-            {props.children}
-        </button>
+        <button type={props.type || 'button'} {...htmlProps} className={className}></button>
     )
 
     return props.isAnchor ? anchor : button;

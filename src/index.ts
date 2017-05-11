@@ -8,6 +8,10 @@ export { MenuLabel } from './components/Menu/MenuLabel';
 export { MenuList } from './components/Menu/MenuList';
 export { MenuLink } from './components/Menu/MenuLink';
 
+export { Message } from './components/Message';
+export { MessageHeader } from './components/Message/MessageHeader';
+export { MessageBody } from './components/Message/MessageBody';
+
 export { Pagination } from './components/Pagination';
 export { PageControl } from './components/Pagination/PageControl';
 export { Page } from './components/Pagination/Page';
@@ -21,3 +25,5 @@ export { Field } from './elements/Form/Field';
 export { Control } from './elements/Form/Control';
 
 export { Delete } from './elements/Delete';
+
+export { Container } from './layout/Container';

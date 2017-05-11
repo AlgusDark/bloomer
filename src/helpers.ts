@@ -3,6 +3,8 @@ import * as classes from 'classnames';
 import { Bulma, getModifiersClasses, getBulmaClasses } from './bulma';
 
 export function withModifiers(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}) {
+    console.log({...getModifiersClasses(props)});
+
     return [
         {
             ...obj,
