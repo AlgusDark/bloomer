@@ -3,7 +3,6 @@
     "moduleResolution": "node",
     "module": "commonjs",
     "target": "es5",
-    "rootDir": "src",
     "removeComments": true,
     "lib": [
       "es2015",

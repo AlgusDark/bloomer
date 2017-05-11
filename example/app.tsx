@@ -6,12 +6,19 @@ import 'bulma/css/bulma.css';
 import {
     Tabs,
     Tab,
+    TabList,
     TabLink,
 
     Pagination,
     PageControl,
+    Page,
     PageList,
     PageLink,
+
+    Menu,
+    MenuLabel,
+    MenuLink,
+    MenuList,
 
     Box,
 
@@ -28,7 +35,7 @@ ReactDOM.render(
         <div className='container'>
             <div className='section'>
                 <Tabs isCentered>
-                    <ul>
+                    <TabList>
                         <Tab>
                             <TabLink>Pictures</TabLink>
                         </Tab>
@@ -41,7 +48,7 @@ ReactDOM.render(
                         <Tab>
                             <TabLink render={props => (<a {...props}>Documents</a>)} />
                         </Tab>
-                    </ul>
+                    </TabList>
                 </Tabs>
             </div>
 
@@ -50,18 +57,18 @@ ReactDOM.render(
                     <PageControl isPrevious disabled title="Sup nigga" render={props => <a {...props}>Previous</a>} />
                     <PageControl isNext>Next</PageControl>
                     <PageList>
-                        <li>
+                        <Page>
                             <PageLink>1</PageLink>
-                        </li>
-                        <li>
+                        </Page>
+                        <Page>
                             <PageLink className='is-current'>2</PageLink>
-                        </li>
-                        <li>
+                        </Page>
+                        <Page>
                             <PageLink render={props => (<a {...props}>3</a>)} />
-                        </li>
-                        <li>
+                        </Page>
+                        <Page>
                             <PageLink isCurrent>4</PageLink>
-                        </li>
+                        </Page>
                     </PageList>
                 </Pagination>
             </div>
@@ -97,6 +104,37 @@ ReactDOM.render(
                         <li>list</li>
                     </ul>
                 </Content>
+            </div>
+
+            <div className='section'>
+                <Menu>
+                    <MenuLabel>General</MenuLabel>
+                    <MenuList>
+                        <li><MenuLink>Dashboard</MenuLink></li>
+                        <li><MenuLink>Customers</MenuLink></li>
+                    </MenuList>
+                    <MenuLabel>Administration</MenuLabel>
+                    <MenuList>
+                        <li><MenuLink>Team Settings</MenuLink></li>
+                        <li>
+                            <MenuLink isActive>Manage Your Team</MenuLink>
+                            <ul>
+                                <li><MenuLink>Members</MenuLink></li>
+                                <li><MenuLink>Plugins</MenuLink></li>
+                                <li><MenuLink>Add a member</MenuLink></li>
+                            </ul>
+                        </li>
+                        <li><MenuLink>Invitations</MenuLink></li>
+                        <li><MenuLink>Cloud Storage Environment Settings</MenuLink></li>
+                        <li><MenuLink>Authentication</MenuLink></li>
+                    </MenuList>
+                    <MenuLabel>Transactions</MenuLabel>
+                    <MenuList>
+                        <li><MenuLink>Payments</MenuLink></li>
+                        <li><MenuLink>Transfers</MenuLink></li>
+                        <li><MenuLink>Balance</MenuLink></li>
+                    </MenuList>
+                </Menu>
             </div>
 
         </div>

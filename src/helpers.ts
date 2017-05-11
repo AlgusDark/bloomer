@@ -19,7 +19,9 @@ export function classNames(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}): st
 
 export function getHTMLProps(props: Bulma.NonHTMLProps<HTMLElement>): React.HTMLProps<HTMLElement> {
     const {
+        // Extra helpers
         render,
+        isAnchor,
         // Alignment
         isCentered,
         isRight,

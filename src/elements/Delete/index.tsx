@@ -3,25 +3,13 @@ import { Bulma } from './../../bulma';
 
 import { classNames, getHTMLProps } from './../../helpers';
 
-export interface Button<T> extends
-    Bulma.Render, Bulma.State, Bulma.Color, Bulma.FullWidth,
-    React.HTMLProps<T> {
-    isLink?: boolean,
-    isOutlined?: boolean,
-    isInverted?: boolean,
+export interface Delete<T> extends
+    Bulma.Render, Bulma.Size, React.HTMLProps<T> {
     isAnchor?: boolean,
 }
 
-export function getButtonClasses(props: Button<HTMLButtonElement|HTMLAnchorElement>) {
-    return {
-        'is-link': props.isLink,
-        'is-outlined': props.isOutlined,
-        'is-inverted': props.isInverted,
-    }
-}
-
-export const Button = (props: Button<HTMLButtonElement|HTMLAnchorElement>) => {
-    const className = classNames(props, { button: true });
+export const Delete = (props: Delete<HTMLButtonElement|HTMLAnchorElement>) => {
+    const className = classNames(props, { delete: true });
     const { render } = props;
     const htmlProps = getHTMLProps(props);
 
