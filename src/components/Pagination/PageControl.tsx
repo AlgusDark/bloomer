@@ -1,29 +1,27 @@
 import * as React from 'react';
+import { Bulma } from './../../bulma';
 
-import { IModifiers, IRender, IPageControl } from './../../interfaces';
 import { getHTMLProps, classNames } from './../../helpers';
 
-export interface PageControlProps extends
-    IModifiers, IRender, IPageControl,
-    React.HTMLProps<HTMLAnchorElement> {
+export interface PageControl<T> extends Bulma.Render, React.HTMLProps<T> {
+    isNext?: boolean,
+    isPrevious?: boolean,
 }
 
-export class PageControl extends React.Component<PageControlProps, {}> {
-    render() {
-        const className = classNames(this.props, {
-            'pagination-previous': !this.props.isNext,
-            'pagination-next': !this.props.isPrevious,
-        });
+export const PageControl = (props: PageControl<HTMLAnchorElement>) => {
+    const className = classNames(props, {
+        'pagination-previous': !props.isNext,
+        'pagination-next': !props.isPrevious,
+    });
 
-        const { render } = this.props;
-        const props = getHTMLProps(this.props);
+    const { render } = props;
+    const htmlProps = getHTMLProps(props);
 
-        if (render) return render({ ...props, className });
+    if (render) return render({ ...htmlProps, className });
 
-        return (
-            <a {...props} className={className}>
-                {this.props.children}
-            </a>
-        )
-    }
+    return (
+        <a {...htmlProps} className={className}>
+            {props.children}
+        </a>
+    )
 }

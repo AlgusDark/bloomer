@@ -3,9 +3,11 @@ import { Bulma } from './../../bulma';
 
 import { classNames, getHTMLProps } from './../../helpers';
 
-export interface TabLink<T> extends Bulma.Render, React.HTMLProps<T> { }
+export interface MenuLink<T> extends Bulma.Render, React.HTMLProps<T> {
+    isActive?: boolean,
+ }
 
-export const TabLink = (props: TabLink<HTMLAnchorElement>) => {
+export const MenuLink = (props: MenuLink<HTMLAnchorElement>) => {
     const className = classNames(props);
     const { render } = props;
     const htmlProps = getHTMLProps(props);

@@ -1,47 +1,75 @@
 import * as classes from 'classnames';
 
-import { NonHTMLProps } from './interfaces';
+import { Bulma, getModifiersClasses, getBulmaClasses } from './bulma';
 
-export interface IProps extends NonHTMLProps, React.HTMLProps<HTMLElement> { }
+export function withModifiers(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}) {
+    console.log({...getModifiersClasses(props)});
 
-export function withModifiers(props: IProps, obj = {}) {
     return [
         {
             ...obj,
-            'is-centered': props.isCentered,
-            'is-right': props.isRight,
-            'is-small': props.isSmall,
-            'is-medium': props.isMedium,
-            'is-large': props.isLarge,
-            'is-boxed': props.isBoxed,
-            'is-toggle': props.isToggle,
-            'is-fullwidth': props.isFullwidth,
-            'is-active': props.isActive,
-            'is-current': props.isCurrent,
+            ...getModifiersClasses(props),
+            ...getBulmaClasses(props),
         },
         props.className
     ]
 }
 
-export function classNames(props: IProps, obj = {}): string | undefined {
+export function classNames(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}): string | undefined {
     return classes(withModifiers(props, obj)) || undefined;
 }
 
-export function getHTMLProps(props: IProps): React.HTMLProps<HTMLElement> {
+export function getHTMLProps(props: Bulma.NonHTMLProps<HTMLElement>): React.HTMLProps<HTMLElement> {
     const {
+        // Extra helpers
         render,
+        isAnchor,
+        // Alignment
         isCentered,
         isRight,
+        // Size
         isSmall,
         isMedium,
         isLarge,
+        // FullWidth
+        isFullwidth,
+        // State
+        isActive,
+        isFocused,
+        isHovered,
+        isLoading,
+        // Color
+        isWhite,
+        isLight,
+        isDark,
+        isBlack,
+        isPrimary,
+        isInfo,
+        isSuccess,
+        isWarning,
+        isDanger,
+        // Control
+        hasIcons,
+        hasIconsLeft,
+        hasIconsRight,
+        isExpanded,
+        // Button
+        isLink,
+        isOutlined,
+        isInverted,
+        // Tabs
         isBoxed,
         isToggle,
-        isFullwidth,
-        isActive,
+        // PageLink
         isCurrent,
+        // PageControl
         isPrevious,
         isNext,
+        // Field
+        isGrouped,
+        isGroupedCentered,
+        isGroupedRight,
+        // HTMLProps
         ...rest,
     } = props;
 

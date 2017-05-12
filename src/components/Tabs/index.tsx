@@ -1,19 +1,27 @@
 import * as React from 'react';
+import { Bulma } from './../../bulma';
 
-import { IModifiers } from './../../interfaces';
 import { classNames, getHTMLProps } from './../../helpers';
 
-export interface TabsProps extends IModifiers, React.HTMLProps<HTMLDivElement> { }
+export interface Tabs<T> extends Bulma.Alignment, Bulma.Size, React.HTMLProps<T> {
+    isBoxed?: boolean,
+    isToggle?: boolean,
+}
 
-export class Tabs extends React.Component<TabsProps, {}> {
-    render() {
-        const className = classNames(this.props, { tabs: true });
-        const props = getHTMLProps(this.props);
-
-        return (
-            <div {...props} className={className}>
-                {props.children}
-            </div>
-        )
+export function getTabsClasses(props: Tabs<HTMLDivElement>) {
+    return {
+        'is-boxed': props.isBoxed,
+        'is-toggle': props.isToggle,
     }
+}
+
+export const Tabs = (props: Tabs<HTMLDivElement>) => {
+    const className = classNames(props, { tabs: true });
+    const htmlProps = getHTMLProps(props);
+
+    return (
+        <div {...htmlProps} className={className}>
+            {props.children}
+        </div>
+    )
 }

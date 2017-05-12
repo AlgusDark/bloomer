@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import { classNames, getHTMLProps } from './../../helpers';
 
-export const PageList = (props: React.HTMLProps<HTMLLIElement>) => {
-    const className = classNames(props, { 'pagination-list': true });
+export const TabList = (props: React.HTMLProps<HTMLUListElement>) => {
+    const className = classNames(props);
     const HTMLProps = getHTMLProps(props);
 
     return (

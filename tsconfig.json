@@ -3,6 +3,7 @@
     "moduleResolution": "node",
     "module": "commonjs",
     "target": "es5",
+    "removeComments": true,
     "lib": [
       "es2015",
       "dom"
@@ -13,10 +14,18 @@
     "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
     "declaration": true,
-    "jsx": "react"
+    "jsx": "react",
+    "importHelpers": true
   },
-  "files": [
-    "./src/index.ts"
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "bundles",
+    "example",
+    "lib",
+    "lib-esm"
   ],
   "compileOnSave": false,
   "buildOnSave": false,
