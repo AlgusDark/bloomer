@@ -9,7 +9,6 @@ export interface Button<T> extends
     isLink?: boolean,
     isOutlined?: boolean,
     isInverted?: boolean,
-    isAnchor?: boolean,
 }
 
 export function getButtonClasses(props: Button<HTMLButtonElement|HTMLAnchorElement>) {
@@ -39,5 +38,5 @@ export const Button = (props: Button<HTMLButtonElement|HTMLAnchorElement>) => {
         </button>
     )
 
-    return props.isAnchor ? anchor : button;
+    return props.href ? anchor : button;
 }

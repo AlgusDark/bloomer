@@ -5,7 +5,6 @@ import { classNames, getHTMLProps } from './../../helpers';
 
 export interface Delete<T> extends
     Bulma.Render, Bulma.Size, React.HTMLProps<T> {
-    isAnchor?: boolean,
 }
 
 export const Delete = (props: Delete<HTMLButtonElement|HTMLAnchorElement>) => {
@@ -23,5 +22,5 @@ export const Delete = (props: Delete<HTMLButtonElement|HTMLAnchorElement>) => {
         <button type={props.type || 'button'} {...htmlProps} className={className}></button>
     )
 
-    return props.isAnchor ? anchor : button;
+    return props.href ? anchor : button;
 }

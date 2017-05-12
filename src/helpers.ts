@@ -23,7 +23,6 @@ export function getHTMLProps(props: Bulma.NonHTMLProps<HTMLElement>): React.HTML
     const {
         // Extra helpers
         render,
-        isAnchor,
         // Alignment
         isCentered,
         isRight,
