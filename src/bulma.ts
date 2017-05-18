@@ -79,6 +79,14 @@ function getAlignmentClasses(props: Bulma.Alignment) {
     }
 }
 
+export function removeAlignmentProps(props: Bulma.Alignment) {
+    const {
+        isCentered,
+        isRight,
+        ...rest } = props;
+    return rest;
+}
+
 function getSizeClasses(props: Bulma.Size) {
     return {
         'is-small': props.isSmall,
@@ -87,10 +95,26 @@ function getSizeClasses(props: Bulma.Size) {
     }
 }
 
+export function removeSizeProps(props: Bulma.Size) {
+    const {
+        isLarge,
+        isMedium,
+        isSmall,
+        ...rest } = props;
+    return rest;
+}
+
 function getFullWidthClasses(props: Bulma.FullWidth) {
     return {
         'is-fullwidth': props.isFullwidth,
     }
+}
+
+export function removeFullWidthProps(props: Bulma.FullWidth) {
+    const {
+        isFullwidth,
+        ...rest } = props;
+    return rest;
 }
 
 function getStateClasses(props: Bulma.State) {
@@ -100,6 +124,16 @@ function getStateClasses(props: Bulma.State) {
         'is-hovered': props.isHovered,
         'is-loading': props.isLoading,
     }
+}
+
+export function removeStateProps(props: Bulma.State) {
+    const {
+        isActive,
+        isFocused,
+        isHovered,
+        isLoading,
+        ...rest } = props;
+    return rest;
 }
 
 function getColorClasses(props: Bulma.Color) {
@@ -114,6 +148,21 @@ function getColorClasses(props: Bulma.Color) {
         'is-warning': props.isWarning,
         'is-danger': props.isDanger,
     }
+}
+
+export function removeColorProps(props: Bulma.Color) {
+    const {
+        isBlack,
+        isDanger,
+        isDark,
+        isInfo,
+        isLight,
+        isPrimary,
+        isSuccess,
+        isWarning,
+        isWhite,
+        ...rest } = props;
+    return rest;
 }
 
 export function getModifiersClasses(props: Bulma.NonHTMLProps<HTMLElement>) {

@@ -18,7 +18,11 @@ export function getFieldClasses(props: Field<HTMLDivElement>) {
 
 export const Field = (props: Field<HTMLDivElement>) => {
     const className = classNames(props, { field: true });
-    const HTMLProps = getHTMLProps(props);
+    const { 
+        isGrouped,
+        isGroupedRight,
+        isGroupedCentered,
+        ...HTMLProps } = props;
 
     return (
         <div {...HTMLProps} className={className}>

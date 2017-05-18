@@ -1,25 +1,24 @@
 import * as React from 'react';
-import { Bulma } from './../../bulma';
 
+import { Bulma, removeSizeProps } from './../../bulma';
 import { classNames, getHTMLProps } from './../../helpers';
 
-export interface Delete<T> extends
-    Bulma.Render, Bulma.Size, React.HTMLProps<T> {
-}
+export interface Delete<T> extends Bulma.Render, Bulma.Size,
+    React.HTMLProps<T> { }
 
-export const Delete = (props: Delete<HTMLButtonElement|HTMLAnchorElement>) => {
+export const Delete = (props: Delete<HTMLButtonElement | HTMLAnchorElement>) => {
     const className = classNames(props, { delete: true });
-    const { render } = props;
-    const htmlProps = getHTMLProps(props);
+    const { render, ...rest } = props;
+    const HTMLProps = getHTMLProps(rest, removeSizeProps);
 
-    if (render) return render({ ...htmlProps, className });
+    if (render) return render({ ...HTMLProps, className });
 
     const anchor = (
-        <a role='button' {...htmlProps} className={className}></a>
+        <a role='button' {...HTMLProps} className={className}></a>
     )
 
     const button = (
-        <button type={props.type || 'button'} {...htmlProps} className={className}></button>
+        <button type={props.type || 'button'} {...HTMLProps} className={className}></button>
     )
 
     return props.href ? anchor : button;

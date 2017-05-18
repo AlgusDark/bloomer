@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Bulma } from './../../bulma';
 
+import { Bulma, removeStateProps, removeColorProps, removeFullWidthProps } from './../../bulma';
 import { classNames, getHTMLProps } from './../../helpers';
 
 export interface Button<T> extends
@@ -11,7 +11,7 @@ export interface Button<T> extends
     isInverted?: boolean,
 }
 
-export function getButtonClasses(props: Button<HTMLButtonElement|HTMLAnchorElement>) {
+export function getButtonClasses(props: Button<HTMLButtonElement | HTMLAnchorElement>) {
     return {
         'is-link': props.isLink,
         'is-outlined': props.isOutlined,
@@ -19,10 +19,15 @@ export function getButtonClasses(props: Button<HTMLButtonElement|HTMLAnchorEleme
     }
 }
 
-export const Button = (props: Button<HTMLButtonElement|HTMLAnchorElement>) => {
+export const Button = (props: Button<HTMLButtonElement | HTMLAnchorElement>) => {
     const className = classNames(props, { button: true });
-    const { render } = props;
-    const HTMLProps = getHTMLProps(props);
+    const { render, isLink, isOutlined, isInverted, ...rest } = props;
+    const HTMLProps = getHTMLProps(
+        rest,
+        removeStateProps,
+        removeColorProps,
+        removeFullWidthProps,
+    );
 
     if (render) return render({ ...HTMLProps, className });
 

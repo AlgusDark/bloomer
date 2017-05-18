@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { classNames, getHTMLProps } from './../../helpers';
+import { classNames } from './../../helpers';
 
 export interface Control<T> extends React.HTMLProps<T> {
     hasIcons?: boolean,
@@ -21,7 +21,12 @@ export function getControlClasses(props: Control<HTMLParagraphElement>) {
 
 export const Control = (props: Control<HTMLParagraphElement>) => {
     const className = classNames(props, { control: true });
-    const HTMLProps = getHTMLProps(props);
+    const {
+        hasIcons,
+        hasIconsLeft, hasIconsRight,
+        isLoading, isExpanded,
+        ...HTMLProps
+    } = props;
 
     return (
         <p {...HTMLProps} className={className}>

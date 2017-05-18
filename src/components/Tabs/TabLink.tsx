@@ -1,19 +1,16 @@
 import * as React from 'react';
-import { Bulma } from './../../bulma';
 
-import { classNames, getHTMLProps } from './../../helpers';
+import { Bulma } from './../../bulma';
 
 export interface TabLink<T> extends Bulma.Render, React.HTMLProps<T> { }
 
 export const TabLink = (props: TabLink<HTMLAnchorElement>) => {
-    const className = classNames(props);
-    const { render } = props;
-    const HTMLProps = getHTMLProps(props);
+    const { render, ...HTMLProps } = props;
 
-    if (render) return render({ ...HTMLProps, className });
+    if (render) return render({ ...HTMLProps });
 
     return (
-        <a {...HTMLProps} className={className}>
+        <a {...HTMLProps}>
             {props.children}
         </a>
     )

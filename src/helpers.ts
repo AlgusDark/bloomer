@@ -17,60 +17,8 @@ export function classNames(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}): st
     return classnames(withModifiers(props, obj)) || undefined;
 }
 
-export function getHTMLProps(props: Bulma.NonHTMLProps<HTMLElement>): React.HTMLProps<HTMLElement> {
-    const {
-        // Extra helpers
-        render,
-        // Alignment
-        isCentered,
-        isRight,
-        // Size
-        isSmall,
-        isMedium,
-        isLarge,
-        // FullWidth
-        isFullwidth,
-        // State
-        isActive,
-        isFocused,
-        isHovered,
-        isLoading,
-        // Color
-        isWhite,
-        isLight,
-        isDark,
-        isBlack,
-        isPrimary,
-        isInfo,
-        isSuccess,
-        isWarning,
-        isDanger,
-        // Control
-        hasIcons,
-        hasIconsLeft,
-        hasIconsRight,
-        isExpanded,
-        // Button
-        isLink,
-        isOutlined,
-        isInverted,
-        // Tabs
-        isBoxed,
-        isToggle,
-        // PageLink
-        isCurrent,
-        // PageControl
-        isPrevious,
-        isNext,
-        // Field
-        isGrouped,
-        isGroupedCentered,
-        isGroupedRight,
-        // Container
-        isFluid,
-        // HTMLProps
-        ...rest,
-    } = props;
+export function getHTMLProps(props, ...args: Array<Function>): React.HTMLProps<HTMLElement> {
+    if (args.length > 0) return args.reduce((rest, fn) => ({ ...fn(rest) }), props)
 
-    return rest;
+    return props;
 }

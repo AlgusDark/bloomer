@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { classNames, getHTMLProps } from './../../helpers';
+import { classNames } from './../../helpers';
 
 export interface Tab<T> extends React.HTMLProps<T> {
     isActive?: boolean,
@@ -8,7 +8,7 @@ export interface Tab<T> extends React.HTMLProps<T> {
 
 export const Tab = (props: Tab<HTMLLIElement>) => {
     const className = classNames(props);
-    const HTMLProps = getHTMLProps(props);
+    const { isActive, ...HTMLProps } = props;
 
     return (
         <li {...HTMLProps} className={className}>
