@@ -8,10 +8,10 @@ export interface Tab<T> extends React.HTMLProps<T> {
 
 export const Tab = (props: Tab<HTMLLIElement>) => {
     const className = classNames(props);
-    const htmlProps = getHTMLProps(props);
+    const HTMLProps = getHTMLProps(props);
 
     return (
-        <li {...htmlProps} className={className}>
+        <li {...HTMLProps} className={className}>
             {props.children}
         </li>
     )

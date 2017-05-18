@@ -1,14 +1,11 @@
 import * as React from 'react';
-import { Bulma } from './../../bulma';
-
-import { classNames, getHTMLProps } from './../../helpers';
+import * as classNames from 'classnames';
 
 export const MessageBody = (props: React.HTMLProps<HTMLDivElement>) => {
-    const className = classNames(props, { 'message-body': true });
-    const htmlProps = getHTMLProps(props);
+    const className = classNames('message-body');
 
     return (
-        <div {...htmlProps} className={className}>
+        <div {...props} className={className}>
             {props.children}
         </div>
     )

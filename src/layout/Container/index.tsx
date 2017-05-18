@@ -13,10 +13,10 @@ export function getContainerClasses(props: Container<HTMLDivElement>) {
 
 export const Container = (props: Container<HTMLDivElement>) => {
     const className = classNames(props, { container: true });
-    const htmlProps = getHTMLProps(props);
+    const HTMLProps = getHTMLProps(props);
 
     return (
-        <div {...htmlProps} className={className}>
+        <div {...HTMLProps} className={className}>
             {props.children}
         </div>
     )

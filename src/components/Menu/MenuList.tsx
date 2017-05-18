@@ -1,13 +1,11 @@
 import * as React from 'react';
-
-import { classNames, getHTMLProps } from './../../helpers';
+import * as classNames from 'classnames';
 
 export const MenuList = (props: React.HTMLProps<HTMLUListElement>) => {
-    const className = classNames(props, { 'menu-list': true });
-    const HTMLProps = getHTMLProps(props);
-
+    const className = classNames('menu-list');
+    
     return (
-        <ul {...HTMLProps} className={className}>
+        <ul {...props} className={className}>
             {props.children}
         </ul>
     )

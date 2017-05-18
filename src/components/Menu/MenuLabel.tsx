@@ -1,13 +1,11 @@
 import * as React from 'react';
-
-import { classNames, getHTMLProps } from './../../helpers';
+import * as classNames from 'classnames';
 
 export const MenuLabel = (props: React.HTMLProps<HTMLParagraphElement>) => {
-    const className = classNames(props, { 'menu-label': true });
-    const HTMLProps = getHTMLProps(props);
+    const className = classNames('menu-label');
 
     return (
-        <p {...HTMLProps} className={className}>
+        <p {...props} className={className}>
             {props.children}
         </p>
     )

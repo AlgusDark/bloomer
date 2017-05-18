@@ -6,6 +6,8 @@ import { getHTMLProps, classNames } from './../../helpers';
 export interface PageControl<T> extends Bulma.Render, React.HTMLProps<T> {
     isNext?: boolean,
     isPrevious?: boolean,
+    isFocused?: boolean,
+    isActive?: boolean,
 }
 
 export const PageControl = (props: PageControl<HTMLAnchorElement>) => {
@@ -15,12 +17,12 @@ export const PageControl = (props: PageControl<HTMLAnchorElement>) => {
     });
 
     const { render } = props;
-    const htmlProps = getHTMLProps(props);
+    const HTMLProps = getHTMLProps(props);
 
-    if (render) return render({ ...htmlProps, className });
+    if (render) return render({ ...HTMLProps, className });
 
     return (
-        <a {...htmlProps} className={className}>
+        <a {...HTMLProps} className={className}>
             {props.children}
         </a>
     )

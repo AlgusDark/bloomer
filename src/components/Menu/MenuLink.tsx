@@ -10,12 +10,12 @@ export interface MenuLink<T> extends Bulma.Render, React.HTMLProps<T> {
 export const MenuLink = (props: MenuLink<HTMLAnchorElement>) => {
     const className = classNames(props);
     const { render } = props;
-    const htmlProps = getHTMLProps(props);
+    const HTMLProps = getHTMLProps(props);
 
-    if (render) return render({ ...htmlProps, className });
+    if (render) return render({ ...HTMLProps, className });
 
     return (
-        <a {...htmlProps} className={className}>
+        <a {...HTMLProps} className={className}>
             {props.children}
         </a>
     )

@@ -18,10 +18,10 @@ export function getFieldClasses(props: Field<HTMLDivElement>) {
 
 export const Field = (props: Field<HTMLDivElement>) => {
     const className = classNames(props, { field: true });
-    const htmlProps = getHTMLProps(props);
+    const HTMLProps = getHTMLProps(props);
 
     return (
-        <div {...htmlProps} className={className}>
+        <div {...HTMLProps} className={className}>
             {props.children}
         </div>
     )

@@ -8,10 +8,10 @@ export interface Message<T> extends
 
 export const Message = (props: Message<HTMLElement>) => {
     const className = classNames(props, { message: true });
-    const htmlProps = getHTMLProps(props);
+    const HTMLProps = getHTMLProps(props);
 
     return (
-        <article {...htmlProps} className={className}>
+        <article {...HTMLProps} className={className}>
             {props.children}
         </article>
     )

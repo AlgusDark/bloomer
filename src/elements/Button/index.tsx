@@ -22,18 +22,18 @@ export function getButtonClasses(props: Button<HTMLButtonElement|HTMLAnchorEleme
 export const Button = (props: Button<HTMLButtonElement|HTMLAnchorElement>) => {
     const className = classNames(props, { button: true });
     const { render } = props;
-    const htmlProps = getHTMLProps(props);
+    const HTMLProps = getHTMLProps(props);
 
-    if (render) return render({ ...htmlProps, className });
+    if (render) return render({ ...HTMLProps, className });
 
     const anchor = (
-        <a role='button' {...htmlProps} className={className}>
+        <a {...HTMLProps} role='button' className={className}>
             {props.children}
         </a>
     )
 
     const button = (
-        <button type={props.type || 'button'} {...htmlProps} className={className}>
+        <button {...HTMLProps} type={props.type || 'button'} className={className}>
             {props.children}
         </button>
     )

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Bulma } from './../../bulma';
 
-
 import { classNames, getHTMLProps } from './../../helpers';
 
 export interface Pagination<T> extends
@@ -9,10 +8,10 @@ export interface Pagination<T> extends
 
 export const Pagination = (props: Pagination<HTMLElement>) => {
     const className = classNames(props, { pagination: true });
-    const htmlProps = getHTMLProps(props);
+    const HTMLProps = getHTMLProps(props);
 
     return (
-        <nav {...htmlProps} className={className}>
+        <nav {...HTMLProps} className={className}>
             {props.children}
         </nav>
     )

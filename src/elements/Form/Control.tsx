@@ -21,10 +21,10 @@ export function getControlClasses(props: Control<HTMLParagraphElement>) {
 
 export const Control = (props: Control<HTMLParagraphElement>) => {
     const className = classNames(props, { control: true });
-    const htmlProps = getHTMLProps(props);
+    const HTMLProps = getHTMLProps(props);
 
     return (
-        <p {...htmlProps} className={className}>
+        <p {...HTMLProps} className={className}>
             {props.children}
         </p>
     )

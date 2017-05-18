@@ -17,10 +17,10 @@ export function getTabsClasses(props: Tabs<HTMLDivElement>) {
 
 export const Tabs = (props: Tabs<HTMLDivElement>) => {
     const className = classNames(props, { tabs: true });
-    const htmlProps = getHTMLProps(props);
+    const HTMLProps = getHTMLProps(props);
 
     return (
-        <div {...htmlProps} className={className}>
+        <div {...HTMLProps} className={className}>
             {props.children}
         </div>
     )
