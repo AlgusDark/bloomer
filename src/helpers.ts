@@ -1,10 +1,8 @@
-import * as classes from 'classnames';
+import * as classnames from 'classnames';
 
 import { Bulma, getModifiersClasses, getBulmaClasses } from './bulma';
 
 export function withModifiers(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}) {
-    console.log({...getModifiersClasses(props)});
-
     return [
         {
             ...obj,
@@ -16,7 +14,7 @@ export function withModifiers(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}) 
 }
 
 export function classNames(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}): string | undefined {
-    return classes(withModifiers(props, obj)) || undefined;
+    return classnames(withModifiers(props, obj)) || undefined;
 }
 
 export function getHTMLProps(props: Bulma.NonHTMLProps<HTMLElement>): React.HTMLProps<HTMLElement> {
@@ -68,6 +66,8 @@ export function getHTMLProps(props: Bulma.NonHTMLProps<HTMLElement>): React.HTML
         isGrouped,
         isGroupedCentered,
         isGroupedRight,
+        // Container
+        isFluid,
         // HTMLProps
         ...rest,
     } = props;
