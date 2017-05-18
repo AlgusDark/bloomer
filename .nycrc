@@ -1,0 +1,21 @@
+{
+  "reporter": [
+    "lcov",
+    "text",
+    "html"
+  ],
+  "report-dir": "reports/coverage",
+  "extension": [
+    ".ts",
+    ".tsx"
+  ],
+  "require": [
+    "ts-node/register"
+  ],
+  "exclude": [
+    "**/*.test.tsx",
+    "bundles",
+    "lib",
+    "lib-esm"
+  ]
+}

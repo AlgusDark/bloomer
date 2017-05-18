@@ -5,3 +5,6 @@ lib/
 lib-esm/
 bundles/
 node_modules/
+
+.nyc_output
+reports

@@ -16,12 +16,3 @@ test('Render Fluid Container', t => {
     t.equal(wrapper.hasClass('is-fluid'), true);
     t.end();
 });
-
-test('getContainerClasses', t => {
-    const classes = getContainerClasses({
-        isFluid: true,
-        onClick: f => f
-    });
-    t.deepEqual(classes, { 'is-fluid': true }, 'should return { isFluid: true }');
-    t.end();
-});

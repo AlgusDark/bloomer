@@ -25,7 +25,8 @@
     "bundles",
     "example",
     "lib",
-    "lib-esm"
+    "lib-esm",
+    "src/**/*.test.*"
   ],
   "compileOnSave": false,
   "buildOnSave": false,
