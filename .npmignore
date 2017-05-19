@@ -1,7 +1,8 @@
 .*
-**/webpack.config.js
-**/webpack.dev.js
+**/webpack*.js
 **/tsconfig.json
 **/node_modules
 src
 example
+test
+reports

@@ -15,7 +15,8 @@
     "sourceMap": true,
     "declaration": true,
     "jsx": "react",
-    "importHelpers": true
+    "importHelpers": true,
+    "noImplicitAny": false
   },
   "include": [
     "src/**/*"
@@ -25,7 +26,8 @@
     "bundles",
     "example",
     "lib",
-    "lib-esm"
+    "lib-esm",
+    "src/**/*.test.*"
   ],
   "compileOnSave": false,
   "buildOnSave": false,

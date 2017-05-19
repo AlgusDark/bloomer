@@ -1,76 +1,23 @@
-import * as classes from 'classnames';
+import * as classnames from 'classnames';
 
-import { Bulma, getModifiersClasses, getBulmaClasses } from './bulma';
+import { Bulma, getModifiersClasses } from './bulma';
 
-export function withModifiers(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}) {
-    console.log({...getModifiersClasses(props)});
-
+export function withModifiers(props: Bulma.NonHTMLProps<HTMLElement>, obj) {
     return [
         {
             ...obj,
             ...getModifiersClasses(props),
-            ...getBulmaClasses(props),
         },
         props.className
     ]
 }
 
 export function classNames(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}): string | undefined {
-    return classes(withModifiers(props, obj)) || undefined;
+    return classnames(withModifiers(props, obj)) || undefined;
 }
 
-export function getHTMLProps(props: Bulma.NonHTMLProps<HTMLElement>): React.HTMLProps<HTMLElement> {
-    const {
-        // Extra helpers
-        render,
-        // Alignment
-        isCentered,
-        isRight,
-        // Size
-        isSmall,
-        isMedium,
-        isLarge,
-        // FullWidth
-        isFullwidth,
-        // State
-        isActive,
-        isFocused,
-        isHovered,
-        isLoading,
-        // Color
-        isWhite,
-        isLight,
-        isDark,
-        isBlack,
-        isPrimary,
-        isInfo,
-        isSuccess,
-        isWarning,
-        isDanger,
-        // Control
-        hasIcons,
-        hasIconsLeft,
-        hasIconsRight,
-        isExpanded,
-        // Button
-        isLink,
-        isOutlined,
-        isInverted,
-        // Tabs
-        isBoxed,
-        isToggle,
-        // PageLink
-        isCurrent,
-        // PageControl
-        isPrevious,
-        isNext,
-        // Field
-        isGrouped,
-        isGroupedCentered,
-        isGroupedRight,
-        // HTMLProps
-        ...rest,
-    } = props;
+export function getHTMLProps(props: Bulma.NonHTMLProps<HTMLElement>, ...args: Array<Function>): React.HTMLProps<HTMLElement> {
+    if (args.length > 0) return args.reduce((rest, fn) => ({ ...fn(rest) }), props)
 
-    return rest;
+    return props;
 }

@@ -1,13 +1,13 @@
 /// <reference types="react" />
 
-import { Field, getFieldClasses } from './elements/Form/Field';
-import { Control, getControlClasses } from './elements/Form/Control';
-import { Button, getButtonClasses } from './elements/Button';
-import { PageLink, getPageLinkClasses } from './components/Pagination/PageLink';
+import { Field } from './elements/Form/Field';
+import { Control } from './elements/Form/Control';
+import { Button } from './elements/Button';
+import { PageLink } from './components/Pagination/PageLink';
 import { PageControl } from './components/Pagination/PageControl';
-import { Tabs, getTabsClasses } from './components/Tabs';
+import { Tabs } from './components/Tabs';
 import { Tab } from './components/Tabs/Tab';
-import { Container, getContainerClasses } from './layout/Container';
+import { Container } from './layout/Container';
 
 export declare namespace Bulma {
     // Modifiers
@@ -79,6 +79,14 @@ function getAlignmentClasses(props: Bulma.Alignment) {
     }
 }
 
+export function removeAlignmentProps(props: Bulma.Alignment) {
+    const {
+        isCentered,
+        isRight,
+        ...rest } = props;
+    return rest;
+}
+
 function getSizeClasses(props: Bulma.Size) {
     return {
         'is-small': props.isSmall,
@@ -87,10 +95,26 @@ function getSizeClasses(props: Bulma.Size) {
     }
 }
 
+export function removeSizeProps(props: Bulma.Size) {
+    const {
+        isLarge,
+        isMedium,
+        isSmall,
+        ...rest } = props;
+    return rest;
+}
+
 function getFullWidthClasses(props: Bulma.FullWidth) {
     return {
         'is-fullwidth': props.isFullwidth,
     }
+}
+
+export function removeFullWidthProps(props: Bulma.FullWidth) {
+    const {
+        isFullwidth,
+        ...rest } = props;
+    return rest;
 }
 
 function getStateClasses(props: Bulma.State) {
@@ -100,6 +124,16 @@ function getStateClasses(props: Bulma.State) {
         'is-hovered': props.isHovered,
         'is-loading': props.isLoading,
     }
+}
+
+export function removeStateProps(props: Bulma.State) {
+    const {
+        isActive,
+        isFocused,
+        isHovered,
+        isLoading,
+        ...rest } = props;
+    return rest;
 }
 
 function getColorClasses(props: Bulma.Color) {
@@ -116,6 +150,21 @@ function getColorClasses(props: Bulma.Color) {
     }
 }
 
+export function removeColorProps(props: Bulma.Color) {
+    const {
+        isBlack,
+        isDanger,
+        isDark,
+        isInfo,
+        isLight,
+        isPrimary,
+        isSuccess,
+        isWarning,
+        isWhite,
+        ...rest } = props;
+    return rest;
+}
+
 export function getModifiersClasses(props: Bulma.NonHTMLProps<HTMLElement>) {
     return {
         ...getAlignmentClasses(props),
@@ -123,15 +172,5 @@ export function getModifiersClasses(props: Bulma.NonHTMLProps<HTMLElement>) {
         ...getFullWidthClasses(props),
         ...getStateClasses(props),
         ...getColorClasses(props),
-    }
-}
-
-export function getBulmaClasses(props) {
-    return {
-        ...getFieldClasses(props),
-        ...getControlClasses(props),
-        ...getButtonClasses(props),
-        ...getPageLinkClasses(props),
-        ...getContainerClasses(props),
     }
 }

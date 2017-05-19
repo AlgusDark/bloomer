@@ -1,13 +1,11 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 
-import { classNames, getHTMLProps } from './../../helpers';
-
-export const PageList = (props: React.HTMLProps<HTMLLIElement>) => {
-    const className = classNames(props, { 'pagination-list': true });
-    const HTMLProps = getHTMLProps(props);
+export const PageList = (props: React.HTMLProps<HTMLUListElement>) => {
+    const className = classNames('pagination-list', props.className);
 
     return (
-        <ul {...HTMLProps} className={className}>
+        <ul {...props} className={className}>
             {props.children}
         </ul>
     )
