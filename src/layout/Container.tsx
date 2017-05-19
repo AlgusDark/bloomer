@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { classNames } from './../../helpers';
+import { classNames } from './../helpers';
 
 export interface Container<T> extends React.HTMLProps<T> {
     isFluid?: boolean,

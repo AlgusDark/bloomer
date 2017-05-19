@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Bulma, removeSizeProps } from './../../bulma';
-import { classNames, getHTMLProps } from './../../helpers';
+import { Bulma, removeSizeProps } from './../bulma';
+import { classNames, getHTMLProps } from './../helpers';
 
 export interface Content<T> extends Bulma.Size, React.HTMLProps<HTMLDivElement> { }
 

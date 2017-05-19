@@ -54,5 +54,31 @@ describe('getHTMLProps', () => {
         }
         expect(getHTMLProps({ ...props, ...aligmentProps }, removeAlignmentProps))
             .toEqual(props);
-    })
+    });
+
+    it('should remove color and State props', () => {
+        const colorWithStateProps: Bulma.Color & Bulma.State = {
+            isPrimary: true,
+            isLoading: true,
+        }
+        expect(getHTMLProps({ ...props, ...colorWithStateProps }, removeColorProps, removeStateProps))
+            .toEqual(props);
+    });
+
+    it('should remove fullWidth props', () => {
+        const fullWidthProps: Bulma.FullWidth = {
+            isFullwidth: true,
+        }
+        expect(getHTMLProps({ ...props, ...fullWidthProps }, removeFullWidthProps))
+            .toEqual(props);
+    });
+
+    it('should remove Size props', () => {
+        const SizeProps: Bulma.Size = {
+            isLarge: true,
+            isSmall: false,
+        }
+        expect(getHTMLProps({ ...props, ...SizeProps }, removeSizeProps))
+            .toEqual(props);
+    });
 })

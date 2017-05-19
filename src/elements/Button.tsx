@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Bulma, removeStateProps, removeColorProps, removeFullWidthProps } from './../../bulma';
-import { classNames, getHTMLProps } from './../../helpers';
+import { Bulma, removeStateProps, removeColorProps, removeFullWidthProps } from './../bulma';
+import { classNames, getHTMLProps } from './../helpers';
 
 export interface Button<T> extends
     Bulma.Render, Bulma.State, Bulma.Color, Bulma.FullWidth,

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Bulma, removeSizeProps } from './../../bulma';
-import { classNames, getHTMLProps } from './../../helpers';
+import { Bulma, removeSizeProps } from './../bulma';
+import { classNames, getHTMLProps } from './../helpers';
 
 export interface Delete<T> extends Bulma.Render, Bulma.Size,
     React.HTMLProps<T> { }
