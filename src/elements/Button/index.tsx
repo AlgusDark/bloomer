@@ -11,16 +11,13 @@ export interface Button<T> extends
     isInverted?: boolean,
 }
 
-export function getButtonClasses(props: Button<HTMLButtonElement | HTMLAnchorElement>) {
-    return {
+export const Button = (props: Button<HTMLButtonElement | HTMLAnchorElement>) => {
+    const className = classNames(props, {
+        button: true,
         'is-link': props.isLink,
         'is-outlined': props.isOutlined,
         'is-inverted': props.isInverted,
-    }
-}
-
-export const Button = (props: Button<HTMLButtonElement | HTMLAnchorElement>) => {
-    const className = classNames(props, { button: true });
+    });
     const { render, isLink, isOutlined, isInverted, ...rest } = props;
     const HTMLProps = getHTMLProps(
         rest,

@@ -10,17 +10,14 @@ export interface Control<T> extends React.HTMLProps<T> {
     isExpanded?: boolean,
 }
 
-export function getControlClasses(props: Control<HTMLParagraphElement>) {
-    return {
+export const Control = (props: Control<HTMLParagraphElement>) => {
+    const className = classNames(props, {
+        control: true,
         'has-icons-left has-icons-right': props.hasIcons,
         'has-icons-left': props.hasIconsLeft,
         'has-icons-right': props.hasIconsRight,
         'is-expanded': props.isExpanded,
-    }
-}
-
-export const Control = (props: Control<HTMLParagraphElement>) => {
-    const className = classNames(props, { control: true });
+    });
     const {
         hasIcons,
         hasIconsLeft, hasIconsRight,

@@ -9,15 +9,12 @@ export interface Tabs<T> extends Bulma.Alignment, Bulma.Size,
     isToggle?: boolean,
 }
 
-export function getTabsClasses(props: Tabs<HTMLDivElement>) {
-    return {
+export const Tabs = (props: Tabs<HTMLDivElement>) => {
+    const className = classNames(props, {
+        tabs: true,
         'is-boxed': props.isBoxed,
         'is-toggle': props.isToggle,
-    }
-}
-
-export const Tabs = (props: Tabs<HTMLDivElement>) => {
-    const className = classNames(props, { tabs: true });
+    });
     const { isBoxed, isToggle, ...rest } = props;
     const HTMLProps = getHTMLProps(rest, removeAlignmentProps, removeSizeProps);
 

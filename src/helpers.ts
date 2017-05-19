@@ -1,13 +1,12 @@
 import * as classnames from 'classnames';
 
-import { Bulma, getModifiersClasses, getBulmaClasses } from './bulma';
+import { Bulma, getModifiersClasses } from './bulma';
 
 export function withModifiers(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}) {
     return [
         {
             ...obj,
             ...getModifiersClasses(props),
-            ...getBulmaClasses(props),
         },
         props.className
     ]

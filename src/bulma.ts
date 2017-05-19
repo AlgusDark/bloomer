@@ -1,13 +1,13 @@
 /// <reference types="react" />
 
-import { Field, getFieldClasses } from './elements/Form/Field';
-import { Control, getControlClasses } from './elements/Form/Control';
-import { Button, getButtonClasses } from './elements/Button';
-import { PageLink, getPageLinkClasses } from './components/Pagination/PageLink';
+import { Field } from './elements/Form/Field';
+import { Control } from './elements/Form/Control';
+import { Button } from './elements/Button';
+import { PageLink } from './components/Pagination/PageLink';
 import { PageControl } from './components/Pagination/PageControl';
-import { Tabs, getTabsClasses } from './components/Tabs';
+import { Tabs } from './components/Tabs';
 import { Tab } from './components/Tabs/Tab';
-import { Container, getContainerClasses } from './layout/Container';
+import { Container } from './layout/Container';
 
 export declare namespace Bulma {
     // Modifiers
@@ -172,15 +172,5 @@ export function getModifiersClasses(props: Bulma.NonHTMLProps<HTMLElement>) {
         ...getFullWidthClasses(props),
         ...getStateClasses(props),
         ...getColorClasses(props),
-    }
-}
-
-export function getBulmaClasses(props) {
-    return {
-        ...getFieldClasses(props),
-        ...getControlClasses(props),
-        ...getButtonClasses(props),
-        ...getPageLinkClasses(props),
-        ...getContainerClasses(props),
     }
 }

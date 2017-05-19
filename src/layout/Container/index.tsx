@@ -5,14 +5,11 @@ export interface Container<T> extends React.HTMLProps<T> {
     isFluid?: boolean,
 }
 
-export function getContainerClasses(props: Container<HTMLDivElement>) {
-    return {
-        'is-fluid': props.isFluid,
-    }
-}
-
 export const Container = (props: Container<HTMLDivElement>) => {
-    const className = classNames(props, { container: true });
+    const className = classNames(props, {
+        container: true,
+        'is-fluid': props.isFluid,
+    });
     const { isFluid, ...HTMLProps } = props;
 
     return (

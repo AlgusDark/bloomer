@@ -8,17 +8,14 @@ export interface Field<T> extends React.HTMLProps<T> {
     isGroupedCentered?: boolean,
 }
 
-export function getFieldClasses(props: Field<HTMLDivElement>) {
-    return {
+export const Field = (props: Field<HTMLDivElement>) => {
+    const className = classNames(props, {
+        field: true,
         'is-grouped': props.isGrouped,
         'is-grouped-centered': props.isGroupedCentered,
         'is-grouped-right': props.isGroupedRight,
-    }
-}
-
-export const Field = (props: Field<HTMLDivElement>) => {
-    const className = classNames(props, { field: true });
-    const { 
+    });
+    const {
         isGrouped,
         isGroupedRight,
         isGroupedCentered,
