@@ -15,7 +15,8 @@
     "sourceMap": true,
     "declaration": true,
     "jsx": "react",
-    "importHelpers": true
+    "importHelpers": true,
+    "noImplicitAny": false
   },
   "include": [
     "src/**/*"

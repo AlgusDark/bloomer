@@ -2,7 +2,7 @@ import * as classnames from 'classnames';
 
 import { Bulma, getModifiersClasses } from './bulma';
 
-export function withModifiers(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}) {
+export function withModifiers(props: Bulma.NonHTMLProps<HTMLElement>, obj) {
     return [
         {
             ...obj,
@@ -16,7 +16,7 @@ export function classNames(props: Bulma.NonHTMLProps<HTMLElement>, obj = {}): st
     return classnames(withModifiers(props, obj)) || undefined;
 }
 
-export function getHTMLProps(props, ...args: Array<Function>): React.HTMLProps<HTMLElement> {
+export function getHTMLProps(props: Bulma.NonHTMLProps<HTMLElement>, ...args: Array<Function>): React.HTMLProps<HTMLElement> {
     if (args.length > 0) return args.reduce((rest, fn) => ({ ...fn(rest) }), props)
 
     return props;

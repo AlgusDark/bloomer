@@ -3,5 +3,7 @@
 **/webpack.dev.js
 **/tsconfig.json
 **/node_modules
+tsconfig.json
 src
 example
+test
