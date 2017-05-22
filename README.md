@@ -3,6 +3,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/AlgusDark/bulma-jsx/badge.svg?branch=master)](https://coveralls.io/github/AlgusDark/bulma-jsx?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/AlgusDark/bulma-jsx/badge.svg?branch=master)](https://coveralls.io/github/AlgusDark/bulma-jsx?branch=master)
+
 A set of React components for Bulma v0.4.x
 This repository is heavily under development and unstable.
 
