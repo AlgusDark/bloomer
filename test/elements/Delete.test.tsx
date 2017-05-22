@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Delete } from './../../src/elements/Delete';
+import { Delete } from './../../src';
 
 describe('Delete', () => {
     it('should render a custom component with delete props', () => {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { TabLink } from './../../../src/components/Tabs/TabLink';
+import { TabLink } from './../../../src';
 
 describe('TabLink', () => {
     it('should render a custom component with HTML props', () => {

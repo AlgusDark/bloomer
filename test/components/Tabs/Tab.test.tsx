@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Tab } from './../../../src/components/Tabs/Tab';
+import { Tab } from './../../../src';
 
 describe('Tab', () => {
     it('should render a li', () => {

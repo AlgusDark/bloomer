@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { PageControl } from './../../../src/components/Pagination/PageControl';
+import { PageControl } from './../../../src';
 
 describe('PageControl', () => {
     it('should render a custom component with PageControl props', () => {

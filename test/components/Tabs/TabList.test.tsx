@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { TabList } from './../../../src/components/Tabs/TabList';
+import { TabList } from './../../../src';
 
 describe('TabList', () => {
     const component = shallow(<TabList className='custom'>
