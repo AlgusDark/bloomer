@@ -36,7 +36,7 @@ import {
     Delete,
 
     Container
-} from '../src/index';
+} from './../src/index';
 
 ReactDOM.render(
     <section className='section'>

@@ -5,7 +5,7 @@ import { classNames } from './../../helpers';
 
 export interface MenuLink<T> extends Bulma.Render, React.HTMLProps<T> {
     isActive?: boolean,
- }
+}
 
 export const MenuLink = (props: MenuLink<HTMLAnchorElement>) => {
     const className = classNames(props);
@@ -13,9 +13,11 @@ export const MenuLink = (props: MenuLink<HTMLAnchorElement>) => {
 
     if (render) return render({ ...HTMLProps, className });
 
-    return (
+    const withClassName = (
         <a {...HTMLProps} className={className}>
             {props.children}
         </a>
     )
+
+    return className ? withClassName : <a {...HTMLProps} className={className}>{props.children}</a>
 }
