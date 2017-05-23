@@ -1,4 +1,4 @@
-# Bulma-JSX
+Bulma-JSX
 ==================================
 
 [![Build Status](https://travis-ci.org/AlgusDark/bulma-jsx.svg?branch=master)](https://travis-ci.org/AlgusDark/bulma-jsx)
