@@ -27,3 +27,12 @@ export { Control } from './elements/Form/Control';
 export { Delete } from './elements/Delete';
 
 export { Container } from './layout/Container';
+
+export { Hero } from './layout/Hero';
+export { HeroHead } from './layout/Hero/HeroHead';
+export { HeroBody } from './layout/Hero/HeroBody';
+export { HeroFoot } from './layout/Hero/HeroFoot';
+
+export { Section } from './layout/Section';
+
+export { Footer } from './layout/Footer';
