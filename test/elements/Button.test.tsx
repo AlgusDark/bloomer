@@ -39,7 +39,7 @@ describe('Button', () => {
     });
 
     it('should render a button with .button with modifiers', () => {
-        const component = shallow(<Button isBlack isFullwidth isOutlined />);
+        const component = shallow(<Button isBlack isFullWidth isOutlined />);
         expect(component.hasClass('button')).toBe(true);
         expect(component.hasClass('is-black')).toBe(true);
         expect(component.hasClass('is-fullwidth')).toBe(true);

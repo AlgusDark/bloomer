@@ -23,7 +23,7 @@ export declare namespace Bulma {
     }
 
     export interface FullWidth {
-        isFullwidth?: boolean,
+        isFullWidth?: boolean,
     }
 
     export interface State {
@@ -106,13 +106,13 @@ export function removeSizeProps(props: Bulma.Size) {
 
 function getFullWidthClasses(props: Bulma.FullWidth) {
     return {
-        'is-fullwidth': props.isFullwidth,
+        'is-fullwidth': props.isFullWidth,
     }
 }
 
 export function removeFullWidthProps(props: Bulma.FullWidth) {
     const {
-        isFullwidth,
+        isFullWidth,
         ...rest } = props;
     return rest;
 }
