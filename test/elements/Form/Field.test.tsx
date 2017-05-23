@@ -21,4 +21,13 @@ describe('Field', () => {
         expect(component.hasClass('field')).toBe(true);
         expect(component.hasClass('is-grouped-centered')).toBe(true);
     });
+
+    it('should render a div with .field, modifiers and custom classes', () => {
+        const component = shallow(<Field isGrouped isGroupedCentered isGroupedRight className='custom'><span>Any Content</span></Field>);
+        expect(component.hasClass('field')).toBe(true);
+        expect(component.hasClass('is-grouped')).toBe(true);
+        expect(component.hasClass('is-grouped-right')).toBe(true);
+        expect(component.hasClass('is-grouped-centered')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
+    });
 });

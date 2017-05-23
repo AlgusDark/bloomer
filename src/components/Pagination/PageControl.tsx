@@ -1,20 +1,25 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 
 import { Bulma } from './../../bulma';
-import { classNames } from './../../helpers';
 
 export interface PageControl<T> extends Bulma.Render, React.HTMLProps<T> {
-    isNext?: boolean,
     isPrevious?: boolean,
+    isNext?: boolean,
     isFocused?: boolean,
     isActive?: boolean,
 }
 
 export const PageControl: React.SFC<PageControl<HTMLAnchorElement>> = (props) => {
-    const className = classNames(props, {
-        'pagination-previous': !props.isNext,
-        'pagination-next': !props.isPrevious && props.isNext,
-    });
+    const className = classNames(
+        {
+            'pagination-previous': !props.isNext,
+            'pagination-next': !props.isPrevious && props.isNext,
+            'is-focused': props.isFocused,
+            'is-active': props.isActive,
+        },
+        props.className
+    );
 
     const {
         render,

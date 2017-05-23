@@ -10,11 +10,10 @@ describe('Control', () => {
     });
 
     it('should render a paragraph with .control and modifiers', () => {
-        const component = shallow(<Control hasIcons isExpanded><span>Any Content</span></Control>);
+        const component = shallow(<Control hasIcons><span>Any Content</span></Control>);
         expect(component.hasClass('control')).toBe(true);
         expect(component.hasClass('has-icons-left')).toBe(true);
         expect(component.hasClass('has-icons-right')).toBe(true);
-        expect(component.hasClass('is-expanded')).toBe(true);
     });
 
     it('should render a paragraph with .control and custom classes', () => {
@@ -22,5 +21,15 @@ describe('Control', () => {
         expect(component.hasClass('control')).toBe(true);
         expect(component.hasClass('my-custom-class')).toBe(true);
         expect(component.hasClass('loader')).toBe(true);
+    });
+
+    it('should render a paragraph with .control, modifiers and custom classes', () => {
+        const component = shallow(<Control isExpanded isLoading hasIconsLeft hasIconsRight className='custom'><span>Any Content</span></Control>);
+        expect(component.hasClass('control')).toBe(true);
+        expect(component.hasClass('is-expanded')).toBe(true);
+        expect(component.hasClass('is-loading')).toBe(true);
+        expect(component.hasClass('has-icons-left')).toBe(true);
+        expect(component.hasClass('has-icons-right')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
     });
 });

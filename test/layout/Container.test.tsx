@@ -5,8 +5,8 @@ import { Container } from './../../src';
 
 describe('Container', () => {
     it('should render a div with .container', () => {
-        const container = shallow(<Container />);
-        expect(container.contains(<div className='container' />)).toBe(true)
+        const container = shallow(<Container>My Container</Container>);
+        expect(container.contains(<div className='container'>My Container</div>)).toBe(true)
     });
 
     it('should render a div with .container.is-fluid', () => {
@@ -22,21 +22,4 @@ describe('Container', () => {
         expect(container.hasClass('custom')).toBe(true);
         expect(container.hasClass('loader')).toBe(true);
     });
-
-    it('should render a div with .container with children', () => {
-        const children = (
-            <div>
-                <h1>Hello World!</h1>
-                <p>This is a test :)</p>
-            </div>
-        );
-
-        const shallowContainer = (
-            <Container>
-                {children}
-            </Container>
-        );
-        const container = shallow(shallowContainer);
-        expect(container.contains(children)).toEqual(true);
-    })
 });
