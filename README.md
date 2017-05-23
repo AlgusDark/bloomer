@@ -67,6 +67,6 @@ TODO
 #### Layout
 
 - [x] Container
-- [ ] Hero
-- [ ] Section
-- [ ] Footer
+- [x] Hero
+- [x] Section
+- [x] Footer
