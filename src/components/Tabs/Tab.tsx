@@ -1,13 +1,17 @@
 import * as React from 'react';
-
-import { classNames } from './../../helpers';
+import * as classNames from 'classnames';
 
 export interface Tab<T> extends React.HTMLProps<T> {
     isActive?: boolean,
 }
 
 export const Tab: React.SFC<Tab<HTMLLIElement>> = (props) => {
-    const className = classNames(props);
+    const className = classNames(
+        {
+            'is-active': props.isActive
+        },
+        props.className
+    );
     const { isActive, ...HTMLProps } = props;
 
     const withClassName = (

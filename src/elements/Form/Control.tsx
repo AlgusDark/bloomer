@@ -1,27 +1,29 @@
 import * as React from 'react';
-
-import { classNames } from './../../helpers';
+import * as classNames from 'classnames';
 
 export interface Control<T> extends React.HTMLProps<T> {
     hasIcons?: boolean,
     hasIconsLeft?: boolean,
     hasIconsRight?: boolean,
-    isLoading?: boolean,
     isExpanded?: boolean,
+    isLoading?: boolean,
 }
 
 export const Control: React.SFC<Control<HTMLParagraphElement>> = (props) => {
-    const className = classNames(props, {
-        control: true,
-        'has-icons-left has-icons-right': props.hasIcons,
-        'has-icons-left': props.hasIconsLeft,
-        'has-icons-right': props.hasIconsRight,
-        'is-expanded': props.isExpanded,
-    });
+    const className = classNames(
+        'control',
+        {
+            'has-icons-left has-icons-right': props.hasIcons,
+            'has-icons-left': props.hasIconsLeft,
+            'has-icons-right': props.hasIconsRight,
+            'is-expanded': props.isExpanded,
+            'is-loading': props.isLoading,
+        },
+        props.className);
     const {
         hasIcons,
         hasIconsLeft, hasIconsRight,
-        isLoading, isExpanded,
+        isExpanded, isLoading,
         ...HTMLProps
     } = props;
 
