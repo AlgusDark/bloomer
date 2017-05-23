@@ -8,7 +8,7 @@ export interface Field<T> extends React.HTMLProps<T> {
     isGroupedCentered?: boolean,
 }
 
-export const Field = (props: Field<HTMLDivElement>) => {
+export const Field: React.SFC<Field<HTMLDivElement>> = (props) => {
     const className = classNames(props, {
         field: true,
         'is-grouped': props.isGrouped,

@@ -9,7 +9,7 @@ export interface PageLink<T> extends Bulma.Render, React.HTMLProps<T> {
     isActive?: boolean,
 }
 
-export const PageLink = (props: PageLink<HTMLAnchorElement>) => {
+export const PageLink: React.SFC<PageLink<HTMLAnchorElement>> = (props) => {
     const className = classNames(props, {
         'pagination-link': true,
         'is-current': props.isCurrent
