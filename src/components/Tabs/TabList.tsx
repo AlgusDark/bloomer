@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export const TabList = (props: React.HTMLProps<HTMLUListElement>) => {
+export const TabList: React.SFC<React.HTMLProps<HTMLUListElement>> = (props) => {
     return (
         <ul {...props}>
             {props.children}

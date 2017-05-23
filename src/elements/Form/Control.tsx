@@ -10,7 +10,7 @@ export interface Control<T> extends React.HTMLProps<T> {
     isExpanded?: boolean,
 }
 
-export const Control = (props: Control<HTMLParagraphElement>) => {
+export const Control: React.SFC<Control<HTMLParagraphElement>> = (props) => {
     const className = classNames(props, {
         control: true,
         'has-icons-left has-icons-right': props.hasIcons,

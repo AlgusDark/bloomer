@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-export const Box = (props: React.HTMLProps<HTMLDivElement>) => {
+export const Box: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
     const className = classNames('box', props.className);
     
     return (

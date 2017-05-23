@@ -6,7 +6,7 @@ import { classNames, getHTMLProps } from './../../helpers';
 export interface Pagination<T> extends Bulma.Alignment, Bulma.Size,
     React.HTMLProps<T> { }
 
-export const Pagination = (props: Pagination<HTMLElement>) => {
+export const Pagination: React.SFC<Pagination<HTMLElement>> = (props) => {
     const className = classNames(props, { pagination: true });
     const HTMLProps = getHTMLProps(
         props,

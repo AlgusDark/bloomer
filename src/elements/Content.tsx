@@ -5,7 +5,7 @@ import { classNames, getHTMLProps } from './../helpers';
 
 export interface Content<T> extends Bulma.Size, React.HTMLProps<HTMLDivElement> { }
 
-export const Content = (props: Content<HTMLDivElement>) => {
+export const Content: React.SFC<Content<HTMLDivElement>> = (props) => {
     const className = classNames(props, { content: true });
     const HTMLProps = getHTMLProps(props, removeSizeProps);
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-export const MenuLabel = (props: React.HTMLProps<HTMLParagraphElement>) => {
+export const MenuLabel: React.SFC<React.HTMLProps<HTMLParagraphElement>> = (props) => {
     const className = classNames('menu-label', props.className);
 
     return (

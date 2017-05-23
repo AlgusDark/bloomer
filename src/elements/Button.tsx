@@ -11,7 +11,7 @@ export interface Button<T> extends
     isInverted?: boolean,
 }
 
-export const Button = (props: Button<HTMLButtonElement | HTMLAnchorElement>) => {
+export const Button: React.SFC<Button<HTMLButtonElement | HTMLAnchorElement>> = (props) => {
     const className = classNames(props, {
         button: true,
         'is-link': props.isLink,

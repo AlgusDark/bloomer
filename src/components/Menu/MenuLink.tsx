@@ -7,7 +7,7 @@ export interface MenuLink<T> extends Bulma.Render, React.HTMLProps<T> {
     isActive?: boolean,
 }
 
-export const MenuLink = (props: MenuLink<HTMLAnchorElement>) => {
+export const MenuLink: React.SFC<MenuLink<HTMLAnchorElement>> = (props) => {
     const className = classNames(props);
     const { render, isActive, ...HTMLProps } = props;
 

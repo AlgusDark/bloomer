@@ -6,7 +6,7 @@ export interface Tab<T> extends React.HTMLProps<T> {
     isActive?: boolean,
 }
 
-export const Tab = (props: Tab<HTMLLIElement>) => {
+export const Tab: React.SFC<Tab<HTMLLIElement>> = (props) => {
     const className = classNames(props);
     const { isActive, ...HTMLProps } = props;
 
