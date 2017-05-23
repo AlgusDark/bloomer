@@ -22,6 +22,11 @@ describe('PageControl', () => {
     });
 
     it('should render a paragraph with .pagination-previous', () => {
+        const component = shallow(<PageControl>My Link</PageControl>);
+        expect(component.hasClass('pagination-previous')).toBe(true);
+    });
+
+    it('should render a paragraph with .pagination-previous', () => {
         const component = shallow(<PageControl isPrevious>My Link</PageControl>);
         expect(component.hasClass('pagination-previous')).toBe(true);
     });

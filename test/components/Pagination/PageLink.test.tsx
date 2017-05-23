@@ -21,9 +21,9 @@ describe('PageLink', () => {
         expect(component.contains(customComponentRendered)).toBe(true);
     });
 
-    it('should render an anchor with', () => {
+    it('should render an anchor', () => {
         const component = shallow(<PageLink href='#'>My Link</PageLink>);
-        expect(component.contains(<a href='#'>My Link</a>));
+        expect(component.contains(<a href='#' className='pagination-link'>My Link</a>));
     });
 
     it('should render an anchor with .pagination-link and custom props', () => {

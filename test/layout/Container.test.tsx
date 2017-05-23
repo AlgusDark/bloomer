@@ -15,6 +15,14 @@ describe('Container', () => {
         expect(container.hasClass('is-fluid')).toBe(true);
     });
 
+    it('should render a div with .container with custom classNames', () => {
+        const container = shallow(<Container isFluid className='custom loader' />);
+        expect(container.hasClass('container')).toBe(true);
+        expect(container.hasClass('is-fluid')).toBe(true);
+        expect(container.hasClass('custom')).toBe(true);
+        expect(container.hasClass('loader')).toBe(true);
+    });
+
     it('should render a div with .container with children', () => {
         const children = (
             <div>
