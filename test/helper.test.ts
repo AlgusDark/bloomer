@@ -67,7 +67,7 @@ describe('getHTMLProps', () => {
 
     it('should remove fullWidth props', () => {
         const fullWidthProps: Bulma.FullWidth = {
-            isFullwidth: true,
+            isFullWidth: true,
         }
         expect(getHTMLProps({ ...props, ...fullWidthProps }, removeFullWidthProps))
             .toEqual(props);
