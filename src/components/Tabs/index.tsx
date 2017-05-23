@@ -9,7 +9,7 @@ export interface Tabs<T> extends Bulma.Alignment, Bulma.Size,
     isToggle?: boolean,
 }
 
-export const Tabs = (props: Tabs<HTMLDivElement>) => {
+export const Tabs: React.SFC<Tabs<HTMLDivElement>> = (props) => {
     const className = classNames(props, {
         tabs: true,
         'is-boxed': props.isBoxed,

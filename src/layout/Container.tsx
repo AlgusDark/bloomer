@@ -5,7 +5,7 @@ export interface Container<T> extends React.HTMLProps<T> {
     isFluid?: boolean,
 }
 
-export const Container = (props: Container<HTMLDivElement>) => {
+export const Container: React.SFC<Container<HTMLDivElement>> = (props) => {
     const className = classNames(props, {
         container: true,
         'is-fluid': props.isFluid,
