@@ -1,7 +1,7 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 
 import { Bulma } from './../../bulma';
-import { classNames } from './../../helpers';
 
 export interface PageLink<T> extends Bulma.Render, React.HTMLProps<T> {
     isCurrent?: boolean,
@@ -10,10 +10,15 @@ export interface PageLink<T> extends Bulma.Render, React.HTMLProps<T> {
 }
 
 export const PageLink: React.SFC<PageLink<HTMLAnchorElement>> = (props) => {
-    const className = classNames(props, {
-        'pagination-link': true,
-        'is-current': props.isCurrent
-    });
+    const className = classNames(
+        'pagination-link',
+        {
+            'is-current': props.isCurrent,
+            'is-focused': props.isFocused,
+            'is-active': props.isActive
+        },
+        props.className
+    );
 
     const {
         render,

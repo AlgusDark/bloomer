@@ -32,4 +32,13 @@ describe('PageLink', () => {
         expect(component.hasClass('is-current')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);
     });
+
+    it('should render an anchor with .pagination-link, modifiers and custom props', () => {
+        const component = shallow(<PageLink href='#' isCurrent isFocused isActive className='custom'>My Link</PageLink>);
+        expect(component.hasClass('pagination-link')).toBe(true);
+        expect(component.hasClass('is-current')).toBe(true);
+        expect(component.hasClass('is-focused')).toBe(true);
+        expect(component.hasClass('is-active')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
+    });
 });
