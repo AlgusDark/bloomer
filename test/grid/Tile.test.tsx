@@ -9,7 +9,7 @@ describe('Tile', () => {
         expect(component.contains(<div className='tile'>Any Content</div>)).toBe(true);
     });
 
-    it('should render a div with .tile and Modifiers', () => {
+    it('should render a div with .tile and modifiers', () => {
         const component = shallow(
             <Tile
                 isAncestor
@@ -24,10 +24,16 @@ describe('Tile', () => {
         expect(component.hasClass('is-vertical')).toBe(true);
     });
 
-    it('should render a div with .tile, Modifiers and custom classes', () => {
+    it('should render a div with .tile, modifiers and custom classNames', () => {
         const component = shallow(<Tile isAncestor className='custom' />);
         expect(component.hasClass('tile')).toBe(true);
         expect(component.hasClass('is-ancestor')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
+    });
+
+    it('should render a div with .tile and custom classNames', () => {
+        const component = shallow(<Tile isAncestor className='custom' />);
+        expect(component.hasClass('tile')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);
     });
 });

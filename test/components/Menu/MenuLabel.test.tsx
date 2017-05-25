@@ -9,7 +9,7 @@ describe('MenuLabel', () => {
         expect(component.contains(<p className='menu-label'>My MenuLabel</p>)).toBe(true);
     });
 
-    it('should render an paragraph with .message and custom classes', () => {
+    it('should render an paragraph with .message and custom classNames', () => {
         const component = shallow(<MenuLabel className='custom'><span>Any Content</span></MenuLabel>);
         expect(component.hasClass('menu-label')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);

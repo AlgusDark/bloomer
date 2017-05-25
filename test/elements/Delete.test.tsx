@@ -32,9 +32,9 @@ describe('Delete', () => {
     });
 
     it('should render a button with .delete and custom classNames', () => {
-        const component = shallow(<Delete className='my-custom-class loader' />);
+        const component = shallow(<Delete className='custom loader' />);
         expect(component.hasClass('delete')).toBe(true);
-        expect(component.hasClass('my-custom-class')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
         expect(component.hasClass('loader')).toBe(true);
     });
 });

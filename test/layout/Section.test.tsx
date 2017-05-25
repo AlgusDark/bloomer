@@ -9,21 +9,23 @@ describe('Section', () => {
         expect(container.contains(<section className='section'>My Section</section>)).toBe(true)
     });
 
-    it('should render a section with .section.is-large', () => {
-        const container = shallow(<Section isLarge/>);
+    it('should render a section with .section and modifiers', () => {
+        const container = shallow(<Section isLarge isMedium/>);
         expect(container.hasClass('section')).toBe(true);
         expect(container.hasClass('is-large')).toBe(true);
-    });
-
-    it('should render a section with .section.is-medium', () => {
-        const container = shallow(<Section isMedium/>);
-        expect(container.hasClass('section')).toBe(true);
         expect(container.hasClass('is-medium')).toBe(true);
     });
 
-    it('should render a section with .section with custom classNames', () => {
-        const container = shallow(<Section isLarge className='custom' />);
+    it('should render a section with .section, modifiers and custom classNames', () => {
+        const container = shallow(<Section isLarge className='custom loader' />);
         expect(container.hasClass('section')).toBe(true);
+        expect(container.hasClass('is-large')).toBe(true);
+        expect(container.hasClass('custom')).toBe(true);
+        expect(container.hasClass('loader')).toBe(true);
+    });
+
+    it('should render a section with .section with custom classNames', () => {
+        const container = shallow(<Section className='custom' />);
         expect(container.hasClass('is-large')).toBe(true);
         expect(container.hasClass('custom')).toBe(true);
     });

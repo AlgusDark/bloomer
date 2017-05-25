@@ -9,7 +9,7 @@ describe('Columns', () => {
         expect(component.contains(<div className='columns'>Any Content</div>)).toBe(true);
     });
 
-    it('should render a div with .columns and Modifiers', () => {
+    it('should render a div with .columns and modifiers', () => {
         const component = shallow(
             <Columns
                 isMobile
@@ -30,12 +30,20 @@ describe('Columns', () => {
         expect(component.hasClass('is-centered')).toBe(true);
     });
 
-    it('should render a div with .columns, Modifiers and custom classes', () => {
+    it('should render a div with .columns, modifiers and custom classNames', () => {
         const component = shallow(
             <Columns isMobile className='custom' />
         );
         expect(component.hasClass('columns')).toBe(true);
         expect(component.hasClass('is-mobile')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
+    });
+
+    it('should render a div with .columns and custom classNames', () => {
+        const component = shallow(
+            <Columns className='custom' />
+        );
+        expect(component.hasClass('columns')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);
     });
 });

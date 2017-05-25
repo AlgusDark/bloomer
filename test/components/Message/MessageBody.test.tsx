@@ -9,7 +9,7 @@ describe('MessageBody', () => {
         expect(component.contains(<div className='message-body'>My MessageBody</div>)).toBe(true);
     });
 
-    it('should render a div with .message and custom classes', () => {
+    it('should render a div with .message and custom classNames', () => {
         const component = shallow(<MessageBody className='custom'><span>Any Content</span></MessageBody>);
         expect(component.hasClass('message-body')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);

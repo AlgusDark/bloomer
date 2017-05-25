@@ -27,18 +27,32 @@ describe('PageLink', () => {
     });
 
     it('should render an anchor with .pagination-link and custom props', () => {
-        const component = shallow(<PageLink isCurrent href='#' className='custom'>My Link</PageLink>);
+        const component = shallow(
+            <PageLink
+                isActive
+                isCurrent
+                isFocused
+            />
+        );
         expect(component.hasClass('pagination-link')).toBe(true);
+        expect(component.hasClass('is-active')).toBe(true);
         expect(component.hasClass('is-current')).toBe(true);
-        expect(component.hasClass('custom')).toBe(true);
+        expect(component.hasClass('is-focused')).toBe(true);
     });
 
-    it('should render an anchor with .pagination-link, modifiers and custom props', () => {
-        const component = shallow(<PageLink href='#' isCurrent isFocused isActive className='custom'>My Link</PageLink>);
+    it('should render an anchor with .pagination-link, modifiers and custom classNames', () => {
+        const component = shallow(<PageLink href='#' isCurrent className='custom' />);
         expect(component.hasClass('pagination-link')).toBe(true);
         expect(component.hasClass('is-current')).toBe(true);
         expect(component.hasClass('is-focused')).toBe(true);
         expect(component.hasClass('is-active')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
+    });
+
+    it('should render an anchor with .pagination-link, and custom classNames', () => {
+        const component = shallow(<PageLink isCurrent className='custom'/>);
+        expect(component.hasClass('pagination-link')).toBe(true);
+        expect(component.hasClass('is-current')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);
     });
 });

@@ -10,18 +10,23 @@ describe('Hero', () => {
     });
 
     it('should render a section with .hero with modifiers', () => {
-        const container = shallow(<Hero isBlack isBold isFullHeight />);
+        const container = shallow(<Hero isBold isFullHeight />);
         expect(container.hasClass('hero')).toBe(true);
-        expect(container.hasClass('is-black')).toBe(true);
         expect(container.hasClass('is-bold')).toBe(true);
         expect(container.hasClass('is-fullheight')).toBe(true);
     });
 
-    it('should render a section with .hero with custom classNames', () => {
-        const container = shallow(<Hero isBold isBlack className='custom loader' />);
+    it('should render a section with .hero, modifiers and custom classNames', () => {
+        const container = shallow(<Hero isBold className='custom loader' />);
         expect(container.hasClass('hero')).toBe(true);
-        expect(container.hasClass('is-black')).toBe(true);
         expect(container.hasClass('is-bold')).toBe(true);
+        expect(container.hasClass('custom')).toBe(true);
+        expect(container.hasClass('loader')).toBe(true);
+    });
+
+    it('should render a section with .hero and custom classNames', () => {
+        const container = shallow(<Hero className='custom loader' />);
+        expect(container.hasClass('hero')).toBe(true);
         expect(container.hasClass('custom')).toBe(true);
         expect(container.hasClass('loader')).toBe(true);
     });

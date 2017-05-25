@@ -10,15 +10,9 @@ describe('Content', () => {
     });
 
     it('should render a div with .delete and custom classNames', () => {
-        const component = shallow(<Content className='my-custom-class loader'>My Content</Content>);
+        const component = shallow(<Content className='custom loader'>My Content</Content>);
         expect(component.hasClass('content')).toBe(true);
-        expect(component.hasClass('my-custom-class')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
         expect(component.hasClass('loader')).toBe(true);
-    });
-
-    it('should render a div with .content and size modifiers', () => {
-        const component = shallow(<Content isMedium>My Content</Content>);
-        expect(component.hasClass('content')).toBe(true);
-        expect(component.hasClass('is-medium')).toBe(true);
     });
 });

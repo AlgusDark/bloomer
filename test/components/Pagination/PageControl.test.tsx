@@ -31,7 +31,7 @@ describe('PageControl', () => {
         expect(component.hasClass('pagination-previous')).toBe(true);
     });
 
-    it('should render a paragraph with .pagination-previous and custom classes', () => {
+    it('should render a paragraph with .pagination-previous and custom classNames', () => {
         const component = shallow(<PageControl className='custom'>My Link</PageControl>);
         expect(component.hasClass('pagination-previous')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);
@@ -42,7 +42,13 @@ describe('PageControl', () => {
         expect(component.hasClass('pagination-next')).toBe(true);
     });
 
-    it('should render a paragraph with modifiers and custom classes', () => {
+    it('should render a paragraph with .pagination-next and custom classNames', () => {
+        const component = shallow(<PageControl isNext className='custom'>My Link</PageControl>);
+        expect(component.hasClass('pagination-next')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
+    });
+
+    it('should render a paragraph with modifiers and custom classNames', () => {
         const component = shallow(<PageControl isNext isActive isFocused className='custom'>My Link</PageControl>);
         expect(component.hasClass('pagination-next')).toBe(true);
         expect(component.hasClass('is-active')).toBe(true);
