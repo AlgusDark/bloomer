@@ -74,6 +74,7 @@ describe('combineModifiers', () => {
         const props = {
             isNarrow: true,
             isTwoThirds: true,
+            custom:true
         };
         const expected = {
             'is-narrow': true,

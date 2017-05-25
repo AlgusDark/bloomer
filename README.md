@@ -33,8 +33,8 @@ TODO
 
 #### Grid
 
-- [ ] Columns
-- [ ] Tile
+- [x] Columns
+- [x] Tile
 
 #### Elements
 

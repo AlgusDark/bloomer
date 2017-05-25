@@ -9,10 +9,10 @@ describe('Box', () => {
         expect(component.contains(<div className='box'>Any Content</div>)).toBe(true);
     });
 
-    it('should render a div with .box and custom classes', () => {
-        const component = shallow(<Box className='my-custom-class loader' />);
+    it('should render a div with .box and custom classNames', () => {
+        const component = shallow(<Box className='custom loader' />);
         expect(component.hasClass('box')).toBe(true);
-        expect(component.hasClass('my-custom-class')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
         expect(component.hasClass('loader')).toBe(true);
     });
 });

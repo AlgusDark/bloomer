@@ -9,7 +9,7 @@ describe('Page', () => {
         expect(component.contains(<li>My Link</li>)).toBe(true);
     });
 
-    it('should render a li with custom classes', () => {
+    it('should render a li with custom classNames', () => {
         const component = shallow(<Page className='custom'>My Link</Page>);
         expect(component.hasClass('custom')).toBe(true);
     });

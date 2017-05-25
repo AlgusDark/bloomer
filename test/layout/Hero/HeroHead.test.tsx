@@ -9,7 +9,7 @@ describe('HeroHead', () => {
         expect(component.contains(<div className='hero-head'>Any Content</div>)).toBe(true);
     });
 
-    it('should render a div with .hero-head and custom classes', () => {
+    it('should render a div with .hero-head and custom classNames', () => {
         const component = shallow(<HeroHead className='custom loader' />);
         expect(component.hasClass('hero-head')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);

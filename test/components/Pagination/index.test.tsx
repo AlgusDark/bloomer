@@ -16,7 +16,7 @@ describe('Pagination', () => {
         expect(component.hasClass('is-centered')).toBe(true);
     });
 
-    it('should render a nav with .pagination and custom classes', () => {
+    it('should render a nav with .pagination and custom classNames', () => {
         const component = shallow(<Pagination isMedium className='custom'><span>Any Content</span></Pagination>);
         expect(component.hasClass('pagination')).toBe(true);
         expect(component.hasClass('is-medium')).toBe(true);
