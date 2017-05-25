@@ -67,7 +67,7 @@ export declare namespace Bulma {
     }
 }
 
-function getAlignmentModifiers(props: Bulma.Alignment) {
+export function getAlignmentModifiers(props: Bulma.Alignment) {
     return {
         'is-centered': props.isCentered,
         'is-right': props.isRight,
@@ -82,7 +82,7 @@ export function removeAlignmentProps(props: Bulma.Alignment) {
     return rest;
 }
 
-function getSizeModifiers(props: Bulma.Size) {
+export function getSizeModifiers(props: Bulma.Size) {
     return {
         'is-small': props.isSmall,
         'is-medium': props.isMedium,
@@ -99,7 +99,7 @@ export function removeSizeProps(props: Bulma.Size) {
     return rest;
 }
 
-function getFullWidthModifiers(props: Bulma.FullWidth) {
+export function getFullWidthModifiers(props: Bulma.FullWidth) {
     return {
         'is-fullwidth': props.isFullWidth,
     }
@@ -112,7 +112,7 @@ export function removeFullWidthProps(props: Bulma.FullWidth) {
     return rest;
 }
 
-function getStateModifiers(props: Bulma.State) {
+export function getStateModifiers(props: Bulma.State) {
     return {
         'is-active': props.isActive,
         'is-focused': props.isFocused,
@@ -131,7 +131,7 @@ export function removeStateProps(props: Bulma.State) {
     return rest;
 }
 
-function getColorModifiers(props: Bulma.Color) {
+export function getColorModifiers(props: Bulma.Color) {
     return {
         'is-white': props.isWhite,
         'is-light': props.isLight,
@@ -158,14 +158,4 @@ export function removeColorProps(props: Bulma.Color) {
         isWhite,
         ...rest } = props;
     return rest;
-}
-
-export function getModifiersModifiers(props: Bulma.NonHTMLProps<HTMLElement>) {
-    return {
-        ...getAlignmentModifiers(props),
-        ...getSizeModifiers(props),
-        ...getFullWidthModifiers(props),
-        ...getStateModifiers(props),
-        ...getColorModifiers(props),
-    }
 }

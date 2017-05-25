@@ -1,7 +1,12 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 
-import { Bulma, removeStateProps, removeColorProps, removeFullWidthProps } from './../bulma';
-import { classNames, getHTMLProps } from './../helpers';
+import {
+    Bulma,
+    removeStateProps, removeColorProps, removeFullWidthProps,
+    getStateModifiers, getColorModifiers, getFullWidthModifiers,
+} from './../bulma';
+import { combineModifiers, getHTMLProps } from './../helpers';
 
 export interface Button<T> extends
     Bulma.Render, Bulma.State, Bulma.Color, Bulma.FullWidth,
@@ -12,12 +17,16 @@ export interface Button<T> extends
 }
 
 export const Button: React.SFC<Button<HTMLButtonElement | HTMLAnchorElement>> = (props) => {
-    const className = classNames(props, {
-        button: true,
-        'is-link': props.isLink,
-        'is-outlined': props.isOutlined,
-        'is-inverted': props.isInverted,
-    });
+    const className = classNames(
+        'button',
+        {
+            'is-link': props.isLink,
+            'is-outlined': props.isOutlined,
+            'is-inverted': props.isInverted,
+            ...combineModifiers(props, getStateModifiers, getColorModifiers, getFullWidthModifiers)
+        },
+        props.className,
+    );
     const { render, isLink, isOutlined, isInverted, ...rest } = props;
     const HTMLProps = getHTMLProps(
         rest,
