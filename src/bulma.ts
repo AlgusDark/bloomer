@@ -67,7 +67,7 @@ export declare namespace Bulma {
     }
 }
 
-function getAlignmentClasses(props: Bulma.Alignment) {
+function getAlignmentModifiers(props: Bulma.Alignment) {
     return {
         'is-centered': props.isCentered,
         'is-right': props.isRight,
@@ -82,7 +82,7 @@ export function removeAlignmentProps(props: Bulma.Alignment) {
     return rest;
 }
 
-function getSizeClasses(props: Bulma.Size) {
+function getSizeModifiers(props: Bulma.Size) {
     return {
         'is-small': props.isSmall,
         'is-medium': props.isMedium,
@@ -99,7 +99,7 @@ export function removeSizeProps(props: Bulma.Size) {
     return rest;
 }
 
-function getFullWidthClasses(props: Bulma.FullWidth) {
+function getFullWidthModifiers(props: Bulma.FullWidth) {
     return {
         'is-fullwidth': props.isFullWidth,
     }
@@ -112,7 +112,7 @@ export function removeFullWidthProps(props: Bulma.FullWidth) {
     return rest;
 }
 
-function getStateClasses(props: Bulma.State) {
+function getStateModifiers(props: Bulma.State) {
     return {
         'is-active': props.isActive,
         'is-focused': props.isFocused,
@@ -131,7 +131,7 @@ export function removeStateProps(props: Bulma.State) {
     return rest;
 }
 
-function getColorClasses(props: Bulma.Color) {
+function getColorModifiers(props: Bulma.Color) {
     return {
         'is-white': props.isWhite,
         'is-light': props.isLight,
@@ -160,12 +160,12 @@ export function removeColorProps(props: Bulma.Color) {
     return rest;
 }
 
-export function getModifiersClasses(props: Bulma.NonHTMLProps<HTMLElement>) {
+export function getModifiersModifiers(props: Bulma.NonHTMLProps<HTMLElement>) {
     return {
-        ...getAlignmentClasses(props),
-        ...getSizeClasses(props),
-        ...getFullWidthClasses(props),
-        ...getStateClasses(props),
-        ...getColorClasses(props),
+        ...getAlignmentModifiers(props),
+        ...getSizeModifiers(props),
+        ...getFullWidthModifiers(props),
+        ...getStateModifiers(props),
+        ...getColorModifiers(props),
     }
 }
