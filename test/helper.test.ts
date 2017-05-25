@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { classNames, getHTMLProps, withModifiers, combineModifiers } from './../src/helpers';
+import { getHTMLProps, combineModifiers } from './../src/helpers';
 import {
     Bulma,
     removeAlignmentProps,
@@ -13,32 +13,6 @@ import {
     Grid,
     getSizeModifiers,
 } from './../src/grid/grid'
-
-describe('classNames', () => {
-    const props = {
-        href: '#',
-        onClick: f => f,
-    }
-
-    it('should return undefined when there are no modifiers', () => {
-        expect(classNames(props)).toBe(undefined);
-    });
-
-    it('should return Bulma modifier class', () => {
-        expect(classNames({ ...props, ...{ isActive: true } }))
-            .toBe('is-active');
-    });
-
-    it('should return className', () => {
-        expect(classNames({ ...props, ...{ className: 'lol' } }))
-            .toBe('lol');
-    });
-
-    it('should return bulma modifier with ClassName', () => {
-        expect(classNames({ ...props, ...{ isActive: true }, ...{ className: 'lol' } }))
-            .toBe('is-active lol');
-    });
-});
 
 describe('getHTMLProps', () => {
     const props = {

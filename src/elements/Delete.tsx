@@ -1,13 +1,18 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 
-import { Bulma, removeSizeProps } from './../bulma';
-import { classNames, getHTMLProps } from './../helpers';
+import { Bulma, removeSizeProps, getSizeModifiers } from './../bulma';
+import { combineModifiers, getHTMLProps } from './../helpers';
 
 export interface Delete<T> extends Bulma.Render, Bulma.Size,
     React.HTMLProps<T> { }
 
 export const Delete: React.SFC<Delete<HTMLButtonElement | HTMLAnchorElement>> = (props) => {
-    const className = classNames(props, { delete: true });
+    const className = classNames(
+        'delete',
+        { ...combineModifiers(props, getSizeModifiers) },
+        props.className,
+    );
     const { render, ...rest } = props;
     const HTMLProps = getHTMLProps(rest, removeSizeProps);
 
