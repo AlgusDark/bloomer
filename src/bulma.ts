@@ -1,13 +1,6 @@
 /// <reference types="react" />
 
-import { Field } from './elements/Form/Field';
-import { Control } from './elements/Form/Control';
-import { Button } from './elements/Button';
-import { PageLink } from './components/Pagination/PageLink';
-import { PageControl } from './components/Pagination/PageControl';
-import { Tabs } from './components/Tabs';
-import { Tab } from './components/Tabs/Tab';
-import { Container } from './layout/Container';
+import { Grid } from './grid/grid';
 
 export declare namespace Bulma {
     // Modifiers
@@ -45,12 +38,22 @@ export declare namespace Bulma {
         isDanger?: boolean,
     }
 
+    export interface Grid extends Grid.HorizontalSize,
+        Grid.Size,
+        Grid.Offset,
+        Grid.Mobile,
+        Grid.Tablet,
+        Grid.Desktop {
+
+    }
+
     export interface Modifiers extends
         Alignment,
         Size,
         FullWidth,
         State,
-        Color {
+        Color,
+        Grid {
     }
 
     // Renderable
@@ -58,17 +61,9 @@ export declare namespace Bulma {
         render?: Function
     }
 
-    // Bulma Components Interfaces
-    export interface BulmaComponents<T> extends
-        Field<T>, Control<T>, Button<T>,
-        PageLink<T>, PageControl<T>,
-        Tabs<T>, Tab<T>,
-        Container<T> {
-    }
-
     // All Non HTML Props
     export interface NonHTMLProps<T> extends
-        Modifiers, Render, BulmaComponents<T> {
+        Modifiers, Render {
     }
 }
 
