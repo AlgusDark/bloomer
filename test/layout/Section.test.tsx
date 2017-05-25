@@ -26,7 +26,6 @@ describe('Section', () => {
 
     it('should render a section with .section with custom classNames', () => {
         const container = shallow(<Section className='custom' />);
-        expect(container.hasClass('is-large')).toBe(true);
         expect(container.hasClass('custom')).toBe(true);
     });
 });
