@@ -1,7 +1,12 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 
-import { Bulma, removeAlignmentProps, removeSizeProps } from './../../bulma';
-import { classNames, getHTMLProps } from './../../helpers';
+import {
+    Bulma,
+    removeAlignmentProps, removeSizeProps,
+    getAlignmentModifiers, getSizeModifiers,
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Tabs<T> extends Bulma.Alignment, Bulma.Size,
     React.HTMLProps<T> {
@@ -10,11 +15,15 @@ export interface Tabs<T> extends Bulma.Alignment, Bulma.Size,
 }
 
 export const Tabs: React.SFC<Tabs<HTMLDivElement>> = (props) => {
-    const className = classNames(props, {
-        tabs: true,
-        'is-boxed': props.isBoxed,
-        'is-toggle': props.isToggle,
-    });
+    const className = classNames(
+        'tabs',
+        {
+            'is-boxed': props.isBoxed,
+            'is-toggle': props.isToggle,
+            ...combineModifiers(props, getAlignmentModifiers, getSizeModifiers),
+        },
+        props.className,
+    );
     const { isBoxed, isToggle, ...rest } = props;
     const HTMLProps = getHTMLProps(rest, removeAlignmentProps, removeSizeProps);
 

@@ -1,13 +1,22 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 
-import { Bulma, removeAlignmentProps, removeSizeProps } from './../../bulma';
-import { classNames, getHTMLProps } from './../../helpers';
+import {
+    Bulma,
+    removeAlignmentProps, removeSizeProps,
+    getAlignmentModifiers, getSizeModifiers,
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Pagination<T> extends Bulma.Alignment, Bulma.Size,
     React.HTMLProps<T> { }
 
 export const Pagination: React.SFC<Pagination<HTMLElement>> = (props) => {
-    const className = classNames(props, { pagination: true });
+    const className = classNames(
+        'pagination',
+        { ...combineModifiers(props, getAlignmentModifiers, getSizeModifiers) },
+        props.className,
+    );
     const HTMLProps = getHTMLProps(
         props,
         removeAlignmentProps,

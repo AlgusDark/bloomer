@@ -1,7 +1,12 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 
-import { Bulma, removeColorProps, removeSizeProps } from './../../bulma';
-import { classNames, getHTMLProps } from './../../helpers';
+import {
+    Bulma,
+    removeColorProps, removeSizeProps,
+    getColorModifiers, getSizeModifiers,
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Hero<T> extends Bulma.Color, Bulma.Size, React.HTMLProps<T> {
     isBold?: boolean,
@@ -9,11 +14,15 @@ export interface Hero<T> extends Bulma.Color, Bulma.Size, React.HTMLProps<T> {
 }
 
 export const Hero: React.SFC<Hero<HTMLElement>> = (props) => {
-    const className = classNames(props, {
-        hero: true,
-        'is-bold': props.isBold,
-        'is-fullheight': props.isFullHeight,
-    });
+    const className = classNames(
+        'hero',
+        {
+            'is-bold': props.isBold,
+            'is-fullheight': props.isFullHeight,
+            ...combineModifiers(props, getColorModifiers, getSizeModifiers)
+        },
+        props.className
+    );
     const { isBold, isFullHeight, ...rest } = props;
     const HTMLProps = getHTMLProps(
         rest,
