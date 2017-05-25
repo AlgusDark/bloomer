@@ -3,7 +3,7 @@ const path = require('path');
 const config = {
   entry: ['./example/app.tsx'],
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'example'),
     filename: 'bundle.js'
   },
   resolve: {
@@ -15,7 +15,12 @@ const config = {
       {
         test: /\.tsx?$/,
         use: [
-          'awesome-typescript-loader'
+          {
+            loader: 'awesome-typescript-loader',
+            options: {
+              configFileName: 'tsconfig.dev.json'
+            }
+          }
         ],
         exclude: /node_modules/
       },
