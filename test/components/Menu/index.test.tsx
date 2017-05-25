@@ -9,7 +9,7 @@ describe('Menu', () => {
         expect(component.contains(<aside className='menu'>My Menu</aside>)).toBe(true);
     });
 
-    it('should render an aside with .menu and custom classes', () => {
+    it('should render an aside with .menu and custom classNames', () => {
         const component = shallow(<Menu className='custom'><span>Any Content</span></Menu>);
         expect(component.hasClass('menu')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);

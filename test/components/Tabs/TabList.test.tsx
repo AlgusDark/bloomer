@@ -4,14 +4,23 @@ import { shallow } from 'enzyme';
 import { TabList } from './../../../src';
 
 describe('TabList', () => {
-    const component = shallow(<TabList className='custom'>
-        <li>One</li>
-        <li>Two</li>
-    </TabList>);
-    it('should render a ul with props and children', () => {
-        expect(component.contains(<ul className='custom'>
+    it('should render a ul with children', () => {
+        const component = shallow(
+            <TabList>
+                <li>One</li>
+                <li>Two</li>
+            </TabList>
+        );
+        expect(component.contains(<ul>
             <li>One</li>
             <li>Two</li>
         </ul>)).toBe(true);
     });
+
+    it('should render a ul with classNames', () => {
+        const component = shallow(<TabList className='custom' />);
+        expect(component.hasClass('custom')).toBe(true);
+    });
+
+
 });

@@ -9,16 +9,23 @@ describe('Container', () => {
         expect(container.contains(<div className='container'>My Container</div>)).toBe(true)
     });
 
-    it('should render a div with .container.is-fluid', () => {
+    it('should render a div with .container with modifiers', () => {
         const container = shallow(<Container isFluid />);
         expect(container.hasClass('container')).toBe(true);
         expect(container.hasClass('is-fluid')).toBe(true);
     });
 
-    it('should render a div with .container with custom classNames', () => {
+    it('should render a div with .container, modifiers and custom classNames', () => {
         const container = shallow(<Container isFluid className='custom loader' />);
         expect(container.hasClass('container')).toBe(true);
         expect(container.hasClass('is-fluid')).toBe(true);
+        expect(container.hasClass('custom')).toBe(true);
+        expect(container.hasClass('loader')).toBe(true);
+    });
+
+    it('should render a div with .container and custom classNames', () => {
+        const container = shallow(<Container className='custom loader' />);
+        expect(container.hasClass('container')).toBe(true);
         expect(container.hasClass('custom')).toBe(true);
         expect(container.hasClass('loader')).toBe(true);
     });

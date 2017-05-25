@@ -9,7 +9,7 @@ describe('MenuList', () => {
         expect(component.contains(<ul className='menu-list'><li>My MenuList</li></ul>)).toBe(true);
     });
 
-    it('should render an ul with .menu-list and custom classes', () => {
+    it('should render an ul with .menu-list and custom classNames', () => {
         const component = shallow(<MenuList className='custom'><li>My MenuList</li></MenuList>);
         expect(component.hasClass('menu-list')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);

@@ -25,24 +25,56 @@ describe('Button', () => {
         const component = shallow(<Button href='#' />);
         expect(component.contains(<a role='button' href='#' className='button' />)).toBe(true);
     });
+    it('should render an anchor with .button with modifiers', () => {
+        const component = shallow(<Button href='#' isLink
+            isOutlined
+            isInverted />);
+        expect(component.is('a')).toBe(true);
+        expect(component.hasClass('button')).toBe(true);
+        expect(component.hasClass('is-link')).toBe(true);
+        expect(component.hasClass('is-outlined')).toBe(true);
+        expect(component.hasClass('is-inverted')).toBe(true);
+    });
+
+    it('should render an anchor with .button and custom classNames', () => {
+        const component = shallow(<Button href='#' isLink className='custom loader' />);
+        expect(component.is('a')).toBe(true);
+        expect(component.hasClass('button')).toBe(true);
+        expect(component.hasClass('is-link')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
+        expect(component.hasClass('loader')).toBe(true);
+    });
 
     it('should render a button with .button', () => {
         const component = shallow(<Button />);
         expect(component.contains(<button type='button' className='button' />)).toBe(true);
     });
 
-    it('should render a button with .button and custom classNames', () => {
-        const component = shallow(<Button className='my-custom-class loader' />);
+    it('should render a button with .button with modifiers', () => {
+        const component = shallow(<Button isLink
+            isOutlined
+            isInverted />);
+        expect(component.is('button')).toBe(true);
         expect(component.hasClass('button')).toBe(true);
-        expect(component.hasClass('my-custom-class')).toBe(true);
+        expect(component.hasClass('is-link')).toBe(true);
+        expect(component.hasClass('is-outlined')).toBe(true);
+        expect(component.hasClass('is-inverted')).toBe(true);
+    });
+
+    it('should render a button with .button, modifiers and custom classNames', () => {
+        const component = shallow(<Button isLink className='custom loader' />);
+        expect(component.is('button')).toBe(true);
+        expect(component.hasClass('button')).toBe(true);
+        expect(component.hasClass('is-link')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
         expect(component.hasClass('loader')).toBe(true);
     });
 
-    it('should render a button with .button with modifiers', () => {
-        const component = shallow(<Button isBlack isFullWidth isOutlined />);
+    it('should render a button with .button and custom classNames', () => {
+        const component = shallow(<Button className='custom loader' />);
+        expect(component.is('button')).toBe(true);
         expect(component.hasClass('button')).toBe(true);
-        expect(component.hasClass('is-black')).toBe(true);
-        expect(component.hasClass('is-fullwidth')).toBe(true);
-        expect(component.hasClass('is-outlined')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
+        expect(component.hasClass('loader')).toBe(true);
     });
 });

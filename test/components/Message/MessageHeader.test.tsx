@@ -9,7 +9,7 @@ describe('MessageHeader', () => {
         expect(component.contains(<div className='message-header'>My MessageHeader</div>)).toBe(true);
     });
 
-    it('should render a div with .message-header and custom classes', () => {
+    it('should render a div with .message-header and custom classNames', () => {
         const component = shallow(<MessageHeader className='custom'><span>Any Content</span></MessageHeader>);
         expect(component.hasClass('message-header')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);
