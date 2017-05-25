@@ -26,7 +26,7 @@ describe('PageLink', () => {
         expect(component.contains(<a href='#' className='pagination-link'>My Link</a>));
     });
 
-    it('should render an anchor with .pagination-link and custom props', () => {
+    it('should render an anchor with .pagination-link and modifiers', () => {
         const component = shallow(
             <PageLink
                 isActive
@@ -44,8 +44,6 @@ describe('PageLink', () => {
         const component = shallow(<PageLink href='#' isCurrent className='custom' />);
         expect(component.hasClass('pagination-link')).toBe(true);
         expect(component.hasClass('is-current')).toBe(true);
-        expect(component.hasClass('is-focused')).toBe(true);
-        expect(component.hasClass('is-active')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);
     });
 

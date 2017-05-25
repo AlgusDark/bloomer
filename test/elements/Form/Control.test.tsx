@@ -9,7 +9,7 @@ describe('Control', () => {
         expect(component.contains(<p className='control'><span>Any Content</span></p>)).toBe(true);
     });
 
-    it('should render a paragraph with .control and modifiers', () => {
+    it('should render a paragraph with .control and .has-icons-left.has-icons.right', () => {
         const component = shallow(<Control hasIcons />);
         expect(component.hasClass('control')).toBe(true);
         expect(component.hasClass('has-icons-left')).toBe(true);
@@ -23,7 +23,6 @@ describe('Control', () => {
         expect(component.hasClass('is-loading')).toBe(true);
         expect(component.hasClass('has-icons-left')).toBe(true);
         expect(component.hasClass('has-icons-right')).toBe(true);
-        expect(component.hasClass('custom')).toBe(true);
     });
 
     it('should render a paragraph with .control, modifiers and custom classNames', () => {
