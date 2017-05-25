@@ -26,6 +26,10 @@ export { Control } from './elements/Form/Control';
 
 export { Delete } from './elements/Delete';
 
+export { Columns } from './grid/Columns';
+export { Column } from './grid/Column';
+export { Tile } from './grid/Tile';
+
 export { Container } from './layout/Container';
 
 export { Hero } from './layout/Hero';

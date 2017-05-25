@@ -1,14 +1,18 @@
 import * as React from 'react';
 
-import { classNames, getHTMLProps, withModifiers } from './../src/helpers';
+import { classNames, getHTMLProps, withModifiers, combineModifiers } from './../src/helpers';
 import {
     Bulma,
     removeAlignmentProps,
     removeColorProps,
     removeFullWidthProps,
     removeSizeProps,
-    removeStateProps
+    removeStateProps,
 } from './../src/bulma';
+import {
+    Grid,
+    getSizeModifiers,
+} from './../src/grid/grid'
 
 describe('classNames', () => {
     const props = {
@@ -81,4 +85,29 @@ describe('getHTMLProps', () => {
         expect(getHTMLProps({ ...props, ...SizeProps }, removeSizeProps))
             .toEqual(props);
     });
+});
+
+describe('combineModifiers', () => {
+    it('should return an empty object when no get*ModifiersFunctions are passed', () => {
+        const props = {
+            isNarrow: true,
+        }
+        expect(combineModifiers(props))
+            .toEqual({});
+    });
+
+    it('should return Size Modifiers', () => {
+        const props = {
+            isNarrow: true,
+            isTwoThirds: true,
+        };
+        const expected = {
+            'is-narrow': true,
+            'is-two-thirds': true,
+        }
+
+        expect(combineModifiers(props, getSizeModifiers))
+            .toEqual(expected);
+    })
+
 })

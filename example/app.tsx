@@ -33,15 +33,32 @@ import {
 
     Content,
 
+    Columns,
+    Column,
+    Tiles,
+
     Delete,
 
-    Container
+    Container,
+
+    Section,
 } from './../src/index';
 
 ReactDOM.render(
     <section className='section'>
         <Container isFluid>
-            <div className='section'>
+            <Section>
+                <Columns>
+                    <Column IsOffsetHalf>
+                        <p className="notification is-info">Content</p>
+                    </Column>
+                    <Column>
+                        <p className="notification is-danger">...rest</p>
+                    </Column>
+                </Columns>
+            </Section>
+
+            <Section>
                 <Tabs isCentered>
                     <TabList>
                         <Tab>
@@ -58,9 +75,9 @@ ReactDOM.render(
                         </Tab>
                     </TabList>
                 </Tabs>
-            </div>
+            </Section>
 
-            <div className='section'>
+            <Section>
                 <Pagination>
                     <PageControl isPrevious disabled title="Sup nigga" render={props => <a {...props}>Previous</a>} />
                     <PageControl isNext>Next</PageControl>
@@ -79,13 +96,13 @@ ReactDOM.render(
                         </Page>
                     </PageList>
                 </Pagination>
-            </div>
+            </Section>
 
-            <div className='section'>
+            <Section>
                 <Box>Hello World</Box>
-            </div>
+            </Section>
 
-            <div className='section'>
+            <Section>
                 <Field isGrouped>
                     <Control isLoading>
                         <Button>This is a Button</Button>
@@ -100,9 +117,9 @@ ReactDOM.render(
                         <Button isBlack isLoading render={(props) => <a {...props}>black magic</a>} />
                     </Control>
                 </Field>
-            </div>
+            </Section>
 
-            <div className='section'>
+            <Section>
                 <Content isMedium>
                     <ul>
                         <li>This</li>
@@ -112,9 +129,9 @@ ReactDOM.render(
                         <li>list</li>
                     </ul>
                 </Content>
-            </div>
+            </Section>
 
-            <div className='section'>
+            <Section>
                 <Menu>
                     <MenuLabel>General</MenuLabel>
                     <MenuList>
@@ -143,19 +160,19 @@ ReactDOM.render(
                         <li><MenuLink>Balance</MenuLink></li>
                     </MenuList>
                 </Menu>
-            </div>
+            </Section>
 
-            <div className='section'>
+            <Section>
                 <Message>
                     <MessageHeader>
                         <p>Hello World</p>
-                        <Delete/>
+                        <Delete />
                     </MessageHeader>
                     <MessageBody>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
                     </MessageBody>
                 </Message>
-            </div>
+            </Section>
         </Container>
     </section>,
     document.getElementById('root')
