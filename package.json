@@ -1,6 +1,6 @@
 {
   "name": "bulma-jsx",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A set of React Components for Bulma CSS",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
