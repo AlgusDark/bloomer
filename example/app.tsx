@@ -35,7 +35,7 @@ import {
 
     Columns,
     Column,
-    Tiles,
+    Tile,
 
     Delete,
 
@@ -105,7 +105,7 @@ ReactDOM.render(
             <Section>
                 <Field isGrouped>
                     <Control isLoading>
-                        <Button>This is a Button</Button>
+                        <Button isFlexDesktopOnly>This is a Button</Button>
                     </Control>
                     <Control>
                         <Button isPrimary>This is a Primary Button</Button>
