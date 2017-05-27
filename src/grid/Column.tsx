@@ -10,6 +10,7 @@ import {
     getTabletModifiers, removeTabletProps,
     getDesktopModifiers, removeDesktopProps,
 } from './grid';
+import { Bulma, withHelpersModifiers } from './../bulma';
 import { getHTMLProps, combineModifiers } from './../helpers';
 
 export interface Column<T> extends
@@ -32,8 +33,6 @@ export const Column: React.SFC<Column<HTMLDivElement>> = (props) => {
         props.className
     );
 
-
-
     const HTMLProps = getHTMLProps(
         props,
         removeHorizontalSizeProps,
@@ -50,3 +49,5 @@ export const Column: React.SFC<Column<HTMLDivElement>> = (props) => {
         </div>
     )
 }
+
+export default withHelpersModifiers(Column);

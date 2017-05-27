@@ -5,6 +5,7 @@ import {
     Bulma,
     removeColorProps, removeSizeProps,
     getColorModifiers, getSizeModifiers,
+    withHelpersModifiers,
 } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
@@ -36,3 +37,5 @@ export const Hero: React.SFC<Hero<HTMLElement>> = (props) => {
         </section>
     )
 }
+
+export default withHelpersModifiers(Hero);

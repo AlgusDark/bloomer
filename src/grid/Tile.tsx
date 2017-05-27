@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 
 import { Grid, getHorizontalSizeModifiers, removeHorizontalSizeProps } from './grid';
+import { Bulma, withHelpersModifiers } from './../bulma';
 import { getHTMLProps } from './../helpers';
 
 export interface Tile<T> extends Grid.HorizontalSize,
@@ -40,3 +41,5 @@ export const Tile: React.SFC<Tile<HTMLDivElement>> = (props) => {
         </div>
     )
 }
+
+export default withHelpersModifiers(Tile);

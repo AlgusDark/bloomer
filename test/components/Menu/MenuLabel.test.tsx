@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { MenuLabel } from './../../../src';
+import { MenuLabel } from './../../../src/components/Menu/MenuLabel';
 
 describe('MenuLabel', () => {
     it('should render an paragraph with .menu-label', () => {

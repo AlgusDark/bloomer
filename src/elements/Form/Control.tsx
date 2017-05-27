@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
+import { Bulma, withHelpersModifiers } from './../../bulma';
+
 export interface Control<T> extends React.HTMLProps<T> {
     hasIcons?: boolean,
     hasIconsLeft?: boolean,
@@ -33,3 +35,5 @@ export const Control: React.SFC<Control<HTMLParagraphElement>> = (props) => {
         </p>
     )
 }
+
+export default withHelpersModifiers(Control);

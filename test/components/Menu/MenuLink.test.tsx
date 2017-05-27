@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { MenuLink } from './../../../src';
+import { MenuLink } from './../../../src/components/Menu/MenuLink';
 
 describe('MenuLink', () => {
     it('should render a custom component with MenuLink props', () => {

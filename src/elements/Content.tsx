@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma, removeSizeProps, getSizeModifiers } from './../bulma';
+import { Bulma, removeSizeProps, getSizeModifiers, withHelpersModifiers } from './../bulma';
 import { combineModifiers, getHTMLProps } from './../helpers';
 
 export interface Content<T> extends Bulma.Size, React.HTMLProps<HTMLDivElement> { }
@@ -20,3 +20,5 @@ export const Content: React.SFC<Content<HTMLDivElement>> = (props) => {
         </div>
     )
 }
+
+export default withHelpersModifiers(Content);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Message } from './../../../src';
+import { Message } from './../../../src/components/Message/Message';
 
 describe('Message', () => {
     it('should render an article with .message', () => {

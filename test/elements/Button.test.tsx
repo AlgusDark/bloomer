@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Button } from './../../src';
+import { Button } from './../../src/elements/Button';
 
 describe('Button', () => {
     it('should render a custom component with Button props', () => {

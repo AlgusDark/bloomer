@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Control } from './../../../src';
+import { Control } from './../../../src/elements/Form/Control';
 
 describe('Control', () => {
     it('should render a paragraph with .control', () => {

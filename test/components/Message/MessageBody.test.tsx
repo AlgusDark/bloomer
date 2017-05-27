@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { MessageBody } from './../../../src';
+import { MessageBody } from './../../../src/components/Message/MessageBody';
 
 describe('MessageBody', () => {
     it('should render a div with .message-body', () => {

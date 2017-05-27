@@ -1,42 +1,42 @@
-export { Tabs } from './components/Tabs';
-export { Tab } from './components/Tabs/Tab';
-export { TabList } from './components/Tabs/TabList';
-export { TabLink } from './components/Tabs/TabLink';
+export { default as Tabs } from './components/Tabs/Tabs';
+export { default as Tab } from './components/Tabs/Tab';
+export { default as TabList } from './components/Tabs/TabList';
+export { default as TabLink } from './components/Tabs/TabLink';
 
-export { Menu } from './components/Menu';
-export { MenuLabel } from './components/Menu/MenuLabel';
-export { MenuList } from './components/Menu/MenuList';
-export { MenuLink } from './components/Menu/MenuLink';
+export { default as Menu } from './components/Menu/Menu';
+export { default as MenuLabel } from './components/Menu/MenuLabel';
+export { default as MenuList } from './components/Menu/MenuList';
+export { default as MenuLink } from './components/Menu/MenuLink';
 
-export { Message } from './components/Message';
-export { MessageHeader } from './components/Message/MessageHeader';
-export { MessageBody } from './components/Message/MessageBody';
+export { default as Message } from './components/Message/Message';
+export { default as MessageHeader } from './components/Message/MessageHeader';
+export { default as MessageBody } from './components/Message/MessageBody';
 
-export { Pagination } from './components/Pagination';
-export { PageControl } from './components/Pagination/PageControl';
-export { Page } from './components/Pagination/Page';
-export { PageList } from './components/Pagination/PageList';
-export { PageLink } from './components/Pagination/PageLink';
+export { default as Pagination } from './components/Pagination/Pagination';
+export { default as PageControl } from './components/Pagination/PageControl';
+export { default as Page } from './components/Pagination/Page';
+export { default as PageList } from './components/Pagination/PageList';
+export { default as PageLink } from './components/Pagination/PageLink';
 
-export { Box } from './elements/Box';
-export { Button } from './elements/Button';
-export { Content } from './elements/Content';
-export { Field } from './elements/Form/Field';
-export { Control } from './elements/Form/Control';
+export { default as Box } from './elements/Box';
+export { default as Button } from './elements/Button';
+export { default as Content } from './elements/Content';
+export { default as Field } from './elements/Form/Field';
+export { default as Control } from './elements/Form/Control';
 
-export { Delete } from './elements/Delete';
+export { default as Delete } from './elements/Delete';
 
-export { Columns } from './grid/Columns';
-export { Column } from './grid/Column';
-export { Tile } from './grid/Tile';
+export { default as Columns } from './grid/Columns';
+export { default as Column } from './grid/Column';
+export { default as Tile } from './grid/Tile';
 
-export { Container } from './layout/Container';
+export { default as Container } from './layout/Container';
 
-export { Hero } from './layout/Hero';
-export { HeroHead } from './layout/Hero/HeroHead';
-export { HeroBody } from './layout/Hero/HeroBody';
-export { HeroFoot } from './layout/Hero/HeroFoot';
+export { default as Hero } from './layout/Hero/Hero';
+export { default as HeroHead } from './layout/Hero/HeroHead';
+export { default as HeroBody } from './layout/Hero/HeroBody';
+export { default as HeroFoot } from './layout/Hero/HeroFoot';
 
-export { Section } from './layout/Section';
+export { default as Section } from './layout/Section';
 
-export { Footer } from './layout/Footer';
+export { default as Footer } from './layout/Footer';

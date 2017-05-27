@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Menu } from './../../../src';
+import { Menu } from './../../../src/components/Menu/Menu';
 
 describe('Menu', () => {
     it('should render an aside with .menu', () => {

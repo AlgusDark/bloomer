@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
+import { Bulma, withHelpersModifiers } from './../../bulma';
+
 export interface Tab<T> extends React.HTMLProps<T> {
     isActive?: boolean,
 }
@@ -22,3 +24,5 @@ export const Tab: React.SFC<Tab<HTMLLIElement>> = (props) => {
 
     return className ? withClassName : <li {...HTMLProps}>{props.children}</li>
 }
+
+export default withHelpersModifiers(Tab);

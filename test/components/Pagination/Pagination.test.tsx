@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Pagination } from './../../../src';
+import { Pagination } from './../../../src/components/Pagination/Pagination';
 
 describe('Pagination', () => {
     it('should render a nav with .pagination', () => {
