@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma, removeSizeProps, getSizeModifiers } from './../bulma';
+import { Bulma, removeSizeProps, getSizeModifiers, withHelpersModifiers } from './../bulma';
 import { combineModifiers, getHTMLProps } from './../helpers';
 
 export interface Delete<T> extends Bulma.Render, Bulma.Size,
@@ -28,3 +28,5 @@ export const Delete: React.SFC<Delete<HTMLButtonElement | HTMLAnchorElement>> = 
 
     return props.href ? anchor : button;
 }
+
+export default withHelpersModifiers(Delete);

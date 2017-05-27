@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { PageList } from './../../../src';
+import { PageList } from './../../../src/components/Pagination/PageList';
 
 describe('PageList', () => {
     it('should render a ul with .pagination-list', () => {

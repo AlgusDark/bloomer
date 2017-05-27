@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma } from './../../bulma';
+import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface MenuLink<T> extends Bulma.Render, React.HTMLProps<T> {
     isActive?: boolean,
@@ -26,3 +26,5 @@ export const MenuLink: React.SFC<MenuLink<HTMLAnchorElement>> = (props) => {
 
     return className ? withClassName : <a {...HTMLProps} className={className}>{props.children}</a>
 }
+
+export default withHelpersModifiers(MenuLink);

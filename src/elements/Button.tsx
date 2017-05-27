@@ -5,6 +5,7 @@ import {
     Bulma,
     removeStateProps, removeColorProps, removeFullWidthProps,
     getStateModifiers, getColorModifiers, getFullWidthModifiers,
+    withHelpersModifiers,
 } from './../bulma';
 import { combineModifiers, getHTMLProps } from './../helpers';
 
@@ -51,3 +52,5 @@ export const Button: React.SFC<Button<HTMLButtonElement | HTMLAnchorElement>> = 
 
     return props.href ? anchor : button;
 }
+
+export default withHelpersModifiers(Button);

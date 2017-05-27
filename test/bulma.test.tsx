@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { shallow } from 'enzyme';
+
 import * as Bulma from './../src/bulma';
 
 describe('removeProps functions', () => {
@@ -46,7 +48,7 @@ describe('removeProps functions', () => {
     });
 
     it('should remove Color props', () => {
-        const ColorProps = {
+        const colorProps = {
             isWhite: true,
             isLight: true,
             isDark: true,
@@ -57,7 +59,7 @@ describe('removeProps functions', () => {
             isWarning: true,
             isDanger: true,
         }
-        expect(Bulma.removeColorProps({ ...props, ...ColorProps }))
+        expect(Bulma.removeColorProps({ ...props, ...colorProps }))
             .toEqual(props);
     });
 });
@@ -144,5 +146,45 @@ describe('get*Modifiers functions', () => {
         }
         expect(Bulma.getColorModifiers(props))
             .toEqual(expected);
+    });
+})
+
+describe('withHelpersModifiers', () => {
+    it('should render a Component without modification', () => {
+        const Component: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
+            return (
+                <div>Hello World</div>
+            )
+        }
+        const WithHelpersModifiersComponent = Bulma.withHelpersModifiers(Component);
+
+        expect(shallow(<WithHelpersModifiersComponent />).contains(<Component />)).toBe(true);
+    });
+
+    it('should render a Component with custom props', () => {
+        const Component: React.SFC<React.HTMLProps<HTMLDivElement> & Bulma.Bulma.Color> = (props) => {
+            return (
+                <div>Hello World</div>
+            )
+        }
+        const WithHelpersModifiersComponent = Bulma.withHelpersModifiers(Component);
+        const renderedComponent = <WithHelpersModifiersComponent isBlack className='custom' />
+        expect(shallow(renderedComponent).contains(<Component isBlack className='custom' />)).toBe(true);
+    });
+
+    it('should render a Component with className from Helpers without passing Helpers Props', () => {
+        const Component: React.SFC<React.HTMLProps<HTMLDivElement> & Bulma.Bulma.Modifiers> = (props) => {
+            return (
+                <div>Hello World</div>
+            )
+        }
+        const WithHelpersModifiersComponent = Bulma.withHelpersModifiers(Component);
+        const renderedComponent = <WithHelpersModifiersComponent isBlack isFlexDesktopOnly className='custom' />
+        const shallowedComponent = shallow(renderedComponent);
+        
+        expect(shallowedComponent.prop('isBlack')).toBe(true);
+        expect(shallowedComponent.prop('isFlexDesktopOnly')).toBe(undefined);
+        expect(shallowedComponent.hasClass('custom')).toBe(true);
+        expect(shallowedComponent.hasClass('is-flex-desktop-only')).toBe(true);
     });
 })

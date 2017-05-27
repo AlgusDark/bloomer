@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma } from './../../bulma';
+import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface PageLink<T> extends Bulma.Render, React.HTMLProps<T> {
     isCurrent?: boolean,
@@ -33,3 +33,5 @@ export const PageLink: React.SFC<PageLink<HTMLAnchorElement>> = (props) => {
         </a>
     )
 }
+
+export default withHelpersModifiers(PageLink);

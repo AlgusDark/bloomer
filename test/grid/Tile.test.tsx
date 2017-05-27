@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Tile } from './../../src';
+import { Tile } from './../../src/grid/Tile';
 
 describe('Tile', () => {
     it('should render a div with .tile', () => {

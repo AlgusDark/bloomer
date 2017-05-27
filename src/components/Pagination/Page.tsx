@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { Bulma, withHelpersModifiers } from './../../bulma';
+
 export const Page: React.SFC<React.HTMLProps<HTMLLIElement>> = (props) => {
 
     return (
@@ -8,3 +10,5 @@ export const Page: React.SFC<React.HTMLProps<HTMLLIElement>> = (props) => {
         </li>
     )
 }
+
+export default withHelpersModifiers(Page);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Hero } from './../../../src';
+import { Hero } from './../../../src/layout/Hero/Hero';
 
 describe('Hero', () => {
     it('should render a section with .hero', () => {

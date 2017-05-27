@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Content } from './../../src';
+import { Content } from './../../src/elements/Content';
 
 describe('Content', () => {
     it('should render a div with .content', () => {

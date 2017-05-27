@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { HeroHead } from './../../../src';
+import { HeroHead } from './../../../src/layout/Hero/HeroHead';
 
 describe('HeroHead', () => {
     it('should render a div with .hero-head', () => {

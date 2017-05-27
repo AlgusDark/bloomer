@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Bulma } from './../../bulma';
+import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface TabLink<T> extends Bulma.Render, React.HTMLProps<T> { }
 
@@ -15,3 +15,5 @@ export const TabLink: React.SFC<TabLink<HTMLAnchorElement>> = (props) => {
         </a>
     )
 }
+
+export default withHelpersModifiers(TabLink);

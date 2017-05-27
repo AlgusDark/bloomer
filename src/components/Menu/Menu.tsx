@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
+import { Bulma, withHelpersModifiers } from './../../bulma';
+
 export const Menu: React.SFC<React.HTMLProps<HTMLElement>> = (props) => {
     const className = classNames('menu', props.className);
 
@@ -10,3 +12,5 @@ export const Menu: React.SFC<React.HTMLProps<HTMLElement>> = (props) => {
         </aside>
     )
 }
+
+export default withHelpersModifiers(Menu);

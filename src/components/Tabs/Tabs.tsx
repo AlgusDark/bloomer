@@ -5,6 +5,7 @@ import {
     Bulma,
     removeAlignmentProps, removeSizeProps,
     getAlignmentModifiers, getSizeModifiers,
+    withHelpersModifiers,
 } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
@@ -33,3 +34,5 @@ export const Tabs: React.SFC<Tabs<HTMLDivElement>> = (props) => {
         </div>
     )
 }
+
+export default withHelpersModifiers(Tabs);

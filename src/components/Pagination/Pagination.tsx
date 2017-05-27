@@ -5,6 +5,7 @@ import {
     Bulma,
     removeAlignmentProps, removeSizeProps,
     getAlignmentModifiers, getSizeModifiers,
+    withHelpersModifiers,
 } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
@@ -29,3 +30,5 @@ export const Pagination: React.SFC<Pagination<HTMLElement>> = (props) => {
         </nav>
     )
 }
+
+export default withHelpersModifiers(Pagination);
