@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Page } from './../../../src';
+import { Page } from './../../../src/components/Pagination/Page';
 
 describe('Page', () => {
     it('should render a li', () => {

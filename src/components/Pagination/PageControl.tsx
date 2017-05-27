@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma } from './../../bulma';
+import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface PageControl<T> extends Bulma.Render, React.HTMLProps<T> {
     isPrevious?: boolean,
@@ -34,3 +34,5 @@ export const PageControl: React.SFC<PageControl<HTMLAnchorElement>> = (props) =>
         </a>
     )
 }
+
+export default withHelpersModifiers(PageControl);

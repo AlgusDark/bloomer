@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { MenuList } from './../../../src';
+import { MenuList } from './../../../src/components/Menu/MenuList';
 
 describe('MenuList', () => {
     it('should render an ul with .menu-list', () => {

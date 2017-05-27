@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Column } from './../../src';
+import { Column } from './../../src/grid/Column';
 
 describe('Column', () => {
     it('should render a div with .column', () => {

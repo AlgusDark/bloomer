@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
+import { Bulma, withHelpersModifiers } from './../bulma';
+
 export interface Container<T> extends React.HTMLProps<T> {
     isFluid?: boolean,
 }
@@ -22,3 +24,5 @@ export const Container: React.SFC<Container<HTMLDivElement>> = (props) => {
         </div>
     )
 }
+
+export default withHelpersModifiers(Container);

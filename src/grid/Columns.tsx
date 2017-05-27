@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
+import { Bulma, withHelpersModifiers } from './../bulma';
+
 export interface Columns<T> extends React.HTMLProps<T> {
     isMobile?: boolean,
     isDesktop?: boolean,
@@ -41,3 +43,5 @@ export const Columns: React.SFC<Columns<HTMLDivElement>> = (props) => {
         </div>
     )
 }
+
+export default withHelpersModifiers(Columns);

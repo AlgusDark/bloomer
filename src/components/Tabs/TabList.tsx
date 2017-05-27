@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { Bulma, withHelpersModifiers } from './../../bulma';
+
 export const TabList: React.SFC<React.HTMLProps<HTMLUListElement>> = (props) => {
     return (
         <ul {...props}>
@@ -7,3 +9,5 @@ export const TabList: React.SFC<React.HTMLProps<HTMLUListElement>> = (props) => 
         </ul>
     )
 }
+
+export default withHelpersModifiers(TabList);

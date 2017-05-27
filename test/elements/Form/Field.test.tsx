@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Field } from './../../../src';
+import { Field } from './../../../src/elements/Form/Field';
 
 describe('Field', () => {
     it('should render a div with .field', () => {

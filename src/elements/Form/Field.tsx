@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
+import { Bulma, withHelpersModifiers } from './../../bulma';
+
 export interface Field<T> extends React.HTMLProps<T> {
     isGrouped?: boolean,
     isGroupedRight?: boolean,
@@ -28,3 +30,5 @@ export const Field: React.SFC<Field<HTMLDivElement>> = (props) => {
         </div>
     )
 }
+
+export default withHelpersModifiers(Field);

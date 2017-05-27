@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { TabList } from './../../../src';
+import { TabList } from './../../../src/components/Tabs/TabList';
 
 describe('TabList', () => {
     it('should render a ul with children', () => {

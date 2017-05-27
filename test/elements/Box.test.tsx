@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Box } from './../../src';
+import { Box } from './../../src/elements/Box';
 
 describe('Box', () => {
     it('should render a div with .box', () => {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma, removeColorProps, getColorModifiers } from './../../bulma';
+import { Bulma, removeColorProps, getColorModifiers, withHelpersModifiers } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Message<T> extends Bulma.Color, React.HTMLProps<T> { }
@@ -20,3 +20,5 @@ export const Message: React.SFC<Message<HTMLElement>> = (props) => {
         </article>
     )
 }
+
+export default withHelpersModifiers(Message);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { PageLink } from './../../../src';
+import { PageLink } from './../../../src/components/Pagination/PageLink';
 
 describe('PageLink', () => {
     it('should render a custom component with PageLink props', () => {

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
+import { Bulma, withHelpersModifiers } from './../../bulma';
+
 export const MenuLabel: React.SFC<React.HTMLProps<HTMLParagraphElement>> = (props) => {
     const className = classNames('menu-label', props.className);
 
@@ -10,3 +12,5 @@ export const MenuLabel: React.SFC<React.HTMLProps<HTMLParagraphElement>> = (prop
         </p>
     )
 }
+
+export default withHelpersModifiers(MenuLabel);

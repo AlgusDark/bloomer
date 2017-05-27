@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Container } from './../../src';
+import { Container } from './../../src/layout/Container';
 
 describe('Container', () => {
     it('should render a div with .container', () => {
