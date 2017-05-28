@@ -29,9 +29,7 @@ export const PageControl: React.SFC<PageControl<HTMLAnchorElement>> = (props) =>
     if (render) return render({ ...HTMLProps, className });
 
     return (
-        <a {...HTMLProps} className={className}>
-            {props.children}
-        </a>
+        <a {...HTMLProps} className={className} />
     )
 }
 

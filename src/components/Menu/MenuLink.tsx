@@ -19,12 +19,10 @@ export const MenuLink: React.SFC<MenuLink<HTMLAnchorElement>> = (props) => {
     if (render) return render({ ...HTMLProps, className });
 
     const withClassName = (
-        <a {...HTMLProps} className={className}>
-            {props.children}
-        </a>
+        <a {...HTMLProps} className={className} />
     )
 
-    return className ? withClassName : <a {...HTMLProps} className={className}>{props.children}</a>
+    return className ? withClassName : <a {...HTMLProps} className={className} />
 }
 
 export default withHelpersModifiers(MenuLink);

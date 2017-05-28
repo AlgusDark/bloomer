@@ -30,9 +30,7 @@ export const Control: React.SFC<Control<HTMLParagraphElement>> = (props) => {
     } = props;
 
     return (
-        <p {...HTMLProps} className={className}>
-            {props.children}
-        </p>
+        <p {...HTMLProps} className={className} />
     )
 }
 

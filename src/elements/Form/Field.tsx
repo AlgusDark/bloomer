@@ -25,9 +25,7 @@ export const Field: React.SFC<Field<HTMLDivElement>> = (props) => {
         ...HTMLProps } = props;
 
     return (
-        <div {...HTMLProps} className={className}>
-            {props.children}
-        </div>
+        <div {...HTMLProps} className={className} />
     )
 }
 

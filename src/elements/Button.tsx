@@ -39,15 +39,11 @@ export const Button: React.SFC<Button<HTMLButtonElement | HTMLAnchorElement>> = 
     if (render) return render({ ...HTMLProps, className });
 
     const anchor = (
-        <a {...HTMLProps} role='button' className={className}>
-            {props.children}
-        </a>
+        <a {...HTMLProps} role='button' className={className} />
     )
 
     const button = (
-        <button {...HTMLProps} type={props.type || 'button'} className={className}>
-            {props.children}
-        </button>
+        <button {...HTMLProps} type={props.type || 'button'} className={className} />
     )
 
     return props.href ? anchor : button;

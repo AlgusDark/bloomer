@@ -15,9 +15,7 @@ export const Content: React.SFC<Content<HTMLDivElement>> = (props) => {
     const HTMLProps = getHTMLProps(props, removeSizeProps);
 
     return (
-        <div {...HTMLProps} className={className}>
-            {props.children}
-        </div>
+        <div {...HTMLProps} className={className} />
     )
 }
 

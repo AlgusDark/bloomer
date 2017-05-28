@@ -19,9 +19,7 @@ export const Container: React.SFC<Container<HTMLDivElement>> = (props) => {
     const { isFluid, ...HTMLProps } = props;
 
     return (
-        <div {...HTMLProps} className={className}>
-            {props.children}
-        </div>
+        <div {...HTMLProps} className={className} />
     )
 }
 

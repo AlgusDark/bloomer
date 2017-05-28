@@ -7,9 +7,7 @@ export const Box: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
     const className = classNames('box', props.className);
 
     return (
-        <div {...props} className={className}>
-            {props.children}
-        </div>
+        <div {...props} className={className} />
     )
 }
 

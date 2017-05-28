@@ -25,9 +25,7 @@ export const Pagination: React.SFC<Pagination<HTMLElement>> = (props) => {
     );
 
     return (
-        <nav {...HTMLProps} className={className}>
-            {props.children}
-        </nav>
+        <nav {...HTMLProps} className={className} />
     )
 }
 
