@@ -1,4 +1,15 @@
 export {
+    Card,
+    Image as CardImage,
+    Header as CardHeader,
+    Title as CardHeaderTitle,
+    Icon as CardHeaderIcon,
+    Content as CardContent,
+    Footer as CardFooter,
+    Item as CardFooterItem,
+} from './components/Card';
+
+export {
     Tabs,
     Tab,
     List as TabList,
