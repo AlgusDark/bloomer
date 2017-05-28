@@ -56,7 +56,7 @@
     "coverageDirectory": "reports",
     "collectCoverageFrom": [
       "**/src/**/*.{ts,tsx}",
-      "!src/index.ts"
+      "!**/src/**/index.ts"
     ]
   },
   "keywords": [
