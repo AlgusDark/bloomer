@@ -29,9 +29,7 @@ export const Tabs: React.SFC<Tabs<HTMLDivElement>> = (props) => {
     const HTMLProps = getHTMLProps(rest, removeAlignmentProps, removeSizeProps);
 
     return (
-        <div {...HTMLProps} className={className}>
-            {props.children}
-        </div>
+        <div {...HTMLProps} className={className} />
     )
 }
 

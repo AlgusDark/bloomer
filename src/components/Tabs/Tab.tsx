@@ -17,12 +17,10 @@ export const Tab: React.SFC<Tab<HTMLLIElement>> = (props) => {
     const { isActive, ...HTMLProps } = props;
 
     const withClassName = (
-        <li {...HTMLProps} className={className}>
-            {props.children}
-        </li>
+        <li {...HTMLProps} className={className} />
     )
 
-    return className ? withClassName : <li {...HTMLProps}>{props.children}</li>
+    return className ? withClassName : <li {...HTMLProps} />
 }
 
 export default withHelpersModifiers(Tab);

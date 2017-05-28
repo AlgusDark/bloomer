@@ -26,6 +26,9 @@ export declare namespace Bulma {
         isActive?: boolean,
         isHovered?: boolean,
         isFocused?: boolean,
+    }
+
+    export interface Loading {
         isLoading?: boolean,
     }
 
@@ -39,6 +42,16 @@ export declare namespace Bulma {
         isSuccess?: boolean,
         isWarning?: boolean,
         isDanger?: boolean,
+    }
+
+    export interface Headings {
+        is1?: boolean,
+        is2?: boolean,
+        is3?: boolean,
+        is4?: boolean,
+        is5?: boolean,
+        is6?: boolean,
+        isSpaced?: boolean,
     }
 
     export interface Grid extends Grid.HorizontalSize,
@@ -106,6 +119,12 @@ export declare namespace Bulma {
     }
 
     export interface Helpers extends FullWidth, Responsive {
+        isFlex?: boolean,
+        isBlock?: boolean,
+        isInline?: boolean,
+        isInlineBlock?: boolean,
+        isInlineFlex?: boolean,
+
         isClearfix?: boolean,
         isPulledLeft?: boolean,
         isPulledRight?: boolean,
@@ -176,13 +195,13 @@ export function removeSizeProps(props: Bulma.Size) {
     return rest;
 }
 
-export function getFullWidthModifiers(props: Bulma.FullWidth) {
+function getFullWidthModifiers(props: Bulma.FullWidth) {
     return {
         'is-fullwidth': props.isFullWidth,
     }
 }
 
-export function removeFullWidthProps(props: Bulma.FullWidth) {
+function removeFullWidthProps(props: Bulma.FullWidth) {
     const {
         isFullWidth,
         ...rest } = props;
@@ -194,7 +213,6 @@ export function getStateModifiers(props: Bulma.State) {
         'is-active': props.isActive,
         'is-focused': props.isFocused,
         'is-hovered': props.isHovered,
-        'is-loading': props.isLoading,
     }
 }
 
@@ -203,6 +221,18 @@ export function removeStateProps(props: Bulma.State) {
         isActive,
         isFocused,
         isHovered,
+        ...rest } = props;
+    return rest;
+}
+
+export function getLoadingModifiers(props: Bulma.Loading) {
+    return {
+        'is-loading': props.isLoading,
+    }
+}
+
+export function removeLoadingProps(props: Bulma.Loading) {
+    const {
         isLoading,
         ...rest } = props;
     return rest;
@@ -237,8 +267,64 @@ export function removeColorProps(props: Bulma.Color) {
     return rest;
 }
 
+export function getHeadingElement(props: Bulma.Headings) {
+    let element = 'h1';
+
+    if (props.is1) {
+        element = 'h1';
+    }
+    else if (props.is2) {
+        element = 'h2';
+    }
+    else if (props.is3) {
+        element = 'h3';
+    }
+    else if (props.is4) {
+        element = 'h4';
+    }
+    else if (props.is5) {
+        element = 'h5';
+    }
+    else if (props.is6) {
+        element = 'h6';
+    }
+
+    return element;
+}
+
+export function getHeadingModifiers(props: Bulma.Headings) {
+    return {
+        'is-1': props.is1,
+        'is-2': props.is2,
+        'is-3': props.is3,
+        'is-4': props.is4,
+        'is-5': props.is5,
+        'is-6': props.is6,
+        'is-spaced': props.isSpaced,
+    }
+}
+
+export function removeHeadingProps(props: Bulma.Headings) {
+    const {
+        is1,
+        is2,
+        is3,
+        is4,
+        is5,
+        is6,
+        isSpaced,
+        ...rest } = props;
+    return rest;
+}
+
 function getHelpersModifiers(props: Bulma.Helpers) {
     return {
+        'is-flex': props.isFlex,
+        'is-block': props.isBlock,
+        'is-inline': props.isInline,
+        'is-inline-block': props.isInlineBlock,
+        'is-inline-flex': props.isInlineFlex,
+
         'is-flex-mobile': props.isFlexMobile,
         'is-flex-tablet-only': props.isFlexTabletOnly,
         'is-flex-desktop-only': props.isFlexDesktopOnly,
@@ -305,6 +391,11 @@ function getHelpersModifiers(props: Bulma.Helpers) {
 
 function removeHelpersProps(props: Bulma.Helpers) {
     const {
+        isFlex,
+        isBlock,
+        isInline,
+        isInlineBlock,
+        isInlineFlex,
         isFlexMobile,
         isFlexTabletOnly,
         isFlexDesktopOnly,
@@ -368,7 +459,7 @@ export function withHelpersModifiers<T>(Component: Bulma.Component<T>): React.Co
         render() {
             const className = classNames(
                 {
-                    ...combineModifiers(this.props, getHelpersModifiers),
+                    ...combineModifiers(this.props, getHelpersModifiers, getFullWidthModifiers),
                 },
                 this.props.className,
             );
@@ -378,6 +469,7 @@ export function withHelpersModifiers<T>(Component: Bulma.Component<T>): React.Co
             const props: any = getHTMLProps(
                 this.props,
                 removeHelpersProps,
+                removeFullWidthProps,
             );
             return className ? <Component {...props} className={className} /> : <Component {...props} />
         }

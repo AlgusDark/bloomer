@@ -7,9 +7,7 @@ export const MessageBody: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) =
     const className = classNames('message-body', props.className);
 
     return (
-        <div {...props} className={className}>
-            {props.children}
-        </div>
+        <div {...props} className={className} />
     )
 }
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import * as Bulma from './../src/bulma';
 
@@ -28,20 +28,11 @@ describe('removeProps functions', () => {
             .toEqual(props);
     });
 
-    it('should remove FullWidth props', () => {
-        const fullWidthProps = {
-            isFullWidth: true,
-        }
-        expect(Bulma.removeFullWidthProps({ ...props, ...fullWidthProps }))
-            .toEqual(props);
-    });
-
     it('should remove State props', () => {
         const stateProps = {
             isActive: true,
             isHovered: true,
             isFocused: true,
-            isLoading: true,
         }
         expect(Bulma.removeStateProps({ ...props, ...stateProps }))
             .toEqual(props);
@@ -60,6 +51,20 @@ describe('removeProps functions', () => {
             isDanger: true,
         }
         expect(Bulma.removeColorProps({ ...props, ...colorProps }))
+            .toEqual(props);
+    });
+
+    it('should remove Heading props', () => {
+        const HeadingProps = {
+            is1: true,
+            is2: true,
+            is3: true,
+            is4: true,
+            is5: true,
+            is6: true,
+            isSpaced: true,
+        }
+        expect(Bulma.removeHeadingProps({ ...props, ...HeadingProps }))
             .toEqual(props);
     });
 });
@@ -93,31 +98,29 @@ describe('get*Modifiers functions', () => {
             .toEqual(expected);
     });
 
-    it('should getFullWidthModifiers', () => {
-        const props = {
-            isFullWidth: true,
-        }
-        const expected = {
-            'is-fullwidth': true,
-        }
-        expect(Bulma.getFullWidthModifiers(props))
-            .toEqual(expected);
-    });
-
     it('should getStateModifiers', () => {
         const props = {
             isActive: true,
             isFocused: true,
             isHovered: true,
-            isLoading: true,
         }
         const expected = {
             'is-active': true,
             'is-focused': true,
             'is-hovered': true,
-            'is-loading': true,
         }
         expect(Bulma.getStateModifiers(props))
+            .toEqual(expected);
+    });
+
+    it('should getLoadingModifiers', () => {
+        const props = {
+            isLoading: true,
+        }
+        const expected = {
+            'is-loading': true,
+        }
+        expect(Bulma.getLoadingModifiers(props))
             .toEqual(expected);
     });
 
@@ -147,7 +150,42 @@ describe('get*Modifiers functions', () => {
         expect(Bulma.getColorModifiers(props))
             .toEqual(expected);
     });
-})
+
+    it('should getHeadingModifiers', () => {
+        const props = {
+            is1: true,
+            is2: true,
+            is3: true,
+            is4: true,
+            is5: true,
+            is6: true,
+            isSpaced: true,
+        }
+        const expected = {
+            'is-1': props.is1,
+            'is-2': props.is2,
+            'is-3': props.is3,
+            'is-4': props.is4,
+            'is-5': props.is5,
+            'is-6': props.is6,
+            'is-spaced': props.isSpaced,
+        }
+        expect(Bulma.getHeadingModifiers(props))
+            .toEqual(expected);
+    });
+});
+
+describe('getHeadingElement', () => {
+    it('should return h1', () => {
+        const props = {
+            is1:true,
+            is3:false,
+            is4:true,
+        }
+        const actual = Bulma.getHeadingElement(props);
+        expect(actual).toBe('h1');
+    });
+});
 
 describe('withHelpersModifiers', () => {
     it('should render a Component without modification', () => {
@@ -179,12 +217,14 @@ describe('withHelpersModifiers', () => {
             )
         }
         const WithHelpersModifiersComponent = Bulma.withHelpersModifiers(Component);
-        const renderedComponent = <WithHelpersModifiersComponent isBlack isFlexDesktopOnly className='custom' />
+        const renderedComponent = <WithHelpersModifiersComponent isBlack isFlexDesktopOnly isFullWidth className='custom' />
         const shallowedComponent = shallow(renderedComponent);
-        
+
         expect(shallowedComponent.prop('isBlack')).toBe(true);
         expect(shallowedComponent.prop('isFlexDesktopOnly')).toBe(undefined);
+        expect(shallowedComponent.prop('isFullWidth')).toBe(undefined);
         expect(shallowedComponent.hasClass('custom')).toBe(true);
         expect(shallowedComponent.hasClass('is-flex-desktop-only')).toBe(true);
+        expect(shallowedComponent.hasClass('is-fullwidth')).toBe(true);
     });
-})
+});

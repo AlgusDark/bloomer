@@ -4,11 +4,6 @@ import * as ReactDOM from 'react-dom';
 import 'bulma/css/bulma.css';
 
 import {
-    Tabs,
-    Tab,
-    TabList,
-    TabLink,
-
     Message,
     MessageBody,
     MessageHeader,
@@ -30,6 +25,7 @@ import {
 
     Field,
     Control,
+    Input,
 
     Content,
 
@@ -42,7 +38,9 @@ import {
     Container,
 
     Section,
-} from './../src/index';
+} from './../src';
+
+import { Tabs, List, Tab, Link } from './../src/components/Tabs';
 
 ReactDOM.render(
     <section className='section'>
@@ -58,22 +56,28 @@ ReactDOM.render(
                 </Columns>
             </Section>
 
+            <Section isHiddenMobile>
+                <Control>
+                    <Input placeholder="Write something" />
+                </Control>
+            </Section>
+
             <Section>
                 <Tabs isCentered>
-                    <TabList>
+                    <List>
                         <Tab>
-                            <TabLink>Pictures</TabLink>
+                            <Link>Pictures</Link>
                         </Tab>
                         <Tab isActive>
-                            <TabLink>Music</TabLink>
+                            <Link>Music</Link>
                         </Tab>
                         <Tab>
-                            <TabLink>Videos</TabLink>
+                            <Link>Videos</Link>
                         </Tab>
                         <Tab>
-                            <TabLink render={props => (<a {...props}>Documents</a>)} />
+                            <Link render={props => (<a {...props}>Documents</a>)} />
                         </Tab>
-                    </TabList>
+                    </List>
                 </Tabs>
             </Section>
 
