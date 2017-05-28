@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { Field } from './../../../src/elements/Form/Field';
+import { Field } from './../../../../src/elements/Form/Field/Field';
 
 describe('Field', () => {
     it('should render a div with .field', () => {
@@ -15,13 +15,15 @@ describe('Field', () => {
                 isGrouped
                 isGroupedRight
                 isGroupedCentered
-                hasAddons />
+                hasAddons
+                isHorizontal />
         );
         expect(component.hasClass('field')).toBe(true);
         expect(component.hasClass('is-grouped')).toBe(true);
         expect(component.hasClass('is-grouped-right')).toBe(true);
         expect(component.hasClass('is-grouped-centered')).toBe(true);
         expect(component.hasClass('has-addons')).toBe(true);        
+        expect(component.hasClass('is-horizontal')).toBe(true);        
     });
 
     it('should render a div with .field and .has-addons-right', () => {

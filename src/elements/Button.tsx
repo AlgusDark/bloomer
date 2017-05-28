@@ -3,18 +3,19 @@ import * as classNames from 'classnames';
 
 import {
     Bulma,
-    removeStateProps, removeColorProps, removeFullWidthProps,
-    getStateModifiers, getColorModifiers, getFullWidthModifiers,
+    removeStateProps, removeColorProps, removeLoadingProps,
+    getStateModifiers, getColorModifiers, getLoadingModifiers,
     withHelpersModifiers,
 } from './../bulma';
 import { combineModifiers, getHTMLProps } from './../helpers';
 
 export interface Button<T> extends
-    Bulma.Render, Bulma.State, Bulma.Color,
+    Bulma.Render, Bulma.State, Bulma.Color, Bulma.Loading,
     React.HTMLProps<T> {
     isLink?: boolean,
     isOutlined?: boolean,
     isInverted?: boolean,
+    isStatic?: boolean,
 }
 
 export const Button: React.SFC<Button<HTMLButtonElement | HTMLAnchorElement>> = (props) => {
@@ -24,16 +25,17 @@ export const Button: React.SFC<Button<HTMLButtonElement | HTMLAnchorElement>> = 
             'is-link': props.isLink,
             'is-outlined': props.isOutlined,
             'is-inverted': props.isInverted,
-            ...combineModifiers(props, getStateModifiers, getColorModifiers, getFullWidthModifiers)
+            'is-static': props.isStatic,
+            ...combineModifiers(props, getStateModifiers, getColorModifiers, getLoadingModifiers)
         },
         props.className,
     );
-    const { render, isLink, isOutlined, isInverted, ...rest } = props;
+    const { render, isLink, isOutlined, isInverted, isStatic, ...rest } = props;
     const HTMLProps = getHTMLProps(
         rest,
         removeStateProps,
         removeColorProps,
-        removeFullWidthProps,
+        removeLoadingProps,
     );
 
     if (render) return render({ ...HTMLProps, className });

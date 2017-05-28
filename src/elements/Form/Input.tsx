@@ -3,31 +3,25 @@ import * as classNames from 'classnames';
 
 import {
     Bulma,
-    getColorModifiers, getSizeModifiers,
-    removeColorProps, removeSizeProps,
+    getColorModifiers, getSizeModifiers, getStateModifiers,
+    removeColorProps, removeSizeProps, removeStateProps,
     withHelpersModifiers,
 } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
-export interface Input<T> extends Bulma.Color, Bulma.Size,
+export interface Input<T> extends Bulma.Color, Bulma.Size, Bulma.State,
     React.HTMLProps<T> {
-    isActive?: boolean,
-    isHovered?: boolean,
-    isFocused?: boolean,
 }
 
 export const Input: React.SFC<Input<HTMLInputElement>> = (props) => {
     const className = classNames(
         'input',
         {
-            'is-active': props.isActive,
-            'is-hovered': props.isHovered,
-            'is-focused': props.isFocused,
-            ...combineModifiers(props, getColorModifiers, getSizeModifiers),
+            ...combineModifiers(props, getColorModifiers, getSizeModifiers, getStateModifiers),
         },
         props.className);
 
-    const HTMLProps = getHTMLProps(props, removeColorProps, removeSizeProps);
+    const HTMLProps = getHTMLProps(props, removeColorProps, removeSizeProps, removeStateProps);
 
     return (
         <input {...HTMLProps} className={className} type={props.type || 'text'} />

@@ -9,7 +9,7 @@ describe('Content', () => {
         expect(component.contains(<div className='content'>My Content</div>)).toBe(true);
     });
 
-    it('should render a div with .delete and custom classNames', () => {
+    it('should render a div with .content and custom classNames', () => {
         const component = shallow(<Content className='custom loader'>My Content</Content>);
         expect(component.hasClass('content')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);

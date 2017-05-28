@@ -4,7 +4,7 @@ Bulma-JSX
 [![Build Status](https://travis-ci.org/AlgusDark/bulma-jsx.svg?branch=master)](https://travis-ci.org/AlgusDark/bulma-jsx)
 [![Coverage Status](https://coveralls.io/repos/github/AlgusDark/bulma-jsx/badge.svg?branch=master)](https://coveralls.io/github/AlgusDark/bulma-jsx?branch=master)
 
-A set of React components for Bulma v0.4.x
+A set of React components for Bulma v0.4.1
 This repository is heavily under development and unstable.
 
 ## NPM
@@ -42,23 +42,15 @@ TODO
 - [x] Button
 - [x] Content
 - [x] Delete
-- [ ] Form
-    - [x] Control
-    - [x] Field
-    - [x] Label
-    - [x] Input
-    - [ ] TextArea
-    - [ ] Select
-    - [ ] CheckBox
-    - [ ] Radio
-    - [ ] Help
-- [ ] Icon
-- [ ] Image
-- [ ] Notification
-- [ ] Progress 
-- [ ] Table
-- [ ] Tag
-- [ ] Title
+- [x] Form
+- [x] Icon
+- [x] Image
+- [x] Notification
+- [x] Progress 
+- [x] Table
+    - `<tr>` has a `.is-selected` modifier, since **bulma-jsx** doesn't provide table rows, you should use this modifier manually.
+- [x] Tag
+- [x] Title / SubTitle
 
 #### Components
 

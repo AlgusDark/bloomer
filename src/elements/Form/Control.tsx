@@ -11,7 +11,7 @@ export interface Control<T> extends React.HTMLProps<T> {
     isLoading?: boolean,
 }
 
-export const Control: React.SFC<Control<HTMLParagraphElement>> = (props) => {
+export const Control: React.SFC<Control<HTMLDivElement>> = (props) => {
     const className = classNames(
         'control',
         {
@@ -30,7 +30,7 @@ export const Control: React.SFC<Control<HTMLParagraphElement>> = (props) => {
     } = props;
 
     return (
-        <p {...HTMLProps} className={className} />
+        <div {...HTMLProps} className={className} />
     )
 }
 
