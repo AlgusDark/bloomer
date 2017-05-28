@@ -38,9 +38,7 @@ export const Columns: React.SFC<Columns<HTMLDivElement>> = (props) => {
         ...HTMLProps } = props;
 
     return (
-        <div {...HTMLProps} className={className}>
-            {props.children}
-        </div>
+        <div {...HTMLProps} className={className} />
     )
 }
 

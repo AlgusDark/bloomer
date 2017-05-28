@@ -7,9 +7,7 @@ export const HeroFoot: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
     const className = classNames('hero-foot', props.className);
 
     return (
-        <div {...props} className={className}>
-            {props.children}
-        </div>
+        <div {...props} className={className} />
     )
 }
 

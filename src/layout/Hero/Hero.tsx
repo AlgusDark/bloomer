@@ -32,9 +32,7 @@ export const Hero: React.SFC<Hero<HTMLElement>> = (props) => {
     );
 
     return (
-        <section {...HTMLProps} className={className}>
-            {props.children}
-        </section>
+        <section {...HTMLProps} className={className} />
     )
 }
 

@@ -21,10 +21,16 @@ describe('Button', () => {
         expect(component.contains(customComponentRendered)).toBe(true);
     });
 
+    it('should render an anchor with .button:disabled', () => {
+        const component = shallow(<Button href='#' disabled />);
+        expect(component.contains(<a role='button' href='#' className='button' disabled />)).toBe(true);
+    });
+
     it('should render an anchor with .button', () => {
         const component = shallow(<Button href='#' />);
         expect(component.contains(<a role='button' href='#' className='button' />)).toBe(true);
     });
+
     it('should render an anchor with .button with modifiers', () => {
         const component = shallow(<Button href='#' isLink
             isOutlined
@@ -50,10 +56,18 @@ describe('Button', () => {
         expect(component.contains(<button type='button' className='button' />)).toBe(true);
     });
 
+    it('should render a button with .button:disabled', () => {
+        const component = shallow(<Button disabled />);
+        expect(component.contains(<button type='button' className='button' disabled />)).toBe(true);
+    });
+
     it('should render a button with .button with modifiers', () => {
-        const component = shallow(<Button isLink
-            isOutlined
-            isInverted />);
+        const component = shallow(
+            <Button isLink
+                isOutlined
+                isInverted
+                isStatic />
+        );
         expect(component.is('button')).toBe(true);
         expect(component.hasClass('button')).toBe(true);
         expect(component.hasClass('is-link')).toBe(true);

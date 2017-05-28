@@ -7,9 +7,7 @@ export const MenuLabel: React.SFC<React.HTMLProps<HTMLParagraphElement>> = (prop
     const className = classNames('menu-label', props.className);
 
     return (
-        <p {...props} className={className}>
-            {props.children}
-        </p>
+        <p {...props} className={className} />
     )
 }
 

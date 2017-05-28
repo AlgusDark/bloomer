@@ -21,9 +21,7 @@ export const Section: React.SFC<Section<HTMLElement>> = (props) => {
     const { isMedium, isLarge, ...HTMLProps } = props;
 
     return (
-        <section {...HTMLProps} className={className}>
-            {props.children}
-        </section>
+        <section {...HTMLProps} className={className} />
     )
 }
 

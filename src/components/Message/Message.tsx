@@ -15,9 +15,7 @@ export const Message: React.SFC<Message<HTMLElement>> = (props) => {
     const HTMLProps = getHTMLProps(props, removeColorProps);
 
     return (
-        <article {...HTMLProps} className={className}>
-            {props.children}
-        </article>
+        <article {...HTMLProps} className={className} />
     )
 }
 

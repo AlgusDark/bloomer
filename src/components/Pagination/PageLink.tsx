@@ -28,9 +28,7 @@ export const PageLink: React.SFC<PageLink<HTMLAnchorElement>> = (props) => {
     if (render) return render({ ...HTMLProps, className });
 
     return (
-        <a {...HTMLProps} className={className}>
-            {props.children}
-        </a>
+        <a {...HTMLProps} className={className} />
     )
 }
 

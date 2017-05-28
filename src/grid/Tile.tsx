@@ -36,9 +36,7 @@ export const Tile: React.SFC<Tile<HTMLDivElement>> = (props) => {
     const HTMLProps = getHTMLProps(rest, removeHorizontalSizeProps);
 
     return (
-        <div {...HTMLProps} className={className}>
-            {props.children}
-        </div>
+        <div {...HTMLProps} className={className} />
     )
 }
 

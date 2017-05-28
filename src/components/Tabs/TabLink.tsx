@@ -10,9 +10,7 @@ export const TabLink: React.SFC<TabLink<HTMLAnchorElement>> = (props) => {
     if (render) return render({ ...HTMLProps });
 
     return (
-        <a {...HTMLProps}>
-            {props.children}
-        </a>
+        <a {...HTMLProps} />
     )
 }
 
