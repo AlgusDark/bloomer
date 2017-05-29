@@ -4,8 +4,8 @@
   "description": "A set of React Components for Bulma CSS",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "jsnext:main": "lib-esm/index.js",
-  "module": "lib-esm/index.js",
+  "jsnext:main": "es6/index.js",
+  "module": "es6/index.js",
   "dependencies": {
     "classnames": "^2.2.5",
     "tslib": "^1.7.0"
@@ -37,8 +37,8 @@
     "test": "jest",
     "test:ci": "jest --coverage && cat ./reports/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage": "jest --coverage",
-    "build": "npm run clean && tsc && tsc -m es6 --outDir lib-esm && NODE_ENV=production webpack",
-    "clean": "shx rm -rf lib lib-esm bundles",
+    "build": "npm run clean && tsc && tsc -m es6 -t ESNext --outDir es6 --importHelpers false && NODE_ENV=production webpack",
+    "clean": "shx rm -rf lib es6 bundles",
     "prepublish": "npm run build"
   },
   "jest": {
