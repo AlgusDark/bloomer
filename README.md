@@ -18,7 +18,7 @@ $ npm install bulma-jsx --save
 
 ## Yarn
 ```sh
-$ npm install bulma-jsx --save
+$ yarn add bulma-jsx
 ```
 
 ## Usage
