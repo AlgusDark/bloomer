@@ -10,6 +10,7 @@ export { default as Table } from './Table';
 export { default as Tag } from './Tag';
 export { default as Title } from './Title';
 export { default as SubTitle } from './SubTitle';
+export { default as Heading } from './Heading';
 
 export {
     Field,
