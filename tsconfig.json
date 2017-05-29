@@ -26,7 +26,7 @@
     "bundles",
     "example",
     "lib",
-    "es6",
+    "esm",
     "src/**/*.test.*"
   ],
   "compileOnSave": false,
