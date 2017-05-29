@@ -3,6 +3,6 @@
 
 bundles/
 lib/
-lib-esm/
+es6/
 node_modules/
 reports
