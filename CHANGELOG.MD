@@ -1,5 +1,10 @@
 # Bulma-jsx Changelog
 
+## 0.3.0 - 2017-05-29
+### Added
+- All Bulma/Components.
+- This is the first release with all Bulma Components (components/elements/grid/layout).
+
 ## 0.2.5 - 2017-05-28
 ### Added
 - This changelog.
