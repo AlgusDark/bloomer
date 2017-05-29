@@ -7,34 +7,34 @@ export {
     Content as CardContent,
     Footer as CardFooter,
     Item as CardFooterItem,
-} from './components/Card';
+} from './Card';
 
 export {
     Level,
     Item as LevelItem,
     Left as LevelLeft,
     Right as LevelRight,
-} from './components/Level';
+} from './Level';
 
 export {
     Media,
     Content as MediaContent,
     Left as MediaLeft,
     Right as MediaRight,
-} from './components/Media';
+} from './Media';
 
 export {
     Menu,
     Label as MenuLabel,
     List as MenuList,
     Link as MenuLink,
-} from './components/Menu';
+} from './Menu';
 
 export {
     Message,
     Header as MessageHeader,
     Body as MessageBody,
-} from './components/Message';
+} from './Message';
 
 export {
     Modal,
@@ -47,7 +47,7 @@ export {
     ModalCardTitle,
     ModalCardBody,
     ModalCardFooter,
-} from './components/Modal';
+} from './Modal';
 
 export {
     Nav,
@@ -56,7 +56,7 @@ export {
     Right as NavRight,
     Toggle as NavToggle,
     Item as NavItem,
-} from './components/Nav';
+} from './Nav';
 
 export {
     Pagination,
@@ -65,7 +65,7 @@ export {
     Page,
     List as PageList,
     Link as PageLink,
-} from './components/Pagination';
+} from './Pagination';
 
 export {
     Panel,
@@ -74,55 +74,11 @@ export {
     Tab as PanelTab,
     Block as PanelBlock,
     Icon as PanelIcon,
-} from './components/Panel';
+} from './Panel';
 
 export {
     Tabs,
     Tab,
     List as TabList,
     Link as TabLink,
-} from './components/Tabs';
-
-export {
-    Box,
-    Button,
-    Content,
-    Delete,
-    Icon,
-    Image,
-    Notification,
-    Progress,
-    Table,
-    Tag,
-    Title,
-    SubTitle,
-    Heading,
-} from './elements';
-
-export {
-    Field, FieldBody, FieldLabel,
-    Checkbox,
-    Control,
-    Help,
-    Input,
-    Label,
-    Radio,
-    Select,
-    TextArea,
-} from './elements/Form/';
-
-export {
-    Columns,
-    Column,
-    Tile,
-} from './grid';
-
-export {
-    Container,
-    Footer,
-    Section,
-    Hero,
-    HeroHeader,
-    HeroBody,
-    HeroFooter,
-} from './layout'
+} from './Tabs';

@@ -1,2 +1,2 @@
-import { default as Footer } from './CardFooter';
-import { default as Item } from './CardFooterItem';
+export { default as Footer } from './CardFooter';
+export { default as Item } from './CardFooterItem';

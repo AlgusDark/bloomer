@@ -467,7 +467,7 @@ export function withHelpersModifiers<T>(Component: Bulma.Component<T>): React.Co
             );
 
             // TODO
-            // Without "as any", this gives me the error:
+            // Without "as any", this gives an error:
             const props: any = getHTMLProps(
                 this.props,
                 removeHelpersProps,

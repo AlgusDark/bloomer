@@ -56,13 +56,13 @@ TODO
 
 - [x] Card
 - [x] Level
-- [ ] Media object
+- [x] Media object
 - [x] Menu
 - [x] Message
-- [ ] Modal
-- [ ] Nav
+- [x] Modal
+- [x] Nav
 - [x] Pagination
-- [ ] Panel
+- [x] Panel
 - [x] Tabs
 
 #### Layout
