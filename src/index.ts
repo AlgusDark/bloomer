@@ -17,6 +17,13 @@ export {
 } from './components/Tabs';
 
 export {
+    Level,
+    Item as LevelItem,
+    Left as LevelLeft,
+    Right as LevelRight,
+} from './components/Level'
+
+export {
     Menu,
     Label as MenuLabel,
     List as MenuList,
@@ -51,6 +58,7 @@ export {
     Tag,
     Title,
     SubTitle,
+    Heading,
 } from './elements';
 
 export {
