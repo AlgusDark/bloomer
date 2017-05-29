@@ -1,9 +1,27 @@
 export {
-    Tabs,
-    Tab,
-    List as TabList,
-    Link as TabLink,
-} from './components/Tabs';
+    Card,
+    Image as CardImage,
+    Header as CardHeader,
+    Title as CardHeaderTitle,
+    Icon as CardHeaderIcon,
+    Content as CardContent,
+    Footer as CardFooter,
+    Item as CardFooterItem,
+} from './components/Card';
+
+export {
+    Level,
+    Item as LevelItem,
+    Left as LevelLeft,
+    Right as LevelRight,
+} from './components/Level';
+
+export {
+    Media,
+    Content as MediaContent,
+    Left as MediaLeft,
+    Right as MediaRight,
+} from './components/Media';
 
 export {
     Menu,
@@ -19,13 +37,51 @@ export {
 } from './components/Message';
 
 export {
+    Modal,
+    ModalBackground,
+    ModalContent,
+    ModalClose,
+
+    ModalCard,
+    ModalCardHeader,
+    ModalCardTitle,
+    ModalCardBody,
+    ModalCardFooter,
+} from './components/Modal';
+
+export {
+    Nav,
+    Left as NavLeft,
+    Center as NavCenter,
+    Right as NavRight,
+    Toggle as NavToggle,
+    Item as NavItem,
+} from './components/Nav';
+
+export {
     Pagination,
     Control as PageControl,
-    Ellipsis,
+    Ellipsis as PageEllipsis,
     Page,
     List as PageList,
     Link as PageLink,
 } from './components/Pagination';
+
+export {
+    Panel,
+    Heading as PanelHeading,
+    Tabs as PanelTabs,
+    Tab as PanelTab,
+    Block as PanelBlock,
+    Icon as PanelIcon,
+} from './components/Panel';
+
+export {
+    Tabs,
+    Tab,
+    List as TabList,
+    Link as TabLink,
+} from './components/Tabs';
 
 export {
     Box,
@@ -40,6 +96,7 @@ export {
     Tag,
     Title,
     SubTitle,
+    Heading,
 } from './elements';
 
 export {
@@ -64,11 +121,8 @@ export {
     Container,
     Footer,
     Section,
-} from './layout'
-
-export {
     Hero,
-    Head as HeroHead,
-    Body as HeroBody,
-    Foot as HeroFoot,
-} from './layout/Hero';
+    HeroHeader,
+    HeroBody,
+    HeroFooter,
+} from './layout'

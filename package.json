@@ -1,11 +1,11 @@
 {
   "name": "bulma-jsx",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "A set of React Components for Bulma CSS",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "jsnext:main": "lib-esm/index.js",
-  "module": "lib-esm/index.js",
+  "jsnext:main": "esm/index.js",
+  "module": "esm/index.js",
   "dependencies": {
     "classnames": "^2.2.5",
     "tslib": "^1.7.0"
@@ -37,8 +37,8 @@
     "test": "jest",
     "test:ci": "jest --coverage && cat ./reports/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage": "jest --coverage",
-    "build": "npm run clean && tsc && tsc -m es6 --outDir lib-esm && NODE_ENV=production webpack",
-    "clean": "shx rm -rf lib lib-esm bundles",
+    "build": "npm run clean && tsc && tsc -m es6 --outDir esm && NODE_ENV=production webpack",
+    "clean": "shx rm -rf lib esm bundles",
     "prepublish": "npm run build"
   },
   "jest": {

@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { HeroHead } from './../../../src/layout/Hero/HeroHead';
+import { HeroHeader } from './../../../src/layout/Hero/HeroHeader';
 
-describe('HeroHead', () => {
+describe('HeroHeader', () => {
     it('should render a div with .hero-head', () => {
-        const component = shallow(<HeroHead>Any Content</HeroHead>);
+        const component = shallow(<HeroHeader>Any Content</HeroHeader>);
         expect(component.contains(<div className='hero-head'>Any Content</div>)).toBe(true);
     });
 
     it('should render a div with .hero-head and custom classNames', () => {
-        const component = shallow(<HeroHead className='custom loader' />);
+        const component = shallow(<HeroHeader className='custom loader' />);
         expect(component.hasClass('hero-head')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);
         expect(component.hasClass('loader')).toBe(true);
