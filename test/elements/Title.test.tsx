@@ -51,6 +51,28 @@ describe('Title', () => {
         expect(component.hasClass('is-spaced')).toBe(true);
     });
 
+     it('should render a paragraph with .title', () => {
+        const component = shallow(<Title isParagraph>My Title</Title>);
+        expect(component.contains(<p className='title'>My Title</p>)).toBe(true);
+    });
+
+    it('should render a paragraph with .title and modifiers', () => {
+        const component = shallow(<Title isParagraph isSpaced is3>My Title</Title>);
+        expect(component.is('p')).toBe(true);
+        expect(component.hasClass('title')).toBe(true);
+        expect(component.hasClass('is-spaced')).toBe(true);
+        expect(component.hasClass('is-3')).toBe(true);
+    });
+
+    it('should render a paragraph with .title, modifiers and classNames', () => {
+        const component = shallow(<Title isParagraph isSpaced is3 className='custom'>My Title</Title>);
+        expect(component.is('p')).toBe(true);
+        expect(component.hasClass('title')).toBe(true);
+        expect(component.hasClass('is-spaced')).toBe(true);
+        expect(component.hasClass('is-3')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
+    });
+
     it('should render a h1 with .title, modifiers and classNames', () => {
         const component = shallow(<Title is1 isSpaced className='custom'>My Title</Title>);
         expect(component.hasClass('title')).toBe(true);

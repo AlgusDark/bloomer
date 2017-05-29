@@ -44,7 +44,7 @@ export declare namespace Bulma {
         isDanger?: boolean,
     }
 
-    export interface Headings {
+    export interface Heading {
         is1?: boolean,
         is2?: boolean,
         is3?: boolean,
@@ -52,6 +52,7 @@ export declare namespace Bulma {
         is5?: boolean,
         is6?: boolean,
         isSpaced?: boolean,
+        isParagraph?: boolean,
     }
 
     export interface Grid extends Grid.HorizontalSize,
@@ -267,7 +268,7 @@ export function removeColorProps(props: Bulma.Color) {
     return rest;
 }
 
-export function getHeadingElement(props: Bulma.Headings) {
+export function getHeadingElement(props: Bulma.Heading) {
     let element = 'h1';
 
     if (props.is1) {
@@ -292,7 +293,7 @@ export function getHeadingElement(props: Bulma.Headings) {
     return element;
 }
 
-export function getHeadingModifiers(props: Bulma.Headings) {
+export function getHeadingModifiers(props: Bulma.Heading) {
     return {
         'is-1': props.is1,
         'is-2': props.is2,
@@ -304,7 +305,7 @@ export function getHeadingModifiers(props: Bulma.Headings) {
     }
 }
 
-export function removeHeadingProps(props: Bulma.Headings) {
+export function removeHeadingProps(props: Bulma.Heading) {
     const {
         is1,
         is2,
@@ -313,6 +314,7 @@ export function removeHeadingProps(props: Bulma.Headings) {
         is5,
         is6,
         isSpaced,
+        isParagraph,
         ...rest } = props;
     return rest;
 }
