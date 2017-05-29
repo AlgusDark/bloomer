@@ -54,8 +54,8 @@ TODO
 
 #### Components
 
-- [ ] Card
-- [ ] Level
+- [x] Card
+- [x] Level
 - [ ] Media object
 - [x] Menu
 - [x] Message
