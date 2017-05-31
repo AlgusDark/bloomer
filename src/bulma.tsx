@@ -58,7 +58,6 @@ export declare namespace Bulma {
 
     }
 
-    // 
     export type Platform = 'mobile' | 'm' | 'tablet' | 'tt' | 'touch' | 't' | 'desktop' | 'd' | 'widescreen' | 'w';
     export type PlatformOnly = 'tablet' | 'tt' | 'desktop' | 'd';
 
@@ -114,12 +113,10 @@ export declare namespace Bulma {
         Helpers {
     }
 
-    // Renderable
     export interface Render {
         render?: Function
     }
 
-    // All Non HTML Props
     export interface NonHTMLProps extends
         Modifiers, Render {
     }
@@ -232,6 +229,7 @@ export function removeColorProps(props: Bulma.Color) {
 }
 
 const isValidHeading = isBetween(1, 6);
+
 export function getHeadingElement({ isHeading: heading }: Bulma.Heading, defaultHeading: Bulma.HeadingSize = 1) {
     return isValidHeading(heading) ? `h${heading}` : `h${defaultHeading}`
 }
@@ -292,27 +290,25 @@ const reducerModifier = (helper: string) => (init: object, option: string) => {
     return init;
 }
 
-const getResponsiveModifiers = (modifier: boolean | Bulma.Platform | Bulma.Platform[], modifierOnly: Bulma.PlatformOnly | Bulma.PlatformOnly[], helper: string) => {
+const getResponsiveModifierFactory = (modifier, helper, reducer) => {
     if (typeof modifier === 'string') {
-        const getModifier = reducerModifier(helper);
+        const getModifier = reducer(helper);
         return getModifier({}, modifier.toLowerCase().trim());
     }
     else if (Array.isArray(modifier)) {
         return modifier.map(str => str.toLowerCase().trim())
-            .reduce(reducerModifier(helper), {})
+            .reduce(reducer(helper), {})
     }
     else if (modifier === true) {
         return { [`is-${helper}`]: true }
     }
 
-    if (typeof modifierOnly === 'string') {
-        const getModifierOnly = reducerModifierOnly(helper)
-        return getModifierOnly({}, modifierOnly.toLowerCase().trim());
-    }
-    else if(Array.isArray(modifierOnly)) {
-        return modifierOnly.map(str => str.toLowerCase().trim())
-            .reduce(reducerModifierOnly(helper), {})
-    }
+    return {};
+}
+
+const getResponsiveModifiers = (modifier: boolean | Bulma.Platform | Bulma.Platform[], modifierOnly: Bulma.PlatformOnly | Bulma.PlatformOnly[], helper: string) => {
+    if (modifier) return getResponsiveModifierFactory(modifier, helper, reducerModifier);
+    if (modifierOnly) return getResponsiveModifierFactory(modifierOnly, helper, reducerModifierOnly);
 
     return {};
 }
