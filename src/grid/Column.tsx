@@ -6,29 +6,24 @@ import {
     getHorizontalSizeModifiers, removeHorizontalSizeProps,
     getSizeModifiers, removeSizeProps,
     getOffsetModifiers, removeOffsetProps,
-    getMobileModifiers, removeMobileProps,
-    getTabletModifiers, removeTabletProps,
-    getDesktopModifiers, removeDesktopProps,
 } from './grid';
 import { Bulma, withHelpersModifiers } from './../bulma';
 import { getHTMLProps, combineModifiers } from './../helpers';
 
 export interface Column<T> extends
     Grid.HorizontalSize, Grid.Size, Grid.Offset,
-    Grid.Mobile, Grid.Tablet, Grid.Desktop,
     React.HTMLProps<T> { }
 
 export const Column: React.SFC<Column<HTMLDivElement>> = (props) => {
     const className = classNames(
         'column',
         {
-            ...combineModifiers(props,
-                getSizeModifiers,
+            ...combineModifiers(
+                props,
                 getHorizontalSizeModifiers,
+                getSizeModifiers,
                 getOffsetModifiers,
-                getMobileModifiers,
-                getTabletModifiers,
-                getDesktopModifiers)
+            )
         },
         props.className
     );
@@ -38,13 +33,10 @@ export const Column: React.SFC<Column<HTMLDivElement>> = (props) => {
         removeHorizontalSizeProps,
         removeSizeProps,
         removeOffsetProps,
-        removeMobileProps,
-        removeTabletProps,
-        removeDesktopProps,
     );
 
     return (
-        <div {...HTMLProps} className={className}/>
+        <div {...HTMLProps} className={className} />
     )
 }
 

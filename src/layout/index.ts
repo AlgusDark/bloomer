@@ -6,5 +6,6 @@ export {
     Hero,
     Header as HeroHeader,
     Body as HeroBody,
+    Video as HeroVideo,
     Footer as HeroFooter,
 } from './Hero';

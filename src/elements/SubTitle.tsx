@@ -24,7 +24,7 @@ export const SubTitle: React.SFC<SubTitle<HTMLHeadingElement | HTMLParagraphElem
 
     if (props.isParagraph) return <p {...HTMLProps} className={className} />
 
-    const element = getHeadingElement(props);
+    const element = getHeadingElement(props, 2);
 
     return React.createElement(element, { ...HTMLProps, className });
 }

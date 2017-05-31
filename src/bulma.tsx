@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 
 import { Grid } from './grid/grid';
-import { combineModifiers, getHTMLProps } from './helpers';
+import { combineModifiers, getHTMLProps, isBetween } from './helpers';
 
 export declare namespace Bulma {
     // Modifiers
@@ -44,101 +44,64 @@ export declare namespace Bulma {
         isDanger?: boolean,
     }
 
+    export type HeadingSize = 1 | 2 | 3 | 4 | 5 | 6;
+
     export interface Heading {
-        is1?: boolean,
-        is2?: boolean,
-        is3?: boolean,
-        is4?: boolean,
-        is5?: boolean,
-        is6?: boolean,
+        isHeading?: HeadingSize,
+        isSize?: HeadingSize,
         isSpaced?: boolean,
         isParagraph?: boolean,
     }
 
-    export interface Grid extends Grid.HorizontalSize,
-        Grid.Size,
-        Grid.Offset,
-        Grid.Mobile,
-        Grid.Tablet,
-        Grid.Desktop {
+    export interface Grid extends Grid.Size,
+        Grid.Offset {
 
     }
 
+    // 
+    export type Platform = 'mobile' | 'm' | 'tablet' | 'tt' | 'touch' | 't' | 'desktop' | 'd' | 'widescreen' | 'w';
+    export type PlatformOnly = 'tablet' | 'tt' | 'desktop' | 'd';
+
     export interface Show {
-        isFlexMobile?: boolean,
-        isFlexTabletOnly?: boolean,
-        isFlexDesktopOnly?: boolean,
-        isFlexWidescreen?: boolean,
-        isFlexTouch?: boolean,
-        isFlexTablet?: boolean,
-        isFlexDesktop?: boolean,
+        isFlex?: boolean | Platform | Platform[],
+        isFlexOnly?: PlatformOnly | PlatformOnly[],
 
-        isBlockMobile?: boolean,
-        isBlockTabletOnly?: boolean,
-        isBlockDesktopOnly?: boolean,
-        isBlockWidescreen?: boolean,
-        isBlockTouch?: boolean,
-        isBlockTablet?: boolean,
-        isBlockDesktop?: boolean,
+        isBlock?: boolean | Platform | Platform[],
+        isBlockOnly?: PlatformOnly | PlatformOnly[],
 
-        isInlineMobile?: boolean,
-        isInlineTabletOnly?: boolean,
-        isInlineDesktopOnly?: boolean,
-        isInlineWidescreen?: boolean,
-        isInlineTouch?: boolean,
-        isInlineTablet?: boolean,
-        isInlineDesktop?: boolean,
+        isInline?: boolean | Platform | Platform[],
+        isInlineOnly?: PlatformOnly | PlatformOnly[],
 
-        isInlineBlockMobile?: boolean,
-        isInlineBlockTabletOnly?: boolean,
-        isInlineBlockDesktopOnly?: boolean,
-        isInlineBlockWidescreen?: boolean,
-        isInlineBlockTouch?: boolean,
-        isInlineBlockTablet?: boolean,
-        isInlineBlockDesktop?: boolean,
+        isInlineBlock?: boolean | Platform | Platform[],
+        isInlineBlockOnly?: PlatformOnly | PlatformOnly[],
 
-        isInlineFlexMobile?: boolean,
-        isInlineFlexTabletOnly?: boolean,
-        isInlineFlexDesktopOnly?: boolean,
-        isInlineFlexWidescreen?: boolean,
-        isInlineFlexTouch?: boolean,
-        isInlineFlexTablet?: boolean,
-        isInlineFlexDesktop?: boolean,
+        isInlineFlex?: boolean | Platform | Platform[],
+        isInlineFlexOnly?: PlatformOnly | PlatformOnly[],
     }
 
     export interface Hide {
-        isHiddenMobile?: boolean,
-        isHiddenTabletOnly?: boolean,
-        isHiddenDesktopOnly?: boolean,
-        isHiddenWidescreen?: boolean,
-        isHiddenTouch?: boolean,
-        isHiddenTablet?: boolean,
-        isHiddenDesktop?: boolean,
+        isHidden?: boolean | Platform[],
+        isHiddenOnly?: PlatformOnly | PlatformOnly[],
     }
 
     export interface Responsive extends Show, Hide {
     }
 
-    export interface Helpers extends FullWidth, Responsive {
-        isFlex?: boolean,
-        isBlock?: boolean,
-        isInline?: boolean,
-        isInlineBlock?: boolean,
-        isInlineFlex?: boolean,
+    export type Align = 'left' | 'l' | 'right' | 'r';
 
+    export interface Helpers extends FullWidth, Responsive {
         isClearfix?: boolean,
-        isPulledLeft?: boolean,
-        isPulledRight?: boolean,
+        isPulled?: Align,
 
         isOverlay?: boolean,
 
-        hasTextCentered?: boolean,
-        hasTextLeft?: boolean,
-        hasTextRigh?: boolean,
+        hasAlignedText?: Align | 'center' | 'centered' | 'c',
 
         isMarginless?: boolean,
         isPaddingless?: boolean,
         isUnselectable?: boolean,
+
+        hasColor?: 'white' | 'light' | 'dark' | 'black' | 'primary' | 'info' | 'success' | 'warning' | 'danger',
     }
 
     export interface Modifiers extends
@@ -268,212 +231,197 @@ export function removeColorProps(props: Bulma.Color) {
     return rest;
 }
 
-export function getHeadingElement(props: Bulma.Heading) {
-    let element = 'h1';
-
-    if (props.is1) {
-        element = 'h1';
-    }
-    else if (props.is2) {
-        element = 'h2';
-    }
-    else if (props.is3) {
-        element = 'h3';
-    }
-    else if (props.is4) {
-        element = 'h4';
-    }
-    else if (props.is5) {
-        element = 'h5';
-    }
-    else if (props.is6) {
-        element = 'h6';
-    }
-
-    return element;
+const isValidHeading = isBetween(1, 6);
+export function getHeadingElement({ isHeading: heading }: Bulma.Heading, defaultHeading: Bulma.HeadingSize = 1) {
+    return isValidHeading(heading) ? `h${heading}` : `h${defaultHeading}`
 }
 
-export function getHeadingModifiers(props: Bulma.Heading) {
+export function getHeadingModifiers({ isSpaced, isSize: size }: Bulma.Heading) {
     return {
-        'is-1': props.is1,
-        'is-2': props.is2,
-        'is-3': props.is3,
-        'is-4': props.is4,
-        'is-5': props.is5,
-        'is-6': props.is6,
-        'is-spaced': props.isSpaced,
+        [`is-${size}`]: isValidHeading(size),
+        'is-spaced': isSpaced,
     }
 }
 
 export function removeHeadingProps(props: Bulma.Heading) {
     const {
-        is1,
-        is2,
-        is3,
-        is4,
-        is5,
-        is6,
+        isSize,
+        isHeading,
         isSpaced,
         isParagraph,
         ...rest } = props;
     return rest;
 }
 
-function getHelpersModifiers(props: Bulma.Helpers) {
+const is = (options) => (str: string): boolean => options[str] || false;
+
+const isMobile = is({ 'mobile': true, 'm': true, });
+const isTablet = is({ 'tablet': true, 'tt': true, });
+const isTouch = is({ 'touch': true, 't': true, });
+const isDesktop = is({ 'desktop': true, 'd': true, });
+const isWidescreen = is({ 'widescreen': true, 'w': true, });
+
+const isLeft = is({ 'left': true, 'l': true, });
+const isRight = is({ 'right': true, 'r': true, });
+const isCentered = is({ 'center': true, 'centered': true, 'c': true });
+
+const isColor = is({
+    'white': true,
+    'light': true,
+    'dark': true,
+    'black': true,
+    'primary': true,
+    'info': true,
+    'success': true,
+    'warning': true,
+    'danger': true,
+})
+
+const reducerModifierOnly = (helper: string) => (init: object, option: string) => {
+    if (isTablet(option)) return { ...init, [`is-${helper}-tablet-only`]: true };
+    if (isDesktop(option)) return { ...init, [`is-${helper}-desktop-only`]: true };
+    return init;
+}
+
+const reducerModifier = (helper: string) => (init: object, option: string) => {
+    if (isMobile(option)) return { ...init, [`is-${helper}-mobile`]: true };
+    if (isTablet(option)) return { ...init, [`is-${helper}-tablet`]: true };
+    if (isTouch(option)) return { ...init, [`is-${helper}-touch`]: true };
+    if (isDesktop(option)) return { ...init, [`is-${helper}-desktop`]: true };
+    if (isWidescreen(option)) return { ...init, [`is-${helper}-widescreen`]: true };
+    return init;
+}
+
+const getResponsiveModifiers = (modifier: boolean | Bulma.Platform | Bulma.Platform[], modifierOnly: Bulma.PlatformOnly | Bulma.PlatformOnly[], helper: string) => {
+    if (typeof modifier === 'string') {
+        const getModifier = reducerModifier(helper);
+        return getModifier({}, modifier.toLowerCase().trim());
+    }
+    else if (Array.isArray(modifier)) {
+        return modifier.map(str => str.toLowerCase().trim())
+            .reduce(reducerModifier(helper), {})
+    }
+    else if (modifier === true) {
+        return { [`is-${helper}`]: true }
+    }
+
+    if (typeof modifierOnly === 'string') {
+        const getModifierOnly = reducerModifierOnly(helper)
+        return getModifierOnly({}, modifierOnly.toLowerCase().trim());
+    }
+    else if(Array.isArray(modifierOnly)) {
+        return modifierOnly.map(str => str.toLowerCase().trim())
+            .reduce(reducerModifierOnly(helper), {})
+    }
+
+    return {};
+}
+
+const getAlignModifier = (modifier: string, helper: string) => {
+    if (isLeft(modifier)) {
+        return { [`${helper}-left`]: true }
+    }
+    else if (isRight(modifier)) {
+        return { [`${helper}-right`]: true }
+    }
+    else if (isCentered(modifier)) {
+        return { [`${helper}-centered`]: true }
+    }
+    return {};
+}
+
+const getColorModifier = (modifier: string) => {
+    return isColor(modifier) ? { [`has-text-${modifier}`]: true } : {}
+}
+
+function getHelpersModifiers(
+    {
+        isFlex,
+        isFlexOnly,
+        isBlock,
+        isBlockOnly,
+        isInline,
+        isInlineOnly,
+        isInlineBlock,
+        isInlineBlockOnly,
+        isInlineFlex,
+        isInlineFlexOnly,
+        isHidden,
+        isHiddenOnly,
+        isPulled,
+        hasAlignedText,
+        isClearfix,
+        isOverlay,
+        isMarginless,
+        isPaddingless,
+        isUnselectable,
+        hasColor,
+    }: Bulma.Helpers) {
     return {
-        'is-flex': props.isFlex,
-        'is-block': props.isBlock,
-        'is-inline': props.isInline,
-        'is-inline-block': props.isInlineBlock,
-        'is-inline-flex': props.isInlineFlex,
-
-        'is-flex-mobile': props.isFlexMobile,
-        'is-flex-tablet-only': props.isFlexTabletOnly,
-        'is-flex-desktop-only': props.isFlexDesktopOnly,
-        'is-flex-widescreen': props.isFlexWidescreen,
-        'is-flex-touch': props.isFlexTouch,
-        'is-flex-tablet': props.isFlexTablet,
-        'is-flex-desktop': props.isFlexDesktop,
-
-        'is-block-mobile': props.isBlockMobile,
-        'is-block-tablet-only': props.isBlockTabletOnly,
-        'is-block-desktop-only': props.isBlockDesktopOnly,
-        'is-block-widescreen': props.isBlockWidescreen,
-        'is-block-touch': props.isBlockTouch,
-        'is-block-tablet': props.isBlockTablet,
-        'is-block-desktop': props.isBlockDesktop,
-
-        'is-inline-mobile': props.isInlineMobile,
-        'is-inline-tablet-only': props.isInlineTabletOnly,
-        'is-inline-desktop-only': props.isInlineDesktopOnly,
-        'is-inline-widescreen': props.isInlineWidescreen,
-        'is-inline-touch': props.isInlineTouch,
-        'is-inline-tablet': props.isInlineTablet,
-        'is-inline-desktop': props.isInlineDesktop,
-
-        'is-inline-block-mobile': props.isInlineBlockMobile,
-        'is-inline-block-tablet-only': props.isInlineBlockTabletOnly,
-        'is-inline-block-desktop-only': props.isInlineBlockDesktopOnly,
-        'is-inline-block-widescreen': props.isInlineBlockWidescreen,
-        'is-inline-block-touch': props.isInlineBlockTouch,
-        'is-inline-block-tablet': props.isInlineBlockTablet,
-        'is-inline-block-desktop': props.isInlineBlockDesktop,
-
-        'is-inline-flex-mobile': props.isInlineFlexMobile,
-        'is-inline-flex-tablet-only': props.isInlineFlexTabletOnly,
-        'is-inline-flex-desktop-only': props.isInlineFlexDesktopOnly,
-        'is-inline-flex-widescreen': props.isInlineFlexWidescreen,
-        'is-inline-flex-touch': props.isInlineFlexTouch,
-        'is-inline-flex-tablet': props.isInlineFlexTablet,
-        'is-inline-flex-desktop': props.isInlineFlexDesktop,
-
-        'is-hidden-mobile': props.isHiddenMobile,
-        'is-hidden-tablet-only': props.isHiddenTabletOnly,
-        'is-hidden-desktop-only': props.isHiddenDesktopOnly,
-        'is-hidden-widescreen': props.isHiddenWidescreen,
-        'is-hidden-touch': props.isHiddenTouch,
-        'is-hidden-tablet': props.isHiddenTablet,
-        'is-hidden-desktop': props.isHiddenDesktop,
-
-        'is-clearfix': props.isClearfix,
-        'is-pulled-left': props.isPulledLeft,
-        'is-pulled-right': props.isPulledRight,
-
-        'is-overlay': props.isOverlay,
-
-        'has-text-centered': props.hasTextCentered,
-        'has-text-left': props.hasTextLeft,
-        'has-text-righ': props.hasTextRigh,
-
-        'is-marginless': props.isMarginless,
-        'is-paddingless': props.isPaddingless,
-        'is-unselectable': props.isUnselectable,
+        ...getResponsiveModifiers(isFlex, isFlexOnly, 'flex'),
+        ...getResponsiveModifiers(isBlock, isBlockOnly, 'block'),
+        ...getResponsiveModifiers(isInline, isInlineOnly, 'inline'),
+        ...getResponsiveModifiers(isInlineBlock, isInlineBlockOnly, 'inline-block'),
+        ...getResponsiveModifiers(isInlineFlex, isInlineFlexOnly, 'inline-flex'),
+        ...getResponsiveModifiers(isHidden, isHiddenOnly, 'hidden'),
+        ...getAlignModifier(isPulled, 'is-pulled'),
+        ...getAlignModifier(hasAlignedText, 'has-text'),
+        ...getColorModifier(hasColor),
+        'is-clearfix': isClearfix,
+        'is-overlay': isOverlay,
+        'is-marginless': isMarginless,
+        'is-paddingless': isPaddingless,
+        'is-unselectable': isUnselectable,
     }
 }
 
 function removeHelpersProps(props: Bulma.Helpers) {
     const {
         isFlex,
+        isFlexOnly,
         isBlock,
+        isBlockOnly,
         isInline,
+        isInlineOnly,
         isInlineBlock,
+        isInlineBlockOnly,
         isInlineFlex,
-        isFlexMobile,
-        isFlexTabletOnly,
-        isFlexDesktopOnly,
-        isFlexWidescreen,
-        isFlexTouch,
-        isFlexTablet,
-        isFlexDesktop,
-        isBlockMobile,
-        isBlockTabletOnly,
-        isBlockDesktopOnly,
-        isBlockWidescreen,
-        isBlockTouch,
-        isBlockTablet,
-        isBlockDesktop,
-        isInlineMobile,
-        isInlineTabletOnly,
-        isInlineDesktopOnly,
-        isInlineWidescreen,
-        isInlineTouch,
-        isInlineTablet,
-        isInlineDesktop,
-        isInlineBlockMobile,
-        isInlineBlockTabletOnly,
-        isInlineBlockDesktopOnly,
-        isInlineBlockWidescreen,
-        isInlineBlockTouch,
-        isInlineBlockTablet,
-        isInlineBlockDesktop,
-        isInlineFlexMobile,
-        isInlineFlexTabletOnly,
-        isInlineFlexDesktopOnly,
-        isInlineFlexWidescreen,
-        isInlineFlexTouch,
-        isInlineFlexTablet,
-        isInlineFlexDesktop,
-        isHiddenMobile,
-        isHiddenTabletOnly,
-        isHiddenDesktopOnly,
-        isHiddenWidescreen,
-        isHiddenTouch,
-        isHiddenTablet,
-        isHiddenDesktop,
+        isInlineFlexOnly,
+        isHidden,
+        isHiddenOnly,
         isClearfix,
-        isPulledLeft,
-        isPulledRight,
+        isPulled,
         isOverlay,
-        hasTextCentered,
-        hasTextLeft,
-        hasTextRigh,
+        hasAlignedText,
         isMarginless,
         isPaddingless,
         isUnselectable,
+        hasColor,
         ...rest
     } = props;
 
     return rest;
 }
 
-export function withHelpersModifiers<T>(Component: Bulma.Component<T>): React.ComponentClass<T & Bulma.Helpers> {
-    return class extends React.Component<T & React.HTMLProps<T>, void> {
-        render() {
-            const className = classNames(
-                {
-                    ...combineModifiers(this.props, getHelpersModifiers, getFullWidthModifiers),
-                },
-                this.props.className,
-            );
+export function withHelpersModifiers<T>(Component: Bulma.Component<T>): React.SFC<T & Bulma.Helpers> {
+    const SFC: React.SFC<T & React.HTMLProps<HTMLElement>> = (props) => {
+        const className = classNames(
+            {
+                ...combineModifiers(props, getHelpersModifiers, getFullWidthModifiers),
+            },
+            props.className,
+        );
 
-            // TODO
-            // Without "as any", this gives an error:
-            const props: any = getHTMLProps(
-                this.props,
-                removeHelpersProps,
-                removeFullWidthProps,
-            );
-            return className ? <Component {...props} className={className} /> : <Component {...props} />
-        }
+        // TODO: spread operator isn't fully supported (yet)
+        // should refactor when this is fixed in another ts release 
+        const rest: any = getHTMLProps(
+            props,
+            removeHelpersProps,
+            removeFullWidthProps,
+        );
+
+        return className ? <Component {...rest} className={className} /> : <Component {...rest} />
     }
+
+    return SFC;
 }
