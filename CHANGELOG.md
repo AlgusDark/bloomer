@@ -1,5 +1,13 @@
 # Bulma-jsx Changelog
 
+## 0.4.0 - 2017-05-31
+### Added
+- withHelpersModifiers HOC was added to index, so everyone can extend their components with Bulma helpers
+- HeroVideo Component
+- hasAlignedText and hasColor Helper Modifiers
+### Breaking
+- API for Column, Title, Subtitle and HelpersModifiers (rensponsive helpers) where changed, so less props are used.
+
 ## 0.3.0 - 2017-05-29
 ### Added
 - All Bulma/Components.

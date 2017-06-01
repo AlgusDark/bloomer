@@ -124,5 +124,8 @@ export {
     Hero,
     HeroHeader,
     HeroBody,
+    HeroVideo,
     HeroFooter,
 } from './layout'
+
+export { withHelpersModifiers } from './bulma';

@@ -20,6 +20,7 @@ export const Title: React.SFC<Title<HTMLHeadingElement | HTMLParagraphElement>> 
         },
         props.className,
     );
+    
     const HTMLProps = getHTMLProps(props, removeHeadingProps);
 
     if (props.isParagraph) return <p {...HTMLProps} className={className} />
