@@ -286,6 +286,20 @@ describe('withHelpersModifiers', () => {
         expect(shallowedComponent.hasClass('custom')).toBe(true);
     });
 
+    it('should render a Component withouth errors when passing bad data to isFlex', () => {
+        const Component: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
+            return (
+                <div>Hello World</div>
+            )
+        }
+        const WithHelpersModifiersComponent: any = Bulma.withHelpersModifiers(Component);
+        const renderedComponent = <WithHelpersModifiersComponent isFlex={1} className='custom' />
+        const shallowedComponent = shallow(renderedComponent);
+
+        expect(shallowedComponent.prop('isFlex')).toBe(undefined);
+        expect(shallowedComponent.hasClass('custom')).toBe(true);
+    });
+
     it('should render a Component with flex "shortcut" modifiers', () => {
         const Component: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
             return (
