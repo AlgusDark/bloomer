@@ -4,12 +4,11 @@ Bulma-JSX
 [![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/AlgusDark/bulma-jsx/blob/master/LICENSE.md)
 [![NPM Downloads](https://img.shields.io/npm/dm/bulma-jsx.svg?style=flat-square)](http://npmjs.com/package/bulma-jsx)
 [![NPM Version](https://img.shields.io/npm/v/bulma-jsx.svg?style=flat-square)](http://npmjs.com/package/bulma-jsx)
-
 [![Build Status](https://travis-ci.org/AlgusDark/bulma-jsx.svg?branch=master)](https://travis-ci.org/AlgusDark/bulma-jsx)
 [![Coverage Status](https://coveralls.io/repos/github/AlgusDark/bulma-jsx/badge.svg?branch=master)](https://coveralls.io/github/AlgusDark/bulma-jsx?branch=master)
 ![Gluten Status](https://img.shields.io/badge/Gluten-Free-green.svg)
 
-A set of React components for Bulma v0.4.2
+A set of React Stateless components for Bulma v0.4.2
 
 ## NPM
 ```sh
@@ -18,7 +17,7 @@ $ npm install bulma-jsx --save
 
 ## Yarn
 ```sh
-$ npm install bulma-jsx --save
+$ yarn add bulma-jsx
 ```
 
 ## Usage
