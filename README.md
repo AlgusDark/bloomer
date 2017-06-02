@@ -1,23 +1,23 @@
-Bulma-JSX
+Bloomer
 ==================================
 
-[![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/AlgusDark/bulma-jsx/blob/master/LICENSE.md)
-[![NPM Downloads](https://img.shields.io/npm/dm/bulma-jsx.svg?style=flat-square)](http://npmjs.com/package/bulma-jsx)
-[![NPM Version](https://img.shields.io/npm/v/bulma-jsx.svg?style=flat-square)](http://npmjs.com/package/bulma-jsx)
-[![Build Status](https://travis-ci.org/AlgusDark/bulma-jsx.svg?branch=master)](https://travis-ci.org/AlgusDark/bulma-jsx)
-[![Coverage Status](https://coveralls.io/repos/github/AlgusDark/bulma-jsx/badge.svg?branch=master)](https://coveralls.io/github/AlgusDark/bulma-jsx?branch=master)
+[![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/AlgusDark/bloomer/blob/master/LICENSE.md)
+[![NPM Downloads](https://img.shields.io/npm/dm/bloomer.svg?style=flat-square)](http://npmjs.com/package/bloomer)
+[![NPM Version](https://img.shields.io/npm/v/bloomer.svg?style=flat-square)](http://npmjs.com/package/bloomer)
+[![Build Status](https://travis-ci.org/AlgusDark/bloomer.svg?branch=master)](https://travis-ci.org/AlgusDark/bloomer)
+[![Coverage Status](https://coveralls.io/repos/github/AlgusDark/bloomer/badge.svg?branch=master)](https://coveralls.io/github/AlgusDark/bloomer?branch=master)
 ![Gluten Status](https://img.shields.io/badge/Gluten-Free-green.svg)
 
 A set of React Stateless components for Bulma v0.4.2
 
 ## NPM
 ```sh
-$ npm install bulma-jsx --save
+$ npm install bloomer --save
 ```
 
 ## Yarn
 ```sh
-$ yarn add bulma-jsx
+$ yarn add bloomer-jsx
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ $ yarn add bulma-jsx
 // you should have bulma in your project
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Container, Box  } from 'bulma-jsx';
+import { Container, Box  } from 'bloomer';
 
 ReactDOM.render(
     <Container>
@@ -54,7 +54,7 @@ ReactDOM.render(
 - [x] Notification
 - [x] Progress 
 - [x] Table
-    - `<tr>` has a `.is-selected` modifier, since **bulma-jsx** doesn't provide table rows, you should use this modifier manually.
+    - `<tr>` has a `.is-selected` modifier, since **bloomer** doesn't provide table rows, you should use this modifier manually.
 - [x] Tag
 - [x] Title / SubTitle
 
@@ -85,4 +85,4 @@ ReactDOM.render(
 All contributions are welcome send your PR and Issues.
 
 ### License
-This is a open-source software licensed under the [MIT license](https://github.com/AlgusDark/bulma-jsx/blob/master/LICENSE.md)
+This is a open-source software licensed under the [MIT license](https://github.com/AlgusDark/bloomer/blob/master/LICENSE.md)

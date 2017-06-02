@@ -4,6 +4,10 @@
     "module": "commonjs",
     "target": "es5",
     "removeComments": true,
+    "lib": [
+      "es2015",
+      "dom"
+    ],
     "allowSyntheticDefaultImports": true,
     "suppressImplicitAnyIndexErrors": true,
     "forceConsistentCasingInFileNames": true,
@@ -15,7 +19,7 @@
     "noEmit": true
   },
   "include": [
-    "example"
+    "docs"
   ],
   "compileOnSave": false,
   "buildOnSave": false,

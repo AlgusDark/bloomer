@@ -1,0 +1,10 @@
+#twitter {
+    color: #55acee;
+    border-color: #55acee;
+}
+
+#twitter:hover {
+    background: #55acee;
+    border-color: #55acee;
+    color: white;
+}

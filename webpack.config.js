@@ -3,8 +3,8 @@ const webpack = require('webpack');
 
 const config = {
 	entry: {
-		'bulma-jsx': ['./src/index.ts'],
-		'bulma-jsx.min': ['./src/index.ts']
+		'bloomer': ['./src/index.ts'],
+		'bloomer.min': ['./src/index.ts']
 	},
 	output: {
 		path: path.resolve(__dirname, 'bundles'),

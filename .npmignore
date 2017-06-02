@@ -2,8 +2,9 @@
 **/webpack*.js
 **/tsconfig*.json
 **/node_modules
+preprocessor.js
 npm-debug.log
 src
-example
 test
 reports
+docs
