@@ -79,7 +79,7 @@ export declare namespace Bulma {
     }
 
     export interface Hide {
-        isHidden?: boolean | Platform[],
+        isHidden?: boolean| Platform | Platform[],
         isHiddenOnly?: PlatformOnly | PlatformOnly[],
     }
 
