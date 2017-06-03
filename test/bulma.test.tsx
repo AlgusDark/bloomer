@@ -364,7 +364,7 @@ describe('withHelpersModifiers', () => {
         expect(shallowedComponent.hasClass('custom')).toBe(true);
     });
 
-    it('should render a Component with hasAlignedText modifiers', () => {
+    it('should render a Component with hasText modifiers', () => {
         const Component: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
             return (
                 <div>Hello World</div>
@@ -373,20 +373,20 @@ describe('withHelpersModifiers', () => {
         const WithHelpersModifiersComponent: any = Bulma.withHelpersModifiers(Component);
 
         expect(
-            shallow(<WithHelpersModifiersComponent hasAlignedText='l' className='custom' />)
+            shallow(<WithHelpersModifiersComponent hasText='l' className='custom' />)
                 .hasClass('has-text-left')
         ).toBe(true);
         expect(
-            shallow(<WithHelpersModifiersComponent hasAlignedText='c' className='custom' />)
+            shallow(<WithHelpersModifiersComponent hasText='c' className='custom' />)
                 .hasClass('has-text-centered')
         ).toBe(true);
         expect(
-            shallow(<WithHelpersModifiersComponent hasAlignedText='r' className='custom' />)
+            shallow(<WithHelpersModifiersComponent hasText='r' className='custom' />)
                 .hasClass('has-text-right')
         ).toBe(true);
 
         expect(
-            shallow(<WithHelpersModifiersComponent hasAlignedText='r,l' className='custom' />)
+            shallow(<WithHelpersModifiersComponent hasText='r,l' className='custom' />)
                 .hasClass('has-text-right')
         ).toBe(false);
     });
