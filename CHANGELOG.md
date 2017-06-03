@@ -1,5 +1,9 @@
 # Bloomer Changelog
 
+## 0.4.1 - 2017-06-02
+### Breaking
+- Changed Helper `hasAlignedText` to `hasText` to be more similar with Bulma modifier.
+
 ## 0.4.0 - 2017-05-31
 ### Added
 - withHelpersModifiers HOC was added to index, so everyone can extend their components with Bulma helpers

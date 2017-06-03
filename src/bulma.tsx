@@ -94,7 +94,7 @@ export declare namespace Bulma {
 
         isOverlay?: boolean,
 
-        hasAlignedText?: Align | 'center' | 'centered' | 'c',
+        hasText?: Align | 'center' | 'centered' | 'c',
 
         isMarginless?: boolean,
         isPaddingless?: boolean,
@@ -345,7 +345,7 @@ function getHelpersModifiers(
         isHidden,
         isHiddenOnly,
         isPulled,
-        hasAlignedText,
+        hasText,
         isClearfix,
         isOverlay,
         isMarginless,
@@ -361,7 +361,7 @@ function getHelpersModifiers(
         ...getResponsiveModifiers(isInlineFlex, isInlineFlexOnly, 'inline-flex'),
         ...getResponsiveModifiers(isHidden, isHiddenOnly, 'hidden'),
         ...getAlignModifier(isPulled, 'is-pulled'),
-        ...getAlignModifier(hasAlignedText, 'has-text'),
+        ...getAlignModifier(hasText, 'has-text'),
         ...getColorModifier(hasColor),
         'is-clearfix': isClearfix,
         'is-overlay': isOverlay,
@@ -388,7 +388,7 @@ function removeHelpersProps(props: Bulma.Helpers) {
         isClearfix,
         isPulled,
         isOverlay,
-        hasAlignedText,
+        hasText,
         isMarginless,
         isPaddingless,
         isUnselectable,
