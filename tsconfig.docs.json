@@ -11,7 +11,7 @@
     "allowSyntheticDefaultImports": true,
     "suppressImplicitAnyIndexErrors": true,
     "forceConsistentCasingInFileNames": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "declaration": false,
     "jsx": "react",
     "importHelpers": true,

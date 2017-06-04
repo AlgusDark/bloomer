@@ -8,3 +8,17 @@
     border-color: #55acee;
     color: white;
 }
+
+.npm {
+    font-size: 23px;
+}
+
+#home.hero .container div {
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 425px) {
+    #footer {
+        text-align: center
+    }
+}
