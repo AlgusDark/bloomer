@@ -94,18 +94,39 @@ describe('get*Modifiers functions', () => {
 
         expect(Grid.getSizeModifiers(props)).toEqual(expected);
 
-        expect(Grid.getSizeModifiers({isMobile: 1})).toEqual({'is-1-mobile': true});
-        expect(Grid.getSizeModifiers({isMobile: 2})).toEqual({'is-2-mobile': true});
-        expect(Grid.getSizeModifiers({isMobile: 3})).toEqual({'is-3-mobile': true});
-        expect(Grid.getSizeModifiers({isMobile: 4})).toEqual({'is-4-mobile': true});
-        expect(Grid.getSizeModifiers({isMobile: 5})).toEqual({'is-5-mobile': true});
-        expect(Grid.getSizeModifiers({isMobile: 6})).toEqual({'is-6-mobile': true});
-        expect(Grid.getSizeModifiers({isMobile: 7})).toEqual({'is-7-mobile': true});
-        expect(Grid.getSizeModifiers({isMobile: 8})).toEqual({'is-8-mobile': true});
-        expect(Grid.getSizeModifiers({isMobile: 9})).toEqual({'is-9-mobile': true});
-        expect(Grid.getSizeModifiers({isMobile: 10})).toEqual({'is-10-mobile': true});
-        expect(Grid.getSizeModifiers({isMobile: 11})).toEqual({'is-11-mobile': true});
-        expect(Grid.getSizeModifiers({isMobile: 12})).toEqual({'is-12-mobile': true});
+        expect(Grid.getSizeModifiers({ isMobile: 1 })).toEqual({ 'is-1-mobile': true });
+        expect(Grid.getSizeModifiers({ isMobile: 12 })).toEqual({ 'is-12-mobile': true });
+        expect(Grid.getSizeModifiers({ isMobile: false })).toEqual({});
+        expect(Grid.getSizeModifiers({ isMobile: true })).toEqual({});
+
+        expect(Grid.getSizeModifiers({ isTablet: 1 })).toEqual({ 'is-1-tablet': true });
+        expect(Grid.getSizeModifiers({ isTablet: 12 })).toEqual({ 'is-12-tablet': true });
+        expect(Grid.getSizeModifiers({ isTablet: false })).toEqual({});
+        expect(Grid.getSizeModifiers({ isTablet: true })).toEqual({});
+
+        expect(Grid.getSizeModifiers({ isDesktop: 1 })).toEqual({ 'is-1-desktop': true });
+        expect(Grid.getSizeModifiers({ isDesktop: 12 })).toEqual({ 'is-12-desktop': true });
+        expect(Grid.getSizeModifiers({ isDesktop: false })).toEqual({});
+        expect(Grid.getSizeModifiers({ isDesktop: true })).toEqual({});
+    });
+
+    it('should getSizeModifiers with String|Array', () => {
+        const bad: any = { isFull: 'bad' };
+        const badAry: any = { isFull: ['bad', 'mobile'] };
+
+        expect(Grid.getSizeModifiers({ isFull: 'mobile' })).toEqual({ 'is-full-mobile': true });
+        expect(Grid.getSizeModifiers(bad)).toEqual({});
+        expect(Grid.getSizeModifiers({ isFull: ['mobile', 'desktop'] })).toEqual(
+            {
+                'is-full-mobile': true,
+                'is-full-desktop': true,
+            }
+        );
+        expect(Grid.getSizeModifiers(badAry)).toEqual(
+            {
+                'is-full-mobile': true,
+            }
+        );
     });
 
     it('should getOffsetModifiers', () => {
@@ -128,5 +149,22 @@ describe('get*Modifiers functions', () => {
 
         expect(Grid.getOffsetModifiers(props))
             .toEqual(expected);
+
+        expect(Grid.getOffsetModifiers({ isOffsetMobile: 1 })).toEqual({ 'is-offset-1-mobile': true });
+        expect(Grid.getOffsetModifiers({ isOffsetMobile: 12 })).toEqual({ 'is-offset-12-mobile': true });
+        expect(Grid.getOffsetModifiers({ isOffsetMobile: false })).toEqual({});
+        expect(Grid.getOffsetModifiers({ isOffsetMobile: true })).toEqual({});
+
+        expect(Grid.getOffsetModifiers({ isOffsetTablet: 1 })).toEqual({ 'is-offset-1-tablet': true });
+        expect(Grid.getOffsetModifiers({ isOffsetTablet: 12 })).toEqual({ 'is-offset-12-tablet': true });
+        expect(Grid.getOffsetModifiers({ isOffsetTablet: false })).toEqual({});
+        expect(Grid.getOffsetModifiers({ isOffsetTablet: true })).toEqual({});
+
+        expect(Grid.getOffsetModifiers({ isOffsetDesktop: 1 })).toEqual({ 'is-offset-1-desktop': true });
+        expect(Grid.getOffsetModifiers({ isOffsetDesktop: 12 })).toEqual({ 'is-offset-12-desktop': true });
+        expect(Grid.getOffsetModifiers({ isOffsetDesktop: false })).toEqual({});
+        expect(Grid.getOffsetModifiers({ isOffsetDesktop: true })).toEqual({});
     });
+
+
 })

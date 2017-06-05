@@ -1,29 +1,28 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma, withHelpersModifiers } from './../../bulma';
+import {
+    Bulma,
+    getActiveModifiers, removeActiveModifiers,
+    getFocusedModifiers, removeFocusedModifiers,
+    withHelpersModifiers,
+} from './../../bulma';
+import { getHTMLProps, combineModifiers } from './../../helpers';
 
-export interface Ellipsis<T> extends React.HTMLProps<T> {
-    isFocused?: boolean,
-    isActive?: boolean,
+export interface Ellipsis<T> extends Bulma.Active, Bulma.Focused, React.HTMLProps<T> {
 }
 
 export const Ellipsis: React.SFC<Ellipsis<HTMLSpanElement>> = (props) => {
     const className = classNames(
         'pagination-ellipsis',
         {
-            'is-focused': props.isFocused,
-            'is-active': props.isActive,
+            ...combineModifiers(props, getActiveModifiers, getFocusedModifiers),
         },
         props.className
     );
 
-    const {
-        isFocused,
-        isActive,
-        children,
-        ...HTMLProps
-    } = props;
+    const { children, ...HTMLProps } = getHTMLProps(props, removeActiveModifiers, removeFocusedModifiers);
+
 
     return (
         <span {...HTMLProps} className={className}>&hellip;</span>

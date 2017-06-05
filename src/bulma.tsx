@@ -3,63 +3,61 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 
 import { Grid } from './grid/grid';
-import { combineModifiers, getHTMLProps, isBetween } from './helpers';
+import { combineModifiers, getHTMLProps, isBetween, is, isOption } from './helpers';
 
 export declare namespace Bulma {
     // Modifiers
     export interface Alignment {
-        isCentered?: boolean,
-        isRight?: boolean,
+        isAlign?: string
     }
 
+    export type Sizes = 'large' | 'medium' | 'small';
     export interface Size {
-        isSmall?: boolean,
-        isMedium?: boolean,
-        isLarge?: boolean,
+        isSize?: Sizes,
     }
 
     export interface FullWidth {
         isFullWidth?: boolean,
     }
 
-    export interface State {
+    export interface Active {
         isActive?: boolean,
+    }
+
+    export interface Hovered {
         isHovered?: boolean,
+    }
+
+    export interface Focused {
         isFocused?: boolean,
+    }
+
+    export interface State extends Active, Hovered, Focused {
     }
 
     export interface Loading {
         isLoading?: boolean,
     }
 
+    export type Colors = 'white' | 'light' | 'dark' | 'black' | 'primary' | 'info' | 'success' | 'warning' | 'danger'
     export interface Color {
-        isWhite?: boolean,
-        isLight?: boolean,
-        isDark?: boolean,
-        isBlack?: boolean,
-        isPrimary?: boolean,
-        isInfo?: boolean,
-        isSuccess?: boolean,
-        isWarning?: boolean,
-        isDanger?: boolean,
+        isColor?: Colors,
     }
 
-    export type HeadingSize = 1 | 2 | 3 | 4 | 5 | 6;
+    export type HeadingSizes = 1 | 2 | 3 | 4 | 5 | 6;
 
     export interface Heading {
-        isHeading?: HeadingSize,
-        isSize?: HeadingSize,
+        isHeading?: HeadingSizes,
+        isSize?: HeadingSizes,
         isSpaced?: boolean,
         isParagraph?: boolean,
     }
 
-    export interface Grid extends Grid.Size,
-        Grid.Offset {
-
+    export interface Grid extends Grid.HorizontalSize, Grid.Size, Grid.Offset {
     }
 
-    export type Platform = 'mobile' | 'm' | 'tablet' | 'tt' | 'touch' | 't' | 'desktop' | 'd' | 'widescreen' | 'w';
-    export type PlatformOnly = 'tablet' | 'tt' | 'desktop' | 'd';
+    export type Platform = 'mobile' | 'tablet' | 'touch' | 'desktop' | 'widescreen';
+    export type PlatformOnly = 'tablet' | 'desktop';
 
     export interface Show {
         isFlex?: boolean | Platform | Platform[],
@@ -79,28 +77,27 @@ export declare namespace Bulma {
     }
 
     export interface Hide {
-        isHidden?: boolean| Platform | Platform[],
+        isHidden?: boolean | Platform | Platform[],
         isHiddenOnly?: PlatformOnly | PlatformOnly[],
     }
 
     export interface Responsive extends Show, Hide {
     }
 
-    export type Align = 'left' | 'l' | 'right' | 'r';
+    export type Alignments = 'left' | 'right';
 
     export interface Helpers extends FullWidth, Responsive {
         isClearfix?: boolean,
-        isPulled?: Align,
+        isPulled?: Alignments,
 
         isOverlay?: boolean,
-
-        hasText?: Align | 'center' | 'centered' | 'c',
 
         isMarginless?: boolean,
         isPaddingless?: boolean,
         isUnselectable?: boolean,
 
-        hasColor?: 'white' | 'light' | 'dark' | 'black' | 'primary' | 'info' | 'success' | 'warning' | 'danger',
+        hasTextAlign?: Alignments | 'centered',
+        hasTextColor?: Colors,
     }
 
     export interface Modifiers extends
@@ -109,7 +106,6 @@ export declare namespace Bulma {
         FullWidth,
         State,
         Color,
-        Grid,
         Helpers {
     }
 
@@ -124,34 +120,57 @@ export declare namespace Bulma {
     export type Component<T> = React.ComponentClass<T & React.HTMLProps<HTMLElement>> | React.SFC<T & React.HTMLProps<HTMLElement>>;
 }
 
-export function getAlignmentModifiers(props: Bulma.Alignment) {
-    return {
-        'is-centered': props.isCentered,
-        'is-right': props.isRight,
-    }
+export const isMobile = is({ 'mobile': true, });
+export const isTablet = is({ 'tablet': true, });
+export const isTouch = is({ 'touch': true, });
+export const isDesktop = is({ 'desktop': true, });
+export const isWidescreen = is({ 'widescreen': true, });
+
+export const isLeft = is({ 'left': true, });
+export const isRight = is({ 'right': true, });
+export const isCentered = is({ 'centered': true, });
+
+export const isCenter = is({ 'center': true, });
+export const isFullWidth = is({ 'fullwidth': true, });
+
+const isColor = is({
+    'white': true,
+    'light': true,
+    'dark': true,
+    'black': true,
+    'primary': true,
+    'info': true,
+    'success': true,
+    'warning': true,
+    'danger': true,
+});
+
+export const isSmall = is({ 'small': true, });
+export const isMedium = is({ 'medium': true, });
+export const isLarge = is({ 'large': true, });
+
+const isPlatform = isOption(isMobile, isTablet, isDesktop, isTouch, isWidescreen);
+const isAlign = isOption(isLeft, isCentered, isRight);
+const isSize = isOption(isSmall, isMedium, isLarge);
+
+export function getAlignmentModifiers({ isAlign: align }: Bulma.Alignment) {
+    return isAlign(align) ? { [`is-${align}`]: true } : {};
 }
 
 export function removeAlignmentProps(props: Bulma.Alignment) {
     const {
-        isCentered,
-        isRight,
+        isAlign,
         ...rest } = props;
     return rest;
 }
 
-export function getSizeModifiers(props: Bulma.Size) {
-    return {
-        'is-small': props.isSmall,
-        'is-medium': props.isMedium,
-        'is-large': props.isLarge,
-    }
+export function getSizeModifiers({ isSize: size }: Bulma.Size) {
+    return isSize(size) ? { [`is-${size}`]: true } : {};
 }
 
 export function removeSizeProps(props: Bulma.Size) {
     const {
-        isLarge,
-        isMedium,
-        isSmall,
+        isSize,
         ...rest } = props;
     return rest;
 }
@@ -169,11 +188,38 @@ function removeFullWidthProps(props: Bulma.FullWidth) {
     return rest;
 }
 
+export function getActiveModifiers(props: Bulma.Active) {
+    return { 'is-active': props.isActive };
+}
+
+export function removeActiveModifiers(props: Bulma.Active) {
+    const { isActive, ...rest } = props;
+    return rest;
+}
+
+export function getFocusedModifiers(props: Bulma.Focused) {
+    return { 'is-focused': props.isFocused };
+}
+
+export function removeFocusedModifiers(props: Bulma.Focused) {
+    const { isFocused, ...rest } = props;
+    return rest;
+}
+
+export function getHoveredModifiers(props: Bulma.Hovered) {
+    return { 'is-hovered': props.isHovered };
+}
+
+export function removeHoveredModifiers(props: Bulma.Hovered) {
+    const { isHovered, ...rest } = props;
+    return rest;
+}
+
 export function getStateModifiers(props: Bulma.State) {
     return {
-        'is-active': props.isActive,
-        'is-focused': props.isFocused,
-        'is-hovered': props.isHovered,
+        ...getActiveModifiers(props),
+        ...getFocusedModifiers(props),
+        ...getHoveredModifiers(props),
     }
 }
 
@@ -199,44 +245,28 @@ export function removeLoadingProps(props: Bulma.Loading) {
     return rest;
 }
 
-export function getColorModifiers(props: Bulma.Color) {
-    return {
-        'is-white': props.isWhite,
-        'is-light': props.isLight,
-        'is-dark': props.isDark,
-        'is-black': props.isBlack,
-        'is-primary': props.isPrimary,
-        'is-info': props.isInfo,
-        'is-success': props.isSuccess,
-        'is-warning': props.isWarning,
-        'is-danger': props.isDanger,
-    }
+export function getColorModifiers({ isColor: color }: Bulma.Color) {
+    return isColor(color) ? { [`is-${color}`]: true } : {}
 }
 
 export function removeColorProps(props: Bulma.Color) {
     const {
-        isBlack,
-        isDanger,
-        isDark,
-        isInfo,
-        isLight,
-        isPrimary,
-        isSuccess,
-        isWarning,
-        isWhite,
+        isColor,
         ...rest } = props;
     return rest;
 }
 
 const isValidHeading = isBetween(1, 6);
 
-export function getHeadingElement({ isHeading: heading }: Bulma.Heading, defaultHeading: Bulma.HeadingSize = 1) {
+export function getHeadingElement({ isHeading: heading }: Bulma.Heading, defaultHeading: Bulma.HeadingSizes = 1) {
     return isValidHeading(heading) ? `h${heading}` : `h${defaultHeading}`
 }
 
 export function getHeadingModifiers({ isSpaced, isSize: size }: Bulma.Heading) {
+    const isSize = isValidHeading(size) ? { [`is-${size}`]: true } : {};
+    
     return {
-        [`is-${size}`]: isValidHeading(size),
+        ...isSize,
         'is-spaced': isSpaced,
     }
 }
@@ -251,42 +281,13 @@ export function removeHeadingProps(props: Bulma.Heading) {
     return rest;
 }
 
-const is = (options) => (str: string): boolean => options[str] || false;
-
-const isMobile = is({ 'mobile': true, 'm': true, });
-const isTablet = is({ 'tablet': true, 'tt': true, });
-const isTouch = is({ 'touch': true, 't': true, });
-const isDesktop = is({ 'desktop': true, 'd': true, });
-const isWidescreen = is({ 'widescreen': true, 'w': true, });
-
-const isLeft = is({ 'left': true, 'l': true, });
-const isRight = is({ 'right': true, 'r': true, });
-const isCentered = is({ 'center': true, 'centered': true, 'c': true });
-
-const isColor = is({
-    'white': true,
-    'light': true,
-    'dark': true,
-    'black': true,
-    'primary': true,
-    'info': true,
-    'success': true,
-    'warning': true,
-    'danger': true,
-})
-
 const reducerModifierOnly = (helper: string) => (init: object, option: string) => {
-    if (isTablet(option)) return { ...init, [`is-${helper}-tablet-only`]: true };
-    if (isDesktop(option)) return { ...init, [`is-${helper}-desktop-only`]: true };
+    if (isOption(isTablet, isDesktop)(option)) return { ...init, [`is-${helper}-${option}-only`]: true };
     return init;
 }
 
 const reducerModifier = (helper: string) => (init: object, option: string) => {
-    if (isMobile(option)) return { ...init, [`is-${helper}-mobile`]: true };
-    if (isTablet(option)) return { ...init, [`is-${helper}-tablet`]: true };
-    if (isTouch(option)) return { ...init, [`is-${helper}-touch`]: true };
-    if (isDesktop(option)) return { ...init, [`is-${helper}-desktop`]: true };
-    if (isWidescreen(option)) return { ...init, [`is-${helper}-widescreen`]: true };
+    if (isPlatform(option)) return { ...init, [`is-${helper}-${option}`]: true };
     return init;
 }
 
@@ -314,16 +315,7 @@ const getResponsiveModifiers = (modifier: boolean | Bulma.Platform | Bulma.Platf
 }
 
 const getAlignModifier = (modifier: string, helper: string) => {
-    if (isLeft(modifier)) {
-        return { [`${helper}-left`]: true }
-    }
-    else if (isRight(modifier)) {
-        return { [`${helper}-right`]: true }
-    }
-    else if (isCentered(modifier)) {
-        return { [`${helper}-centered`]: true }
-    }
-    return {};
+    return isAlign(modifier) ? { [`${helper}-${modifier}`]: true } : {};
 }
 
 const getColorModifier = (modifier: string) => {
@@ -345,13 +337,13 @@ function getHelpersModifiers(
         isHidden,
         isHiddenOnly,
         isPulled,
-        hasText,
         isClearfix,
         isOverlay,
         isMarginless,
         isPaddingless,
         isUnselectable,
-        hasColor,
+        hasTextAlign,
+        hasTextColor,
     }: Bulma.Helpers) {
     return {
         ...getResponsiveModifiers(isFlex, isFlexOnly, 'flex'),
@@ -361,8 +353,8 @@ function getHelpersModifiers(
         ...getResponsiveModifiers(isInlineFlex, isInlineFlexOnly, 'inline-flex'),
         ...getResponsiveModifiers(isHidden, isHiddenOnly, 'hidden'),
         ...getAlignModifier(isPulled, 'is-pulled'),
-        ...getAlignModifier(hasText, 'has-text'),
-        ...getColorModifier(hasColor),
+        ...getAlignModifier(hasTextAlign, 'has-text'),
+        ...getColorModifier(hasTextColor),
         'is-clearfix': isClearfix,
         'is-overlay': isOverlay,
         'is-marginless': isMarginless,
@@ -388,19 +380,19 @@ function removeHelpersProps(props: Bulma.Helpers) {
         isClearfix,
         isPulled,
         isOverlay,
-        hasText,
         isMarginless,
         isPaddingless,
         isUnselectable,
-        hasColor,
+        hasTextAlign,
+        hasTextColor,
         ...rest
     } = props;
 
     return rest;
 }
 
-export function withHelpersModifiers<T>(Component: Bulma.Component<T>): React.SFC<T & Bulma.Helpers> {
-    const SFC: React.SFC<T & React.HTMLProps<HTMLElement>> = (props) => {
+export function withHelpersModifiers<T>(Component: Bulma.Component<T>) {
+    const SFC: React.SFC<T & React.HTMLProps<HTMLElement> & Bulma.Helpers> = (props) => {
         const className = classNames(
             {
                 ...combineModifiers(props, getHelpersModifiers, getFullWidthModifiers),

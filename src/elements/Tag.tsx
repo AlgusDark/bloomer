@@ -3,27 +3,26 @@ import * as classNames from 'classnames';
 
 import {
     Bulma,
+    getSizeModifiers, removeSizeProps,
     getColorModifiers, removeColorProps,
     withHelpersModifiers,
 } from './../bulma';
 import { combineModifiers, getHTMLProps } from './../helpers';
 
-export interface Tag<T> extends Bulma.Color, React.HTMLProps<T> {
-    isMedium?: boolean,
-    isLarge?: boolean,
+export interface Tag<T> extends Bulma.Color, Bulma.Size,
+React.HTMLProps<T> {
+    isSize?: 'medium' | 'large'
 }
 
 export const Tag: React.SFC<Tag<HTMLSpanElement>> = (props) => {
     const className = classNames(
         'tag',
         {
-            'is-medium': props.isMedium,
-            'is-large': props.isLarge,
-            ...combineModifiers(props, getColorModifiers),
+            ...combineModifiers(props, getColorModifiers, getSizeModifiers),
         },
         props.className,
     );
-    const HTMLProps = getHTMLProps(props, removeColorProps);
+    const HTMLProps = getHTMLProps(props, removeColorProps, removeSizeProps);
 
     return (
         <span {...HTMLProps} className={className} />

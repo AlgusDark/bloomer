@@ -1,10 +1,14 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma, withHelpersModifiers } from './../../bulma';
+import {
+    Bulma,
+    getActiveModifiers, removeActiveModifiers,
+    withHelpersModifiers,
+} from './../../bulma';
+import { getHTMLProps, combineModifiers } from './../../helpers';
 
-export interface NavItem<T> extends Bulma.Render, React.HTMLProps<T> {
-    isActive?: boolean,
+export interface NavItem<T> extends Bulma.Render, Bulma.Active, React.HTMLProps<T> {
     isTab?: boolean,
     isBrand?: boolean,
 }
@@ -13,19 +17,21 @@ export const NavItem: React.SFC<NavItem<HTMLDivElement | HTMLAnchorElement>> = (
     const className = classNames(
         'nav-item',
         {
-            'is-active': props.isActive,
             'is-tab': props.isTab,
             'is-brand': props.isBrand,
+            ...getActiveModifiers(props),
         },
         props.className
     );
 
     const {
         render,
-        isActive,
         isTab,
         isBrand,
-        ...HTMLProps } = props;
+        ...rest
+     } = props;
+
+     const HTMLProps = getHTMLProps(rest, removeActiveModifiers);
 
     if (render) return render({ ...HTMLProps, className });
 

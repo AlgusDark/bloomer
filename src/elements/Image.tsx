@@ -5,65 +5,56 @@ import {
     Bulma,
     withHelpersModifiers
 } from './../bulma';
-import { combineModifiers, getHTMLProps } from './../helpers';
+import { combineModifiers, getHTMLProps, is } from './../helpers';
 
-export interface Square {
-    is16x16?: boolean,
-    is24x24?: boolean,
-    is32x32?: boolean,
-    is48x48?: boolean,
-    is64x64?: boolean,
-    is96x96?: boolean,
-    is128x128?: boolean,
+export interface Size {
+    isSize?: '16x16' | '24x24' | '32x32' | '48x48' | '64x64' | '96x96' | '128x128';
 }
 
 export interface Ratio {
-    isSquare?: boolean,
-    is1by1?: boolean,
-    is4by3?: boolean,
-    is3by2?: boolean,
-    is16by9?: boolean,
-    is2by1?: boolean,
+    isRatio?: 'square' | '1by1' | '4by3' | '3by2' | '16by9' | '2by1'
 }
 
-export interface Image<T> extends Square, Ratio,
+export interface Image<T> extends Size, Ratio,
     React.HTMLProps<T> {
 
 }
 
-function getImageModifiers<T>(props: Image<T>) {
+const isRatio = is({
+    'square': true,
+    '1by1': true,
+    '4by3': true,
+    '3by2': true,
+    '16by9': true,
+    '2by1': true,
+})
+
+const isSize = is({
+    '16x16': true,
+    '24x24': true,
+    '32x32': true,
+    '48x48': true,
+    '64x64': true,
+    '96x96': true,
+    '128x128': true,
+});
+
+function getSizeModifiers<T>({ isSize: size }: Image<T>) {
     return {
-        'is-16x16': props.is16x16,
-        'is-24x24': props.is24x24,
-        'is-32x32': props.is32x32,
-        'is-48x48': props.is48x48,
-        'is-64x64': props.is64x64,
-        'is-96x96': props.is96x96,
-        'is-128x128': props.is128x128,
-        'is-square': props.isSquare,
-        'is-1by1': props.is1by1,
-        'is-4by3': props.is4by3,
-        'is-3by2': props.is3by2,
-        'is-16by9': props.is16by9,
-        'is-2by1': props.is2by1,
+        ...(isSize(size) ? {[`is-${size}`]: true} : {}),
+    }
+}
+
+function getRatioModifiers<T>({ isRatio: ratio }: Image<T>) {
+    return {
+        ...(isRatio(ratio) ? {[`is-${ratio}`]: true} : {}),
     }
 }
 
 function removeImageProps<T>(props: Image<T>) {
     const {
-        is16x16,
-        is24x24,
-        is32x32,
-        is48x48,
-        is64x64,
-        is96x96,
-        is128x128,
-        isSquare,
-        is1by1,
-        is4by3,
-        is3by2,
-        is16by9,
-        is2by1,
+        isSize,
+        isRatio,
         ...rest } = props;
     return rest;
 }
@@ -72,7 +63,7 @@ export const Image: React.SFC<Image<HTMLSpanElement>> = (props) => {
     const className = classNames(
         'image',
         {
-            ...combineModifiers(props, getImageModifiers),
+            ...combineModifiers(props, getSizeModifiers, getRatioModifiers),
         },
         props.className,
     );

@@ -10,16 +10,15 @@ describe('Section', () => {
     });
 
     it('should render a section with .section and modifiers', () => {
-        const container = shallow(<Section isLarge isMedium/>);
+        const container = shallow(<Section isSize='large'/>);
         expect(container.hasClass('section')).toBe(true);
         expect(container.hasClass('is-large')).toBe(true);
-        expect(container.hasClass('is-medium')).toBe(true);
     });
 
     it('should render a section with .section, modifiers and custom classNames', () => {
-        const container = shallow(<Section isLarge className='custom loader' />);
+        const container = shallow(<Section isSize='medium' className='custom loader' />);
         expect(container.hasClass('section')).toBe(true);
-        expect(container.hasClass('is-large')).toBe(true);
+        expect(container.hasClass('is-medium')).toBe(true);
         expect(container.hasClass('custom')).toBe(true);
         expect(container.hasClass('loader')).toBe(true);
     });
