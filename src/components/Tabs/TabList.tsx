@@ -1,11 +1,29 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 
-import { Bulma, withHelpersModifiers } from './../../bulma';
+import {
+    Bulma,
+    isLeft, isCenter, isRight, removeAlignmentProps,
+    withHelpersModifiers,
+} from './../../bulma';
+import { isOption, getHTMLProps } from './../../helpers'
 
-export const TabList: React.SFC<React.HTMLProps<HTMLUListElement>> = (props) => {
-    return (
-        <ul {...props} />
-    )
+export interface TabList<T> extends Bulma.Alignment, React.HTMLProps<T> {
+    isAlign?: 'left' | 'center' | 'right',
+}
+
+export const TabList: React.SFC<TabList<HTMLUListElement>> = (props) => {
+    const isAlignOption = isOption(isLeft, isCenter, isRight);
+    const className = classNames(
+        {
+            ...(isAlignOption(props.isAlign) ? {[`is-${props.isAlign}`]: true} : {})
+        },
+        props.className
+    );
+
+    const HTMLProps = getHTMLProps(props, removeAlignmentProps);
+
+    return className ? <ul {...HTMLProps} className={className} /> : <ul {...HTMLProps}/>
 }
 
 export default withHelpersModifiers(TabList);

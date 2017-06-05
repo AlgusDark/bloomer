@@ -24,7 +24,7 @@ describe('Select', () => {
 
     it('should render a div.select with select and modifiers', () => {
         const component = shallow(
-            <Select isSmall isBlack isLoading />
+            <Select isSize='small' isColor='black' isLoading />
         );
         expect(component.hasClass('select')).toBe(true);
         expect(component.hasClass('is-small')).toBe(true);

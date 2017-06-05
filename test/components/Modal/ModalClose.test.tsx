@@ -17,7 +17,7 @@ describe('ModalClose', () => {
             </div>
         );
 
-        const component = shallow(<ModalClose href='#' isSmall render={customComponent} />);
+        const component = shallow(<ModalClose href='#' isSize='small' render={customComponent} />);
         expect(component.contains(customComponentRendered)).toBe(true);
     });
 

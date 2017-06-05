@@ -1,5 +1,24 @@
 # Bloomer Changelog
 
+## 0.5.0 - 2017-06-05
+### Added
+- Bulma Sizes to Button Component (small, medium, large)
+- Refactor Bulma.State interface to split Active, Focused and Hovered.
+- Refactor isLeft|isRight|isCenter|isCentered to `isAlign` with desired alignment (left, right, center, centered) as string.
+- Add `isAlign` to `TabList` component.
+- Refactor colors props (e.g. isWhite), to `isColor` with desired color as string (e.g. `isColor='white'`)
+- Reduce Props to be more similar with last API change:
+    - Field
+        - Now you only need `isGrouped` and `hasAddons`
+    - Control
+        - Now you only need `hasIcons`
+    - Image
+        - Now you only need `isSize` and `isRatio`
+    
+### Breaking
+- Removed shortcuts on helpers (for example, you should write 'mobile' instead of 'm') to be more expresive with the API.
+- Refactor Bulma.Size to use only one prop `isSize` with desired size (small, medium, large) as string 
+
 ## 0.4.1 - 2017-06-02
 ### Breaking
 - Changed Helper `hasAlignedText` to `hasText` to be more similar with Bulma modifier.

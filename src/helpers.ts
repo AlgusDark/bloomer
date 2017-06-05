@@ -9,3 +9,5 @@ export function combineModifiers(props: Bulma.NonHTMLProps, ...args: Array<Funct
 }
 
 export const isBetween = (min: number, max: number) => (value: number) => (value >= min && value <= max);
+export const is = (options: object) => (str: string): boolean => options[str] || false;
+export const isOption = (...fn: Function[]) => (str: string) => fn.some(option => option(str));
