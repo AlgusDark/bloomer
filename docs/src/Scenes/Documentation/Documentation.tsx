@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { NavLink, withRouter, Route, Link, Redirect } from 'react-router-dom';
+import { withRouter, Route, Link, Redirect, Switch } from 'react-router-dom';
 
 import { isActive } from './../../utils';
 
 import { Hero, Body, Footer } from './../../../../src/layout/Hero';
 import { Section, Container } from './../../../../src/layout';
-import { Columns, Column, Title, SubTitle } from './../../../../src';
+import { Columns, Column, Title, Subtitle } from './../../../../src';
 import { Tabs, List, Tab } from './../../../../src/components/Tabs';
 import { Nav, Left, Item } from './../../../../src/components/Nav';
 
@@ -47,13 +47,13 @@ const NavBar = withRouter(({ match, location }) => {
 });
 
 const DocHero = () => (
-    <Hero isPrimary>
+    <Hero isColor='primary'>
         <Body>
             <Container>
                 <Columns isVCentered>
                     <Column>
                         <Title>Documentation</Title>
-                        <SubTitle>Everything you need to start using Bloomer</SubTitle>
+                        <Subtitle>Everything you need to start using Bloomer</Subtitle>
                     </Column>
                 </Columns>
             </Container>
@@ -78,7 +78,12 @@ const Documentation = ({ match }) => (
         <DocHero />
         <Menu />
         <Section>
-            <Route path={`${match.url}/overview`} component={Overview} />
+            <Switch>
+                <Route path={`${match.url}/overview`} component={Overview} />
+                <Route render={
+                    props => <Container><Title hasTextAlign='centered' isSize={1}>Bloomer is 100% done, but Documentation is in progress.</Title></Container>
+                } />
+            </Switch>
         </Section>
     </div>
 )

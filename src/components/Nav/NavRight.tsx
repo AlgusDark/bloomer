@@ -23,7 +23,7 @@ export const NavRight: React.SFC<NavRight<HTMLDivElement>> = (props) => {
     );
 
     const { isMenu, ...rest } = props;
-    const HTMLProps = getHTMLProps(props, removeActiveModifiers);
+    const HTMLProps = getHTMLProps(rest, removeActiveModifiers);
 
     return (
         <div {...HTMLProps} className={className} />

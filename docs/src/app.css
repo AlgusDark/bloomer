@@ -13,10 +13,36 @@
     font-size: 23px;
 }
 
+.npm code {
+    background: whitesmoke;
+    border-radius: 3px;
+    color: #00d1b2;
+    display: inline-block;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
 #home.hero .container div {
     margin-bottom: 1.5rem;
 }
 
+.table.docs tr td:nth-child(1) {
+    color: #7f9a44;
+}
+
+.table.docs tr td:nth-child(2) {
+    color: #b77daa;
+}
+
+.table.docs code {
+    color: #847bb9;
+    background: #f5f5f5;
+}
+
+pre {
+    margin: 1rem 0;
+}
+ 
 @media screen and (max-width: 425px) {
     #footer {
         text-align: center
