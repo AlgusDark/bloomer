@@ -7,7 +7,7 @@ const NavBar = (props) => (
     <Container>
         <Nav>
             <Left>
-                <Item isBrand href='http://algus.ninja/bloomer'>
+                <Item isBrand href='http://bloomer.js.org'>
                     Bloomer
                 </Item>
             </Left>
@@ -25,13 +25,13 @@ const NavBar = (props) => (
             </Center>
             <Toggle />
             <Right isMenu>
-                <Item href="/"> Home</Item>
-                <Item href="/documentation"> Documentation  </Item>
+                <Item href="#/"> Home</Item>
+                <Item href="#/documentation"> Documentation  </Item>
 
                 <Item>
                     <Field isGrouped>
                         <Control>
-                            <Button id="twitter" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://algus.ninja/bloomer" target="_blank" href="https://twitter.com/intent/tweet?text=bloomer: a set of React Stateless Components for bulma.io&amp;url=http://algus.ninja/bloomer&amp;via=AlgusDark">
+                            <Button id="twitter" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://bloomer.js.org" target="_blank" href="https://twitter.com/intent/tweet?text=bloomer: a set of React Stateless Components for bulma.io&amp;url=http://bloomer.js.org&amp;via=AlgusDark">
                                 <Icon>
                                     <i className="fa fa-twitter"></i>
                                 </Icon>

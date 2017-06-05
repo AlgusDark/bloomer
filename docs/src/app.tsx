@@ -7,13 +7,16 @@ import './app.css';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
 
+import Home from './Scenes/Home/Home';
+import Documentation from './Scenes/Documentation/Documentation';
+
 const App = () => (
     <Router>
         <div>
             <NavBar />
             <div>
-                {/*<Route exact path="/" component={Home} />*/}
-                {/*<Route path="/documentation" title="Documentation" component={Documentation} />*/}
+                <Route exact path="/" component={Home} />
+                <Route path="/documentation" component={Documentation} />
             </div>
             <Footer />
         </div>
