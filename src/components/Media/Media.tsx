@@ -1,25 +1,27 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma, withHelpersModifiers } from './../../bulma';
+import {
+    Bulma,
+    getSizeModifiers, removeSizeProps,
+    withHelpersModifiers,
+} from './../../bulma';
+import {getHTMLProps} from './../../helpers'
 
-export interface Media<T> extends React.HTMLProps<T> {
-    isLarge?: boolean,
+export interface Media<T> extends Bulma.Size, React.HTMLProps<T> {
+    isSize?: 'large',
 }
 
 export const Media: React.SFC<Media<HTMLElement>> = (props) => {
     const className = classNames(
         'media',
         {
-            'is-large': props.isLarge
+            ...getSizeModifiers(props),
         },
         props.className,
     );
 
-    const {
-        isLarge,
-        ...HTMLProps
-    } = props;
+    const HTMLProps = getHTMLProps(props, removeSizeProps);
 
     return (
         <article {...HTMLProps} className={className} />

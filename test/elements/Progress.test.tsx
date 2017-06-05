@@ -10,14 +10,14 @@ describe('Progress', () => {
     });
 
     it('should render a progress with .progress and modifiers', () => {
-        const component = shallow(<Progress isBlack isLarge>My Progress</Progress>);
+        const component = shallow(<Progress isColor='black' isSize='large'>My Progress</Progress>);
         expect(component.hasClass('progress')).toBe(true);
         expect(component.hasClass('is-black')).toBe(true);
         expect(component.hasClass('is-large')).toBe(true);
     });
 
     it('should render a progress with .progress, modifiers and custom classNames', () => {
-        const component = shallow(<Progress isPrimary className='custom'><span>Any Content</span></Progress>);
+        const component = shallow(<Progress isColor='primary' className='custom'><span>Any Content</span></Progress>);
         expect(component.hasClass('progress')).toBe(true);
         expect(component.hasClass('is-primary')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);

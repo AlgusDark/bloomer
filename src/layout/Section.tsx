@@ -1,24 +1,27 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma, withHelpersModifiers } from './../bulma';
+import {
+    Bulma,
+    getSizeModifiers, removeSizeProps,
+    withHelpersModifiers,
+} from './../bulma';
+import { getHTMLProps, isOption } from './../helpers';
 
-export interface Section<T> extends React.HTMLProps<T> {
-    isMedium?: boolean,
-    isLarge?: boolean,
+export interface Section<T> extends Bulma.Size, React.HTMLProps<T> {
+    isSize?: 'medium' | 'large',
 }
 
 export const Section: React.SFC<Section<HTMLElement>> = (props) => {
     const className = classNames(
         'section',
         {
-            'is-medium': props.isMedium,
-            'is-large': props.isLarge,
+            ...getSizeModifiers(props),
         },
         props.className,
     );
 
-    const { isMedium, isLarge, ...HTMLProps } = props;
+    const HTMLProps = getHTMLProps(props, removeSizeProps);
 
     return (
         <section {...HTMLProps} className={className} />

@@ -10,14 +10,13 @@ describe('Icon', () => {
     });
 
     it('should render a span with .icon and modifiers', () => {
-        const component = shallow(<Icon isLeft isRight>My Icon</Icon>);
+        const component = shallow(<Icon isAlign='left'>My Icon</Icon>);
         expect(component.hasClass('icon')).toBe(true);
         expect(component.hasClass('is-left')).toBe(true);
-        expect(component.hasClass('is-right')).toBe(true);
     });
 
     it('should render a span with .icon, modifiers and classNames', () => {
-        const component = shallow(<Icon isLarge className='custom'>My Icon</Icon>);
+        const component = shallow(<Icon isSize='large' className='custom'>My Icon</Icon>);
         expect(component.hasClass('icon')).toBe(true);
         expect(component.hasClass('is-large')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);

@@ -1,25 +1,26 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma, withHelpersModifiers } from './../../bulma';
+import {
+    Bulma,
+    getActiveModifiers, removeActiveModifiers,
+    withHelpersModifiers,
+} from './../../bulma';
+import { getHTMLProps, combineModifiers } from './../../helpers';
 
-export interface NavToggle<T> extends React.HTMLProps<T> {
-    isActive?: boolean,
+export interface NavToggle<T> extends Bulma.Active, React.HTMLProps<T> {
 }
 
 export const NavToggle: React.SFC<NavToggle<HTMLSpanElement>> = (props) => {
     const className = classNames(
         'nav-toggle',
         {
-            'is-active': props.isActive,
+            ...getActiveModifiers(props),
         },
         props.className
     );
 
-    const {
-        isActive,
-        children,
-        ...HTMLProps } = props;
+    const {children, ...HTMLProps} = getHTMLProps(props, removeActiveModifiers);
 
     return (
         <span {...HTMLProps} className={className}>
