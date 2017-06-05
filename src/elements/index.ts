@@ -9,7 +9,7 @@ export { default as Progress } from './Progress';
 export { default as Table } from './Table';
 export { default as Tag } from './Tag';
 export { default as Title } from './Title';
-export { default as SubTitle } from './SubTitle';
+export { default as Subtitle } from './Subtitle';
 export { default as Heading } from './Heading';
 
 export {

@@ -1,5 +1,12 @@
 # Bloomer Changelog
 
+## 0.5.1 - 2017-06-05
+### Changed
+- Rename `SubTitle` for `Subtitle` -> Annoying typo
+
+### Fixed
+- `NavRight` was passing `isMenu` as prop when rendered, causing annoying `console.error`.
+
 ## 0.5.0 - 2017-06-05
 ### Added
 - Bulma Sizes to Button Component (small, medium, large)

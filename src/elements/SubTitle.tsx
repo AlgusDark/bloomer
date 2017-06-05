@@ -9,10 +9,10 @@ import {
 } from './../bulma';
 import { combineModifiers, getHTMLProps } from './../helpers';
 
-export interface SubTitle<T> extends Bulma.Heading, React.HTMLProps<T> {
+export interface Subtitle<T> extends Bulma.Heading, React.HTMLProps<T> {
 }
 
-export const SubTitle: React.SFC<SubTitle<HTMLHeadingElement | HTMLParagraphElement>> = (props) => {
+export const Subtitle: React.SFC<Subtitle<HTMLHeadingElement | HTMLParagraphElement>> = (props) => {
     const className = classNames(
         'subtitle',
         {
@@ -29,4 +29,4 @@ export const SubTitle: React.SFC<SubTitle<HTMLHeadingElement | HTMLParagraphElem
     return React.createElement(element, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(SubTitle);
+export default withHelpersModifiers(Subtitle);

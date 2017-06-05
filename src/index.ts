@@ -95,7 +95,7 @@ export {
     Table,
     Tag,
     Title,
-    SubTitle,
+    Subtitle,
     Heading,
 } from './elements';
 
