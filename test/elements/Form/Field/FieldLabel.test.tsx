@@ -18,10 +18,9 @@ describe('FieldLabel', () => {
     });
 
     it('should render a div with .field-label, modifiers and custom classNames', () => {
-        const component = shallow(<FieldLabel isLarge isSmall className='custom'><span>Any Content</span></FieldLabel>);
+        const component = shallow(<FieldLabel isSize='large' className='custom'><span>Any Content</span></FieldLabel>);
         expect(component.hasClass('field-label')).toBe(true);
         expect(component.hasClass('is-large')).toBe(true);
-        expect(component.hasClass('is-small')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);
     });
 

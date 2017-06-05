@@ -10,13 +10,13 @@ describe('Help', () => {
     });
 
     it('should render a paragraph with .help and modifiers', () => {
-        const component = shallow(<Help isDark />);
+        const component = shallow(<Help isColor='dark' />);
         expect(component.hasClass('help')).toBe(true);
         expect(component.hasClass('is-dark')).toBe(true);
     });
 
     it('should render a paragraph with .help, modifiers and classNames', () => {
-        const component = shallow(<Help isDark className='custom' />);
+        const component = shallow(<Help isColor='dark' className='custom' />);
         expect(component.hasClass('help')).toBe(true);
         expect(component.hasClass('is-dark')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);

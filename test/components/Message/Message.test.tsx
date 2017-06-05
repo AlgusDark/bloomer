@@ -10,13 +10,13 @@ describe('Message', () => {
     });
 
     it('should render an article with .message and modifiers', () => {
-        const component = shallow(<Message isBlack>My Message</Message>);
+        const component = shallow(<Message isColor='black'>My Message</Message>);
         expect(component.hasClass('message')).toBe(true);
         expect(component.hasClass('is-black')).toBe(true);
     });
 
     it('should render an article with .message, modifiers and custom classNames', () => {
-        const component = shallow(<Message isPrimary className='custom'><span>Any Content</span></Message>);
+        const component = shallow(<Message isColor='primary' className='custom'><span>Any Content</span></Message>);
         expect(component.hasClass('message')).toBe(true);
         expect(component.hasClass('is-primary')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);

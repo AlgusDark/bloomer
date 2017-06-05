@@ -1,10 +1,14 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma, withHelpersModifiers } from './../../bulma';
+import {
+    Bulma,
+    getActiveModifiers, removeActiveModifiers,
+    withHelpersModifiers,
+} from './../../bulma';
+import { getHTMLProps, combineModifiers } from './../../helpers';
 
-export interface NavRight<T> extends React.HTMLProps<T> {
-    isActive?: boolean,
+export interface NavRight<T> extends Bulma.Active, React.HTMLProps<T> {
     isMenu?: boolean,
 }
 
@@ -12,13 +16,14 @@ export const NavRight: React.SFC<NavRight<HTMLDivElement>> = (props) => {
     const className = classNames(
         'nav-right',
         {
-            'is-active': props.isActive,
             'nav-menu': props.isMenu,
+            ...getActiveModifiers(props),
         },
         props.className,
     );
 
-    const { isActive, isMenu, ...HTMLProps } = props;
+    const { isMenu, ...rest } = props;
+    const HTMLProps = getHTMLProps(props, removeActiveModifiers);
 
     return (
         <div {...HTMLProps} className={className} />

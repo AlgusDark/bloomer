@@ -1,20 +1,25 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma, withHelpersModifiers } from './../../bulma';
+import {
+    Bulma,
+    getActiveModifiers, removeActiveModifiers,
+    withHelpersModifiers,
+} from './../../bulma';
+import { getHTMLProps } from './../../helpers';
 
-export interface PanelTab<T> extends Bulma.Render, React.HTMLProps<T> {
-    isActive?: boolean,
+export interface PanelTab<T> extends Bulma.Render, Bulma.Active, React.HTMLProps<T> {
 }
 
 export const PanelTab: React.SFC<PanelTab<HTMLAnchorElement>> = (props) => {
     const className = classNames(
         {
-            'is-active': props.isActive,
+            ...getActiveModifiers(props)
         },
         props.className
     );
-    const { render, isActive, ...HTMLProps } = props;
+    const { render, ...rest } = props;
+    const HTMLProps = getHTMLProps(rest, removeActiveModifiers);
 
     if (render) return render({ ...HTMLProps, className });
 
