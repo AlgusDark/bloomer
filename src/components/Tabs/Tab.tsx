@@ -1,20 +1,25 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma, withHelpersModifiers } from './../../bulma';
+import {
+    Bulma,
+    getActiveModifiers, removeActiveModifiers,
+    withHelpersModifiers,
+} from './../../bulma';
 
-export interface Tab<T> extends React.HTMLProps<T> {
-    isActive?: boolean,
+import { getHTMLProps } from './../../helpers'
+
+export interface Tab<T> extends Bulma.Active, React.HTMLProps<T> {
 }
 
 export const Tab: React.SFC<Tab<HTMLLIElement>> = (props) => {
     const className = classNames(
         {
-            'is-active': props.isActive
+            ...getActiveModifiers(props)
         },
         props.className
     );
-    const { isActive, ...HTMLProps } = props;
+    const HTMLProps = getHTMLProps(props, removeActiveModifiers);
 
     const withClassName = (
         <li {...HTMLProps} className={className} />

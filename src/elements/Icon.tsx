@@ -4,27 +4,28 @@ import * as classNames from 'classnames';
 import {
     Bulma,
     getSizeModifiers, removeSizeProps,
+    isLeft, isRight, removeAlignmentProps,
     withHelpersModifiers
 } from './../bulma';
-import { combineModifiers, getHTMLProps } from './../helpers';
+import { getHTMLProps, isOption } from './../helpers';
 
-export interface Icon<T> extends Bulma.Size, React.HTMLProps<T> {
-    isLeft?: boolean,
-    isRight?: boolean,
+export interface Icon<T> extends Bulma.Size, Bulma.Alignment,
+    React.HTMLProps<T> {
+    isAlign?: 'left' | 'right';
 }
 
 export const Icon: React.SFC<Icon<HTMLSpanElement>> = (props) => {
+    const isAlignOption = isOption(isLeft, isRight);
     const className = classNames(
         'icon',
         {
-            'is-left':props.isLeft,
-            'is-right':props.isRight,
-            ...combineModifiers(props, getSizeModifiers),
+            ...(isAlignOption(props.isAlign) ? {[`is-${props.isAlign}`]: true} : {}),
+            ...getSizeModifiers(props),
         },
         props.className,
     );
 
-    const HTMLProps = getHTMLProps(props, removeSizeProps);
+    const HTMLProps = getHTMLProps(props, removeAlignmentProps);
 
     return (
         <span {...HTMLProps} className={className} />

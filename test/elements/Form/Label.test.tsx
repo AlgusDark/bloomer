@@ -11,14 +11,14 @@ describe('Label', () => {
 
     it('should render a label with .label and modifiers', () => {
         const component = shallow(
-            <Label isSmall />
+            <Label isSize='small' />
         );
         expect(component.hasClass('label')).toBe(true);
         expect(component.hasClass('is-small')).toBe(true);
     });
 
     it('should render a label with .label, modifiers and custom classNames', () => {
-        const component = shallow(<Label isLarge className='custom' />);
+        const component = shallow(<Label isSize='large' className='custom' />);
         expect(component.hasClass('label')).toBe(true);
         expect(component.hasClass('is-large')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);

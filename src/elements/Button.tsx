@@ -3,14 +3,14 @@ import * as classNames from 'classnames';
 
 import {
     Bulma,
-    removeStateProps, removeColorProps, removeLoadingProps,
-    getStateModifiers, getColorModifiers, getLoadingModifiers,
+    removeStateProps, removeColorProps, removeLoadingProps, removeSizeProps,
+    getStateModifiers, getColorModifiers, getLoadingModifiers, getSizeModifiers,
     withHelpersModifiers,
 } from './../bulma';
 import { combineModifiers, getHTMLProps } from './../helpers';
 
 export interface Button<T> extends
-    Bulma.Render, Bulma.State, Bulma.Color, Bulma.Loading,
+    Bulma.Render, Bulma.State, Bulma.Color, Bulma.Loading, Bulma.Size,
     React.HTMLProps<T> {
     isLink?: boolean,
     isOutlined?: boolean,
@@ -26,7 +26,7 @@ export const Button: React.SFC<Button<HTMLButtonElement | HTMLAnchorElement>> = 
             'is-outlined': props.isOutlined,
             'is-inverted': props.isInverted,
             'is-static': props.isStatic,
-            ...combineModifiers(props, getStateModifiers, getColorModifiers, getLoadingModifiers)
+            ...combineModifiers(props, getStateModifiers, getColorModifiers, getLoadingModifiers, getSizeModifiers)
         },
         props.className,
     );
@@ -36,6 +36,7 @@ export const Button: React.SFC<Button<HTMLButtonElement | HTMLAnchorElement>> = 
         removeStateProps,
         removeColorProps,
         removeLoadingProps,
+        removeSizeProps,
     );
 
     if (render) return render({ ...HTMLProps, className });

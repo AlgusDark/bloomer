@@ -1,11 +1,15 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma, withHelpersModifiers } from './../../bulma';
+import {
+    Bulma,
+    getActiveModifiers, removeActiveModifiers,
+    withHelpersModifiers,
+} from './../../bulma';
+import { getHTMLProps } from './../../helpers';
 
-export interface PanelBlock<T> extends Bulma.Render, React.HTMLProps<T> {
+export interface PanelBlock<T> extends Bulma.Render, Bulma.Active, React.HTMLProps<T> {
     isWrapped?: boolean,
-    isActive?: boolean,
     isLabel?: boolean,
 }
 
@@ -14,7 +18,7 @@ export const PanelBlock: React.SFC<PanelBlock<HTMLAnchorElement | HTMLDivElement
         'panel-block',
         {
             'is-wrapped': props.isWrapped,
-            'is-active': props.isActive,
+            ...getActiveModifiers(props),
         },
         props.className,
     );
@@ -22,10 +26,10 @@ export const PanelBlock: React.SFC<PanelBlock<HTMLAnchorElement | HTMLDivElement
     const {
         render,
         isWrapped,
-        isActive,
         isLabel,
-        ...HTMLProps
+        ...rest
     } = props;
+    const HTMLProps = getHTMLProps(rest, removeActiveModifiers);
 
     if (render) return render({ ...HTMLProps, className });
 

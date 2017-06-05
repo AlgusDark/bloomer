@@ -1,25 +1,26 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Bulma, withHelpersModifiers } from './../../bulma';
+import {
+    Bulma,
+    getActiveModifiers, removeActiveModifiers,
+    withHelpersModifiers,
+} from './../../bulma';
+import { getHTMLProps } from './../../helpers'
 
-export interface Modal<T> extends React.HTMLProps<T> {
-    isActive?: boolean,
+export interface Modal<T> extends Bulma.Active, React.HTMLProps<T> {
 }
 
 export const Modal: React.SFC<Modal<HTMLDivElement>> = (props) => {
     const className = classNames(
         'modal',
         {
-            'is-active': props.isActive
+            ...getActiveModifiers(props),
         },
         props.className,
     );
 
-    const {
-        isActive,
-        ...HTMLProps
-    } = props;
+    const HTMLProps = getHTMLProps(props, removeActiveModifiers);
 
     return (
         <div {...HTMLProps} className={className} />
