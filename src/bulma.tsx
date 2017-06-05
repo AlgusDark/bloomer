@@ -53,7 +53,7 @@ export declare namespace Bulma {
         isParagraph?: boolean,
     }
 
-    export interface Grid extends Grid.Size, Grid.Offset {
+    export interface Grid extends Grid.HorizontalSize, Grid.Size, Grid.Offset {
     }
 
     export type Platform = 'mobile' | 'tablet' | 'touch' | 'desktop' | 'widescreen';
@@ -106,7 +106,6 @@ export declare namespace Bulma {
         FullWidth,
         State,
         Color,
-        Grid,
         Helpers {
     }
 

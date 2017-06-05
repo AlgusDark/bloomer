@@ -45,6 +45,10 @@ export declare namespace Grid {
 
         isOffsetOneQuarter?: boolean | Platforms | Platforms[],
     }
+
+    export interface NonHTMLProps extends HorizontalSize, Size, Offset {
+
+    }
 }
 
 const isValidSize = isBetween(1, 12);
@@ -80,8 +84,8 @@ const getModifier = (modifier: boolean | Grid.Platforms | Grid.Platforms[], help
 export function getSizeModifiers(props: Grid.Size): object {
     const platformSize = {
         ...(isValidAndInteger(props.isMobile) ? { [`is-${props.isMobile}-mobile`]: true } : {}),
-        ...(isValidAndInteger(props.isTablet) ? { [`is-${props.isTablet}-mobile`]: true } : {}),
-        ...(isValidAndInteger(props.isDesktop) ? { [`is-${props.isDesktop}-mobile`]: true } : {}),
+        ...(isValidAndInteger(props.isTablet) ? { [`is-${props.isTablet}-tablet`]: true } : {}),
+        ...(isValidAndInteger(props.isDesktop) ? { [`is-${props.isDesktop}-desktop`]: true } : {}),
     }
 
     return {

@@ -35,6 +35,30 @@ describe('removeProps functions', () => {
             .toEqual(props);
     });
 
+    it('should remove Active props', () => {
+        const stateProps = {
+            isActive: true,
+        }
+        expect(Bulma.removeActiveModifiers({ ...props, ...stateProps }))
+            .toEqual(props);
+    });
+
+    it('should remove Hovered props', () => {
+        const stateProps = {
+            isHovered: true,
+        }
+        expect(Bulma.removeHoveredModifiers({ ...props, ...stateProps }))
+            .toEqual(props);
+    });
+
+    it('should remove Focused props', () => {
+        const stateProps = {
+            isFocused: true,
+        }
+        expect(Bulma.removeFocusedModifiers({ ...props, ...stateProps }))
+            .toEqual(props);
+    });
+
     it('should remove Color props', () => {
         const colorProps: any = {
             isColor: 'white',
