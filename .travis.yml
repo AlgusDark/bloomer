@@ -12,14 +12,3 @@ install:
 
 script:
   - npm run test:ci
-  - npm run build
-  - npm run deploy
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $github_token
-  local_dir: docs
-  target_branch: dev
-  on:
-    branch: dev
