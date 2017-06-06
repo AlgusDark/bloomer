@@ -84,7 +84,7 @@ const Documentation = ({ match }) => (
                 <Route path={`${match.url}/overview`} component={Overview} />
                 <Route path={`${match.url}/grid`} component={Grid} />
                 <Route render={
-                    props => <Container><Title hasTextAlign='centered' isSize={1}>Bloomer is 100% done, but Documentation is in progress.</Title></Container>
+                    props => <Container><Title hasTextAlign='centered' isSize={1}>Bloomer is production ready, but Docs are in progress.</Title></Container>
                 } />
             </Switch>
         </Section>
