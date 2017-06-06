@@ -1,5 +1,10 @@
 # Bloomer Changelog
 
+## 0.5.2 - 2017-06-06
+### Changed
+- Fix name for UMD library to `Bloomer`
+- Remove Type specific for some funcions on helper file (getHTMLProps and combineModifiers).
+
 ## 0.5.1 - 2017-06-05
 ### Changed
 - Rename `SubTitle` for `Subtitle` -> Annoying typo
