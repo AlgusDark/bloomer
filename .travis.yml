@@ -1,16 +1,25 @@
-sudo: false
+language: node_js
+
+node_js:
+  - "stable"
 
 cache:
   directories:
     - node_modules
-
-language: node_js
-
-node_js:
-  - "6"
 
 install:
   - npm install
 
 script:
   - npm run test:ci
+  - npm run build
+  - npm run deploy
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: docs
+  target_branch: dev
+  on:
+    branch: dev

@@ -83,7 +83,8 @@
   "author": {
     "email": "algus.dark@gmail.com",
     "name": "Algus Dark",
-    "url": "http://algus.ninja/bloomer"
+    "url": "http://bloomer.js.org"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "http://bloomer.js.org"
 }
