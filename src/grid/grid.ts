@@ -31,7 +31,7 @@ export declare namespace Grid {
 
     export interface Offset {
         isOffset?: Sizes,
-        isOffsetMobile?: Sizes
+        isOffsetMobile?: Sizes,
         isOffsetTablet?: Sizes,
         isOffsetDesktop?: Sizes,
 

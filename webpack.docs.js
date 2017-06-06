@@ -176,6 +176,12 @@ const config = env => (
     plugins: getPlugins(env),
 
     devServer: getDevServer(env),
+
+    externals: {
+      "react": "React",
+      "react-dom": "ReactDOM",
+      "highlight.js": "hljs",
+    },
   }
 );
 
