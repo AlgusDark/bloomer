@@ -10,7 +10,7 @@ const config = {
 		path: path.resolve(__dirname, 'bundles'),
 		filename: '[name].js',
 		libraryTarget: 'umd',
-		library: 'BulmaJSX',
+		library: 'Bloomer',
 		umdNamedDefine: true
 	},
 	resolve: {
