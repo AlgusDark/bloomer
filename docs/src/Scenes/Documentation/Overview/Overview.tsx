@@ -4,8 +4,7 @@ import { Link, Redirect, Route, withRouter } from 'react-router-dom';
 import { Container } from './../../../../../src/layout';
 import { Left, Item } from './../../../../../src/components/Nav';
 
-import { isActive } from './../../../utils';
-
+import NavDocs from './../../../Components/NavDocs';
 import Start from './Scenes/Start';
 import Helpers from './Scenes/Helpers';
 
@@ -30,12 +29,6 @@ export const OverviewMenu = ({ match, location }) => {
     ];
 
     return (
-        <Left>
-            {pages.map((page, i) => (
-                <Item key={i} isTab isActive={isActive(location, page.to)} render={
-                    props => <Link {...props} to={page.to}>{page.title}</Link>
-                } />
-            ))}
-        </Left>
+        <NavDocs location={location} pages={pages} />
     )
 }

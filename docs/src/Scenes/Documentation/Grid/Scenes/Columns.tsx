@@ -1,12 +1,26 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { sizes } from './../Grid';
 import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
 
 import { Container } from './../../../../../../src/layout';
 import { Title, Subtitle, Tag } from './../../../../../../src';
+
+const sizes = (<td>
+    <code>1</code> |&nbsp;
+    <code>2</code> |&nbsp;
+    <code>3</code> |&nbsp;
+    <code>4</code> |&nbsp;
+    <code>5</code> |&nbsp;
+    <code>6</code> |&nbsp;
+    <code>7</code> |&nbsp;
+    <code>8</code> |&nbsp;
+    <code>9</code> |&nbsp;
+    <code>10</code> |&nbsp;
+    <code>11</code> |&nbsp;
+    <code>12</code>
+</td>)
 
 const columnsRow: Docs.Row[] = [
     {
