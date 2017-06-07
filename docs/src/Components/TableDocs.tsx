@@ -14,7 +14,7 @@ const TableDocs = ({ rows }) => (
                 <tr key={i}>
                     <td>{row.prop}</td>
                     <td>{row.type}</td>
-                    {row.description || <td/>}
+                    {row.description || <td />}
                 </tr>
             ))}
         </tbody>
