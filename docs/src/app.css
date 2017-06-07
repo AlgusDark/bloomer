@@ -42,9 +42,21 @@
 pre {
     margin: 1rem 0;
 }
- 
+
+
+/* Mobile */
+
 @media screen and (max-width: 425px) {
     #footer {
         text-align: center
+    }
+    .table {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-collapse: collapse;
+        border-spacing: 0;
     }
 }

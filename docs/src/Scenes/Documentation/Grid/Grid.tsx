@@ -4,25 +4,9 @@ import { Link, Redirect, Route, withRouter } from 'react-router-dom';
 import { Container } from './../../../../../src/layout';
 import { Left, Item } from './../../../../../src/components/Nav';
 
-import { isActive } from './../../../utils';
-
+import NavDocs from './../../../Components/NavDocs';
 import Columns from './Scenes/Columns';
 import Tiles from './Scenes/Tiles';
-
-export const sizes = (<td>
-    <code>1</code> |&nbsp;
-    <code>2</code> |&nbsp;
-    <code>3</code> |&nbsp;
-    <code>4</code> |&nbsp;
-    <code>5</code> |&nbsp;
-    <code>6</code> |&nbsp;
-    <code>7</code> |&nbsp;
-    <code>8</code> |&nbsp;
-    <code>9</code> |&nbsp;
-    <code>10</code> |&nbsp;
-    <code>11</code> |&nbsp;
-    <code>12</code>
-</td>)
 
 export const Grid = ({ match }) => (
     <Container>
@@ -45,12 +29,6 @@ export const GridMenu = ({ match, location }) => {
     ];
 
     return (
-        <Left>
-            {pages.map((page, i) => (
-                <Item key={i} isTab isActive={isActive(location, page.to)} render={
-                    props => <Link {...props} to={page.to}>{page.title}</Link>
-                } />
-            ))}
-        </Left>
+        <NavDocs location={location} pages={pages} />
     )
 }
