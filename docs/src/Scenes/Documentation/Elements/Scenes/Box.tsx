@@ -1,13 +1,25 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
+import { Link } from 'react-router-dom'
 
-import { Container } from './../../../../../../src/layout';
-import { Title, Subtitle, Table } from './../../../../../../src';
+import { Container, Title, Subtitle, Box } from './../../../../../../src';
 
-const Box = (props) => (
+const BoxDocs = (props) => (
     <Container>
-        Box
+        <Title isSpaced>Box</Title>
+        <Box>
+            <code>Box</code> doesn't have modifiers (but you can use any <Link to='/documentation/overview/helpers'>Helpers</Link> modifiers)
+        </Box>
+        <Highlight className='javascript'>
+            {`import * as React from 'react';
+import { Box } from 'bloomer';
+
+const MyComponent = (props) => (
+    <Box>A white box to contain other elements</Box>
+)
+`}
+        </Highlight>
     </Container>
 )
 
-export default Box;
+export default BoxDocs;

@@ -6,7 +6,7 @@ import {
     getColorModifiers, removeColorProps,
     withHelpersModifiers
 } from './../../bulma';
-import { combineModifiers, getHTMLProps } from './../../helpers';
+import { getHTMLProps } from './../../helpers';
 
 export interface Help<T> extends Bulma.Color,
     React.HTMLProps<T> {
@@ -17,7 +17,7 @@ export const Help: React.SFC<Help<HTMLParagraphElement>> = (props) => {
     const className = classNames(
         'help',
         {
-            ...combineModifiers(props, getColorModifiers),
+            ...getColorModifiers(props),
         },
         props.className,
     );

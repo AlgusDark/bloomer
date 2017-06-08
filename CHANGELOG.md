@@ -1,5 +1,10 @@
 # Bloomer Changelog
 
+## 0.5.3 - 2017-06-06
+### Changed
+- Fix `Icon` component. Was passing `isSize` prop to rendered element causing annoyung console warning.
+— Removed unnecessary imports on components.
+
 ## 0.5.2 - 2017-06-06
 ### Changed
 - Fix name for UMD library to `Bloomer`

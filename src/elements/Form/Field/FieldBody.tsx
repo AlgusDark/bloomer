@@ -3,7 +3,6 @@ import * as classNames from 'classnames';
 
 import {
     Bulma,
-    getSizeModifiers, removeSizeProps,
     withHelpersModifiers,
 } from './../../../bulma';
 

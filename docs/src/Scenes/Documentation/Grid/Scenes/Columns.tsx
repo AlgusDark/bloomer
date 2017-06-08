@@ -22,7 +22,7 @@ const sizes = (<td>
     <code>12</code>
 </td>)
 
-const columnsRow: Docs.Row[] = [
+const ColumnsRow: Docs.Row[] = [
     {
         prop: 'isMobile',
         type: 'bool',
@@ -55,7 +55,7 @@ const columnsRow: Docs.Row[] = [
 
 const platforms = (<td><code>mobile</code> | <code>tablet</code> | <code>desktop</code></td>)
 
-const columnRow: Docs.Row[] = [
+const ColumnRow: Docs.Row[] = [
     {
         prop: 'isSize',
         type: 'number',
@@ -159,16 +159,16 @@ const columnRow: Docs.Row[] = [
 
 ]
 
-const Columns = (props) => (
+const ColumnsDocs = (props) => (
     <Container>
         <Title>Columns</Title>
-        <TableDocs rows={columnsRow} />
+        <TableDocs rows={ColumnsRow} />
 
         <hr />
 
         <Title>Column</Title>
-        <TableDocs rows={columnRow} />
+        <TableDocs rows={ColumnRow} />
     </Container>
 )
 
-export default Columns;
+export default ColumnsDocs;
