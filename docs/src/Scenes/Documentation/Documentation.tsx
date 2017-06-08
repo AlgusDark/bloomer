@@ -11,40 +11,51 @@ import { Nav, Left, Item } from './../../../../src/components/Nav';
 
 import { Overview, OverviewMenu } from './Overview/Overview';
 import { Grid, GridMenu } from './Grid/Grid';
+import { Elements, ElementsMenu } from './Elements/Elements';
+
+const pages: any = [
+    {
+        title: 'Overview',
+        to: '/overview',
+        component: Overview,
+        menu: OverviewMenu,
+    },
+    {
+        title: 'Grid',
+        to: '/grid',
+        component: Grid,
+        menu: GridMenu,
+    },
+    {
+        title: 'Elements',
+        to: '/elements',
+        component: Elements,
+        menu: ElementsMenu,
+    },
+    {
+        title: 'Components',
+        to: '/components',
+        // component: Components,
+    },
+    {
+        title: 'Layout',
+        to: '/layout',
+        // component: Layout,
+    },
+];
 
 const NavBar = withRouter(({ match, location }) => {
-    const pages = [
-        {
-            title: 'Overview',
-            to: `${match.url}/overview`,
-        },
-        {
-            title: 'Grid',
-            to: `${match.url}/grid`,
-        },
-        {
-            title: 'Elements',
-            to: `${match.url}/elements`,
-        },
-        {
-            title: 'Components',
-            to: `${match.url}/components`,
-        },
-        {
-            title: 'Layout',
-            to: `${match.url}/layout`,
-        },
-    ];
-
-    return (<Container>
-        <Tabs isBoxed>
-            <List>
-                {pages.map((page, i) => (
-                    <Tab key={i} isActive={isActive(location, page.to)}><Link to={page.to}>{page.title}</Link></Tab>
-                ))}
-            </List>
-        </Tabs>
-    </Container>)
+    return (
+        <Container>
+            <Tabs isBoxed>
+                <List>
+                    {pages.map((page, i) => (
+                        <Tab key={i} isActive={isActive(location, `${match.url}${page.to}`)}><Link to={`${match.url}${page.to}`}>{page.title}</Link></Tab>
+                    ))}
+                </List>
+            </Tabs>
+        </Container>
+    )
 });
 
 const DocHero = () => (
@@ -69,8 +80,9 @@ const Menu = withRouter(({ match }) => (
     <Nav hasShadow>
         <Container>
             <Route exact path={match.url} render={() => <Redirect to={`${match.url}/overview/start`} />} />
-            <Route path={`${match.url}/overview`} component={OverviewMenu} />
-            <Route path={`${match.url}/grid`} component={GridMenu} />
+            {pages.map((page, i) => (
+                <Route path={`${match.url}${page.to}`} component={page.menu} />
+            ))}
         </Container>
     </Nav>
 ))
@@ -81,8 +93,9 @@ const Documentation = ({ match }) => (
         <Menu />
         <Section>
             <Switch>
-                <Route path={`${match.url}/overview`} component={Overview} />
-                <Route path={`${match.url}/grid`} component={Grid} />
+                {pages.map((page, key) => (
+                    <Route path={`${match.url}${page.to}`} component={page.component} />
+                ))}
                 <Route render={
                     props => <Container><Title hasTextAlign='centered' isSize={1}>Bloomer is production ready, but Docs are in progress.</Title></Container>
                 } />
