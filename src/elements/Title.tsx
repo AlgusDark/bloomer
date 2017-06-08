@@ -16,7 +16,7 @@ export const Title: React.SFC<Title<HTMLHeadingElement | HTMLParagraphElement>> 
     const className = classNames(
         'title',
         {
-            ...combineModifiers(props, getHeadingModifiers),
+            ...getHeadingModifiers(props),
         },
         props.className,
     );

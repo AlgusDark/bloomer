@@ -18,6 +18,45 @@ const PlatformsOnly = {
     description: <td><code>tablet</code> | <code>desktop</code></td>
 }
 
+export const colors = <td><code>white</code> | <code>light</code> | <code>dark</code> | <code>black</code> | <code>primary</code> | <code>info</code> | <code>success</code> | <code>warning</code> | <code>danger</code></td>
+export const isColor = {
+    prop: 'isColor',
+    type: 'string',
+    description: colors
+}
+
+export const isSize = {
+    prop: 'isSize',
+    type: 'string',
+    description: <td><code>large</code> | <code>medium</code> | <code>small</code></td>,
+};
+
+export const render = component => ({
+    prop: 'render',
+    type: 'func',
+    description: <td>Allows inline rendering of other element. The render prop receives all the props from {`<${component}>`}.</td>,
+});
+
+export const states = [
+    {
+        prop: 'isActive',
+        type: 'bool',
+    },
+    {
+        prop: 'isHovered',
+        type: 'bool',
+    },
+    {
+        prop: 'isFocused',
+        type: 'bool',
+    }
+];
+
+export const isLoading = {
+    prop: 'isLoading',
+    type: 'bool',
+};
+
 const helpersRows: Docs.Row[] = [
     {
         prop: 'isClearFix',
@@ -40,6 +79,11 @@ const helpersRows: Docs.Row[] = [
         prop: 'hasTextAlign',
         type: 'string',
         description: <td><code>left</code> | <code>centered</code> | <code>right</code></td>,
+    },
+    {
+        prop: 'hasTextColor',
+        type: 'string',
+        description: colors,
     },
     {
         prop: 'isMarginless',

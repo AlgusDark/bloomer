@@ -25,7 +25,7 @@ export const Icon: React.SFC<Icon<HTMLSpanElement>> = (props) => {
         props.className,
     );
 
-    const HTMLProps = getHTMLProps(props, removeAlignmentProps);
+    const HTMLProps = getHTMLProps(props, removeAlignmentProps, removeSizeProps);
 
     return (
         <span {...HTMLProps} className={className} />

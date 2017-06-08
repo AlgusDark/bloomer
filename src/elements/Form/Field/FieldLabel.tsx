@@ -6,7 +6,7 @@ import {
     getSizeModifiers, removeSizeProps,
     withHelpersModifiers,
 } from './../../../bulma';
-import { combineModifiers, getHTMLProps } from './../../../helpers'
+import { getHTMLProps } from './../../../helpers'
 
 export interface FieldLabel<T> extends Bulma.Size,
     React.HTMLProps<T> {
@@ -18,7 +18,7 @@ export const FieldLabel: React.SFC<FieldLabel<HTMLDivElement>> = (props) => {
         'field-label',
         {
             'is-normal': props.isNormal,
-            ...combineModifiers(props, getSizeModifiers)
+            ...getSizeModifiers(props)
         },
         props.className);
     const {

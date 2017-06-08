@@ -4,6 +4,7 @@ import * as Highlight from 'react-highlight';
 import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
 
+
 import { Container } from './../../../../../../src/layout';
 import { Title, Subtitle, Tag } from './../../../../../../src';
 
@@ -46,7 +47,6 @@ const tilesRow: Docs.Row[] = [
         prop: 'isVertical',
         type: 'bool',
     },
-
 ]
 
 const Columns = (props) => (

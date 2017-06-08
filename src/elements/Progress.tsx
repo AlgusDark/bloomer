@@ -15,7 +15,9 @@ export interface Progress<T> extends Bulma.Size, Bulma.Color,
 export const Progress: React.SFC<Progress<HTMLProgressElement>> = (props) => {
     const className = classNames(
         'progress',
-        { ...combineModifiers(props, getSizeModifiers, getColorModifiers) },
+        {
+            ...combineModifiers(props, getSizeModifiers, getColorModifiers)
+        },
         props.className,
     );
     const HTMLProps = getHTMLProps(props, removeSizeProps, removeColorProps);

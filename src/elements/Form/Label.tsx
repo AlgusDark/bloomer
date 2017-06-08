@@ -7,7 +7,7 @@ import {
     removeSizeProps,
     withHelpersModifiers,
 } from './../../bulma';
-import { combineModifiers, getHTMLProps } from './../../helpers';
+import { getHTMLProps } from './../../helpers';
 
 export interface Label<T> extends Bulma.Size,
     React.HTMLProps<T> {
@@ -17,7 +17,7 @@ export const Label: React.SFC<Label<HTMLLabelElement>> = (props) => {
     const className = classNames(
         'label',
         {
-            ...combineModifiers(props, getSizeModifiers),
+            ...getSizeModifiers(props),
         },
         props.className);
 

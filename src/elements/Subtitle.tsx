@@ -7,7 +7,7 @@ import {
     getHeadingModifiers, removeHeadingProps,
     withHelpersModifiers,
 } from './../bulma';
-import { combineModifiers, getHTMLProps } from './../helpers';
+import { getHTMLProps } from './../helpers';
 
 export interface Subtitle<T> extends Bulma.Heading, React.HTMLProps<T> {
 }
@@ -16,7 +16,7 @@ export const Subtitle: React.SFC<Subtitle<HTMLHeadingElement | HTMLParagraphElem
     const className = classNames(
         'subtitle',
         {
-            ...combineModifiers(props, getHeadingModifiers),
+            ...getHeadingModifiers(props),
         },
         props.className,
     );
