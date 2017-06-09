@@ -2,13 +2,14 @@ import * as React from 'react';
 import * as Highlight from 'react-highlight';
 import { Link } from 'react-router-dom'
 
+import { noModifiers } from './../../Overview/Scenes/Helpers';
 import { Container, Title, Subtitle, Box } from './../../../../../../src';
 
 const BoxDocs = (props) => (
     <Container>
         <Title isSpaced>Box</Title>
         <Box>
-            <code>Box</code> doesn't have modifiers (but you can use any <Link to='/documentation/overview/helpers'>Helpers</Link> modifiers)
+            {noModifiers}
         </Box>
         <Highlight className='javascript'>
             {`import * as React from 'react';

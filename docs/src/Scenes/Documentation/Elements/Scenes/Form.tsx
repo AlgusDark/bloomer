@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
 
-import { isSize, isColor, states, isLoading } from './../../Overview/Scenes/Helpers';
+import { isSize, isColor, states, isLoading, noModifiers } from './../../Overview/Scenes/Helpers';
 import { Container, Title, Subtitle, Checkbox, Radio, Help } from './../../../../../../src';
 
 const LabelRows: Docs.Row[] = [
@@ -94,12 +94,12 @@ const FormDocs = (props) => (
         <hr />
 
         <Title>Checkbox</Title>
-        <Checkbox> No modifiers, only those inherited by the <Link to='/documentation/overview/helpers'>Helpers</Link> modifiers</Checkbox>
+        <Checkbox> {noModifiers} </Checkbox>
 
         <hr />
 
         <Title>Radio</Title>
-        <Radio name='option'> No modifiers...</Radio> <Radio name='option'> only those inherited by the <Link to='/documentation/overview/helpers'>Helpers</Link> modifiers</Radio>
+        <Radio name='option'> {noModifiers} </Radio>
 
         <hr />
 
@@ -119,7 +119,7 @@ const FormDocs = (props) => (
         <hr />
 
         <Subtitle isSize={5}>FieldBody</Subtitle>
-        <p>No modifiers, only those inherited by the <Link to='/documentation/overview/helpers'>Helpers</Link> modifiers</p>
+        <p>{noModifiers}</p>
 
         <hr />
 

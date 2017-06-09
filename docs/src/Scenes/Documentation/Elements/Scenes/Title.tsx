@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { noModifiers } from './../../Overview/Scenes/Helpers';
 
 import { Container, Title, Subtitle, Checkbox, Radio, Help, Heading } from './../../../../../../src';
 
@@ -53,7 +54,7 @@ const FormDocs = (props) => (
         <hr />
 
         <Title isSpaced>Heading</Title>
-        <Subtitle> No modifiers, only those inherited by the <Link to='/documentation/overview/helpers'>Helpers</Link> modifiers</Subtitle>
+        <Subtitle> {noModifiers}</Subtitle>
     </Container>
 )
 
