@@ -118,12 +118,12 @@ const FormDocs = (props) => (
 
         <hr />
 
-        <Subtitle isSize={5}>FieldBody</Subtitle>
+        <Title>FieldBody</Title>
         <p>{noModifiers}</p>
 
         <hr />
 
-        <Subtitle isSize={5}>FieldLabel</Subtitle>
+        <Title>FieldLabel</Title>
         <TableDocs rows={FieldLabelRows} />
     </Container>
 )

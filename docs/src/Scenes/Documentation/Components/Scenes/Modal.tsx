@@ -47,22 +47,22 @@ const ModalDocs = (props) => (
 
         <hr />
 
-        <Subtitle isSize={5}>ModalCardHeader</Subtitle>
+        <Title>ModalCardHeader</Title>
         <p>{noModifiers}</p>
 
         <hr />
 
-        <Subtitle isSize={5}>ModalCardTitle</Subtitle>
+        <Title>ModalCardTitle</Title>
         <p>{noModifiers}</p>
 
         <hr />
 
-        <Subtitle isSize={5}>ModalCardBody</Subtitle>
+        <Title>ModalCardBody</Title>
         <p>{noModifiers}</p>
 
         <hr />
 
-        <Subtitle isSize={5}>ModalCardFooter</Subtitle>
+        <Title>ModalCardFooter</Title>
         <p>{noModifiers}</p>
     </Container>
 )
