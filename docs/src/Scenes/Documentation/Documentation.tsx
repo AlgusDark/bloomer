@@ -12,6 +12,7 @@ import { Nav, Left, Item } from './../../../../src/components/Nav';
 import { Overview, OverviewMenu } from './Overview/Overview';
 import { Grid, GridMenu } from './Grid/Grid';
 import { Elements, ElementsMenu } from './Elements/Elements';
+import { Components, ComponentsMenu } from './Components/Components';
 
 const pages: any = [
     {
@@ -35,12 +36,14 @@ const pages: any = [
     {
         title: 'Components',
         to: '/components',
-        // component: Components,
+        component: Components,
+        menu: ComponentsMenu,
     },
     {
         title: 'Layout',
         to: '/layout',
         // component: Layout,
+        // menu: LayoutMenu,
     },
 ];
 
