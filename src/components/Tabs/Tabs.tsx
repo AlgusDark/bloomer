@@ -11,6 +11,7 @@ import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Tabs<T> extends Bulma.Alignment, Bulma.Size,
     React.HTMLProps<T> {
+    isAlign?: 'left' | 'centered' | 'right',
     isBoxed?: boolean,
     isToggle?: boolean,
 }

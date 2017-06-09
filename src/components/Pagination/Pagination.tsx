@@ -10,12 +10,16 @@ import {
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Pagination<T> extends Bulma.Alignment, Bulma.Size,
-    React.HTMLProps<T> { }
+    React.HTMLProps<T> {
+        isAlign?: 'left' | 'centered' | 'right'
+    }
 
 export const Pagination: React.SFC<Pagination<HTMLElement>> = (props) => {
     const className = classNames(
         'pagination',
-        { ...combineModifiers(props, getAlignmentModifiers, getSizeModifiers) },
+        {
+            ...combineModifiers(props, getAlignmentModifiers, getSizeModifiers)
+        },
         props.className,
     );
     const HTMLProps = getHTMLProps(
