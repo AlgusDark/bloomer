@@ -1,6 +1,10 @@
 # Bloomer Changelog
 
-## 0.5.3 - 2017-06-06
+## 0.5.4 - 2017-06-08
+### Changed
+- Add `isAlign` options to `Pagination`, `Tabs` , so Intellisense can be used on those components for that prop.
+
+## 0.5.3 - 2017-06-07
 ### Changed
 - Fix `Icon` component. Was passing `isSize` prop to rendered element causing annoyung console warning.
 — Removed unnecessary imports on components.
