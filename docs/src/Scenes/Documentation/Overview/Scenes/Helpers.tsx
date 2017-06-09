@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
+import { Link } from 'react-router-dom';
 
 import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
@@ -7,6 +8,7 @@ import TableDocs from './../../../../Components/TableDocs';
 import { Container } from './../../../../../../src/layout';
 import { Title, Subtitle } from './../../../../../../src';
 
+export const noModifiers = <span>No modifiers, only those inherited by the <Link to='/documentation/overview/helpers'>Helpers</Link> modifiers</span>;
 
 const Platforms = {
     type: 'bool | string | string[]',
@@ -31,7 +33,13 @@ export const isSize = {
     description: <td><code>large</code> | <code>medium</code> | <code>small</code></td>,
 };
 
-export const render = component => ({
+export const isAlign = {
+    prop: 'isAlign',
+    type: 'string',
+    description: <td><code>left</code> | <code>centered</code> | <code>right</code></td>,
+};
+
+export const render = (component: string) => ({
     prop: 'render',
     type: 'func',
     description: <td>Allows inline rendering of other element. The render prop receives all the props from {`<${component}>`}.</td>,
