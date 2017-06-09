@@ -16,6 +16,9 @@ const Home = () => (
                 <div>
                     <Button href='#/documentation' isSize='medium' isOutlined isColor='light'>Get Started</Button>
                 </div>
+                <div>
+                    <img src="https://camo.githubusercontent.com/33d7b60d09dc9b7a79c969b225755a177b27ed80/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f626c6f6f6d65722e7376673f7374796c653d666c61742d737175617265" alt="NPM Version" data-canonical-src="https://img.shields.io/npm/v/bloomer.svg?style=flat-square" style={{ maxWidth: '100%' }} />
+                </div>
             </Container>
         </HeroBody>
     </Hero>
