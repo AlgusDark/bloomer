@@ -15,7 +15,9 @@ export interface ModalClose<T> extends Bulma.Size, Bulma.Render, React.HTMLProps
 export const ModalClose: React.SFC<ModalClose<HTMLButtonElement>> = (props) => {
     const className = classNames(
         'modal-close',
-        { ...combineModifiers(props, getSizeModifiers) },
+        {
+            ...getSizeModifiers(props)
+        },
         props.className,
     );
 
