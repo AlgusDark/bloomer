@@ -13,6 +13,7 @@ import { Overview, OverviewMenu } from './Overview/Overview';
 import { Grid, GridMenu } from './Grid/Grid';
 import { Elements, ElementsMenu } from './Elements/Elements';
 import { Components, ComponentsMenu } from './Components/Components';
+import { Layout, LayoutMenu } from './Layout/Layout';
 
 const pages: any = [
     {
@@ -42,8 +43,8 @@ const pages: any = [
     {
         title: 'Layout',
         to: '/layout',
-        // component: Layout,
-        // menu: LayoutMenu,
+        component: Layout,
+        menu: LayoutMenu,
     },
 ];
 
@@ -99,9 +100,6 @@ const Documentation = ({ match }) => (
                 {pages.map((page, key) => (
                     <Route path={`${match.url}${page.to}`} component={page.component} />
                 ))}
-                <Route render={
-                    props => <Container><Title hasTextAlign='centered' isSize={1}>Bloomer is production ready, but Docs are in progress.</Title></Container>
-                } />
             </Switch>
         </Section>
     </div>

@@ -1,13 +1,15 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
+import { Link } from 'react-router-dom'
 
-import { Container } from './../../../../../../src/layout';
-import { Title, Subtitle, Table } from './../../../../../../src';
+import { noModifiers } from './../../Overview/Scenes/Helpers';
+import { Container, Title, Subtitle } from './../../../../../../src';
 
-const Footer = (props) => (
+const FooterDocs = (props) => (
     <Container>
-        Footer
+        <Title isSpaced>Footer</Title>
+        <Subtitle>{noModifiers}</Subtitle>
     </Container>
 )
 
-export default Footer;
+export default FooterDocs;
