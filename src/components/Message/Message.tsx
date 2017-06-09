@@ -9,7 +9,9 @@ export interface Message<T> extends Bulma.Color, React.HTMLProps<T> { }
 export const Message: React.SFC<Message<HTMLElement>> = (props) => {
     const className = classNames(
         'message',
-        { ...combineModifiers(props, getColorModifiers) },
+        {
+            ...getColorModifiers(props)
+        },
         props.className,
     );
     const HTMLProps = getHTMLProps(props, removeColorProps);
