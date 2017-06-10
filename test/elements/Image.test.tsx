@@ -5,8 +5,11 @@ import { Image } from './../../src/elements/Image';
 
 describe('Image', () => {
     it('should render a figure with .image', () => {
-        const component = shallow(<Image>My Image</Image>);
-        expect(component.contains(<figure className='image'>My Image</figure>)).toBe(true);
+        const component = shallow(<Image src='something' />);
+        expect(component.is('figure')).toBe(true);
+        expect(component.hasClass('image')).toBe(true);
+        expect(component.children().is('img')).toBe(true);
+        expect(component.children().contains(<img src='something' />)).toBe(true);
     });
 
     it('should render a figure with .image and Square modifiers', () => {
