@@ -7,7 +7,7 @@ export interface LevelItem<T> extends React.HTMLProps<T> {
     isFlexible?: boolean,
 }
 
-export const LevelItem: React.SFC<LevelItem<HTMLDivElement>> = (props) => {
+export const LevelItem: React.SFC<LevelItem<HTMLDivElement | HTMLAnchorElement>> = (props) => {
     const className = classNames(
         'level-item',
         {
@@ -21,9 +21,9 @@ export const LevelItem: React.SFC<LevelItem<HTMLDivElement>> = (props) => {
         ...HTMLProps
     } = props;
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    const element = props.href ? 'a' : 'div';
+    
+    return React.createElement(element, { ...HTMLProps, className });
 }
 
 export default withHelpersModifiers(LevelItem);
