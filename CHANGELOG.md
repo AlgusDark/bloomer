@@ -1,5 +1,9 @@
 # Bloomer Changelog
 
+## 0.5.5 - 2017-06-10
+### Changed
+- `Level` now can be a `div` (default) or an `anchor` if has `href` prop.
+
 ## 0.5.4 - 2017-06-09
 ### Changed
 - `Tile` now has `render` prop.

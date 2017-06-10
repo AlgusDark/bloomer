@@ -84,10 +84,10 @@ const FormExample = `<Field>
     <Control hasIcons>
         <Input isColor='success' placeholder='Text Input' value='bloomer' />
         <Icon isSize='small' isAlign='left'>
-            <i className="fa fa-user" />
+            <span className="fa fa-user" aria-hidden="true" />
         </Icon>
         <Icon isSize='small' isAlign='right'>
-            <i className="fa fa-check" />
+            <span className="fa fa-check" aria-hidden="true" />
         </Icon>
     </Control>
     <Help isColor='success'>This username is available</Help>
@@ -141,7 +141,7 @@ const FieldHorizontalExample = `<Field isHorizontal>
     <Field isGrouped>
         <Control isExpanded hasIcons='left'>
             <Input placeholder='Name' />
-            <Icon isSize='small' isAlign='left'><i className="fa fa-user" /></Icon>
+            <Icon isSize='small' isAlign='left'><span className="fa fa-user" aria-hidden="true"/></Icon>
         </Control>
     </Field>
     <Field>
@@ -196,10 +196,10 @@ const FormDocs = (props) => (
                     <Control hasIcons>
                         <Input isColor='success' placeholder='Text Input' value='bloomer' />
                         <Icon isSize='small' isAlign='left'>
-                            <i className="fa fa-user" />
+                            <span className="fa fa-user" aria-hidden="true"/>
                         </Icon>
                         <Icon isSize='small' isAlign='right'>
-                            <i className="fa fa-check" />
+                            <span className="fa fa-check" aria-hidden="true"/>
                         </Icon>
                     </Control>
                     <Help isColor='success'>This username is available</Help>
@@ -307,7 +307,7 @@ const FormDocs = (props) => (
                         <Field isGrouped>
                             <Control isExpanded hasIcons='left'>
                                 <Input placeholder='Name' />
-                                <Icon isSize='small' isAlign='left'><i className="fa fa-user" /></Icon>
+                                <Icon isSize='small' isAlign='left'><span className="fa fa-user" aria-hidden="true" /></Icon>
                             </Control>
                         </Field>
                         <Field>
