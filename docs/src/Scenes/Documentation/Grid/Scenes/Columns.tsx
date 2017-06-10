@@ -6,6 +6,7 @@ import TableDocs from './../../../../Components/TableDocs';
 
 import { Container } from './../../../../../../src/layout';
 import { Title, Subtitle, Tag } from './../../../../../../src';
+import { Column, Columns, Notification } from './../../../../../../src';
 
 const sizes = (<td>
     <code>1</code> |&nbsp;
@@ -157,10 +158,45 @@ const ColumnRow: Docs.Row[] = [
         description: platforms,
     },
 
-]
+];
+
+const ColumnsExample = `<Columns isCentered>
+    <Column isOneThird>
+        <Notification isColor='success' hasTextAlign='centered'> isOneThird </Notification>
+    </Column>
+    <Column isMobile={8}>
+        <Notification isColor='warning' hasTextAlign='centered'> isMobile={8} </Notification>
+    </Column>
+    <Column>
+        <Notification isColor='danger' hasTextAlign='centered'> Third column </Notification>
+    </Column>
+    <Column>
+        <Notification isColor='primary' hasTextAlign='centered'> Fourth column </Notification>
+    </Column>
+</Columns>
+`;
 
 const ColumnsDocs = (props) => (
     <Container>
+        <Title>Columns & Column</Title>
+        <Columns isCentered>
+            <Column isOneThird>
+                <Notification isColor='success' hasTextAlign='centered'> isOneThird </Notification>
+            </Column>
+            <Column isMobile={8}>
+                <Notification isColor='warning' hasTextAlign='centered'> isMobile={8} </Notification>
+            </Column>
+            <Column>
+                <Notification isColor='danger' hasTextAlign='centered'> Third column </Notification>
+            </Column>
+            <Column>
+                <Notification isColor='primary' hasTextAlign='centered'> Fourth column </Notification>
+            </Column>
+        </Columns>
+        <Highlight className='javascript'>{ColumnsExample}</Highlight>
+
+        <hr/>
+
         <Title>Columns</Title>
         <TableDocs rows={ColumnsRow} />
 

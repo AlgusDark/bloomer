@@ -40,7 +40,15 @@
 }
 
 pre {
-    margin: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+code.hljs {
+    max-height: 600px;
+}
+
+#images tr td:nth-child(1) {
+    width: 320px;
 }
 
 

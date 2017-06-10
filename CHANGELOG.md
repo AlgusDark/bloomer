@@ -1,5 +1,10 @@
 # Bloomer Changelog
 
+## 0.5.4 - 2017-06-09
+### Changed
+- `Tile` now has `render` prop.
+- `Image` now has wrappers rendered, so you should use `src` prop to use it.
+
 ## 0.5.4 - 2017-06-08
 ### Changed
 - Add `isAlign` options to `Pagination`, `Tabs` , so Intellisense can be used on those components for that prop.
