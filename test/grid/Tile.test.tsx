@@ -4,6 +4,19 @@ import { shallow } from 'enzyme';
 import { Tile } from './../../src/grid/Tile';
 
 describe('Tile', () => {
+    it('should render a custom component with Tile props', () => {
+        const customComponent = (props) => (
+            <div {...props}> My Tile </div>
+        );
+
+        const customComponentRendered = (
+            <div className='tile'> My Tile </div>
+        );
+
+        const component = shallow(<Tile render={customComponent} />);
+        expect(component.contains(customComponentRendered)).toBe(true);
+    });
+
     it('should render a div with .tile', () => {
         const component = shallow(<Tile>Any Content</Tile>);
         expect(component.contains(<div className='tile'>Any Content</div>)).toBe(true);
