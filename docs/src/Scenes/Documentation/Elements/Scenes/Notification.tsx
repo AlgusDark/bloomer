@@ -5,15 +5,64 @@ import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
 
 import { isColor } from './../../Overview/Scenes/Helpers';
-import { Container, Title } from './../../../../../../src';
+import { Container, Title, Notification, Delete, Columns, Column } from './../../../../../../src';
 
 const NotificationRows: Docs.Row[] = [
     isColor,
 ]
 
+const NotificationExample = `<Notification>
+    <Delete />
+    Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit lorem ipsum dolor sit amet,
+    consectetur adipiscing elit
+</Notification>
+<Notification isColor='primary'>
+    <Delete />
+    Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit lorem ipsum dolor sit amet,
+    consectetur adipiscing elit
+</Notification>
+<Notification isColor='info'>
+    <Delete />
+    Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit lorem ipsum dolor sit amet,
+    consectetur adipiscing elit
+</Notification>
+`;
+
 const NotificationDocs = (props) => (
     <Container>
         <Title>Notification</Title>
+        <Columns>
+            <Column>
+                <Notification>
+                    <Delete />
+                    Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit
+                </Notification>
+                <Notification isColor='primary'>
+                    <Delete />
+                    Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit
+                </Notification>
+                <Notification isColor='info'>
+                    <Delete />
+                    Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit
+                </Notification>
+            </Column>
+            <Column>
+                <Highlight>{NotificationExample}</Highlight>
+            </Column>
+        </Columns>
+
+        <hr />
+        
+        <Title>API</Title>
         <TableDocs rows={NotificationRows} />
     </Container>
 )

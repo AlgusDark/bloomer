@@ -5,7 +5,9 @@ import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
 
 import { isColor, isSize, noModifiers } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle } from './../../../../../../src';
+import { Container, Title, Subtitle, Icon, Field, Control, Button, } from './../../../../../../src';
+import { Hero, HeroHeader, HeroBody, HeroFooter } from './../../../../../../src';
+import { Nav, NavLeft, NavCenter, NavRight, NavItem, Tabs, TabList, Tab, TabLink } from './../../../../../../src';
 
 const HeroRows: Docs.Row[] = [
     isColor,
@@ -27,8 +29,103 @@ const HeroVideoRows: Docs.Row[] = [
     },
 ]
 
+const HeroExample = `<Hero isColor='info' isSize='medium'>
+<HeroHeader>
+    <Nav>
+        <NavLeft>
+            <NavItem isBrand>Bloomer</NavItem>
+        </NavLeft>
+        <NavCenter>
+            <NavItem>
+                <Icon>
+                    <i className="fa fa-github"></i>
+                </Icon>
+            </NavItem>
+            <NavItem>
+                <Icon>
+                    <i className="fa fa-twitter"></i>
+                </Icon>
+            </NavItem>
+        </NavCenter>
+        <NavRight isMenu>
+            <NavItem>Home</NavItem>
+            <NavItem>Documentation</NavItem>
+        </NavRight>
+    </Nav>
+</HeroHeader>
+
+<HeroBody>
+    <Container hasTextAlign='centered'>
+        <Title>Title</Title>
+    </Container>
+</HeroBody>
+
+<HeroFooter>
+    <Tabs isBoxed isFullWidth>
+        <Container>
+            <TabList>
+                <Tab isActive><TabLink>Overview</TabLink></Tab>
+                <Tab><TabLink>Grid</TabLink></Tab>
+                <Tab><TabLink>Element</TabLink></Tab>
+                <Tab><TabLink>Components</TabLink></Tab>
+                <Tab><TabLink>Layout</TabLink></Tab>
+            </TabList>
+        </Container>
+    </Tabs>
+</HeroFooter>
+</Hero>
+`;
+
 const ContainerDocs = (props) => (
     <Container>
+        <Title>Hero</Title>
+        <Hero isColor='info' isSize='medium'>
+            <HeroHeader>
+                <Nav>
+                    <NavLeft>
+                        <NavItem isBrand>Bloomer</NavItem>
+                    </NavLeft>
+                    <NavCenter>
+                        <NavItem>
+                            <Icon>
+                                <i className="fa fa-github"></i>
+                            </Icon>
+                        </NavItem>
+                        <NavItem>
+                            <Icon>
+                                <i className="fa fa-twitter"></i>
+                            </Icon>
+                        </NavItem>
+                    </NavCenter>
+                    <NavRight isMenu>
+                        <NavItem>Home</NavItem>
+                        <NavItem>Documentation</NavItem>
+                    </NavRight>
+                </Nav>
+            </HeroHeader>
+
+            <HeroBody>
+                <Container hasTextAlign='centered'>
+                    <Title>Title</Title>
+                </Container>
+            </HeroBody>
+
+            <HeroFooter>
+                <Tabs isBoxed isFullWidth>
+                    <Container>
+                        <TabList>
+                            <Tab isActive><TabLink>Overview</TabLink></Tab>
+                            <Tab><TabLink>Grid</TabLink></Tab>
+                            <Tab><TabLink>Element</TabLink></Tab>
+                            <Tab><TabLink>Components</TabLink></Tab>
+                            <Tab><TabLink>Layout</TabLink></Tab>
+                        </TabList>
+                    </Container>
+                </Tabs>
+            </HeroFooter>
+        </Hero>
+        <Highlight>{HeroExample}</Highlight>
+
         <Title>Hero</Title>
         <TableDocs rows={HeroRows} />
 
@@ -37,7 +134,7 @@ const ContainerDocs = (props) => (
         <Title>HeroHeader</Title>
         <Subtitle>{noModifiers}</Subtitle>
 
-        <hr/>
+        <hr />
 
         <Title>HeroVideo</Title>
         <TableDocs rows={HeroVideoRows} />

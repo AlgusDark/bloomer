@@ -7,19 +7,13 @@ import { Container, Title, Subtitle, Box } from './../../../../../../src';
 
 const BoxDocs = (props) => (
     <Container>
-        <Title isSpaced>Box</Title>
-        <Box>
-            {noModifiers}
-        </Box>
-        <Highlight className='javascript'>
-            {`import * as React from 'react';
-import { Box } from 'bloomer';
+        <Title>Box</Title>
+        <Box>A white box to contain other elements</Box>
+        <Highlight>{'<Box>A white box to contain other elements</Box>'}</Highlight>
+        <hr/>
 
-const MyComponent = (props) => (
-    <Box>A white box to contain other elements</Box>
-)
-`}
-        </Highlight>
+        <Title>API</Title>
+        <Subtitle>{noModifiers}</Subtitle>
     </Container>
 )
 

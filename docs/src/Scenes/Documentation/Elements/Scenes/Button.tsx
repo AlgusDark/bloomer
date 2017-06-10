@@ -31,29 +31,40 @@ const ButtonRows: Docs.Row[] = [
     render('Button'),
 ]
 
+const ButtonExample = `<Columns>
+    <Button isColor='info' render={
+        props => <Column hasTextAlign='centered'><p {...props}>Button</p></Column>
+    } />
+    <Column>
+        <Button isColor='warning' isLoading>isLoading={true}</Button>
+    </Column>
+    <Column hasTextAlign='centered'>
+        <Button isColor='success' isOutlined>isOutlined</Button>
+    </Column>
+</Columns>
+`;
+
 const ButtonDocs = (props) => (
     <Container>
-        <Title>Button</Title>
-        <TableDocs rows={ButtonRows} />
         <Columns>
             <Button isColor='info' render={
                 props => <Column hasTextAlign='centered'><p {...props}>Button</p></Column>
             } />
+            <Column hasTextAlign='centered'>
+                <Button isColor='warning' isLoading>isLoading</Button>
+            </Column>
+            <Column hasTextAlign='centered'>
+                <Button isColor='success' isOutlined>isOutlined</Button>
+            </Column>
         </Columns>
-
         <Highlight className='javascript'>
-            {`import * as React from 'react';
-import { Box, Columns, Column } from 'bloomer';
-
-const MyComponent = (props) => (
-    <Columns>
-        <Button href='#' isColor='info' render={
-            props => <Column hasTextAlign='centered'><p {...props}>Button</p></Column>
-        } />
-    </Columns>
-)
-`}
+            {ButtonExample}
         </Highlight>
+
+        <hr />
+
+        <Title>API</Title>
+        <TableDocs rows={ButtonRows} />
     </Container>
 )
 

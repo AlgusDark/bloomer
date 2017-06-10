@@ -41,13 +41,13 @@ const isSize = is({
 
 function getSizeModifiers<T>({ isSize: size }: Image<T>) {
     return {
-        ...(isSize(size) ? {[`is-${size}`]: true} : {}),
+        ...(isSize(size) ? { [`is-${size}`]: true } : {}),
     }
 }
 
 function getRatioModifiers<T>({ isRatio: ratio }: Image<T>) {
     return {
-        ...(isRatio(ratio) ? {[`is-${ratio}`]: true} : {}),
+        ...(isRatio(ratio) ? { [`is-${ratio}`]: true } : {}),
     }
 }
 
@@ -68,10 +68,12 @@ export const Image: React.SFC<Image<HTMLSpanElement>> = (props) => {
         props.className,
     );
 
-    const HTMLProps = getHTMLProps(props, removeImageProps);
+    const { children, src, ...HTMLProps } = getHTMLProps(props, removeImageProps);
 
     return (
-        <figure {...HTMLProps} className={className} />
+        <figure {...HTMLProps} className={className}>
+            <img src={src}  />
+        </figure>
     )
 }
 

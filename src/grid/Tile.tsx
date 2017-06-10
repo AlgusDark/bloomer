@@ -5,7 +5,7 @@ import { Grid, getHorizontalSizeModifiers, removeHorizontalSizeProps } from './g
 import { Bulma, withHelpersModifiers } from './../bulma';
 import { getHTMLProps } from './../helpers';
 
-export interface Tile<T> extends Grid.HorizontalSize,
+export interface Tile<T> extends Bulma.Render, Grid.HorizontalSize,
     React.HTMLProps<T> {
     isAncestor?: boolean,
     isChild?: boolean,
@@ -25,7 +25,9 @@ export const Tile: React.SFC<Tile<HTMLDivElement>> = (props) => {
         },
         props.className
     );
+
     const {
+        render,
         isAncestor,
         isChild,
         isParent,
@@ -34,6 +36,8 @@ export const Tile: React.SFC<Tile<HTMLDivElement>> = (props) => {
     } = props;
 
     const HTMLProps = getHTMLProps(rest, removeHorizontalSizeProps);
+
+    if (render) return render({ ...HTMLProps, className });
 
     return (
         <div {...HTMLProps} className={className} />
