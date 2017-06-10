@@ -5,15 +5,29 @@ import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
 
 import { isSize } from './../../Overview/Scenes/Helpers';
-import { Container, Title } from './../../../../../../src';
+import { Container, Title, Content } from './../../../../../../src';
 
 const ContentRows: Docs.Row[] = [
     isSize,
-]
+];
+
+const ContentExample = `<Content>
+    <h1>Content</h1>
+    <p>Is the component to handle WYSIWYG generated content</p>
+</Content>
+`;
 
 const ContentDocs = (props) => (
     <Container>
-        <Title>Content</Title>
+        <Content>
+            <h1>Content</h1>
+            <p>Is the component to handle WYSIWYG generated content</p>
+        </Content>
+        <Highlight>{ContentExample}</Highlight>
+
+        <hr />
+
+        <Title>API</Title>
         <TableDocs rows={ContentRows} />
     </Container>
 )
