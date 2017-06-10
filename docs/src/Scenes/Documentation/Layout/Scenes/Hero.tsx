@@ -38,12 +38,12 @@ const HeroExample = `<Hero isColor='info' isSize='medium'>
         <NavCenter>
             <NavItem>
                 <Icon>
-                    <i className="fa fa-github"></i>
+                    <span className="fa fa-github" aria-hidden="true" />
                 </Icon>
             </NavItem>
             <NavItem>
                 <Icon>
-                    <i className="fa fa-twitter"></i>
+                    <span className="fa fa-twitter" aria-hidden="true" />
                 </Icon>
             </NavItem>
         </NavCenter>
@@ -88,12 +88,12 @@ const ContainerDocs = (props) => (
                     <NavCenter>
                         <NavItem>
                             <Icon>
-                                <i className="fa fa-github"></i>
+                                <span className="fa fa-github" aria-hidden="true" />
                             </Icon>
                         </NavItem>
                         <NavItem>
                             <Icon>
-                                <i className="fa fa-twitter"></i>
+                                <span className="fa fa-twitter" aria-hidden="true" />
                             </Icon>
                         </NavItem>
                     </NavCenter>
