@@ -9,7 +9,7 @@ const Foot = (props) => (
                 <Columns>
                     <Column isFull>
                         <p>
-                            Made with <Icon hasTextColor='danger'><i className="fa fa-heart" aria-hidden="true"></i></Icon>  by <a href="https://twitter.com/AlgusDark" target="_blank">Algus Dark</a>
+                            Made with <Icon hasTextColor='danger'><span className="fa fa-heart" aria-hidden="true" /></Icon>  by <a href="https://twitter.com/AlgusDark" target="_blank">Algus Dark</a>
                         </p>
                         <p>
                             <a href="https://twitter.com/AlgusDark" className="twitter-follow-button" data-size="large">Follow @AlgusDark</a>

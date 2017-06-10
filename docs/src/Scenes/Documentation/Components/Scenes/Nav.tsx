@@ -6,6 +6,8 @@ import TableDocs from './../../../../Components/TableDocs';
 
 import { noModifiers, render } from './../../Overview/Scenes/Helpers';
 import { Container, Title, Subtitle } from './../../../../../../src';
+import { Nav, NavCenter, NavItem, NavLeft, NavRight, NavToggle } from './../../../../../../src';
+import { Icon, Field, Control, Button, } from './../../../../../../src';
 
 const NavRows: Docs.Row[] = [
     {
@@ -49,35 +51,110 @@ const NavItemRows: Docs.Row[] = [
     render('NavItem'),
 ];
 
+const NavExample = `<Nav>
+    <NavLeft>
+        <NavItem isBrand>Bloomer</NavItem>
+    </NavLeft>
+    <NavCenter>
+        <NavItem>
+            <Icon>
+                <span className="fa fa-github" aria-hidden="true" />
+            </Icon>
+        </NavItem>
+        <NavItem>
+            <Icon>
+                <span className="fa fa-twitter" aria-hidden="true" />
+            </Icon>
+        </NavItem>
+    </NavCenter>
+    <NavToggle />
+    <NavRight isMenu>
+        <NavItem>Home</NavItem>
+        <NavItem>Documentation</NavItem>
+        <NavItem>
+            <Field isGrouped>
+                <Control>
+                    <Button id="twitter">
+                        <Icon>
+                            <span className="fa fa-twitter" aria-hidden="true" />
+                        </Icon>
+                        <span>Tweet</span>
+                    </Button>
+                </Control>
+            </Field>
+        </NavItem>
+    </NavRight>
+</Nav>
+`;
+
 const NavDocs = (props) => (
     <Container>
         <Title>Nav</Title>
+        <Nav style={{ border: 'solid 1px #00D1B2' }}>
+            <NavLeft>
+                <NavItem isBrand>Bloomer</NavItem>
+            </NavLeft>
+            <NavCenter>
+                <NavItem>
+                    <Icon>
+                        <span className="fa fa-github" aria-hidden="true" />
+                    </Icon>
+                </NavItem>
+                <NavItem>
+                    <Icon>
+                        <span className="fa fa-twitter" aria-hidden="true" />
+                    </Icon>
+                </NavItem>
+            </NavCenter>
+            <NavToggle />
+            <NavRight isMenu>
+                <NavItem>Home</NavItem>
+                <NavItem>Documentation</NavItem>
+                <NavItem>
+                    <Field isGrouped>
+                        <Control>
+                            <Button id="twitter">
+                                <Icon>
+                                    <span className="fa fa-twitter" aria-hidden="true" />
+                                </Icon>
+                                <span>Tweet</span>
+                            </Button>
+                        </Control>
+                    </Field>
+                </NavItem>
+            </NavRight>
+        </Nav>
+        <Highlight>{NavExample}</Highlight>
+
+        <hr/>
+
+        <Title>Nav</Title>
         <TableDocs rows={NavRows} />
 
-        <hr/>
+        <hr />
 
         <Title>NavLeft</Title>
-        <Subtitle>{noModifiers}</Subtitle> 
+        <Subtitle>{noModifiers}</Subtitle>
 
-        <hr/>
+        <hr />
 
         <Title>NavCenter</Title>
-        <Subtitle>{noModifiers}</Subtitle> 
+        <Subtitle>{noModifiers}</Subtitle>
 
-        <hr/>
+        <hr />
 
         <Title>NavToggle</Title>
         <TableDocs rows={NavToggleRows} />
 
-        <hr/>
+        <hr />
 
         <Title>NavRight</Title>
-        <TableDocs rows={NavRightRows} /> 
+        <TableDocs rows={NavRightRows} />
 
-        <hr/>
+        <hr />
 
         <Title>NavItem</Title>
-        <TableDocs rows={NavItemRows} />    
+        <TableDocs rows={NavItemRows} />
     </Container>
 )
 
