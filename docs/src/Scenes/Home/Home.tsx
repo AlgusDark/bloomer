@@ -1,11 +1,14 @@
 import * as React from 'react';
 
-import { Hero, HeroBody, Container, Title, Subtitle, Button } from './../../../../src';
+import { Hero, HeroBody, Container, Title, Subtitle, Button, Image } from './../../../../src';
+
+const logo = require('./../../../assets/logo.png');
 
 const Home = () => (
     <Hero id='home' isFullHeight isColor='primary'>
         <HeroBody>
             <Container hasTextAlign='centered'>
+                <Image id='logo' isSize='128x128' src={logo} />
                 <Title>Bloomer</Title>
                 <Subtitle>A set of <strong>React components</strong> for <strong><a href='http://bulma.io/'>Bulma</a></strong></Subtitle>
                 <div className='npm'><code><span className='is-unselectable'>$ </span>npm install bloomer</code></div>

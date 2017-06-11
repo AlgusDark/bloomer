@@ -41,6 +41,15 @@ const getRules = (env) => {
       ],
       exclude: /node_modules/
     },
+    {
+      test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: env.prod ? '[hash:8].[ext]' : 'images/[name].[ext]?[hash:8]',
+        },
+      }],
+    },
   ];
 
   const productionRules = [
