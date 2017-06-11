@@ -46,7 +46,7 @@ const getRules = (env) => {
       use: [{
         loader: 'file-loader',
         options: {
-          name: env.prod ? '[hash:8].[ext]' : 'images/[name].[ext]?[hash:8]',
+          name: env.prod ? 'dist/[hash:8].[ext]' : '[name].[ext]?[hash:8]',
         },
       }],
     },
