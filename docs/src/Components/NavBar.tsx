@@ -1,7 +1,9 @@
 import * as React from 'react';
 
-import { Container, Control, Icon, Field, Button } from './../../../src';
+import { Container, Control, Icon, Field, Button, Image } from './../../../src';
 import { Nav, Left, Center, Toggle, Right, Item } from './../../../src/components/Nav'
+
+const brand = require('./../../assets/logo.png');
 
 class NavBar extends React.Component<{}, { isActive: boolean }> {
     state = { isActive: false };
@@ -15,7 +17,9 @@ class NavBar extends React.Component<{}, { isActive: boolean }> {
             <Nav>
                 <Container>
                     <Left>
-                        <Item isBrand href='http://bloomer.js.org'>Bloomer</Item>
+                        <Item isBrand href='http://bloomer.js.org'>
+                            <img src={brand} style={{marginRight: 5}} /> Bloomer
+                        </Item>
                     </Left>
                     <Center>
                         <Item href="https://github.com/AlgusDark/bloomer">
