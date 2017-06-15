@@ -9,6 +9,16 @@ describe('Icon', () => {
         expect(component.contains(<span className='icon'>My Icon</span>)).toBe(true);
     });
 
+    it('should render a span.icon with span.fa.fa-home', () => {
+        const component = shallow(<Icon icon='home' />);
+        expect(component.contains(
+            <span className='icon'>
+                <span className='fa fa-home' aria-hidden="true">
+                </span>
+            </span>
+        )).toBe(true);
+    });
+
     it('should render a span with .icon and modifiers', () => {
         const component = shallow(<Icon isAlign='left'>My Icon</Icon>);
         expect(component.hasClass('icon')).toBe(true);
