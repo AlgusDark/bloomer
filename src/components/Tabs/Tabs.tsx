@@ -16,7 +16,7 @@ export interface Tabs<T> extends Bulma.Alignment, Bulma.Size,
     isToggle?: boolean,
 }
 
-export const Tabs: React.SFC<Tabs<HTMLDivElement>> = (props) => {
+export function Tabs(props: Tabs<HTMLDivElement>) {
     const className = classNames(
         'tabs',
         {

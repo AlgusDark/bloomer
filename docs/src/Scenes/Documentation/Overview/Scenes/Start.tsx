@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { Container } from './../../../../../../src/layout';
+import { Container } from './../../../../../../src';
 import { Title, Subtitle } from './../../../../../../src';
 
 const startExample = `import * as React from 'react';

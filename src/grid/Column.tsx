@@ -14,7 +14,7 @@ export interface Column<T> extends
     Grid.HorizontalSize, Grid.Size, Grid.Offset,
     React.HTMLProps<T> { }
 
-export const Column: React.SFC<Column<HTMLDivElement>> = (props) => {
+export function Column(props: Column<HTMLDivElement>) {
     const className = classNames(
         'column',
         {

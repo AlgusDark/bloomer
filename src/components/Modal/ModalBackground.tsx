@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export const ModalBackground: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
+export function ModalBackground(props: React.HTMLProps<HTMLDivElement>) {
     const className = classNames('modal-background', props.className);
 
     const { children, ...HTMLProps } = props;

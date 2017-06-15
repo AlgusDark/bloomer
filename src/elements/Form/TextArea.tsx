@@ -12,7 +12,7 @@ import { combineModifiers, getHTMLProps } from './../../helpers';
 export interface TextArea<T> extends Bulma.Size, Bulma.State, React.HTMLProps<T> {
 }
 
-export const TextArea: React.SFC<TextArea<HTMLTextAreaElement>> = (props) => {
+export function TextArea(props: TextArea<HTMLTextAreaElement>) {
     const className = classNames(
         'textarea',
         {

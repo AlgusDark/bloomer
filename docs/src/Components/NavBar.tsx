@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Container, Control, Icon, Field, Button, Image } from './../../../src';
-import { Nav, Left, Center, Toggle, Right, Item } from './../../../src/components/Nav'
+import { Nav, NavLeft as Left, NavCenter as Center, NavToggle as Toggle, NavRight as Right, NavItem as Item } from './../../../src'
 
 const brand = require('./../../assets/logo.png');
 

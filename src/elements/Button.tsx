@@ -18,7 +18,7 @@ export interface Button<T> extends
     isStatic?: boolean,
 }
 
-export const Button: React.SFC<Button<HTMLButtonElement | HTMLAnchorElement>> = (props) => {
+export function Button(props: Button<HTMLButtonElement | HTMLAnchorElement>) {
     const className = classNames(
         'button',
         {

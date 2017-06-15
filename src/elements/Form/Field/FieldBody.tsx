@@ -6,7 +6,7 @@ import {
     withHelpersModifiers,
 } from './../../../bulma';
 
-export const FieldBody: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
+export function FieldBody(props: React.HTMLProps<HTMLDivElement>) {
     const className = classNames(
         'field-body',
         props.className

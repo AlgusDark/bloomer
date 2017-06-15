@@ -12,7 +12,7 @@ import { getHTMLProps, combineModifiers } from './../../helpers';
 export interface Ellipsis<T> extends Bulma.Active, Bulma.Focused, React.HTMLProps<T> {
 }
 
-export const Ellipsis: React.SFC<Ellipsis<HTMLSpanElement>> = (props) => {
+export function Ellipsis(props: Ellipsis<HTMLSpanElement>) {
     const className = classNames(
         'pagination-ellipsis',
         {

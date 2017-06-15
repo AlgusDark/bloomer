@@ -59,7 +59,7 @@ function removeImageProps<T>(props: Image<T>) {
     return rest;
 }
 
-export const Image: React.SFC<Image<HTMLSpanElement>> = (props) => {
+export function Image(props: Image<HTMLSpanElement>) {
     const className = classNames(
         'image',
         {

@@ -14,7 +14,7 @@ React.HTMLProps<T> {
     isSize?: 'medium' | 'large'
 }
 
-export const Tag: React.SFC<Tag<HTMLSpanElement>> = (props) => {
+export function Tag(props: Tag<HTMLSpanElement>) {
     const className = classNames(
         'tag',
         {

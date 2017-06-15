@@ -6,7 +6,7 @@ import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Message<T> extends Bulma.Color, React.HTMLProps<T> { }
 
-export const Message: React.SFC<Message<HTMLElement>> = (props) => {
+export function Message(props: Message<HTMLElement>) {
     const className = classNames(
         'message',
         {

@@ -13,7 +13,7 @@ export interface PanelBlock<T> extends Bulma.Render, Bulma.Active, React.HTMLPro
     isLabel?: boolean,
 }
 
-export const PanelBlock: React.SFC<PanelBlock<HTMLAnchorElement | HTMLDivElement | HTMLLabelElement>> = (props) => {
+export function PanelBlock(props: PanelBlock<HTMLAnchorElement | HTMLDivElement | HTMLLabelElement>) {
     const className = classNames(
         'panel-block',
         {
@@ -34,7 +34,7 @@ export const PanelBlock: React.SFC<PanelBlock<HTMLAnchorElement | HTMLDivElement
     if (render) return render({ ...HTMLProps, className });
 
     if (isLabel) return <label {...HTMLProps} className={className} />
-
+    
     const element = props.href ? 'a' : 'div';
 
     return React.createElement(element, { ...HTMLProps, className });

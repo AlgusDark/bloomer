@@ -7,7 +7,7 @@ export interface Nav<T> extends React.HTMLProps<T> {
     hasShadow?: boolean,
 }
 
-export const Nav: React.SFC<Nav<HTMLElement>> = (props) => {
+export function Nav(props:Nav<HTMLElement>) {
     const className = classNames(
         'nav',
         {

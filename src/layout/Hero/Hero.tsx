@@ -14,7 +14,7 @@ export interface Hero<T> extends Bulma.Color, Bulma.Size, React.HTMLProps<T> {
     isFullHeight?: boolean
 }
 
-export const Hero: React.SFC<Hero<HTMLElement>> = (props) => {
+export function Hero(props: Hero<HTMLElement>) {
     const className = classNames(
         'hero',
         {

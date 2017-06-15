@@ -9,7 +9,7 @@ export interface Table<T> extends React.HTMLProps<T> {
     isNarrow?: boolean,
 }
 
-export const Table: React.SFC<Table<HTMLTableElement>> = (props) => {
+export function Table(props: Table<HTMLTableElement>) {
     const className = classNames(
         'table',
         {

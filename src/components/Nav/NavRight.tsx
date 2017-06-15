@@ -12,7 +12,7 @@ export interface NavRight<T> extends Bulma.Active, React.HTMLProps<T> {
     isMenu?: boolean,
 }
 
-export const NavRight: React.SFC<NavRight<HTMLDivElement>> = (props) => {
+export function NavRight(props: NavRight<HTMLDivElement>) {
     const className = classNames(
         'nav-right',
         {

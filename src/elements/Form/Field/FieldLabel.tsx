@@ -13,7 +13,7 @@ export interface FieldLabel<T> extends Bulma.Size,
     isNormal?: boolean,
 }
 
-export const FieldLabel: React.SFC<FieldLabel<HTMLDivElement>> = (props) => {
+export function FieldLabel(props: FieldLabel<HTMLDivElement>) {
     const className = classNames(
         'field-label',
         {

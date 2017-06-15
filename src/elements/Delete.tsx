@@ -7,7 +7,7 @@ import { getHTMLProps } from './../helpers';
 export interface Delete<T> extends Bulma.Render, Bulma.Size,
     React.HTMLProps<T> { }
 
-export const Delete: React.SFC<Delete<HTMLButtonElement | HTMLAnchorElement>> = (props) => {
+export function Delete(props: Delete<HTMLButtonElement | HTMLAnchorElement>) {
     const className = classNames(
         'delete',
         {

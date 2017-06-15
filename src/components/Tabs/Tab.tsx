@@ -12,7 +12,7 @@ import { getHTMLProps } from './../../helpers'
 export interface Tab<T> extends Bulma.Active, React.HTMLProps<T> {
 }
 
-export const Tab: React.SFC<Tab<HTMLLIElement>> = (props) => {
+export function Tab(props: Tab<HTMLLIElement>) {
     const className = classNames(
         {
             ...getActiveModifiers(props)

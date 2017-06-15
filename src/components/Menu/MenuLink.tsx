@@ -11,7 +11,7 @@ import { getHTMLProps } from './../../helpers';
 export interface MenuLink<T> extends Bulma.Render, Bulma.Active, React.HTMLProps<T> {
 }
 
-export const MenuLink: React.SFC<MenuLink<HTMLAnchorElement>> = (props) => {
+export function MenuLink(props: MenuLink<HTMLAnchorElement>) {
     const className = classNames(
         {
             ...getActiveModifiers(props),

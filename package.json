@@ -47,7 +47,7 @@
     "test": "jest",
     "test:ci": "jest --coverage && cat ./reports/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage": "jest --coverage",
-    "build": "npm run clean && tsc && tsc -m es6 --outDir esm && NODE_ENV=production webpack",
+    "build": "npm run clean && tsc && tsc -m es6 --outDir esm --removeComments false && NODE_ENV=production webpack",
     "clean": "shx rm -rf lib esm bundles",
     "prepublish": "npm run build"
   },

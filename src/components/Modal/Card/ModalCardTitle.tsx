@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../../bulma';
 
-export const ModalCardTitle: React.SFC<React.HTMLProps<HTMLHeadingElement>> = (props) => {
+export function ModalCardTitle (props: React.HTMLProps<HTMLHeadingElement>) {
     const className = classNames('modal-card-title', props.className);
 
     return (

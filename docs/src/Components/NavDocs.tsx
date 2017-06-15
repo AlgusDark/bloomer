@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Left, Item } from './../../../src/components/Nav';
+import { NavLeft as Left, NavItem as Item} from './../../../src';
 import { isActive } from './../utils';
 
 const NavDocs = ({ location, match, pages }) => (

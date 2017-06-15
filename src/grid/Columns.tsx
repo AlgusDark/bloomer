@@ -13,7 +13,7 @@ export interface Columns<T> extends React.HTMLProps<T> {
     isCentered?: boolean,
 }
 
-export const Columns: React.SFC<Columns<HTMLDivElement>> = (props) => {
+export function Columns(props: Columns<HTMLDivElement>) {
     const className = classNames(
         'columns',
         {

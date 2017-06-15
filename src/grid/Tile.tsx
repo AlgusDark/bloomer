@@ -13,7 +13,7 @@ export interface Tile<T> extends Bulma.Render, Grid.HorizontalSize,
     isVertical?: boolean,
 }
 
-export const Tile: React.SFC<Tile<HTMLDivElement>> = (props) => {
+export function Tile(props: Tile<HTMLDivElement>) {
     const className = classNames(
         'tile',
         {

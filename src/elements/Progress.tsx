@@ -12,7 +12,7 @@ import { combineModifiers, getHTMLProps } from './../helpers';
 export interface Progress<T> extends Bulma.Size, Bulma.Color,
     React.HTMLProps<T> { }
 
-export const Progress: React.SFC<Progress<HTMLProgressElement>> = (props) => {
+export function Progress(props: Progress<HTMLProgressElement>) {
     const className = classNames(
         'progress',
         {

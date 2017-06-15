@@ -12,7 +12,7 @@ export interface Media<T> extends Bulma.Size, React.HTMLProps<T> {
     isSize?: 'large',
 }
 
-export const Media: React.SFC<Media<HTMLElement>> = (props) => {
+export function Media(props: Media<HTMLElement>) {
     const className = classNames(
         'media',
         {

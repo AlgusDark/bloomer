@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export const PanelTabs: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
+export function PanelTabs(props: React.HTMLProps<HTMLDivElement>) {
     const className = classNames('panel-tabs', props.className, );
 
     return (

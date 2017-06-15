@@ -28,7 +28,7 @@ const getModifier = (modifier: boolean | Directions | 'fullwidth', helper: strin
     return {};
 }
 
-export const Field: React.SFC<Field<HTMLDivElement>> = (props) => {
+export function Field(props: Field<HTMLDivElement>) {
     const className = classNames(
         'field',
         {

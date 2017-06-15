@@ -7,7 +7,7 @@ export interface Level<T> extends React.HTMLProps<T> {
     isMobile?: boolean,
 }
 
-export const Level: React.SFC<Level<HTMLElement>> = (props) => {
+export function Level(props: Level<HTMLElement>) {
     const className = classNames(
         'level',
         {

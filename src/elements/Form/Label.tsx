@@ -13,7 +13,7 @@ export interface Label<T> extends Bulma.Size,
     React.HTMLProps<T> {
 }
 
-export const Label: React.SFC<Label<HTMLLabelElement>> = (props) => {
+export function Label(props: Label<HTMLLabelElement>) {
     const className = classNames(
         'label',
         {

@@ -12,7 +12,7 @@ import { combineModifiers, getHTMLProps } from './../helpers';
 export interface Title<T> extends Bulma.Heading, React.HTMLProps<T> {
 }
 
-export const Title: React.SFC<Title<HTMLHeadingElement | HTMLParagraphElement>> = (props) => {
+export function Title(props: Title<HTMLHeadingElement | HTMLParagraphElement>) {
     const className = classNames(
         'title',
         {

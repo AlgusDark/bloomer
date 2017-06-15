@@ -11,7 +11,7 @@ import { getHTMLProps } from './../../helpers'
 export interface Modal<T> extends Bulma.Active, React.HTMLProps<T> {
 }
 
-export const Modal: React.SFC<Modal<HTMLDivElement>> = (props) => {
+export function Modal(props: Modal<HTMLDivElement>) {
     const className = classNames(
         'modal',
         {

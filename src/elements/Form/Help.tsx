@@ -13,7 +13,7 @@ export interface Help<T> extends Bulma.Color,
 
 }
 
-export const Help: React.SFC<Help<HTMLParagraphElement>> = (props) => {
+export function Help(props: Help<HTMLParagraphElement>) {
     const className = classNames(
         'help',
         {

@@ -13,7 +13,7 @@ export interface Input<T> extends Bulma.Color, Bulma.Size, Bulma.State,
     React.HTMLProps<T> {
 }
 
-export const Input: React.SFC<Input<HTMLInputElement>> = (props) => {
+export function Input(props: Input<HTMLInputElement>) {
     const className = classNames(
         'input',
         {
