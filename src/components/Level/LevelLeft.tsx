@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export const LevelLeft: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
+export function LevelLeft(props: React.HTMLProps<HTMLDivElement>) {
     const className = classNames('level-left', props.className);
 
     return (

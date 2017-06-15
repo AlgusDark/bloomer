@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export const MessageBody: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
+export function MessageBody(props: React.HTMLProps<HTMLDivElement>) {
     const className = classNames('message-body', props.className);
 
     return (

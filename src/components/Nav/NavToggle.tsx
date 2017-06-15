@@ -11,7 +11,7 @@ import { getHTMLProps, combineModifiers } from './../../helpers';
 export interface NavToggle<T> extends Bulma.Active, React.HTMLProps<T> {
 }
 
-export const NavToggle: React.SFC<NavToggle<HTMLSpanElement>> = (props) => {
+export function NavToggle(props: NavToggle<HTMLSpanElement>) {
     const className = classNames(
         'nav-toggle',
         {

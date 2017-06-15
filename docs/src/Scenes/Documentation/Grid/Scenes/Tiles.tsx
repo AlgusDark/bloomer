@@ -5,7 +5,7 @@ import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
 
 
-import { Container } from './../../../../../../src/layout';
+import { Container } from './../../../../../../src';
 import { Title, Subtitle, Tag, Tile, Box } from './../../../../../../src';
 
 const platforms = (<td><code>mobile</code> | <code>tablet</code> | <code>desktop</code></td>)

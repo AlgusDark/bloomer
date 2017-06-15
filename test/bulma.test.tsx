@@ -205,8 +205,8 @@ describe('withHelpersModifiers', () => {
             )
         }
         const WithHelpersModifiersComponent = Bulma.withHelpersModifiers(Component);
-        const renderedComponent = <WithHelpersModifiersComponent isBlack className='custom' />
-        expect(shallow(renderedComponent).contains(<Component isBlack className='custom' />)).toBe(true);
+        const renderedComponent = <WithHelpersModifiersComponent isColor='black' className='custom' />
+        expect(shallow(renderedComponent).contains(<Component isColor='black' className='custom' />)).toBe(true);
     });
 
     it('should render a Component with className from Helpers without passing Helpers Props', () => {
@@ -216,10 +216,10 @@ describe('withHelpersModifiers', () => {
             )
         }
         const WithHelpersModifiersComponent = Bulma.withHelpersModifiers(Component);
-        const renderedComponent = <WithHelpersModifiersComponent isBlack isFullWidth className='custom' />
+        const renderedComponent = <WithHelpersModifiersComponent isColor='black' isFullWidth className='custom' />
         const shallowedComponent = shallow(renderedComponent);
 
-        expect(shallowedComponent.prop('isBlack')).toBe(true);
+        expect(shallowedComponent.prop('isColor')).toBe('black');
         expect(shallowedComponent.prop('isFullWidth')).toBe(undefined);
         expect(shallowedComponent.hasClass('custom')).toBe(true);
         expect(shallowedComponent.hasClass('is-fullwidth')).toBe(true);

@@ -131,31 +131,31 @@ const PanelDocs = (props) => (
                         <PanelTab>Sources</PanelTab>
                         <PanelTab>Fork</PanelTab>
                     </PanelTabs>
-                    <PanelBlock isActive>
+                    <PanelBlock href='#' isActive>
                         <PanelIcon>
                             <span className='fa fa-book' aria-hidden='true' />
                         </PanelIcon>
                         Bloomer
                     </PanelBlock>
-                    <PanelBlock>
+                    <PanelBlock href='#'>
                         <PanelIcon>
                             <span className='fa fa-code-fork' aria-hidden='true' />
                         </PanelIcon>
                         RxJS
                     </PanelBlock>
-                    <PanelBlock>
+                    <PanelBlock href='#'>
                         <PanelIcon>
                             <span className='fa fa-code-fork' aria-hidden='true' />
                         </PanelIcon>
                         Webpack
                     </PanelBlock>
-                    <PanelBlock>
+                    <PanelBlock href='#'>
                         <PanelIcon>
                             <span className='fa fa-code-fork' aria-hidden='true' />
                         </PanelIcon>
                         Typescript
                     </PanelBlock>
-                    <PanelBlock>
+                    <PanelBlock isLabel>
                         <Checkbox> Remember me</Checkbox>
                     </PanelBlock>
                     <PanelBlock>

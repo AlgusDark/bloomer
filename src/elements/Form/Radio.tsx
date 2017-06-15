@@ -7,7 +7,7 @@ import {
 } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
-export const Radio: React.SFC<React.HTMLProps<HTMLInputElement>> = (props) => {
+export function Radio(props: React.HTMLProps<HTMLInputElement>) {
     const wrapperClassName = classNames(
         'radio',
         props.className

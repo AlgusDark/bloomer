@@ -391,6 +391,10 @@ function removeHelpersProps(props: Bulma.Helpers) {
     return rest;
 }
 
+function getDisplayName(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name;
+}
+
 export function withHelpersModifiers<T>(Component: Bulma.Component<T>) {
     const SFC: React.SFC<T & React.HTMLProps<HTMLElement> & Bulma.Helpers> = (props) => {
         const className = classNames(
@@ -410,6 +414,8 @@ export function withHelpersModifiers<T>(Component: Bulma.Component<T>) {
 
         return className ? <Component {...rest} className={className} /> : <Component {...rest} />
     }
+
+    SFC.displayName = `withHelpersModifiers(${getDisplayName(Component)})`
 
     return SFC;
 }

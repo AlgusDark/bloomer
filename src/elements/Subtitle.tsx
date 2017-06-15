@@ -12,7 +12,7 @@ import { getHTMLProps } from './../helpers';
 export interface Subtitle<T> extends Bulma.Heading, React.HTMLProps<T> {
 }
 
-export const Subtitle: React.SFC<Subtitle<HTMLHeadingElement | HTMLParagraphElement>> = (props) => {
+export function Subtitle(props: Subtitle<HTMLHeadingElement | HTMLParagraphElement>) {
     const className = classNames(
         'subtitle',
         {

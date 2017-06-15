@@ -14,7 +14,7 @@ export interface Icon<T> extends Bulma.Size, Bulma.Alignment,
     isAlign?: 'left' | 'right';
 }
 
-export const Icon: React.SFC<Icon<HTMLSpanElement>> = (props) => {
+export function Icon(props: Icon<HTMLSpanElement>) {
     const isAlignOption = isOption(isLeft, isRight);
     const className = classNames(
         'icon',

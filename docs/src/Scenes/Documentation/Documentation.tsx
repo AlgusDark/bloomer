@@ -3,11 +3,11 @@ import { withRouter, Route, Link, Redirect, Switch } from 'react-router-dom';
 
 import { isActive } from './../../utils';
 
-import { Hero, Body, Footer } from './../../../../src/layout/Hero';
-import { Section, Container } from './../../../../src/layout';
+import { Hero, HeroBody as Body, HeroFooter as Footer } from './../../../../src/';
+import { Section, Container } from './../../../../src';
 import { Columns, Column, Title, Subtitle } from './../../../../src';
-import { Tabs, List, Tab } from './../../../../src/components/Tabs';
-import { Nav, Left, Item } from './../../../../src/components/Nav';
+import { Tabs, TabList as List, Tab } from './../../../../src';
+import { Nav, NavLeft as Left, NavItem as Item } from './../../../../src/';
 
 import { Overview, OverviewMenu } from './Overview/Overview';
 import { Grid, GridMenu } from './Grid/Grid';

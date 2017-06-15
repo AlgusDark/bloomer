@@ -13,7 +13,7 @@ export interface NavItem<T> extends Bulma.Render, Bulma.Active, React.HTMLProps<
     isBrand?: boolean,
 }
 
-export const NavItem: React.SFC<NavItem<HTMLDivElement | HTMLAnchorElement>> = (props) => {
+export function NavItem(props: NavItem<HTMLDivElement | HTMLAnchorElement>) {
     const className = classNames(
         'nav-item',
         {

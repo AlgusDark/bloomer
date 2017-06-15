@@ -14,7 +14,7 @@ export interface Pagination<T> extends Bulma.Alignment, Bulma.Size,
         isAlign?: 'left' | 'centered' | 'right'
     }
 
-export const Pagination: React.SFC<Pagination<HTMLElement>> = (props) => {
+export function Pagination(props: Pagination<HTMLElement>) {
     const className = classNames(
         'pagination',
         {

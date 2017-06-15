@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
 
-import { Container } from './../../../../../../src/layout';
+import { Container } from './../../../../../../src';
 import { Title, Subtitle } from './../../../../../../src';
 
 export const noModifiers = <span>No modifiers, only those inherited by the <Link to='/documentation/overview/helpers'>Helpers</Link> modifiers</span>;

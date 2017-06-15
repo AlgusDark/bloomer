@@ -11,7 +11,7 @@ import { getHTMLProps } from './../../helpers';
 export interface PanelTab<T> extends Bulma.Render, Bulma.Active, React.HTMLProps<T> {
 }
 
-export const PanelTab: React.SFC<PanelTab<HTMLAnchorElement>> = (props) => {
+export function PanelTab(props: PanelTab<HTMLAnchorElement>) {
     const className = classNames(
         {
             ...getActiveModifiers(props)

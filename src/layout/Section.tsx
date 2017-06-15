@@ -12,7 +12,7 @@ export interface Section<T> extends Bulma.Size, React.HTMLProps<T> {
     isSize?: 'medium' | 'large',
 }
 
-export const Section: React.SFC<Section<HTMLElement>> = (props) => {
+export function Section(props: Section<HTMLElement>) {
     const className = classNames(
         'section',
         {

@@ -37,7 +37,7 @@ const getModifier = (modifier) => {
     return {};
 }
 
-export const Control: React.SFC<Control<HTMLDivElement>> = (props) => {
+export function Control(props: Control<HTMLDivElement>) {
     const className = classNames(
         'control',
         {

@@ -13,7 +13,7 @@ export interface Select<T> extends Bulma.Color, Bulma.Size, Bulma.Loading,
     React.HTMLProps<T> {
 }
 
-export const Select: React.SFC<Select<HTMLSelectElement>> = (props) => {
+export function Select(props: Select<HTMLSelectElement>) {
     const wrapperClassName = classNames(
         'select',
         {

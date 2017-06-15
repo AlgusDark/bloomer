@@ -7,7 +7,7 @@ export interface HeroVideo<T> extends React.HTMLProps<T> {
     isTransparent?: boolean,
 }
 
-export const HeroVideo: React.SFC<HeroVideo<HTMLDivElement>> = (props) => {
+export function HeroVideo(props: HeroVideo<HTMLDivElement>) {
     const className = classNames(
         'hero-video',
         {

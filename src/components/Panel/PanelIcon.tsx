@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export const PanelIcon: React.SFC<React.HTMLProps<HTMLSpanElement>> = (props) => {
+export function PanelIcon(props: React.HTMLProps<HTMLSpanElement>) {
     const className = classNames('panel-icon', props.className);
 
     return (

@@ -4,7 +4,7 @@ import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface TabLink<T> extends Bulma.Render, React.HTMLProps<T> { }
 
-export const TabLink: React.SFC<TabLink<HTMLAnchorElement>> = (props) => {
+export function TabLink(props: TabLink<HTMLAnchorElement>) {
     const { render, ...HTMLProps } = props;
 
     if (render) return render({ ...HTMLProps });

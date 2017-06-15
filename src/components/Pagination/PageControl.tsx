@@ -14,7 +14,7 @@ export interface PageControl<T> extends Bulma.Render, Bulma.Active, Bulma.Focuse
     isNext?: boolean,
 }
 
-export const PageControl: React.SFC<PageControl<HTMLAnchorElement>> = (props) => {
+export function PageControl(props: PageControl<HTMLAnchorElement>) {
     const className = classNames(
         {
             'pagination-previous': !props.isNext,

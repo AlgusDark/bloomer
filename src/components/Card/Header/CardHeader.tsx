@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../../bulma';
 
-export const CardHeader: React.SFC<React.HTMLProps<HTMLElement>> = (props) => {
+export function CardHeader(props: React.HTMLProps<HTMLElement>) {
     const className = classNames('card-header', props.className);
 
     return (

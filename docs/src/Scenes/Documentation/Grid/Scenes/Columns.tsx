@@ -4,7 +4,7 @@ import * as Highlight from 'react-highlight';
 import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
 
-import { Container } from './../../../../../../src/layout';
+import { Container } from './../../../../../../src';
 import { Title, Subtitle, Tag } from './../../../../../../src';
 import { Column, Columns, Notification } from './../../../../../../src';
 

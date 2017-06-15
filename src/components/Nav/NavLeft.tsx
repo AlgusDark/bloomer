@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export const NavLeft: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
+export function NavLeft(props: React.HTMLProps<HTMLDivElement>) {
     const className = classNames('nav-left', props.className);
 
     return (

@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export const MediaLeft: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
+export function MediaLeft(props: React.HTMLProps<HTMLDivElement>) {
     const className = classNames('media-left', props.className);
 
     return (

@@ -6,7 +6,7 @@ import { getHTMLProps } from './../helpers';
 
 export interface Notification<T> extends Bulma.Color, React.HTMLProps<T> { }
 
-export const Notification: React.SFC<Notification<HTMLElement>> = (props) => {
+export function Notification(props: Notification<HTMLElement>) {
     const className = classNames(
         'notification',
         {

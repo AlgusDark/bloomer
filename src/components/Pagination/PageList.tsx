@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export const PageList: React.SFC<React.HTMLProps<HTMLUListElement>> = (props) => {
+export function PageList(props: React.HTMLProps<HTMLUListElement>) {
     const className = classNames('pagination-list', props.className);
 
     return (
