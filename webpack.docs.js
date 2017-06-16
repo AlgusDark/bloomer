@@ -186,11 +186,11 @@ const config = env => (
 
     devServer: getDevServer(env),
 
-    externals: {
+    externals: env.prod ? {
       "react": "React",
       "react-dom": "ReactDOM",
       "highlight.js": "hljs",
-    },
+    } : {},
   }
 );
 
