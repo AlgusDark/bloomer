@@ -8,7 +8,6 @@ export interface Nav<T> extends React.HTMLProps<T> {
 }
 
 export function Nav(props:Nav<HTMLElement>) {
-    console.log('nav')
     const className = classNames(
         'nav',
         {
