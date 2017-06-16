@@ -27,12 +27,12 @@ const CardExample = `<Card>
         </CardHeaderIcon>
     </CardHeader>
     <CardImage>
-        <Image isRatio='4by3' src='http://via.placeholder.com/1280x960' />
+        <Image isRatio='4by3' src='https://via.placeholder.com/1280x960' />
     </CardImage>
     <CardContent>
         <Media>
             <MediaLeft>
-                <Image isSize='48x48' src='http://via.placeholder.com/96x96' />
+                <Image isSize='48x48' src='https://via.placeholder.com/96x96' />
             </MediaLeft>
             <MediaContent>
                 <Title isSize={4}>John Wick</Title>
@@ -63,12 +63,12 @@ const CardDocs = (props) => (
                         </CardHeaderIcon>
                     </CardHeader>
                     <CardImage>
-                        <Image isRatio='4by3' src='http://via.placeholder.com/1280x960' />
+                        <Image isRatio='4by3' src='https://via.placeholder.com/1280x960' />
                     </CardImage>
                     <CardContent>
                         <Media>
                             <MediaLeft>
-                                <Image isSize='48x48' src='http://via.placeholder.com/96x96' />
+                                <Image isSize='48x48' src='https://via.placeholder.com/96x96' />
                             </MediaLeft>
                             <MediaContent>
                                 <Title isSize={4}>John Wick</Title>

@@ -7,7 +7,7 @@ const Foot = (props) => (
         <Container>
             <Content>
                 <Columns>
-                    <Column isFull>
+                    <Column isSize='full'>
                         <p>
                             Made with <Icon hasTextColor='danger'><span className="fa fa-heart" aria-hidden="true" /></Icon>  by <a href="https://twitter.com/AlgusDark" target="_blank">Algus Dark</a>
                         </p>

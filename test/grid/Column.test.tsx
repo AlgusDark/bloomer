@@ -18,11 +18,29 @@ describe('Column', () => {
 
     it('should render a div with .column, modifiers and custom classNames', () => {
         const component = shallow(
-            <Column isMobile={2} className='custom' />
+            <Column isSize='1/2' className='custom' />
         );
         expect(component.hasClass('column')).toBe(true);
-        expect(component.hasClass('is-2-mobile')).toBe(true);
+        expect(component.hasClass('is-half')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);
+    });
+
+    it('should render a div with .column, modifiers and custom classNames', () => {
+        const component = shallow(
+            <Column isSize='full' className='custom' />
+        );
+        expect(component.hasClass('column')).toBe(true);
+        expect(component.hasClass('is-full')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
+    });
+
+    it('should render a div with .column, modifiers and custom classNames', () => {
+        const component = shallow(
+            <Column isSize={{ mobile: 'full', lol: 12, tablet: '3/4', desktop: '12/42' }} className='custom' />
+        );
+        expect(component.contains(
+            <div className="column is-full-mobile is-three-quarters-tablet custom" />
+        )).toBe(true);
     });
 
     it('should render a div with .column and custom classNames', () => {
