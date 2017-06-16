@@ -10,4 +10,4 @@ export function combineModifiers(props: object, ...args: Array<Function>): objec
 
 export const isBetween = (min: number, max: number) => (value: number) => (value >= min && value <= max);
 export const is = (options: object) => (str: string): boolean => options[str] || false;
-export const isOption = (...fn: Function[]) => (str: string) => fn.some(option => option(str));
+export const isOption = (...fn: Function[]) => (str: string | boolean) => fn.some(option => option(str));
