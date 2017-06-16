@@ -8,7 +8,7 @@ import { Container } from './../../../../../../src';
 import { Title, Subtitle, Tag } from './../../../../../../src';
 import { Column, Columns, Notification } from './../../../../../../src';
 
-const sizes = (<td>
+const sizes = (description) => (<td>
     <code>1</code> |&nbsp;
     <code>2</code> |&nbsp;
     <code>3</code> |&nbsp;
@@ -20,7 +20,13 @@ const sizes = (<td>
     <code>9</code> |&nbsp;
     <code>10</code> |&nbsp;
     <code>11</code> |&nbsp;
-    <code>12</code>
+    <code>12</code> |
+    <br />
+    <br />
+    <code>3/4</code> | <code>2/3</code> | <code>1/2</code> | <code>1/3</code> | <code>1/4</code> | {description}
+    <br />
+    <br />
+    An Object with any <strong>key</strong> (<code>mobile</code> | <code>tablet</code> | <code>desktop</code> | <code>widescreen</code>) with any <strong>value</strong> from above. <strong>E.g.</strong> <code>{"{mobile: 8, desktop:'1/2' }"}</code>
 </td>)
 
 const ColumnsRow: Docs.Row[] = [
@@ -59,113 +65,22 @@ const platforms = (<td><code>mobile</code> | <code>tablet</code> | <code>desktop
 const ColumnRow: Docs.Row[] = [
     {
         prop: 'isSize',
-        type: 'number',
-        description: sizes,
-    },
-    {
-        prop: 'isMobile',
-        type: 'number',
-        description: sizes,
-    },
-    {
-        prop: 'isTablet',
-        type: 'number',
-        description: sizes,
-    },
-    {
-        prop: 'isDesktop',
-        type: 'number',
-        description: sizes,
-    },
-    {
-        prop: 'isFull',
-        type: 'bool | string | string[]',
-        description: platforms,
-    },
-    {
-        prop: 'isNarrow',
-        type: 'bool | string | string[]',
-        description: platforms,
-    },
-    {
-        prop: 'isThreeQuarters',
-        type: 'bool | string | string[]',
-        description: platforms,
-    },
-    {
-        prop: 'isTwoThirds',
-        type: 'bool | string | string[]',
-        description: platforms,
-    },
-    {
-        prop: 'isHalf',
-        type: 'bool | string | string[]',
-        description: platforms,
-    },
-    {
-        prop: 'isOneThird',
-        type: 'bool | string | string[]',
-        description: platforms,
-    },
-    {
-        prop: 'isOneQuarter',
-        type: 'bool | string | string[]',
-        description: platforms,
+        type: 'number | string | object',
+        description: sizes(<span><code>full</code> | <code>narrow</code> |</span>),
     },
     {
         prop: 'isOffset',
-        type: 'number',
-        description: sizes,
+        type: 'number | string | object',
+        description: sizes(''),
     },
-    {
-        prop: 'isOffsetMobile',
-        type: 'number',
-        description: sizes,
-    },
-    {
-        prop: 'isOffsetTablet',
-        type: 'number',
-        description: sizes,
-    },
-    {
-        prop: 'isOffsetDesktop',
-        type: 'number',
-        description: sizes,
-    },
-    {
-        prop: 'isOffsetThreeQuarters',
-        type: 'bool | string | string[]',
-        description: platforms,
-    },
-    {
-        prop: 'isOffsetTwoThirds',
-        type: 'bool | string | string[]',
-        description: platforms,
-    },
-    {
-        prop: 'isOffsetHalf',
-        type: 'bool | string | string[]',
-        description: platforms,
-    },
-    {
-        prop: 'isOffsetOneThird',
-        type: 'bool | string | string[]',
-        description: platforms,
-    },
-    {
-        prop: 'isOffsetOneQuarter',
-        type: 'bool | string | string[]',
-        description: platforms,
-    },
-
 ];
 
 const ColumnsExample = `<Columns isCentered>
-    <Column isOneThird>
+    <Column isSize='1/3'>
         <Notification isColor='success' hasTextAlign='centered'> isOneThird </Notification>
     </Column>
-    <Column isMobile={8}>
-        <Notification isColor='warning' hasTextAlign='centered'> isMobile={8} </Notification>
+    <Column isSize={{mobile: 8}}>
+        <Notification isColor='warning' hasTextAlign='centered'> isSize={{mobile: 8}} </Notification>
     </Column>
     <Column>
         <Notification isColor='danger' hasTextAlign='centered'> Third column </Notification>
@@ -184,7 +99,7 @@ const ColumnsDocs = (props) => (
                 <Notification isColor='success' hasTextAlign='centered'> isOneThird </Notification>
             </Column>
             <Column isSize={{ mobile: 8 }}>
-                <Notification isColor='warning' hasTextAlign='centered'> isMobile={8} </Notification>
+                <Notification isColor='warning' hasTextAlign='centered'> {'isSize={{ mobile: 8 }}'} </Notification>
             </Column>
             <Column>
                 <Notification isColor='danger' hasTextAlign='centered'> Third column </Notification>

@@ -84,8 +84,8 @@ const Menu = withRouter(({ match }) => (
     <Nav hasShadow>
         <Container>
             <Route exact path={match.url} render={() => <Redirect to={`${match.url}/overview/start`} />} />
-            {pages.map((page, i) => (
-                <Route path={`${match.url}${page.to}`} component={page.menu} />
+            {pages.map((page, key) => (
+                <Route key={key} path={`${match.url}${page.to}`} component={page.menu} />
             ))}
         </Container>
     </Nav>
@@ -98,7 +98,7 @@ const Documentation = ({ match }) => (
         <Section>
             <Switch>
                 {pages.map((page, key) => (
-                    <Route path={`${match.url}${page.to}`} component={page.component} />
+                    <Route key={key} path={`${match.url}${page.to}`} component={page.component} />
                 ))}
             </Switch>
         </Section>
