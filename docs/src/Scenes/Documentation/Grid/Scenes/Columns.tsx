@@ -180,10 +180,10 @@ const ColumnsDocs = (props) => (
     <Container>
         <Title>Columns & Column</Title>
         <Columns isCentered>
-            <Column isOneThird>
+            <Column isSize='1/3'>
                 <Notification isColor='success' hasTextAlign='centered'> isOneThird </Notification>
             </Column>
-            <Column isMobile={8}>
+            <Column isSize={{ mobile: 8 }}>
                 <Notification isColor='warning' hasTextAlign='centered'> isMobile={8} </Notification>
             </Column>
             <Column>
@@ -195,7 +195,7 @@ const ColumnsDocs = (props) => (
         </Columns>
         <Highlight className='javascript'>{ColumnsExample}</Highlight>
 
-        <hr/>
+        <hr />
 
         <Title>Columns</Title>
         <TableDocs rows={ColumnsRow} />

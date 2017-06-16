@@ -20,7 +20,7 @@ const MediaRows: Docs.Row[] = [
 
 const MediaExample = `<Media>
     <MediaLeft>
-        <Image isSize='64x64' src='http://via.placeholder.com/128x128' />
+        <Image isSize='64x64' src='https://via.placeholder.com/128x128' />
     </MediaLeft>
     <MediaContent>
         <Content>
@@ -53,7 +53,7 @@ const MediaDocs = (props) => (
         <Title>Media</Title>
         <Media style={{marginBottom: 15}}>
             <MediaLeft>
-                <Image isSize='64x64' src='http://via.placeholder.com/128x128' />
+                <Image isSize='64x64' src='https://via.placeholder.com/128x128' />
             </MediaLeft>
             <MediaContent>
                 <Content>

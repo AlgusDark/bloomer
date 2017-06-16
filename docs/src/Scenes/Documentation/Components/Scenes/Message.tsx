@@ -47,7 +47,7 @@ const MessageDocs = (props) => (
                     </MessageBody>
                 </Message>
             </Column>
-            <Column isHalf><Highlight>{MessageExample}</Highlight></Column>
+            <Column isSize='1/2'><Highlight>{MessageExample}</Highlight></Column>
         </Columns>
 
         <hr />

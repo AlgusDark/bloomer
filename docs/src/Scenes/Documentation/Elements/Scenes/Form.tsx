@@ -183,7 +183,7 @@ const FormDocs = (props) => (
     <Container>
         <Title>Form</Title>
         <Columns>
-            <Column isHalf>
+            <Column isSize='1/2'>
                 <Field>
                     <Label>Name</Label>
                     <Control>
@@ -244,7 +244,7 @@ const FormDocs = (props) => (
                     </Control>
                 </Field>
             </Column>
-            <Column isHalf>
+            <Column isSize='1/2'>
                 <Highlight>{FormExample}</Highlight>
             </Column>
         </Columns>

@@ -5,7 +5,7 @@ import { Nav, NavLeft as Left, NavCenter as Center, NavToggle as Toggle, NavRigh
 
 const brand = require('./../../assets/logo.png');
 
-class NavBar extends React.Component<{}, { isActive: boolean }> {
+class NavBar extends React.PureComponent<{}, { isActive: boolean }> {
     state = { isActive: false };
 
     onClickNav = () => {
