@@ -10,9 +10,17 @@ describe('Section', () => {
     });
 
     it('should render a section with .section and modifiers', () => {
-        const container = shallow(<Section isSize='large'/>);
-        expect(container.hasClass('section')).toBe(true);
-        expect(container.hasClass('is-large')).toBe(true);
+        const containerLarge = shallow(<Section isSize='large'/>);
+        expect(containerLarge.hasClass('section')).toBe(true);
+        expect(containerLarge.hasClass('is-large')).toBe(true);
+
+        const containerMedium = shallow(<Section isSize='medium'/>);
+        expect(containerMedium.hasClass('section')).toBe(true);
+        expect(containerMedium.hasClass('is-medium')).toBe(true);
+
+        const containerFail = shallow(<Section isSize='fail'/>);
+        expect(containerFail.hasClass('section')).toBe(true);
+        expect(containerFail.hasClass('is-fail')).toBe(false);
     });
 
     it('should render a section with .section, modifiers and custom classNames', () => {
