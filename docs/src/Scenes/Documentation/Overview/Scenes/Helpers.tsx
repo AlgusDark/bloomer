@@ -12,12 +12,7 @@ export const noModifiers = <span>No modifiers, only those inherited by the <Link
 
 const Platforms = {
     type: 'bool | string | string[]',
-    description: <td><code>mobile</code> | <code>tablet</code> | <code>touch</code> | <code>desktop</code> | <code>widescreen</code></td>
-}
-
-const PlatformsOnly = {
-    type: 'string | string[]',
-    description: <td><code>tablet</code> | <code>desktop</code></td>
+    description: <td><code>mobile</code> | <code>tablet</code> | <code>touch</code> | <code>desktop</code> | <code>widescreen</code> | <code>tablet-only</code> | <code>desktop-only</code></td>
 }
 
 export const colors = <td><code>white</code> | <code>light</code> | <code>dark</code> | <code>black</code> | <code>primary</code> | <code>info</code> | <code>success</code> | <code>warning</code> | <code>danger</code></td>
@@ -108,56 +103,27 @@ const helpersRows: Docs.Row[] = [
 
 ];
 
+const showDescription = (
+    <td>
+        <code>flex</code> | <code>block</code> | <code>inline</code> | <code>inline-block</code> | <code>inline-flex</code> <br/>
+        <code>*-mobile</code> | <code>*-tablet</code> | <code>*-touch</code> | <code>*-desktop</code> | <code>*-widescreen</code> | <code>*-tablet-only</code> | <code>*-desktop-only</code>
+        <br/>
+        <small>Replace <strong>*</strong> with any of the above values</small>
+        <br/><br/>
+        <Subtitle style={{marginBottom: 0}}>Object</Subtitle>
+        <strong>keys</strong> <code>flex</code> | <code>block</code> | <code>inline</code> | <code>inline-block</code> | <code>inline-flex</code>
+        <br/>
+        <strong>values</strong> <code>mobile</code> | <code>tablet</code> | <code>touch</code> | <code>desktop</code> | <code>widescreen</code> | <code>tablet-only</code> | <code>desktop-only</code>
+        <br/>
+        <small>You can pass an Array as value with any of the strings above</small>
+    </td>
+)
+
 const showRows: Docs.Row[] = [
     {
-        prop: 'isFlex',
-        type: Platforms.type,
-        description: Platforms.description,
-    },
-    {
-        prop: 'isFlexOnly',
-        type: PlatformsOnly.type,
-        description: PlatformsOnly.description,
-    },
-    {
-        prop: 'isBlock',
-        type: Platforms.type,
-        description: Platforms.description,
-    },
-    {
-        prop: 'isBlockOnly',
-        type: PlatformsOnly.type,
-        description: PlatformsOnly.description,
-    },
-    {
-        prop: 'isInline',
-        type: Platforms.type,
-        description: Platforms.description,
-    },
-    {
-        prop: 'isInlineOnly',
-        type: PlatformsOnly.type,
-        description: PlatformsOnly.description,
-    },
-    {
-        prop: 'isInlineBlock',
-        type: Platforms.type,
-        description: Platforms.description,
-    },
-    {
-        prop: 'isInlineBlockOnly',
-        type: PlatformsOnly.type,
-        description: PlatformsOnly.description,
-    },
-    {
-        prop: 'isInlineFlex',
-        type: Platforms.type,
-        description: Platforms.description,
-    },
-    {
-        prop: 'isInlineFlexOnly',
-        type: PlatformsOnly.type,
-        description: PlatformsOnly.description,
+        prop: 'isDisplay',
+        type: 'string | string[] | object',
+        description: showDescription,
     },
 ]
 
@@ -166,11 +132,6 @@ const hiddenRows: Docs.Row[] = [
         prop: 'isHidden',
         type: Platforms.type,
         description: Platforms.description,
-    },
-    {
-        prop: 'isHiddenOnly',
-        type: PlatformsOnly.type,
-        description: PlatformsOnly.description,
     },
 ]
 

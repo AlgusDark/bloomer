@@ -57,28 +57,30 @@ export declare namespace Bulma {
     }
 
     export type Platform = 'mobile' | 'tablet' | 'touch' | 'desktop' | 'widescreen';
-    export type PlatformOnly = 'tablet' | 'desktop';
+    export type PlatformOnly = 'tablet-only' | 'desktop-only';
+    export type AllPlatforms = Platform | PlatformOnly;
+
+    export type FlexDisplay = 'flex' | 'flex-mobile' | 'flex-tablet' | 'flex-touch' | 'flex-desktop' | 'flex-widescreen' | 'flex-tablet-only' | 'flex-desktop-only';
+    export type BlockDisplay = 'block' | 'block-mobile' | 'block-tablet' | 'block-touch' | 'block-desktop' | 'block-widescreen' | 'block-tablet-only' | 'block-desktop-only';
+    export type InlineDisplay = 'inline' | 'inline-mobile' | 'inline-tablet' | 'inline-touch' | 'inline-desktop' | 'inline-widescreen' | 'inline-tablet-only' | 'inline-desktop-only';
+    export type InlineBlockDisplay = 'inline-block' | 'inline-block-mobile' | 'inline-block-tablet' | 'inline-block-touch' | 'inline-block-desktop' | 'inline-block-widescreen' | 'inline-block-tablet-only' | 'inline-block-desktop-only';
+    export type InlineFlexDisplay = 'inline-flex' | 'inline-flex-mobile' | 'inline-flex-tablet' | 'inline-flex-touch' | 'inline-flex-desktop' | 'inline-flex-widescreen' | 'inline-flex-tablet-only' | 'inline-flex-desktop-only';
+    export type Displays = FlexDisplay | BlockDisplay | InlineDisplay | InlineBlockDisplay | InlineFlexDisplay;
+
+    export interface DisplayObject {
+        flex?: AllPlatforms | AllPlatforms[];
+        block?: AllPlatforms | AllPlatforms[];
+        inline?: AllPlatforms | AllPlatforms[];
+        'inline-block'?: AllPlatforms | AllPlatforms[];
+        'inline-flex'?: AllPlatforms | AllPlatforms[];
+    }
 
     export interface Show {
-        isFlex?: boolean | Platform | Platform[],
-        isFlexOnly?: PlatformOnly | PlatformOnly[],
-
-        isBlock?: boolean | Platform | Platform[],
-        isBlockOnly?: PlatformOnly | PlatformOnly[],
-
-        isInline?: boolean | Platform | Platform[],
-        isInlineOnly?: PlatformOnly | PlatformOnly[],
-
-        isInlineBlock?: boolean | Platform | Platform[],
-        isInlineBlockOnly?: PlatformOnly | PlatformOnly[],
-
-        isInlineFlex?: boolean | Platform | Platform[],
-        isInlineFlexOnly?: PlatformOnly | PlatformOnly[],
+        isDisplay?: Displays | Displays[] | DisplayObject;
     }
 
     export interface Hide {
-        isHidden?: boolean | Platform | Platform[],
-        isHiddenOnly?: PlatformOnly | PlatformOnly[],
+        isHidden?: boolean | AllPlatforms | AllPlatforms[];
     }
 
     export interface Responsive extends Show, Hide {
@@ -120,36 +122,39 @@ export declare namespace Bulma {
     export type Component<T> = React.ComponentClass<T & React.HTMLProps<HTMLElement>> | React.SFC<T & React.HTMLProps<HTMLElement>>;
 }
 
-export const isMobile = is({ 'mobile': true, });
-export const isTablet = is({ 'tablet': true, });
-export const isTouch = is({ 'touch': true, });
-export const isDesktop = is({ 'desktop': true, });
-export const isWidescreen = is({ 'widescreen': true, });
+export const isMobile = is({ mobile: true, });
+export const isTablet = is({ tablet: true, });
+const isTouch = is({ touch: true, });
+export const isDesktop = is({ desktop: true, });
+export const isWidescreen = is({ widescreen: true, });
 
-export const isLeft = is({ 'left': true, });
-export const isRight = is({ 'right': true, });
-export const isCentered = is({ 'centered': true, });
+const isTabletOnly = is({ 'tablet-only': true, });
+const isDesktopOnly = is({ 'desktop-only': true, });
 
-export const isCenter = is({ 'center': true, });
-export const isFullWidth = is({ 'fullwidth': true, });
+export const isLeft = is({ left: true, });
+export const isRight = is({ right: true, });
+export const isCentered = is({ centered: true, });
+
+export const isCenter = is({ center: true, });
+export const isFullWidth = is({ fullwidth: true, });
 
 const isColor = is({
-    'white': true,
-    'light': true,
-    'dark': true,
-    'black': true,
-    'primary': true,
-    'info': true,
-    'success': true,
-    'warning': true,
-    'danger': true,
+    white: true,
+    light: true,
+    dark: true,
+    black: true,
+    primary: true,
+    info: true,
+    success: true,
+    warning: true,
+    danger: true,
 });
 
-export const isSmall = is({ 'small': true, });
-export const isMedium = is({ 'medium': true, });
-export const isLarge = is({ 'large': true, });
+const isSmall = is({ small: true, });
+const isMedium = is({ medium: true, });
+const isLarge = is({ large: true, });
 
-const isPlatform = isOption(isMobile, isTablet, isDesktop, isTouch, isWidescreen);
+const isAllPlatforms = isOption(isMobile, isTablet, isDesktop, isTouch, isWidescreen, isTabletOnly, isDesktopOnly);
 const isAlign = isOption(isLeft, isCentered, isRight);
 const isSize = isOption(isSmall, isMedium, isLarge);
 
@@ -264,7 +269,7 @@ export function getHeadingElement({ isHeading: heading }: Bulma.Heading, default
 
 export function getHeadingModifiers({ isSpaced, isSize: size }: Bulma.Heading) {
     const isSize = isValidHeading(size) ? { [`is-${size}`]: true } : {};
-    
+
     return {
         ...isSize,
         'is-spaced': isSpaced,
@@ -281,36 +286,29 @@ export function removeHeadingProps(props: Bulma.Heading) {
     return rest;
 }
 
-const reducerModifierOnly = (helper: string) => (init: object, option: string) => {
-    if (isOption(isTablet, isDesktop)(option)) return { ...init, [`is-${helper}-${option}-only`]: true };
-    return init;
-}
+const isFlex = is({ flex: true });
+const isBlock = is({ block: true });
+const isInline = is({ inline: true });
+const isInlineBlock = is({ 'inline-block': true });
+const isInlineFlex = is({ 'inline-flex': true });
 
-const reducerModifier = (helper: string) => (init: object, option: string) => {
-    if (isPlatform(option)) return { ...init, [`is-${helper}-${option}`]: true };
-    return init;
-}
+const isDisplay = isOption(isFlex, isBlock, isInline, isInlineBlock, isInlineFlex);
 
-const getResponsiveModifierFactory = (modifier, helper, reducer) => {
-    if (typeof modifier === 'string') {
-        const getModifier = reducer(helper);
-        return getModifier({}, modifier.toLowerCase().trim());
+const getShowModifiers = (display: Bulma.Displays | Bulma.Displays[] | Bulma.DisplayObject) => {
+    if (typeof display === 'string') return { [`is-${display}`]: true };
+    if (Array.isArray(display)) return display.reduce((acc, display) => ({ ...acc, [`is-${display}`]: true }), {});
+    if (typeof display === 'object') {
+        return Object.keys(display).reduce((acc, key) => {
+            return (isDisplay(key) && isAllPlatforms(display[key])) ? { ...acc, [`is-${key}-${display[key]}`]: true } : acc;
+        }, {});
     }
-    else if (Array.isArray(modifier)) {
-        return modifier.map(str => str.toLowerCase().trim())
-            .reduce(reducer(helper), {})
-    }
-    else if (modifier === true) {
-        return { [`is-${helper}`]: true }
-    }
-
     return {};
 }
 
-const getResponsiveModifiers = (modifier: boolean | Bulma.Platform | Bulma.Platform[], modifierOnly: Bulma.PlatformOnly | Bulma.PlatformOnly[], helper: string) => {
-    if (modifier) return getResponsiveModifierFactory(modifier, helper, reducerModifier);
-    if (modifierOnly) return getResponsiveModifierFactory(modifierOnly, helper, reducerModifierOnly);
-
+const getHideModifiers = (platform: boolean | Bulma.AllPlatforms | Bulma.AllPlatforms[]) => {
+    if (typeof platform === 'boolean') return platform ? { 'is-hidden': true } : {};
+    if (typeof platform === 'string') return isAllPlatforms(platform) ? { [`is-hidden-${platform}`]: true } : {};
+    if (Array.isArray(platform)) return platform.reduce((acc, platform) => isAllPlatforms(platform) ? { ...acc, [`is-hidden-${platform}`]: true } : acc, {});
     return {};
 }
 
@@ -324,18 +322,8 @@ const getColorModifier = (modifier: string) => {
 
 function getHelpersModifiers(
     {
-        isFlex,
-        isFlexOnly,
-        isBlock,
-        isBlockOnly,
-        isInline,
-        isInlineOnly,
-        isInlineBlock,
-        isInlineBlockOnly,
-        isInlineFlex,
-        isInlineFlexOnly,
+        isDisplay,
         isHidden,
-        isHiddenOnly,
         isPulled,
         isClearfix,
         isOverlay,
@@ -346,12 +334,8 @@ function getHelpersModifiers(
         hasTextColor,
     }: Bulma.Helpers) {
     return {
-        ...getResponsiveModifiers(isFlex, isFlexOnly, 'flex'),
-        ...getResponsiveModifiers(isBlock, isBlockOnly, 'block'),
-        ...getResponsiveModifiers(isInline, isInlineOnly, 'inline'),
-        ...getResponsiveModifiers(isInlineBlock, isInlineBlockOnly, 'inline-block'),
-        ...getResponsiveModifiers(isInlineFlex, isInlineFlexOnly, 'inline-flex'),
-        ...getResponsiveModifiers(isHidden, isHiddenOnly, 'hidden'),
+        ...getShowModifiers(isDisplay),
+        ...getHideModifiers(isHidden),
         ...getAlignModifier(isPulled, 'is-pulled'),
         ...getAlignModifier(hasTextAlign, 'has-text'),
         ...getColorModifier(hasTextColor),
@@ -365,18 +349,8 @@ function getHelpersModifiers(
 
 function removeHelpersProps(props: Bulma.Helpers) {
     const {
-        isFlex,
-        isFlexOnly,
-        isBlock,
-        isBlockOnly,
-        isInline,
-        isInlineOnly,
-        isInlineBlock,
-        isInlineBlockOnly,
-        isInlineFlex,
-        isInlineFlexOnly,
+        isDisplay,
         isHidden,
-        isHiddenOnly,
         isClearfix,
         isPulled,
         isOverlay,
@@ -392,7 +366,7 @@ function removeHelpersProps(props: Bulma.Helpers) {
 }
 
 function getDisplayName(WrappedComponent) {
-  return WrappedComponent.displayName || WrappedComponent.name;
+    return WrappedComponent.displayName || WrappedComponent.name;
 }
 
 export function withHelpersModifiers<T>(Component: Bulma.Component<T>) {
