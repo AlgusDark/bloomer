@@ -19,7 +19,12 @@ const Start = (props) => (
     <Container>
         <Title isSpaced>How to Start?</Title>
         <Subtitle>1. Install via npm</Subtitle>
-        <div className='npm'><code><span className='is-unselectable'>$ </span>npm install bloomer</code></div>
+        <div className='npm' style={{marginBottom: '1.5rem'}}><code><span className='is-unselectable'>$ </span>npm install bloomer</code></div>
+        <Subtitle>
+            or use the <a href="https://unpkg.com">unpkg</a> CDN
+            <br/>
+            <a href="https://unpkg.com/bloomer/bundles/bloomer.min.js">https://unpkg.com/bloomer/bundles/bloomer.min.js</a>
+            </Subtitle>
 
         <hr />
 
@@ -37,6 +42,11 @@ const Start = (props) => (
             Since <strong>Bloomer</strong> is written with Typescript, the library is ship with typings.
             That means that you have the benefit of IntelliSense in your editor.
         </p>
+        <p>
+            Bloomer has <a href="https://webpack.js.org/guides/tree-shaking/">Tree-Shaking</a> in mind, if your bundle handle this, then you can
+            get the bennefit with Bloomer.
+        </p>
+        <br/>
         <p>Remember, with great power comes great responsibility.</p>
     </Container>
 )
