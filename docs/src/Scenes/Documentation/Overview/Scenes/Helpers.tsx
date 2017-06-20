@@ -143,19 +143,19 @@ const Helpers = (props) => (
 
         <hr />
 
-        <Title isHeading={2} isSpaced>Responsive Helpers</Title>
-        <Subtitle isHeading={3} isSize={5}>Show</Subtitle>
+        <Title tag='h2' isSpaced>Responsive Helpers</Title>
+        <Subtitle tag='h3' isSize={5}>Show</Subtitle>
         <TableDocs rows={showRows} />
 
         <hr />
 
-        <Subtitle isSpaced isHeading={3} isSize={5}>Hide</Subtitle>
+        <Subtitle isSpaced tag='h3' isSize={5}>Hide</Subtitle>
         <TableDocs rows={hiddenRows} />
 
         <hr />
 
-        <Title isHeading={2}>withHelpersModifiers(Component)</Title>
-        <Subtitle isHeading={3} isSize={5}>
+        <Title tag='h2'>withHelpersModifiers(Component)</Title>
+        <Subtitle tag='h3' isSize={5}>
             You can compose all helpers in your own custom components,
             just pass your component to the <strong>withHelpersModifiers</strong> <em>Higher Order Component</em>.
         </Subtitle>
