@@ -13,11 +13,6 @@ const byDefault = (component, level) => <td>By default, {component} is a heading
 
 const row = (component, level) => [
     {
-        prop: 'isHeading',
-        type: 'number',
-        description: headings(<span> — Level of heading element <em>h1/h2/...</em></span>),
-    },
-    {
         prop: 'isSize',
         type: 'number',
         description: headings(<span> — Bulma size element <em>.is-1/.is-2/...</em></span>),
@@ -25,11 +20,6 @@ const row = (component, level) => [
     {
         prop: 'isSpaced',
         type: 'bool',
-    },
-    {
-        prop: 'isParagraph',
-        type: 'bool',
-        description: byDefault(component, level)
     },
 ];
 
@@ -50,12 +40,12 @@ const TitleSizeExample = `<Title isSize={1}>isSize={1}</Title>
 {/* by default, it will render h1 */}
 `;
 
-const TitleHeadingSize = `<Title isHeading={1}>isHeading={1}</Title>
-<Title isHeading={2}>isHeading={2}</Title>
-<Title isHeading={3}>isHeading={3}</Title>
-<Title isHeading={4}>isHeading={4}</Title>
-<Title isHeading={5}>isHeading={5}</Title>
-<Title isHeading={6}>isHeading={6}</Title>
+const TitleHeadingSize = `<Title tag='h1'>tag='h1'</Title>
+<Title tag='h2'>tag='h2'</Title>
+<Title tag='h3'>tag='h3'</Title>
+<Title tag='h4'>tag='h4'</Title>
+<Title tag='h5'>tag='h5'</Title>
+<Title tag='h6'>tag='h6'</Title>
 {/* use developer tools to se the final render elements  */}
 `;
 
@@ -68,12 +58,12 @@ const SubtitleSizeExample = `<Subtitle isSize={1}>isSize={1}</Subtitle>
 {/* by default, it will render h2 */}
 `;
 
-const SubtitleHeadingSize = `<Subtitle isHeading={1}>isHeading={1}</Subtitle>
-<Subtitle isHeading={2}>isHeading={2}</Subtitle>
-<Subtitle isHeading={3}>isHeading={3}</Subtitle>
-<Subtitle isHeading={4}>isHeading={4}</Subtitle>
-<Subtitle isHeading={5}>isHeading={5}</Subtitle>
-<Subtitle isHeading={6}>isHeading={6}</Subtitle>
+const SubtitleHeadingSize = `<Subtitle tag='h1'>tag='h1'</Subtitle>
+<Subtitle tag='h2'>tag='h2'</Subtitle>
+<Subtitle tag='h3'>tag='h3'</Subtitle>
+<Subtitle tag='h4'>tag='h4'</Subtitle>
+<Subtitle tag='h5'>tag='h5'</Subtitle>
+<Subtitle tag='h6'>tag='h6'</Subtitle>
 {/* use developer tools to se the final render elements  */}
 `;
 
@@ -100,12 +90,12 @@ const TitleDocs = (props) => (
 
         <Columns>
             <Column hasTextAlign='centered'>
-                <Title isHeading={1}>isHeading={1}</Title>
-                <Title isHeading={2}>isHeading={2}</Title>
-                <Title isHeading={3}>isHeading={3}</Title>
-                <Title isHeading={4}>isHeading={4}</Title>
-                <Title isHeading={5}>isHeading={5}</Title>
-                <Title isHeading={6}>isHeading={6}</Title>
+                <Title tag='h1'>tag='h1'</Title>
+                <Title tag='h2'>tag='h2'</Title>
+                <Title tag='h3'>tag='h3'</Title>
+                <Title tag='h4'>tag='h4'</Title>
+                <Title tag='h5'>tag='h5'</Title>
+                <Title tag='h6'>tag='h6'</Title>
             </Column>
             <Column>
                 <Highlight>{TitleHeadingSize}</Highlight>
@@ -134,12 +124,12 @@ const TitleDocs = (props) => (
 
         <Columns>
             <Column hasTextAlign='centered'>
-                <Subtitle isHeading={1}>isHeading={1}</Subtitle>
-                <Subtitle isHeading={2}>isHeading={2}</Subtitle>
-                <Subtitle isHeading={3}>isHeading={3}</Subtitle>
-                <Subtitle isHeading={4}>isHeading={4}</Subtitle>
-                <Subtitle isHeading={5}>isHeading={5}</Subtitle>
-                <Subtitle isHeading={6}>isHeading={6}</Subtitle>
+                <Subtitle tag='h1'>tag='h1'</Subtitle>
+                <Subtitle tag='h2'>tag='h2'</Subtitle>
+                <Subtitle tag='h3'>tag='h3'</Subtitle>
+                <Subtitle tag='h4'>tag='h4'</Subtitle>
+                <Subtitle tag='h5'>tag='h5'</Subtitle>
+                <Subtitle tag='h6'>tag='h6'</Subtitle>
             </Column>
             <Column>
                 <Highlight>{SubtitleHeadingSize}</Highlight>

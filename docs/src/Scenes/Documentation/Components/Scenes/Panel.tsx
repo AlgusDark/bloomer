@@ -40,11 +40,6 @@ const PanelBlockRows: Docs.Row[] = [
         type: 'bool'
     },
     {
-        prop: 'isLabel',
-        type: 'bool',
-        description: <td>With this prop, you can turn your rendered element as a <code>label</code></td>,
-    },
-    {
         prop: 'isActive',
         type: 'bool'
     },
@@ -100,7 +95,7 @@ const PanelExample = `<Panel>
         </PanelIcon>
         Typescript
     </PanelBlock>
-    <PanelBlock>
+    <PanelBlock tag='label'>
         <Checkbox> Remember me</Checkbox>
     </PanelBlock>
     <PanelBlock>
@@ -155,7 +150,7 @@ const PanelDocs = (props) => (
                         </PanelIcon>
                         Typescript
                     </PanelBlock>
-                    <PanelBlock isLabel>
+                    <PanelBlock tag='label'>
                         <Checkbox> Remember me</Checkbox>
                     </PanelBlock>
                     <PanelBlock>

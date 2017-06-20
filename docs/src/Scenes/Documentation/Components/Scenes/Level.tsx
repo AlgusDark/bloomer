@@ -30,7 +30,7 @@ const LevelItemRows: Docs.Row[] = [
 
 const LevelExample = `<LevelLeft>
     <LevelItem>
-        <Subtitle isParagraph isSize={5}><strong>123</strong> posts</Subtitle>
+        <Subtitle tag='p' isSize={5}><strong>123</strong> posts</Subtitle>
     </LevelItem>
     <LevelItem>
         <Field hasAddons>
@@ -58,7 +58,7 @@ const LevelDocs = (props) => (
         <Level>
             <LevelLeft>
                 <LevelItem>
-                    <Subtitle isParagraph isSize={5}><strong>123</strong> posts</Subtitle>
+                    <Subtitle tag='p' isSize={5}><strong>123</strong> posts</Subtitle>
                 </LevelItem>
                 <LevelItem>
                     <Field hasAddons>
