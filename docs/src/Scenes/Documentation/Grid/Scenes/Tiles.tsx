@@ -3,6 +3,7 @@ import * as Highlight from 'react-highlight';
 
 import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { render } from './../../Overview/Scenes/Helpers';
 
 
 import { Container } from './../../../../../../src';
@@ -47,6 +48,7 @@ const tilesRow: Docs.Row[] = [
         prop: 'isVertical',
         type: 'bool',
     },
+    render('<Tile/>')
 ]
 
 const TileExample = `<Tile isAncestor>
@@ -118,10 +120,10 @@ const Columns = (props) => (
         </Tile>
         <Highlight className='html'>{TileExample}</Highlight>
 
-        <hr/>
+        <hr />
 
         <Title>Tile</Title>
-        <TableDocs rows={tilesRow} />   
+        <TableDocs rows={tilesRow} />
     </Container>
 )
 

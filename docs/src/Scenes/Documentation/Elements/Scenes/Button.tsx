@@ -46,6 +46,7 @@ const ButtonExample = `<Columns>
 
 const ButtonDocs = (props) => (
     <Container>
+        <Title>Button</Title>
         <Columns>
             <Button isColor='info' render={
                 props => <Column hasTextAlign='centered'><p {...props}>Button</p></Column>
@@ -64,6 +65,11 @@ const ButtonDocs = (props) => (
         <hr />
 
         <Title>API</Title>
+        <Subtitle>
+            By default, <strong>{'<Button />'}</strong> renders a <strong>{'<button />'}</strong> element, 
+            but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
+            <strong>E.g.</strong> <em><strong>{"<Button href='#'/>"}</strong></em>.
+        </Subtitle>
         <TableDocs rows={ButtonRows} />
     </Container>
 )
