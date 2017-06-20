@@ -10,6 +10,12 @@ import { Title, Subtitle } from './../../../../../../src';
 
 export const noModifiers = <span>No modifiers, only those inherited by the <Link to='/documentation/overview/helpers'>Helpers</Link> modifiers</span>;
 
+export const Tag = {
+    prop: 'tag',
+    type: 'string',
+    description: <td>A valid <strong>HTML</strong> tag to be rendered instead of the default one.</td>
+}
+
 const Platforms = {
     type: 'bool | string | string[]',
     description: <td><code>mobile</code> | <code>tablet</code> | <code>touch</code> | <code>desktop</code> | <code>widescreen</code> | <code>tablet-only</code> | <code>desktop-only</code></td>
@@ -151,6 +157,16 @@ const Helpers = (props) => (
 
         <Subtitle isSpaced tag='h3' isSize={5}>Hide</Subtitle>
         <TableDocs rows={hiddenRows} />
+
+        <hr />
+
+        <Title tag='h2'>Tag</Title>
+        <Subtitle tag='h3' isSize={5}>
+            Although it is not a helper modifier, <strong>tag</strong> prop is in almost every component and is used to render a different
+            HTML tag than the default one. For example, a <strong>{'<Footer/>'}</strong> component render into a <strong>{'<footer/>'}</strong> tag, but it could
+            be changed to <strong>{'<div/>'}</strong> with <strong>{"<Footer tag='div'/>"}</strong>. Most of the times you should be following the default tag,
+            but this prop can be handy in some cases.
+        </Subtitle>
 
         <hr />
 
