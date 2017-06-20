@@ -10,16 +10,6 @@ describe('Icon', () => {
     });
 
     it('should render a span.icon with span.fa.fa-home', () => {
-        const component = shallow(<Icon tag='i' icon='home' />);
-        expect(component.contains(
-            <span className='icon'>
-                <i className='fa fa-home' aria-hidden="true">
-                </i>
-            </span>
-        )).toBe(true);
-    });
-
-    it('should render a span.icon with span.fa.fa-home', () => {
         const component = shallow(<Icon icon='home' />);
         expect(component.contains(
             <span className='icon'>
