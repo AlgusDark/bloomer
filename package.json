@@ -6,6 +6,7 @@
   "types": "lib/index.d.ts",
   "jsnext:main": "esm/index.js",
   "module": "esm/index.js",
+  "browser": "bundles/bloomer.min.js",
   "dependencies": {
     "classnames": "^2.2.5",
     "tslib": "^1.7.0"
