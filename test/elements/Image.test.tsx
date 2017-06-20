@@ -19,7 +19,7 @@ describe('Image', () => {
     });
 
     it('should render a figure with .image and Radio modifiers', () => {
-        const component = shallow(<Image isRatio='3by2' />);
+        const component = shallow(<Image isRatio='3:2' />);
         expect(component.hasClass('image')).toBe(true);
         expect(component.hasClass('is-3by2')).toBe(true);
     });
