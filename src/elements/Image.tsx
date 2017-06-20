@@ -21,7 +21,7 @@ export interface Image<T> extends Size, Ratio,
 }
 
 const isRatio = is({
-    'square': true,
+    'square': 'square',
     '1:1': '1by1',
     '4:3': '4by3',
     '3:2': '3by2',
@@ -47,7 +47,7 @@ function getSizeModifiers<T>({ isSize: size }: Image<T>) {
 
 function getRatioModifiers<T>({ isRatio: ratio }: Image<T>) {
     return {
-        ...(isRatio(ratio) ? { [`is-${ratio}`]: true } : {}),
+        ...(isRatio(ratio) ? { [`is-${isRatio(ratio)}`]: true } : {}),
     }
 }
 
