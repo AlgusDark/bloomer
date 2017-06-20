@@ -15,7 +15,7 @@ const ImageRows: Docs.Row[] = [
     {
         prop: 'isRatio',
         type: 'string',
-        description: <td> <code>square</code> | <code>1by1</code> | <code>4by3</code> | <code>3by2</code> | <code>16by9</code> | <code>2by1</code> </td>,
+        description: <td> <code>square</code> | <code>1:1</code> | <code>4:3</code> | <code>3:2</code> | <code>16:9</code> | <code>2:1</code> </td>,
     }
 ]
 
@@ -72,24 +72,24 @@ const ImageDocs = (props) => (
                     <td><Highlight>{"<Image isRatio='square' src='https://via.placeholder.com/480x480' />"}</Highlight></td>
                 </tr>
                 <tr>
-                    <td><Image isRatio='1by1' src='https://via.placeholder.com/480x480' /></td>
-                    <td><Highlight>{"<Image isRatio='1by1' src='https://via.placeholder.com/480x480' />"}</Highlight></td>
+                    <td><Image isRatio='1:1' src='https://via.placeholder.com/480x480' /></td>
+                    <td><Highlight>{"<Image isRatio='1:1' src='https://via.placeholder.com/480x480' />"}</Highlight></td>
                 </tr>
                 <tr>
-                    <td><Image isRatio='4by3' src='https://via.placeholder.com/640x480' /></td>
-                    <td><Highlight>{"<Image isRatio='4by3' src='https://via.placeholder.com/640x480' />"}</Highlight></td>
+                    <td><Image isRatio='4:3' src='https://via.placeholder.com/640x480' /></td>
+                    <td><Highlight>{"<Image isRatio='4:3' src='https://via.placeholder.com/640x480' />"}</Highlight></td>
                 </tr>
                 <tr>
-                    <td><Image isRatio='3by2' src='https://via.placeholder.com/480x320' /></td>
-                    <td><Highlight>{"<Image isRatio='3by2' src='https://via.placeholder.com/480x320' />"}</Highlight></td>
+                    <td><Image isRatio='3:2' src='https://via.placeholder.com/480x320' /></td>
+                    <td><Highlight>{"<Image isRatio='3:2' src='https://via.placeholder.com/480x320' />"}</Highlight></td>
                 </tr>
                 <tr>
-                    <td><Image isRatio='16by9' src='https://via.placeholder.com/640x360' /></td>
-                    <td><Highlight>{"<Image isRatio='16by9' src='https://via.placeholder.com/640x360' />"}</Highlight></td>
+                    <td><Image isRatio='16:9' src='https://via.placeholder.com/640x360' /></td>
+                    <td><Highlight>{"<Image isRatio='16:9' src='https://via.placeholder.com/640x360' />"}</Highlight></td>
                 </tr>
                 <tr>
-                    <td><Image isRatio='2by1' src='https://via.placeholder.com/640x320' /></td>
-                    <td><Highlight>{"<Image isRatio='2by1' src='https://via.placeholder.com/640x320' />"}</Highlight></td>
+                    <td><Image isRatio='2:1' src='https://via.placeholder.com/640x320' /></td>
+                    <td><Highlight>{"<Image isRatio='2:1' src='https://via.placeholder.com/640x320' />"}</Highlight></td>
                 </tr>
             </tbody>
         </Table>

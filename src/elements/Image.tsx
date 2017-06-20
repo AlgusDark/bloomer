@@ -12,7 +12,7 @@ export interface Size {
 }
 
 export interface Ratio {
-    isRatio?: 'square' | '1by1' | '4by3' | '3by2' | '16by9' | '2by1'
+    isRatio?: 'square' | '1:1' | '4:3' | '3:2' | '16:9' | '2:1'
 }
 
 export interface Image<T> extends Size, Ratio,
@@ -22,11 +22,11 @@ export interface Image<T> extends Size, Ratio,
 
 const isRatio = is({
     'square': true,
-    '1by1': true,
-    '4by3': true,
-    '3by2': true,
-    '16by9': true,
-    '2by1': true,
+    '1:1': '1by1',
+    '4:3': '4by3',
+    '3:2': '3by2',
+    '16:9': '16by9',
+    '2:1': '2by1',
 })
 
 const isSize = is({

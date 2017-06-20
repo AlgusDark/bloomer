@@ -27,7 +27,7 @@ const CardExample = `<Card>
         </CardHeaderIcon>
     </CardHeader>
     <CardImage>
-        <Image isRatio='4by3' src='https://via.placeholder.com/1280x960' />
+        <Image isRatio='4:3' src='https://via.placeholder.com/1280x960' />
     </CardImage>
     <CardContent>
         <Media>
@@ -63,7 +63,7 @@ const CardDocs = (props) => (
                         </CardHeaderIcon>
                     </CardHeader>
                     <CardImage>
-                        <Image isRatio='4by3' src='https://via.placeholder.com/1280x960' />
+                        <Image isRatio='4:3' src='https://via.placeholder.com/1280x960' />
                     </CardImage>
                     <CardContent>
                         <Media>
