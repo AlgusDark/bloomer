@@ -154,6 +154,11 @@ const NavDocs = (props) => (
         <hr />
 
         <Title>NavItem</Title>
+        <Subtitle>
+            By default, <strong>{'<NavItem />'}</strong> renders a <strong>{'<div />'}</strong> element,
+            but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
+            <strong>E.g.</strong> <em><strong>{"<NavItem href='#'/>"}</strong></em>.
+        </Subtitle>
         <TableDocs rows={NavItemRows} />
     </Container>
 )

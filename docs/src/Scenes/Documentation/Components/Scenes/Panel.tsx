@@ -175,16 +175,26 @@ const PanelDocs = (props) => (
         <hr />
 
         <Title>PanelBlock</Title>
+        <Subtitle>
+            By default, <strong>{'<PanelBlock />'}</strong> renders a <strong>{'<div />'}</strong> element,
+            but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
+            <strong>E.g.</strong> <em><strong>{"<PanelBlock href='#'/>"}</strong></em>.
+        </Subtitle>
         <TableDocs rows={PanelBlockRows} />
 
         <hr />
 
         <Title>PanelTabs</Title>
-        <Subtitle>{noModifiers}</Subtitle>
+        <Subtitle> {noModifiers} </Subtitle>
 
         <hr />
 
         <Title>PanelTab</Title>
+        <Subtitle>
+            By default, <strong>{'<PanelTab />'}</strong> renders a <strong>{'<p />'}</strong> element,
+            but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
+            <strong>E.g.</strong> <em><strong>{"<PanelTab href='#'/>"}</strong></em>.
+        </Subtitle>
         <TableDocs rows={PanelTabRows} />
 
         <hr />

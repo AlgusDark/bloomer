@@ -13,22 +13,27 @@ const IconRows: Docs.Row[] = [
         prop: 'isAlign',
         type: 'string',
         description: <td> <code>left</code> | <code>right</code> — Should be used only when wrapped by {'<Control />'} that <strong>hasIcons</strong> </td>,
+    },
+    {
+        prop: 'icon',
+        type: 'string',
+        description: <td>A valid icon from <a href="http://fontawesome.io/icons/">Font Awesome</a></td>,
     }
 ];
 
-const IconExample = `<Icon isSize='small'><span className='fa fa-home' /></Icon>
-<Icon><span className='fa fa-home' /></Icon>
-<Icon isSize='medium'><span className='fa fa-home' /></Icon>
-<Icon isSize='large'><span className='fa fa-home' /></Icon>
+const IconExample = `<Icon isSize='small' icon='home' />
+<Icon icon='home' />
+<Icon isSize='medium' icon='home' />
+<Icon isSize='large' icon='home' />
 `;
 
 const IconDocs = (props) => (
     <Container>
         <Title>Icon</Title>
-        <Icon isSize='small'><span className='fa fa-home' /></Icon>
-        <Icon><span className='fa fa-home' /></Icon>
-        <Icon isSize='medium'><span className='fa fa-home' /></Icon>
-        <Icon isSize='large'><span className='fa fa-home' /></Icon>
+        <Icon isSize='small' icon='home' />
+        <Icon icon='home' />
+        <Icon isSize='medium' icon='home' />
+        <Icon isSize='large' icon='home' />
         <Highlight>{IconExample}</Highlight>
 
         <hr />

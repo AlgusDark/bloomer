@@ -59,7 +59,7 @@ const CardDocs = (props) => (
                             Component
                         </CardHeaderTitle>
                         <CardHeaderIcon>
-                            <Icon><span className='fa fa-angle-down'/></Icon>
+                            <Icon><span className='fa fa-angle-down' /></Icon>
                         </CardHeaderIcon>
                     </CardHeader>
                     <CardImage>
@@ -77,7 +77,7 @@ const CardDocs = (props) => (
                         </Media>
                         <Content>
                             People Keep Asking If I’m Back, And I Haven’t Really Had An Answer, But Now, Yeah, I’m Thinking I’m Back.
-                            <br/>
+                            <br />
                             <small>11:09 PM - 30 October 2014</small>
                         </Content>
                     </CardContent>
@@ -90,44 +90,48 @@ const CardDocs = (props) => (
             <Column isSize={7}><Highlight>{CardExample}</Highlight></Column>
         </Columns>
 
-        <hr/>
+        <hr />
 
         <Title>Card</Title>
         <Subtitle>{noModifiers}</Subtitle>
-        
-        <hr/>
+
+        <hr />
 
         <Title>CardHeader</Title>
         <Subtitle>{noModifiers}</Subtitle>
 
-        <hr/>
+        <hr />
 
         <Title>CardHeaderTitle</Title>
         <Subtitle>{noModifiers}</Subtitle>
 
-        <hr/>
+        <hr />
 
         <Title>CardHeaderIcon</Title>
         <TableDocs rows={cardHeaderIconRows} />
 
-        <hr/>
+        <hr />
 
         <Title>CardContent</Title>
         <Subtitle>{noModifiers}</Subtitle>
 
-        <hr/>
+        <hr />
 
         <Title>CardImage</Title>
         <Subtitle>{noModifiers}</Subtitle>
 
-        <hr/>
+        <hr />
 
         <Title>CardFooter</Title>
         <Subtitle>{noModifiers}</Subtitle>
-
-        <hr/>
+        <hr />
 
         <Title>CardFooterItem</Title>
+        <Subtitle>
+            By default, <strong>{'<CardFooterItem />'}</strong> renders a <strong>{'<p />'}</strong> element,
+            but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
+            <strong>E.g.</strong> <em><strong>{"<CardFooterItem href='#'/>"}</strong></em>.
+        </Subtitle>
         <TableDocs rows={cardFooterItemRows} />
     </Container>
 )

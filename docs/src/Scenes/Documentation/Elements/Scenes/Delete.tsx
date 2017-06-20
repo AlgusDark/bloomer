@@ -5,7 +5,7 @@ import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
 
 import { isSize, render } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Delete, Columns, Column, Tag, Notification, Message, MessageBody, MessageHeader } from './../../../../../../src';
+import { Container, Title, Delete, Columns, Column, Tag, Notification, Message, MessageBody, MessageHeader, Subtitle } from './../../../../../../src';
 
 const DeleteRows: Docs.Row[] = [
     isSize,
@@ -62,6 +62,11 @@ const DeleteDocs = (props) => (
         <hr />
 
         <Title>API</Title>
+        <Subtitle>
+            By default, <strong>{'<Delete />'}</strong> renders a <strong>{'<button />'}</strong> element, 
+            but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
+            <strong>E.g.</strong> <em><strong>{"<Delete href='#'/>"}</strong></em>.
+        </Subtitle>
         <TableDocs rows={DeleteRows} />
     </Container>
 )
