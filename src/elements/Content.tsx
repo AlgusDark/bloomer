@@ -4,9 +4,9 @@ import * as classNames from 'classnames';
 import { Bulma, removeSizeProps, getSizeModifiers, withHelpersModifiers } from './../bulma';
 import { getHTMLProps } from './../helpers';
 
-export interface Content<T> extends Bulma.Size, React.HTMLProps<HTMLDivElement> { }
+export interface Content<T> extends Bulma.Size, Bulma.Tag,  React.HTMLProps<T> { }
 
-export function Content(props: Content<HTMLDivElement>) {
+export function Content({ tag = 'div', ...props }: Content<HTMLElement>) {
     const className = classNames(
         'content',
         {
@@ -14,11 +14,11 @@ export function Content(props: Content<HTMLDivElement>) {
         },
         props.className,
     );
+
     const HTMLProps = getHTMLProps(props, removeSizeProps);
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Content);
+const HOC = /*@__PURE__*/withHelpersModifiers(Content);
+export default HOC;

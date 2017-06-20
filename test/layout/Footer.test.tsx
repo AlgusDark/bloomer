@@ -9,6 +9,11 @@ describe('Footer', () => {
         expect(component.contains(<footer className='footer'>Any Content</footer>)).toBe(true);
     });
 
+    it('should render a div with .footer', () => {
+        const component = shallow(<Footer tag='div'>Any Content</Footer>);
+        expect(component.contains(<div className='footer'>Any Content</div>)).toBe(true);
+    });
+
     it('should render a footer with .footer and custom classNames', () => {
         const component = shallow(<Footer className='custom loader' />);
         expect(component.hasClass('footer')).toBe(true);

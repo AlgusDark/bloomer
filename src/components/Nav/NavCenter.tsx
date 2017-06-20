@@ -3,12 +3,13 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export function NavCenter(props: React.HTMLProps<HTMLDivElement>) {
+export interface NavCenter<T> extends Bulma.Tag, React.HTMLProps<T> { }
+
+export function NavCenter({ tag = 'div', ...props }: NavCenter<HTMLElement>) {
     const className = classNames('nav-center', props.className);
 
-    return (
-        <div {...props} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(NavCenter);
+const HOC = /*@__PURE__*/withHelpersModifiers(NavCenter);
+export default HOC;

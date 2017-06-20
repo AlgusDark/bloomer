@@ -3,16 +3,14 @@ import * as classNames from 'classnames';
 
 import {
     Bulma,
-    getHeadingElement,
     getHeadingModifiers, removeHeadingProps,
     withHelpersModifiers,
 } from './../bulma';
 import { combineModifiers, getHTMLProps } from './../helpers';
 
-export interface Title<T> extends Bulma.Heading, React.HTMLProps<T> {
-}
+export interface Title<T> extends Bulma.Heading, Bulma.Tag, React.HTMLProps<T> { }
 
-export function Title(props: Title<HTMLHeadingElement | HTMLParagraphElement>) {
+export function Title({ tag='h1', ...props }: Title<HTMLElement>) {
     const className = classNames(
         'title',
         {
@@ -20,14 +18,11 @@ export function Title(props: Title<HTMLHeadingElement | HTMLParagraphElement>) {
         },
         props.className,
     );
-    
+
     const HTMLProps = getHTMLProps(props, removeHeadingProps);
 
-    if (props.isParagraph) return <p {...HTMLProps} className={className} />
-
-    const element = getHeadingElement(props);
-
-    return React.createElement(element, { ...HTMLProps, className });
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Title);
+const HOC = /*@__PURE__*/withHelpersModifiers(Title);
+export default HOC;

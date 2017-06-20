@@ -59,7 +59,7 @@ function removeImageProps<T>(props: Image<T>) {
     return rest;
 }
 
-export function Image(props: Image<HTMLSpanElement>) {
+export function Image(props: Image<HTMLElement>) {
     const className = classNames(
         'image',
         {
@@ -72,9 +72,10 @@ export function Image(props: Image<HTMLSpanElement>) {
 
     return (
         <figure {...HTMLProps} className={className}>
-            <img src={src}  />
+            <img src={src} />
         </figure>
     )
 }
 
-export default withHelpersModifiers(Image);
+const HOC = /*@__PURE__*/withHelpersModifiers(Image);
+export default HOC;

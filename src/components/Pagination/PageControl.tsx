@@ -9,12 +9,12 @@ import {
 } from './../../bulma';
 import { getHTMLProps, combineModifiers } from './../../helpers';
 
-export interface PageControl<T> extends Bulma.Render, Bulma.Active, Bulma.Focused, React.HTMLProps<T> {
+export interface PageControl<T> extends Bulma.Render, Bulma.Tag, Bulma.Active, Bulma.Focused, React.HTMLProps<T> {
     isPrevious?: boolean,
     isNext?: boolean,
 }
 
-export function PageControl(props: PageControl<HTMLAnchorElement>) {
+export function PageControl({ tag = 'a', render, ...props }: PageControl<HTMLElement>) {
     const className = classNames(
         {
             'pagination-previous': !props.isNext,
@@ -25,18 +25,17 @@ export function PageControl(props: PageControl<HTMLAnchorElement>) {
     );
 
     const {
-        render,
-        isNext, isPrevious,
+        isNext,
+        isPrevious,
         ...rest
     } = props;
-    
+
     const HTMLProps = getHTMLProps(rest, removeActiveModifiers, removeFocusedModifiers);
 
     if (render) return render({ ...HTMLProps, className });
 
-    return (
-        <a {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(PageControl);
+const HOC = /*@__PURE__*/withHelpersModifiers(PageControl);
+export default HOC;

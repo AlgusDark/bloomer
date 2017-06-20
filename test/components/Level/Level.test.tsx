@@ -9,6 +9,11 @@ describe('Level', () => {
         expect(component.contains(<nav className='level'>My Level</nav>)).toBe(true);
     });
 
+    it('should render a div with .level', () => {
+        const component = shallow(<Level tag='div'>My Level</Level>);
+        expect(component.contains(<div className='level'>My Level</div>)).toBe(true);
+    });
+
     it('should render a nav with .level and modifiers', () => {
         const component = shallow(<Level isMobile>My Level</Level>);
         expect(component.hasClass('level')).toBe(true);

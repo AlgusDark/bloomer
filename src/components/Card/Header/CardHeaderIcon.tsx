@@ -3,16 +3,15 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../../bulma';
 
-export function CardHeaderIcon(props: Bulma.Render & React.HTMLProps<HTMLAnchorElement>) {
+export interface CardHeaderIcon<T> extends Bulma.Render, Bulma.Tag, React.HTMLProps<T> { }
+
+export function CardHeaderIcon({ tag = 'a', render, ...props }: CardHeaderIcon<HTMLElement>) {
     const className = classNames('card-header-icon', props.className);
 
-    const { render, ...HTMLProps } = props;
+    if (render) return render({ ...props, className });
 
-    if (render) return render({ ...HTMLProps, className });
-
-    return (
-        <a {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(CardHeaderIcon);
+const HOC = /*@__PURE__*/withHelpersModifiers(CardHeaderIcon);
+export default HOC;

@@ -9,6 +9,11 @@ describe('Column', () => {
         expect(component.contains(<div className='column'>Any Content</div>)).toBe(true);
     });
 
+    it('should render a p with .column', () => {
+        const component = shallow(<Column tag='p'>Any Content</Column>);
+        expect(component.contains(<p className='column'>Any Content</p>)).toBe(true);
+    });
+
     it('should render a div with .column and modifiers', () => {
         const component = shallow(<Column isSize={2} isOffset={6} />);
         expect(component.hasClass('column')).toBe(true);

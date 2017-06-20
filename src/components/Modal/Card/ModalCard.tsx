@@ -3,12 +3,13 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../../bulma';
 
-export function ModalCard(props: React.HTMLProps<HTMLDivElement>) {
+export interface ModalCard<T> extends Bulma.Tag, React.HTMLProps<T> { }
+
+export function ModalCard({ tag = 'div', ...props }: ModalCard<HTMLElement>) {
     const className = classNames('modal-card', props.className);
 
-    return (
-        <div {...props} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(ModalCard);
+const HOC = /*@__PURE__*/withHelpersModifiers(ModalCard);
+export default HOC;

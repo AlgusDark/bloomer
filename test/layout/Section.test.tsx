@@ -9,6 +9,11 @@ describe('Section', () => {
         expect(container.contains(<section className='section'>My Section</section>)).toBe(true)
     });
 
+    it('should render a div with .section', () => {
+        const container = shallow(<Section tag='div'>My Section</Section>);
+        expect(container.contains(<div className='section'>My Section</div>)).toBe(true)
+    });
+
     it('should render a section with .section and modifiers', () => {
         const containerLarge = shallow(<Section isSize='large'/>);
         expect(containerLarge.hasClass('section')).toBe(true);

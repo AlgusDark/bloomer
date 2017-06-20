@@ -8,22 +8,24 @@ import {
 } from './../../bulma';
 import { isOption, getHTMLProps } from './../../helpers'
 
-export interface TabList<T> extends Bulma.Alignment, React.HTMLProps<T> {
+export interface TabList<T> extends Bulma.Alignment, Bulma.Tag, React.HTMLProps<T> {
     isAlign?: 'left' | 'center' | 'right',
 }
 
-export function TabList(props: TabList<HTMLUListElement>) {
-    const isAlignOption = isOption(isLeft, isCenter, isRight);
+const isAlignOption = isOption(isLeft, isCenter, isRight);
+
+export function TabList({ tag = 'ul', ...props }: TabList<HTMLElement>) {
     const className = classNames(
         {
-            ...(isAlignOption(props.isAlign) ? {[`is-${props.isAlign}`]: true} : {})
+            ...(isAlignOption(props.isAlign) ? { [`is-${props.isAlign}`]: true } : {})
         },
         props.className
-    );
+    ) || undefined;
 
     const HTMLProps = getHTMLProps(props, removeAlignmentProps);
 
-    return className ? <ul {...HTMLProps} className={className} /> : <ul {...HTMLProps}/>
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(TabList);
+const HOC = /*@__PURE__*/withHelpersModifiers(TabList);
+export default HOC;

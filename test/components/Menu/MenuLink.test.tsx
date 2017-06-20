@@ -26,6 +26,16 @@ describe('MenuLink', () => {
         expect(component.contains(<a href='#'>My Link</a>));
     });
 
+    it('should render a button', () => {
+        const component = shallow(<MenuLink tag='button'>My Link</MenuLink>);
+        expect(component.contains(<button>My Link</button>));
+    });
+
+    it('should render an anchor', () => {
+        const component = shallow(<MenuLink href='#'>My Link</MenuLink>);
+        expect(component.contains(<a href='#'>My Link</a>));
+    });
+
     it('should render an anchor with modifiers and custom classNames', () => {
         const component = shallow(<MenuLink isActive href='#' className='custom'>My Link</MenuLink>);
         expect(component.hasClass('is-active')).toBe(true);

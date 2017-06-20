@@ -6,15 +6,16 @@ import {
     withHelpersModifiers,
 } from './../../../bulma';
 
-export function FieldBody(props: React.HTMLProps<HTMLDivElement>) {
+export interface FieldBody<T> extends Bulma.Tag, React.HTMLProps<T> { }
+
+export function FieldBody({ tag = 'div', ...props }: FieldBody<HTMLElement>) {
     const className = classNames(
         'field-body',
         props.className
     );
 
-    return (
-        <div {...props} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(FieldBody);
+const HOC = /*@__PURE__*/withHelpersModifiers(FieldBody);
+export default HOC;

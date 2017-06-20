@@ -9,7 +9,7 @@ export interface Table<T> extends React.HTMLProps<T> {
     isNarrow?: boolean,
 }
 
-export function Table(props: Table<HTMLTableElement>) {
+export function Table(props: Table<HTMLElement>) {
     const className = classNames(
         'table',
         {
@@ -32,4 +32,5 @@ export function Table(props: Table<HTMLTableElement>) {
     )
 }
 
-export default withHelpersModifiers(Table);
+const HOC = /*@__PURE__*/withHelpersModifiers(Table);
+export default HOC;

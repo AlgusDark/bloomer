@@ -22,7 +22,7 @@ describe('PanelBlock', () => {
     });
 
     it('should render a label with .panel-block', () => {
-        const component = shallow(<PanelBlock isLabel>My PanelBlock</PanelBlock>);
+        const component = shallow(<PanelBlock tag='label'>My PanelBlock</PanelBlock>);
         expect(component.contains(<label className='panel-block'>My PanelBlock</label>)).toBe(true);
     });
 

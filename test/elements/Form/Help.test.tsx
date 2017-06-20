@@ -9,6 +9,11 @@ describe('Help', () => {
         expect(component.contains(<p className='help'>My Help</p>)).toBe(true);
     });
 
+    it('should render a div with .help', () => {
+        const component = shallow(<Help tag='div'>My Help</Help>);
+        expect(component.contains(<div className='help'>My Help</div>)).toBe(true);
+    });
+
     it('should render a paragraph with .help and modifiers', () => {
         const component = shallow(<Help isColor='dark' />);
         expect(component.hasClass('help')).toBe(true);

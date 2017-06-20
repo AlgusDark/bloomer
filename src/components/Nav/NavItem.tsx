@@ -8,12 +8,12 @@ import {
 } from './../../bulma';
 import { getHTMLProps, combineModifiers } from './../../helpers';
 
-export interface NavItem<T> extends Bulma.Render, Bulma.Active, React.HTMLProps<T> {
+export interface NavItem<T> extends Bulma.Tag, Bulma.Render, Bulma.Active, React.HTMLProps<T> {
     isTab?: boolean,
     isBrand?: boolean,
 }
 
-export function NavItem(props: NavItem<HTMLDivElement | HTMLAnchorElement>) {
+export function NavItem({ tag = 'div', render, ...props }: NavItem<HTMLElement>) {
     const className = classNames(
         'nav-item',
         {
@@ -25,19 +25,17 @@ export function NavItem(props: NavItem<HTMLDivElement | HTMLAnchorElement>) {
     );
 
     const {
-        render,
         isTab,
         isBrand,
         ...rest
      } = props;
 
-     const HTMLProps = getHTMLProps(rest, removeActiveModifiers);
+    const HTMLProps = getHTMLProps(rest, removeActiveModifiers);
 
     if (render) return render({ ...HTMLProps, className });
 
-    const element = props.href ? 'a' : 'div';
-
-    return React.createElement(element, { ...HTMLProps, className });
+    return React.createElement((props.href ? 'a' : tag), { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(NavItem);
+const HOC = /*@__PURE__*/withHelpersModifiers(NavItem);
+export default HOC;

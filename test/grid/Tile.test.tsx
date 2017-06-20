@@ -22,6 +22,11 @@ describe('Tile', () => {
         expect(component.contains(<div className='tile'>Any Content</div>)).toBe(true);
     });
 
+    it('should render a p with .tile', () => {
+        const component = shallow(<Tile tag='p'>Any Content</Tile>);
+        expect(component.contains(<p className='tile'>Any Content</p>)).toBe(true);
+    });
+
     it('should render a div with .tile.is-3', () => {
         const component = shallow(<Tile isSize={3}>Any Content</Tile>);
         expect(component.contains(<div className='tile is-3'>Any Content</div>)).toBe(true);

@@ -5,7 +5,7 @@ import { Grid, getGridSizesModifiers, removeGridSizesProps } from './grid';
 import { Bulma, withHelpersModifiers } from './../bulma';
 import { getHTMLProps } from './../helpers';
 
-export interface Tile<T> extends Bulma.Render,
+export interface Tile<T> extends Bulma.Render, Bulma.Tag,
     React.HTMLProps<T> {
     isSize?: Grid.Sizes,
     isAncestor?: boolean,
@@ -14,7 +14,7 @@ export interface Tile<T> extends Bulma.Render,
     isVertical?: boolean,
 }
 
-export function Tile(props: Tile<HTMLDivElement>) {
+export function Tile({ tag = 'div', render, ...props }: Tile<HTMLElement>) {
     const className = classNames(
         'tile',
         {
@@ -28,7 +28,6 @@ export function Tile(props: Tile<HTMLDivElement>) {
     );
 
     const {
-        render,
         isAncestor,
         isChild,
         isParent,
@@ -40,9 +39,8 @@ export function Tile(props: Tile<HTMLDivElement>) {
 
     if (render) return render({ ...HTMLProps, className });
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Tile);
+const HOC = /*@__PURE__*/withHelpersModifiers(Tile);
+export default HOC;

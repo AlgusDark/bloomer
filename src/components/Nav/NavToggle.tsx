@@ -8,10 +8,10 @@ import {
 } from './../../bulma';
 import { getHTMLProps, combineModifiers } from './../../helpers';
 
-export interface NavToggle<T> extends Bulma.Active, React.HTMLProps<T> {
+export interface NavToggle<T> extends Bulma.Active, Bulma.Tag, React.HTMLProps<T> {
 }
 
-export function NavToggle(props: NavToggle<HTMLSpanElement>) {
+export function NavToggle({ tag = 'span', ...props }: NavToggle<HTMLElement>) {
     const className = classNames(
         'nav-toggle',
         {
@@ -20,15 +20,15 @@ export function NavToggle(props: NavToggle<HTMLSpanElement>) {
         props.className
     );
 
-    const {children, ...HTMLProps} = getHTMLProps(props, removeActiveModifiers);
+    const { children, ...HTMLProps } = getHTMLProps(props, removeActiveModifiers);
 
-    return (
-        <span {...HTMLProps} className={className}>
-            <span />
-            <span />
-            <span />
-        </span>
-    )
+    return React.createElement(
+        tag, { ...HTMLProps, className },
+        React.createElement('span', null),
+        React.createElement('span', null),
+        React.createElement('span', null)
+    );
 }
 
-export default withHelpersModifiers(NavToggle);
+const HOC = /*@__PURE__*/withHelpersModifiers(NavToggle);
+export default HOC;

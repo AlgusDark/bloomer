@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../bulma';
 
-export interface Columns<T> extends React.HTMLProps<T> {
+export interface Columns<T> extends Bulma.Tag, React.HTMLProps<T> {
     isMobile?: boolean,
     isDesktop?: boolean,
     isGapless?: boolean,
@@ -13,7 +13,7 @@ export interface Columns<T> extends React.HTMLProps<T> {
     isCentered?: boolean,
 }
 
-export function Columns(props: Columns<HTMLDivElement>) {
+export function Columns({ tag = 'div', ...props }: Columns<HTMLElement>) {
     const className = classNames(
         'columns',
         {
@@ -37,9 +37,8 @@ export function Columns(props: Columns<HTMLDivElement>) {
         isCentered,
         ...HTMLProps } = props;
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Columns);
+const HOC = /*@__PURE__*/withHelpersModifiers(Columns);
+export default HOC;

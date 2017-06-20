@@ -69,9 +69,7 @@ describe('removeProps functions', () => {
 
     it('should remove Heading props', () => {
         const HeadingProps: Bulma.Bulma.Heading = {
-            isHeading: 3,
             isSize: 2,
-            isParagraph: true,
             isSpaced: true,
         }
         expect(Bulma.removeHeadingProps({ ...props, ...HeadingProps }))
@@ -150,39 +148,6 @@ describe('get*Modifiers functions', () => {
         }
         expect(Bulma.getHeadingModifiers(props))
             .toEqual(expected);
-    });
-});
-
-describe('getHeadingElement', () => {
-    it('should return h1', () => {
-        expect(Bulma.getHeadingElement({ isHeading: 1 })).toBe('h1');
-
-        const fixture: any[] = [
-            { 1: null },
-            { isHeading: '1000' },
-            { isHeading: 1000 },
-            { isHeading: null },
-            { isHeading: undefined },
-        ];
-
-        fixture.forEach(item => expect(Bulma.getHeadingElement(item)).toBe('h1'));
-
-    });
-
-    it('should return h2', () => {
-        expect(Bulma.getHeadingElement({ isHeading: 2 })).toBe('h2');
-    });
-    it('should return h3', () => {
-        expect(Bulma.getHeadingElement({ isHeading: 3 })).toBe('h3');
-    });
-    it('should return h4', () => {
-        expect(Bulma.getHeadingElement({ isHeading: 4 })).toBe('h4');
-    });
-    it('should return h5', () => {
-        expect(Bulma.getHeadingElement({ isHeading: 5 })).toBe('h5');
-    });
-    it('should return h6', () => {
-        expect(Bulma.getHeadingElement({ isHeading: 6 })).toBe('h6');
     });
 });
 

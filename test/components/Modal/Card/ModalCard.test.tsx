@@ -9,7 +9,12 @@ describe('ModalCard', () => {
         expect(component.contains(<div className='modal-card'/>)).toBe(true);
     });
 
-    it('should render a div with .modal-card and custom classNames', () => {
+    it('should render a p with .modal-card', () => {
+        const component = shallow(<ModalCard tag='p'/>);
+        expect(component.contains(<p className='modal-card'/>)).toBe(true);
+    });
+
+    it('should render a p with .modal-card and custom classNames', () => {
         const component = shallow(<ModalCard className='custom' />);
         expect(component.hasClass('modal-card')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);

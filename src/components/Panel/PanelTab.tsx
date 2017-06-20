@@ -8,22 +8,23 @@ import {
 } from './../../bulma';
 import { getHTMLProps } from './../../helpers';
 
-export interface PanelTab<T> extends Bulma.Render, Bulma.Active, React.HTMLProps<T> {
+export interface PanelTab<T> extends Bulma.Render, Bulma.Tag, Bulma.Active, React.HTMLProps<T> {
 }
 
-export function PanelTab(props: PanelTab<HTMLAnchorElement>) {
+export function PanelTab({ tag = 'p', render, ...props }: PanelTab<HTMLElement>) {
     const className = classNames(
         {
             ...getActiveModifiers(props)
         },
         props.className
-    );
-    const { render, ...rest } = props;
-    const HTMLProps = getHTMLProps(rest, removeActiveModifiers);
+    ) || undefined;
+
+    const HTMLProps = getHTMLProps(props, removeActiveModifiers);
 
     if (render) return render({ ...HTMLProps, className });
 
-    return className ? <a {...HTMLProps} className={className} /> : <a {...HTMLProps} />
+    return React.createElement((props.href ? 'a' : tag), { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(PanelTab);
+const HOC = /*@__PURE__*/withHelpersModifiers(PanelTab);
+export default HOC;

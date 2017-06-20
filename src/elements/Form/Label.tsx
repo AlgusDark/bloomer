@@ -13,7 +13,7 @@ export interface Label<T> extends Bulma.Size,
     React.HTMLProps<T> {
 }
 
-export function Label(props: Label<HTMLLabelElement>) {
+export function Label(props: Label<HTMLElement>) {
     const className = classNames(
         'label',
         {
@@ -24,8 +24,9 @@ export function Label(props: Label<HTMLLabelElement>) {
     const HTMLProps = getHTMLProps(props, removeSizeProps);
 
     return (
-        <label {...HTMLProps} className={className}/>
+        <label {...HTMLProps} className={className} />
     )
 }
 
-export default withHelpersModifiers(Label);
+const HOC = /*@__PURE__*/withHelpersModifiers(Label);
+export default HOC;

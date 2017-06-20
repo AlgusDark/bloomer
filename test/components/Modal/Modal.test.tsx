@@ -9,6 +9,11 @@ describe('Modal', () => {
         expect(component.contains(<div className='modal'>My Modal</div>)).toBe(true);
     });
 
+    it('should render a p with .modal', () => {
+        const component = shallow(<Modal tag='p'>My Modal</Modal>);
+        expect(component.contains(<p className='modal'>My Modal</p>)).toBe(true);
+    });
+
      it('should render a div with .modal and modifiers', () => {
         const component = shallow(<Modal isActive><span>Any Content</span></Modal>);
         expect(component.hasClass('modal')).toBe(true);

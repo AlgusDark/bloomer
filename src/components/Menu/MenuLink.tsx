@@ -8,27 +8,24 @@ import {
 } from './../../bulma';
 import { getHTMLProps } from './../../helpers';
 
-export interface MenuLink<T> extends Bulma.Render, Bulma.Active, React.HTMLProps<T> {
+export interface MenuLink<T> extends Bulma.Tag, Bulma.Render, Bulma.Active,
+    React.HTMLProps<T> {
 }
 
-export function MenuLink(props: MenuLink<HTMLAnchorElement>) {
+export function MenuLink({ tag = 'a', render, ...props }: MenuLink<HTMLElement>) {
     const className = classNames(
         {
             ...getActiveModifiers(props),
         },
         props.className
-    );
-    const { render, ...rest } = props;
+    ) || undefined;
 
-    const HTMLProps = getHTMLProps(rest, removeActiveModifiers);
+    const HTMLProps = getHTMLProps(props, removeActiveModifiers);
 
     if (render) return render({ ...HTMLProps, className });
 
-    const withClassName = (
-        <a {...HTMLProps} className={className} />
-    )
-
-    return className ? withClassName : <a {...HTMLProps} className={className} />
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(MenuLink);
+const HOC = /*@__PURE__*/withHelpersModifiers(MenuLink);
+export default HOC;

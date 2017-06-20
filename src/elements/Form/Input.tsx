@@ -13,7 +13,7 @@ export interface Input<T> extends Bulma.Color, Bulma.Size, Bulma.State,
     React.HTMLProps<T> {
 }
 
-export function Input(props: Input<HTMLInputElement>) {
+export function Input(props: Input<HTMLElement>) {
     const className = classNames(
         'input',
         {
@@ -23,9 +23,8 @@ export function Input(props: Input<HTMLInputElement>) {
 
     const HTMLProps = getHTMLProps(props, removeColorProps, removeSizeProps, removeStateProps);
 
-    return (
-        <input {...HTMLProps} className={className} type={props.type || 'text'} />
-    )
+    return <input {...HTMLProps} className={className} type={props.type || 'text'} />
 }
 
-export default withHelpersModifiers(Input);
+const HOC = /*@__PURE__*/withHelpersModifiers(Input);
+export default HOC;

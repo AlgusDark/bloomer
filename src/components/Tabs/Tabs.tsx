@@ -9,14 +9,14 @@ import {
 } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
-export interface Tabs<T> extends Bulma.Alignment, Bulma.Size,
+export interface Tabs<T> extends Bulma.Alignment, Bulma.Size, Bulma.Tag,
     React.HTMLProps<T> {
     isAlign?: 'left' | 'centered' | 'right',
     isBoxed?: boolean,
     isToggle?: boolean,
 }
 
-export function Tabs(props: Tabs<HTMLDivElement>) {
+export function Tabs({ tag = 'div', ...props }: Tabs<HTMLElement>) {
     const className = classNames(
         'tabs',
         {
@@ -26,12 +26,12 @@ export function Tabs(props: Tabs<HTMLDivElement>) {
         },
         props.className,
     );
+
     const { isBoxed, isToggle, ...rest } = props;
     const HTMLProps = getHTMLProps(rest, removeAlignmentProps, removeSizeProps);
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Tabs);
+const HOC = /*@__PURE__*/withHelpersModifiers(Tabs);
+export default HOC;

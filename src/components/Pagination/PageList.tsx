@@ -3,12 +3,13 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export function PageList(props: React.HTMLProps<HTMLUListElement>) {
+export interface PageList<T> extends Bulma.Tag, React.HTMLProps<T> { }
+
+export function PageList({ tag = 'ul', ...props }: PageList<HTMLElement>) {
     const className = classNames('pagination-list', props.className);
 
-    return (
-        <ul {...props} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(PageList);
+const HOC = /*@__PURE__*/withHelpersModifiers(PageList);
+export default HOC;

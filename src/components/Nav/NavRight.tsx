@@ -8,11 +8,11 @@ import {
 } from './../../bulma';
 import { getHTMLProps, combineModifiers } from './../../helpers';
 
-export interface NavRight<T> extends Bulma.Active, React.HTMLProps<T> {
+export interface NavRight<T> extends Bulma.Active, Bulma.Tag, React.HTMLProps<T> {
     isMenu?: boolean,
 }
 
-export function NavRight(props: NavRight<HTMLDivElement>) {
+export function NavRight({ tag = 'div', ...props }: NavRight<HTMLElement>) {
     const className = classNames(
         'nav-right',
         {
@@ -25,9 +25,8 @@ export function NavRight(props: NavRight<HTMLDivElement>) {
     const { isMenu, ...rest } = props;
     const HTMLProps = getHTMLProps(rest, removeActiveModifiers);
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(NavRight);
+const HOC = /*@__PURE__*/withHelpersModifiers(NavRight);
+export default HOC;

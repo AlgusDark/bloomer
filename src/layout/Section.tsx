@@ -8,11 +8,11 @@ import {
 } from './../bulma';
 import { getHTMLProps, isOption } from './../helpers';
 
-export interface Section<T> extends Bulma.Size, React.HTMLProps<T> {
+export interface Section<T> extends Bulma.Size, Bulma.Tag, React.HTMLProps<T> {
     isSize?: 'medium' | 'large',
 }
 
-export function Section(props: Section<HTMLElement>) {
+export function Section({ tag = 'section', ...props }: Section<HTMLElement>) {
     const className = classNames(
         'section',
         {
@@ -23,9 +23,8 @@ export function Section(props: Section<HTMLElement>) {
 
     const HTMLProps = getHTMLProps(props, removeSizeProps);
 
-    return (
-        <section {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Section);
+const HOC = /*@__PURE__*/withHelpersModifiers(Section);
+export default HOC;

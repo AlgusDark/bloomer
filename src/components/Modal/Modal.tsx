@@ -8,10 +8,10 @@ import {
 } from './../../bulma';
 import { getHTMLProps } from './../../helpers'
 
-export interface Modal<T> extends Bulma.Active, React.HTMLProps<T> {
+export interface Modal<T> extends Bulma.Active, Bulma.Tag, React.HTMLProps<T> {
 }
 
-export function Modal(props: Modal<HTMLDivElement>) {
+export function Modal({ tag = 'div', ...props }: Modal<HTMLElement>) {
     const className = classNames(
         'modal',
         {
@@ -22,9 +22,8 @@ export function Modal(props: Modal<HTMLDivElement>) {
 
     const HTMLProps = getHTMLProps(props, removeActiveModifiers);
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Modal);
+const HOC = /*@__PURE__*/withHelpersModifiers(Modal);
+export default HOC;

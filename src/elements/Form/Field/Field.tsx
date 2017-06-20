@@ -11,7 +11,7 @@ import { isOption } from './../../../helpers'
 
 export type Directions = 'right' | 'centered';
 
-export interface Field<T> extends React.HTMLProps<T> {
+export interface Field<T> extends Bulma.Tag, React.HTMLProps<T> {
     isGrouped?: boolean | Directions,
     hasAddons?: boolean | Directions | 'fullwidth',
     isHorizontal?: boolean,
@@ -28,7 +28,7 @@ const getModifier = (modifier: boolean | Directions | 'fullwidth', helper: strin
     return {};
 }
 
-export function Field(props: Field<HTMLDivElement>) {
+export function Field({ tag = 'div', ...props }: Field<HTMLElement>) {
     const className = classNames(
         'field',
         {
@@ -43,9 +43,8 @@ export function Field(props: Field<HTMLDivElement>) {
         isHorizontal,
         ...HTMLProps } = props;
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Field);
+const HOC = /*@__PURE__*/withHelpersModifiers(Field);
+export default HOC;

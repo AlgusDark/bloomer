@@ -9,6 +9,11 @@ describe('ModalCardFooter', () => {
         expect(component.contains(<footer className='modal-card-foot'/>)).toBe(true);
     });
 
+    it('should render a div with .modal-card-foot', () => {
+        const component = shallow(<ModalCardFooter tag='div'/>);
+        expect(component.contains(<div className='modal-card-foot'/>)).toBe(true);
+    });
+
     it('should render a footer with .modal-card-foot and custom classNames', () => {
         const component = shallow(<ModalCardFooter className='custom' />);
         expect(component.hasClass('modal-card-foot')).toBe(true);

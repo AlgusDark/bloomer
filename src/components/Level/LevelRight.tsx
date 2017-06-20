@@ -3,12 +3,13 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export function LevelRight(props: React.HTMLProps<HTMLDivElement>) {
+export interface LevelRight<T> extends Bulma.Tag, React.HTMLProps<T> { }
+
+export function LevelRight({ tag = 'div', ...props }: LevelRight<HTMLElement>) {
     const className = classNames('level-right', props.className);
 
-    return (
-        <div {...props} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(LevelRight);
+const HOC = /*@__PURE__*/withHelpersModifiers(LevelRight);
+export default HOC;

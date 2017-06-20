@@ -9,10 +9,10 @@ import {
 } from './../../bulma';
 import { getHTMLProps, combineModifiers } from './../../helpers';
 
-export interface Ellipsis<T> extends Bulma.Active, Bulma.Focused, React.HTMLProps<T> {
+export interface Ellipsis<T> extends Bulma.Active, Bulma.Focused, Bulma.Tag, React.HTMLProps<T> {
 }
 
-export function Ellipsis(props: Ellipsis<HTMLSpanElement>) {
+export function Ellipsis({ tag = 'span', ...props }: Ellipsis<HTMLElement>) {
     const className = classNames(
         'pagination-ellipsis',
         {
@@ -23,10 +23,8 @@ export function Ellipsis(props: Ellipsis<HTMLSpanElement>) {
 
     const { children, ...HTMLProps } = getHTMLProps(props, removeActiveModifiers, removeFocusedModifiers);
 
-
-    return (
-        <span {...HTMLProps} className={className}>&hellip;</span>
-    )
+    return React.createElement(tag, { ...HTMLProps, className }, '&hellip;');
 }
 
-export default withHelpersModifiers(Ellipsis);
+const HOC = /*@__PURE__*/withHelpersModifiers(Ellipsis);
+export default HOC;

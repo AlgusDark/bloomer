@@ -26,6 +26,11 @@ describe('CardHeaderIcon', () => {
         expect(component.contains(<a className='card-header-icon'>My CardHeaderIcon</a>)).toBe(true);
     });
 
+    it('should render a div with .card-header-icon', () => {
+        const component = shallow(<CardHeaderIcon tag='div'>My CardHeaderIcon</CardHeaderIcon>);
+        expect(component.contains(<div className='card-header-icon'>My CardHeaderIcon</div>)).toBe(true);
+    });
+
     it('should render an anchor with .card-header-icon and custom classNames', () => {
         const component = shallow(<CardHeaderIcon className='custom'><span>Any CardHeaderIcon</span></CardHeaderIcon>);
         expect(component.hasClass('card-header-icon')).toBe(true);

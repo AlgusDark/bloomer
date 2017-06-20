@@ -52,4 +52,5 @@ export function Button(props: Button<HTMLButtonElement | HTMLAnchorElement>) {
     return props.href ? anchor : button;
 }
 
-export default withHelpersModifiers(Button);
+const HOC = /*@__PURE__*/withHelpersModifiers(Button);
+export default HOC;

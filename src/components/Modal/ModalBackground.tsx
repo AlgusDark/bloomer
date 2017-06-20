@@ -3,14 +3,15 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export function ModalBackground(props: React.HTMLProps<HTMLDivElement>) {
+export interface ModalBackground<T> extends Bulma.Tag, React.HTMLProps<T> { }
+
+export function ModalBackground({tag='div', ...props}: ModalBackground<HTMLElement>) {
     const className = classNames('modal-background', props.className);
 
     const { children, ...HTMLProps } = props;
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(ModalBackground);
+const HOC = /*@__PURE__*/withHelpersModifiers(ModalBackground);
+export default HOC;

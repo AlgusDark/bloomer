@@ -6,13 +6,13 @@ import {
     getSizeModifiers, removeSizeProps,
     withHelpersModifiers,
 } from './../../bulma';
-import {getHTMLProps} from './../../helpers'
+import { getHTMLProps } from './../../helpers'
 
-export interface Media<T> extends Bulma.Size, React.HTMLProps<T> {
+export interface Media<T> extends Bulma.Size, Bulma.Tag, React.HTMLProps<T> {
     isSize?: 'large',
 }
 
-export function Media(props: Media<HTMLElement>) {
+export function Media({ tag = 'article', ...props }: Media<HTMLElement>) {
     const className = classNames(
         'media',
         {
@@ -23,9 +23,8 @@ export function Media(props: Media<HTMLElement>) {
 
     const HTMLProps = getHTMLProps(props, removeSizeProps);
 
-    return (
-        <article {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Media);
+const HOC = /*@__PURE__*/withHelpersModifiers(Media);
+export default HOC;

@@ -8,49 +8,51 @@ import { combineModifiers, getHTMLProps, isBetween, is, isOption } from './helpe
 export declare namespace Bulma {
     // Modifiers
     export interface Alignment {
-        isAlign?: string
+        isAlign?: string;
     }
 
     export type Sizes = 'large' | 'medium' | 'small';
     export interface Size {
-        isSize?: Sizes,
+        isSize?: Sizes;
+    }
+
+    export interface Tag {
+        tag?: string;
     }
 
     export interface FullWidth {
-        isFullWidth?: boolean,
+        isFullWidth?: boolean;
     }
 
     export interface Active {
-        isActive?: boolean,
+        isActive?: boolean;
     }
 
     export interface Hovered {
-        isHovered?: boolean,
+        isHovered?: boolean;
     }
 
     export interface Focused {
-        isFocused?: boolean,
+        isFocused?: boolean;
     }
 
     export interface State extends Active, Hovered, Focused {
     }
 
     export interface Loading {
-        isLoading?: boolean,
+        isLoading?: boolean;
     }
 
     export type Colors = 'white' | 'light' | 'dark' | 'black' | 'primary' | 'info' | 'success' | 'warning' | 'danger'
     export interface Color {
-        isColor?: Colors,
+        isColor?: Colors;
     }
 
     export type HeadingSizes = 1 | 2 | 3 | 4 | 5 | 6;
 
     export interface Heading {
-        isHeading?: HeadingSizes,
-        isSize?: HeadingSizes,
-        isSpaced?: boolean,
-        isParagraph?: boolean,
+        isSize?: HeadingSizes;
+        isSpaced?: boolean;
     }
 
     export interface Grid extends Grid.HorizontalSize, Grid.Offset {
@@ -89,17 +91,17 @@ export declare namespace Bulma {
     export type Alignments = 'left' | 'right';
 
     export interface Helpers extends FullWidth, Responsive {
-        isClearfix?: boolean,
-        isPulled?: Alignments,
+        isClearfix?: boolean;
+        isPulled?: Alignments;
 
-        isOverlay?: boolean,
+        isOverlay?: boolean;
 
-        isMarginless?: boolean,
-        isPaddingless?: boolean,
-        isUnselectable?: boolean,
+        isMarginless?: boolean;
+        isPaddingless?: boolean;
+        isUnselectable?: boolean;
 
-        hasTextAlign?: Alignments | 'centered',
-        hasTextColor?: Colors,
+        hasTextAlign?: Alignments | 'centered';
+        hasTextColor?: Colors;
     }
 
     export interface Modifiers extends
@@ -112,7 +114,7 @@ export declare namespace Bulma {
     }
 
     export interface Render {
-        render?: Function
+        render?: Function;
     }
 
     export interface NonHTMLProps extends
@@ -263,10 +265,6 @@ export function removeColorProps(props: Bulma.Color) {
 
 const isValidHeading = isBetween(1, 6);
 
-export function getHeadingElement({ isHeading: heading }: Bulma.Heading, defaultHeading: Bulma.HeadingSizes = 1) {
-    return isValidHeading(heading) ? `h${heading}` : `h${defaultHeading}`
-}
-
 export function getHeadingModifiers({ isSpaced, isSize: size }: Bulma.Heading) {
     const isSize = isValidHeading(size) ? { [`is-${size}`]: true } : {};
 
@@ -279,9 +277,7 @@ export function getHeadingModifiers({ isSpaced, isSize: size }: Bulma.Heading) {
 export function removeHeadingProps(props: Bulma.Heading) {
     const {
         isSize,
-        isHeading,
         isSpaced,
-        isParagraph,
         ...rest } = props;
     return rest;
 }

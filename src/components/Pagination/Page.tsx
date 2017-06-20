@@ -2,11 +2,11 @@ import * as React from 'react';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export function Page(props: React.HTMLProps<HTMLLIElement>) {
+export interface Page<T> extends Bulma.Tag, React.HTMLProps<T> { }
 
-    return (
-        <li {...props} />
-    )
+export function Page({ tag = 'li', ...props }: Page<HTMLElement>) {
+    return React.createElement(tag, { ...props });
 }
 
-export default withHelpersModifiers(Page);
+const HOC = /*@__PURE__*/withHelpersModifiers(Page);
+export default HOC;

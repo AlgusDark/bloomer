@@ -9,6 +9,11 @@ describe('Tag', () => {
         expect(component.contains(<span className='tag'>My Tag</span>)).toBe(true);
     });
 
+    it('should render a div with .tag', () => {
+        const component = shallow(<Tag tag='div'>My Tag</Tag>);
+        expect(component.contains(<div className='tag'>My Tag</div>)).toBe(true);
+    });
+
     it('should render a span with .tag and modifiers', () => {
         const component = shallow(<Tag isColor='black' isSize='large'>My Tag</Tag>);
         expect(component.hasClass('tag')).toBe(true);

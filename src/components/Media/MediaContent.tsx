@@ -3,12 +3,13 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export function MediaContent(props: React.HTMLProps<HTMLDivElement>) {
+export interface MediaContent<T> extends Bulma.Tag, React.HTMLProps<T> { }
+
+export function MediaContent({ tag = 'div', ...props }: MediaContent<HTMLElement>) {
     const className = classNames('media-content', props.className);
 
-    return (
-        <div {...props} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(MediaContent);
+const HOC = /*@__PURE__*/withHelpersModifiers(MediaContent);
+export default HOC;

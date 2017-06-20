@@ -3,12 +3,13 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export function PanelIcon(props: React.HTMLProps<HTMLSpanElement>) {
+export interface PanelIcon<T> extends Bulma.Tag, React.HTMLProps<T> { }
+
+export function PanelIcon({ tag = 'span', ...props }: PanelIcon<HTMLElement>) {
     const className = classNames('panel-icon', props.className);
 
-    return (
-        <span {...props} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(PanelIcon);
+const HOC = /*@__PURE__*/withHelpersModifiers(PanelIcon);
+export default HOC;

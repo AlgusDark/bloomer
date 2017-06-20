@@ -9,12 +9,12 @@ import {
 } from './../../bulma';
 import { getHTMLProps, combineModifiers } from './../../helpers';
 
-export interface PageLink<T> extends Bulma.Render, Bulma.Active, Bulma.Focused,
+export interface PageLink<T> extends Bulma.Render, Bulma.Tag, Bulma.Active, Bulma.Focused,
     React.HTMLProps<T> {
     isCurrent?: boolean,
 }
 
-export function PageLink(props: PageLink<HTMLAnchorElement>) {
+export function PageLink({ tag = 'a', render, ...props }: PageLink<HTMLElement>) {
     const className = classNames(
         'pagination-link',
         {
@@ -25,7 +25,6 @@ export function PageLink(props: PageLink<HTMLAnchorElement>) {
     );
 
     const {
-        render,
         isCurrent,
         ...rest
     } = props;
@@ -34,9 +33,8 @@ export function PageLink(props: PageLink<HTMLAnchorElement>) {
 
     if (render) return render({ ...HTMLProps, className });
 
-    return (
-        <a {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(PageLink);
+const HOC = /*@__PURE__*/withHelpersModifiers(PageLink);
+export default HOC;
