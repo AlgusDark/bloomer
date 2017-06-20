@@ -9,6 +9,11 @@ describe('Hero', () => {
         expect(container.contains(<section className='hero'>My Hero</section>)).toBe(true)
     });
 
+    it('should render a div with .hero', () => {
+        const container = shallow(<Hero tag='div'>My Hero</Hero>);
+        expect(container.contains(<div className='hero'>My Hero</div>)).toBe(true)
+    });
+
     it('should render a section with .hero with modifiers', () => {
         const container = shallow(<Hero isBold isFullHeight />);
         expect(container.hasClass('hero')).toBe(true);

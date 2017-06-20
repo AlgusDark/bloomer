@@ -7,7 +7,9 @@ import {
 } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
-export function Radio(props: React.HTMLProps<HTMLInputElement>) {
+export interface Radio<T> extends React.HTMLProps<T> { }
+
+export function Radio(props: Radio<HTMLElement>) {
     const wrapperClassName = classNames(
         'radio',
         props.className
@@ -22,4 +24,5 @@ export function Radio(props: React.HTMLProps<HTMLInputElement>) {
     )
 }
 
-export default withHelpersModifiers(Radio);
+const HOC = /*@__PURE__*/withHelpersModifiers(Radio);
+export default HOC;

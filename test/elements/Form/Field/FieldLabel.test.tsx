@@ -9,6 +9,11 @@ describe('FieldLabel', () => {
         expect(component.contains(<div className='field-label'><span>Any Content</span></div>)).toBe(true);
     });
 
+    it('should render a p with .field-label', () => {
+        const component = shallow(<FieldLabel tag='p'><span>Any Content</span></FieldLabel>);
+        expect(component.contains(<p className='field-label'><span>Any Content</span></p>)).toBe(true);
+    });
+
     it('should render a div with .field-label and modifiers', () => {
         const component = shallow(
             <FieldLabel isNormal />

@@ -15,27 +15,27 @@ describe('Subtitle', () => {
     });
 
     it('should render a h2 with .subtitle.is-2', () => {
-        const component = shallow(<Subtitle isHeading={1} isSize={2}>My Title</Subtitle>);
+        const component = shallow(<Subtitle tag='h1' isSize={2}>My Title</Subtitle>);
         expect(component.contains(<h1 className='subtitle is-2'>My Title</h1>)).toBe(true);
     });
 
     it('should render a h3 with .subtitle.is-3', () => {
-        const component = shallow(<Subtitle isHeading={3} isSize={3}>My Title</Subtitle>);
+        const component = shallow(<Subtitle tag='h3' isSize={3}>My Title</Subtitle>);
         expect(component.contains(<h3 className='subtitle is-3'>My Title</h3>)).toBe(true);
     });
 
     it('should render a h4 with .subtitle.is-4', () => {
-        const component = shallow(<Subtitle isHeading={4} isSize={4}>My Title</Subtitle>);
+        const component = shallow(<Subtitle tag='h4' isSize={4}>My Title</Subtitle>);
         expect(component.contains(<h4 className='subtitle is-4'>My Title</h4>)).toBe(true);
     });
 
     it('should render a h5 with .subtitle.is-5', () => {
-        const component = shallow(<Subtitle isHeading={5} isSize={5}>My Title</Subtitle>);
+        const component = shallow(<Subtitle tag='h5' isSize={5}>My Title</Subtitle>);
         expect(component.contains(<h5 className='subtitle is-5'>My Title</h5>)).toBe(true);
     });
 
     it('should render a h6 with .subtitle.is-6', () => {
-        const component = shallow(<Subtitle isHeading={6} isSize={6}>My Title</Subtitle>);
+        const component = shallow(<Subtitle tag='h6' isSize={6}>My Title</Subtitle>);
         expect(component.contains(<h6 className='subtitle is-6'>My Title</h6>)).toBe(true);
     });
 
@@ -52,12 +52,12 @@ describe('Subtitle', () => {
     });
 
     it('should render a paragraph with .subtitle', () => {
-        const component = shallow(<Subtitle isParagraph>My Title</Subtitle>);
+        const component = shallow(<Subtitle tag='p'>My Title</Subtitle>);
         expect(component.contains(<p className='subtitle'>My Title</p>)).toBe(true);
     });
 
     it('should render a paragraph with .subtitle and modifiers', () => {
-        const component = shallow(<Subtitle isParagraph isSpaced isSize={3}>My Title</Subtitle>);
+        const component = shallow(<Subtitle tag='p' isSpaced isSize={3}>My Title</Subtitle>);
         expect(component.is('p')).toBe(true);
         expect(component.hasClass('subtitle')).toBe(true);
         expect(component.hasClass('is-spaced')).toBe(true);
@@ -65,7 +65,7 @@ describe('Subtitle', () => {
     });
 
     it('should render a paragraph with .subtitle, modifiers and classNames', () => {
-        const component = shallow(<Subtitle isParagraph isSpaced isSize={3} className='custom'>My Title</Subtitle>);
+        const component = shallow(<Subtitle tag='p' isSpaced isSize={3} className='custom'>My Title</Subtitle>);
         expect(component.is('p')).toBe(true);
         expect(component.hasClass('subtitle')).toBe(true);
         expect(component.hasClass('is-spaced')).toBe(true);

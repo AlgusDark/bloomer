@@ -9,6 +9,11 @@ describe('Tabs', () => {
         expect(component.contains(<div className='tabs'>My Tabs</div>)).toBe(true);
     });
 
+    it('should render a p with .tabs', () => {
+        const component = shallow(<Tabs tag='p'>My Tabs</Tabs>);
+        expect(component.contains(<p className='tabs'>My Tabs</p>)).toBe(true);
+    });
+
     it('should render a div with .tabs and modifiers', () => {
         const component = shallow(<Tabs isBoxed isToggle>My Tabs</Tabs>);
         expect(component.hasClass('tabs')).toBe(true);

@@ -9,12 +9,12 @@ import {
 } from './../bulma';
 import { combineModifiers, getHTMLProps } from './../helpers';
 
-export interface Tag<T> extends Bulma.Color, Bulma.Size,
-React.HTMLProps<T> {
-    isSize?: 'medium' | 'large'
+export interface Tag<T> extends Bulma.Color, Bulma.Size, Bulma.Tag,
+    React.HTMLProps<T> {
+    isSize?: 'medium' | 'large';
 }
 
-export function Tag(props: Tag<HTMLSpanElement>) {
+export function Tag({ tag = 'span', ...props }: Tag<HTMLElement>) {
     const className = classNames(
         'tag',
         {
@@ -22,11 +22,11 @@ export function Tag(props: Tag<HTMLSpanElement>) {
         },
         props.className,
     );
+
     const HTMLProps = getHTMLProps(props, removeColorProps, removeSizeProps);
 
-    return (
-        <span {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Tag);
+const HOC = /*@__PURE__*/withHelpersModifiers(Tag);
+export default HOC;

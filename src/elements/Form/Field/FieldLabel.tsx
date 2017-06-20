@@ -8,12 +8,12 @@ import {
 } from './../../../bulma';
 import { getHTMLProps } from './../../../helpers'
 
-export interface FieldLabel<T> extends Bulma.Size,
+export interface FieldLabel<T> extends Bulma.Size, Bulma.Tag,
     React.HTMLProps<T> {
     isNormal?: boolean,
 }
 
-export function FieldLabel(props: FieldLabel<HTMLDivElement>) {
+export function FieldLabel({ tag = 'div', ...props }: FieldLabel<HTMLElement>) {
     const className = classNames(
         'field-label',
         {
@@ -21,6 +21,7 @@ export function FieldLabel(props: FieldLabel<HTMLDivElement>) {
             ...getSizeModifiers(props)
         },
         props.className);
+
     const {
         isNormal,
         ...rest
@@ -28,9 +29,8 @@ export function FieldLabel(props: FieldLabel<HTMLDivElement>) {
 
     const HTMLProps = getHTMLProps(rest, removeSizeProps);
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(FieldLabel);
+const HOC = /*@__PURE__*/withHelpersModifiers(FieldLabel);
+export default HOC;

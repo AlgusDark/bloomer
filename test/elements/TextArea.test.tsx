@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import { TextArea } from './../../src/elements/Form/TextArea';
 
-describe('Ellipsis', () => {
+describe('TextArea', () => {
     it('should render a textarea with .textarea', () => {
         const component = shallow(<TextArea>My TextArea</TextArea>);
         expect(component.contains(<textarea className='textarea'>My TextArea</textarea>)).toBe(true);

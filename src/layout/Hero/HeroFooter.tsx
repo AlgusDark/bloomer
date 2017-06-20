@@ -3,12 +3,13 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export function HeroFooter(props: React.HTMLProps<HTMLDivElement>) {
+export interface HeroFooter<T> extends Bulma.Tag, React.HTMLProps<T> {}
+
+export function HeroFooter({ tag='footer', ...props }: HeroFooter<HTMLElement>) {
     const className = classNames('hero-foot', props.className);
 
-    return (
-        <div {...props} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(HeroFooter);
+const HOC = /*@__PURE__*/withHelpersModifiers(HeroFooter);
+export default HOC;

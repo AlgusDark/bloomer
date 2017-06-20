@@ -3,12 +3,13 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export function HeroBody(props: React.HTMLProps<HTMLDivElement>) {
+export interface HeroBody<T> extends Bulma.Tag, React.HTMLProps<T> {}
+
+export function HeroBody({ tag = 'div', ...props }: HeroBody<HTMLElement>) {
     const className = classNames('hero-body', props.className);
 
-    return (
-        <div {...props} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(HeroBody);
+const HOC = /*@__PURE__*/withHelpersModifiers(HeroBody);
+export default HOC;

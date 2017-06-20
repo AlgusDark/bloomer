@@ -3,11 +3,11 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../bulma';
 
-export interface Container<T> extends React.HTMLProps<T> {
+export interface Container<T> extends Bulma.Tag, React.HTMLProps<T> {
     isFluid?: boolean,
 }
 
-export function Container(props: Container<HTMLDivElement>) {
+export function Container({tag='div', ...props}: Container<HTMLElement>) {
     const className = classNames(
         'container',
         {
@@ -18,9 +18,8 @@ export function Container(props: Container<HTMLDivElement>) {
 
     const { isFluid, ...HTMLProps } = props;
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Container);
+const HOC = /*@__PURE__*/withHelpersModifiers(Container);
+export default HOC;

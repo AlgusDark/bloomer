@@ -8,12 +8,11 @@ import {
 } from './../../bulma';
 import { getHTMLProps } from './../../helpers';
 
-export interface PanelBlock<T> extends Bulma.Render, Bulma.Active, React.HTMLProps<T> {
+export interface PanelBlock<T> extends Bulma.Render, Bulma.Tag, Bulma.Active, React.HTMLProps<T> {
     isWrapped?: boolean,
-    isLabel?: boolean,
 }
 
-export function PanelBlock(props: PanelBlock<HTMLAnchorElement | HTMLDivElement | HTMLLabelElement>) {
+export function PanelBlock({ tag = 'div', render, ...props }: PanelBlock<HTMLElement>) {
     const className = classNames(
         'panel-block',
         {
@@ -24,20 +23,16 @@ export function PanelBlock(props: PanelBlock<HTMLAnchorElement | HTMLDivElement 
     );
 
     const {
-        render,
         isWrapped,
-        isLabel,
         ...rest
     } = props;
+
     const HTMLProps = getHTMLProps(rest, removeActiveModifiers);
 
     if (render) return render({ ...HTMLProps, className });
 
-    if (isLabel) return <label {...HTMLProps} className={className} />
-    
-    const element = props.href ? 'a' : 'div';
-
-    return React.createElement(element, { ...HTMLProps, className });
+    return React.createElement((props.href ? 'a' : tag), { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(PanelBlock);
+const HOC = /*@__PURE__*/withHelpersModifiers(PanelBlock);
+export default HOC;

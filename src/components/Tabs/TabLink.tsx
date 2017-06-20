@@ -2,16 +2,13 @@ import * as React from 'react';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export interface TabLink<T> extends Bulma.Render, React.HTMLProps<T> { }
+export interface TabLink<T> extends Bulma.Render, Bulma.Tag,  React.HTMLProps<T> { }
 
-export function TabLink(props: TabLink<HTMLAnchorElement>) {
-    const { render, ...HTMLProps } = props;
+export function TabLink({ tag = 'a', render, ...props }: TabLink<HTMLElement>) {
+    if (render) return render({ ...props });
 
-    if (render) return render({ ...HTMLProps });
-
-    return (
-        <a {...HTMLProps} />
-    )
+    return React.createElement(tag, { ...props });
 }
 
-export default withHelpersModifiers(TabLink);
+const HOC = /*@__PURE__*/withHelpersModifiers(TabLink);
+export default HOC;

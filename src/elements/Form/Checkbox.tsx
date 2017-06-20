@@ -6,7 +6,9 @@ import {
     withHelpersModifiers
 } from './../../bulma';
 
-export function Checkbox(props: React.HTMLProps<HTMLInputElement>) {
+export interface Checkbox<T> extends React.HTMLProps<T> { }
+
+export function Checkbox(props: Checkbox<HTMLElement>) {
     const wrapperClassName = classNames(
         'checkbox',
         props.className
@@ -21,4 +23,5 @@ export function Checkbox(props: React.HTMLProps<HTMLInputElement>) {
     )
 }
 
-export default withHelpersModifiers(Checkbox);
+const HOC = /*@__PURE__*/withHelpersModifiers(Checkbox);
+export default HOC;

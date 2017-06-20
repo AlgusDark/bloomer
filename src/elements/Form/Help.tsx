@@ -8,12 +8,12 @@ import {
 } from './../../bulma';
 import { getHTMLProps } from './../../helpers';
 
-export interface Help<T> extends Bulma.Color,
+export interface Help<T> extends Bulma.Color, Bulma.Tag,
     React.HTMLProps<T> {
 
 }
 
-export function Help(props: Help<HTMLParagraphElement>) {
+export function Help({ tag = 'p', ...props }: Help<HTMLElement>) {
     const className = classNames(
         'help',
         {
@@ -24,9 +24,8 @@ export function Help(props: Help<HTMLParagraphElement>) {
 
     const HTMLProps = getHTMLProps(props, removeColorProps);
 
-    return (
-        <p {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Help);
+const HOC = /*@__PURE__*/withHelpersModifiers(Help);
+export default HOC;

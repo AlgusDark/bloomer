@@ -3,12 +3,13 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export function Menu(props: React.HTMLProps<HTMLElement>) {
+export interface Menu<T> extends Bulma.Tag, React.HTMLProps<T> { }
+
+export function Menu({ tag = 'aside', ...props }: Menu<HTMLElement>) {
     const className = classNames('menu', props.className);
 
-    return (
-        <aside {...props} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(Menu);
+const HOC = /*@__PURE__*/withHelpersModifiers(Menu);
+export default HOC;

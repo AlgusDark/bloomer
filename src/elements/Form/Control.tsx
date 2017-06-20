@@ -15,7 +15,7 @@ import {
 
 export type Directions = 'left' | 'right';
 
-export interface Control<T> extends Bulma.Loading, React.HTMLProps<T> {
+export interface Control<T> extends Bulma.Loading, Bulma.Tag, React.HTMLProps<T> {
     hasIcons?: boolean | Directions | Directions[],
     isExpanded?: boolean,
 }
@@ -37,7 +37,7 @@ const getModifier = (modifier) => {
     return {};
 }
 
-export function Control(props: Control<HTMLDivElement>) {
+export function Control({ tag = 'div', ...props }: Control<HTMLElement>) {
     const className = classNames(
         'control',
         {
@@ -54,9 +54,8 @@ export function Control(props: Control<HTMLDivElement>) {
 
     const HTMLProps = getHTMLProps(rest, removeLoadingProps);
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Control);
+const HOC = /*@__PURE__*/withHelpersModifiers(Control);
+export default HOC;

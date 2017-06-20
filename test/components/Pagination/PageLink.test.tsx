@@ -26,6 +26,11 @@ describe('PageLink', () => {
         expect(component.contains(<a href='#' className='pagination-link'>My Link</a>));
     });
 
+    it('should render an anchor', () => {
+        const component = shallow(<PageLink tag='button' >My Link</PageLink>);
+        expect(component.contains(<button className='pagination-link'>My Link</button>));
+    });
+
     it('should render an anchor with .pagination-link and modifiers', () => {
         const component = shallow(
             <PageLink

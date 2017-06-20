@@ -9,10 +9,10 @@ import {
 } from './../bulma';
 import { combineModifiers, getHTMLProps } from './../helpers';
 
-export interface Progress<T> extends Bulma.Size, Bulma.Color,
+export interface Progress<T> extends Bulma.Size, Bulma.Color, Bulma.Tag,
     React.HTMLProps<T> { }
 
-export function Progress(props: Progress<HTMLProgressElement>) {
+export function Progress({ tag = 'progress', ...props }: Progress<HTMLElement>) {
     const className = classNames(
         'progress',
         {
@@ -22,9 +22,8 @@ export function Progress(props: Progress<HTMLProgressElement>) {
     );
     const HTMLProps = getHTMLProps(props, removeSizeProps, removeColorProps);
 
-    return (
-        <progress {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Progress);
+const HOC = /*@__PURE__*/withHelpersModifiers(Progress);
+export default HOC;

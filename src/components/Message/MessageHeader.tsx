@@ -3,12 +3,13 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export function MessageHeader(props: React.HTMLProps<HTMLDivElement>) {
+export interface MessageHeader<T> extends Bulma.Tag, React.HTMLProps<T> { }
+
+export function MessageHeader({ tag = 'div', ...props }: MessageHeader<HTMLElement>) {
     const className = classNames('message-header', props.className);
 
-    return (
-        <div {...props} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(MessageHeader);
+const HOC = /*@__PURE__*/withHelpersModifiers(MessageHeader);
+export default HOC;

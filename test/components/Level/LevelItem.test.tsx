@@ -9,6 +9,11 @@ describe('LevelItem', () => {
         expect(component.contains(<div className='level-item'>My LevelItem</div>)).toBe(true);
     });
 
+    it('should render a p with .level-item', () => {
+        const component = shallow(<LevelItem tag='p'>My LevelItem</LevelItem>);
+        expect(component.contains(<p className='level-item'>My LevelItem</p>)).toBe(true);
+    });
+
     it('should render an anchor with .level-item', () => {
         const component = shallow(<LevelItem href='#'>My LevelItem</LevelItem>);
         expect(component.contains(<a href='#' className='level-item'>My LevelItem</a>)).toBe(true);

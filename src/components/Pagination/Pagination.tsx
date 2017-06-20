@@ -9,12 +9,12 @@ import {
 } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
-export interface Pagination<T> extends Bulma.Alignment, Bulma.Size,
+export interface Pagination<T> extends Bulma.Alignment, Bulma.Tag, Bulma.Size,
     React.HTMLProps<T> {
-        isAlign?: 'left' | 'centered' | 'right'
-    }
+    isAlign?: 'left' | 'centered' | 'right'
+}
 
-export function Pagination(props: Pagination<HTMLElement>) {
+export function Pagination({ tag = 'nav', ...props }: Pagination<HTMLElement>) {
     const className = classNames(
         'pagination',
         {
@@ -28,9 +28,8 @@ export function Pagination(props: Pagination<HTMLElement>) {
         removeSizeProps
     );
 
-    return (
-        <nav {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Pagination);
+const HOC = /*@__PURE__*/withHelpersModifiers(Pagination);
+export default HOC;

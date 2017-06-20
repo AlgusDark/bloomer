@@ -9,14 +9,15 @@ import {
 } from './../bulma';
 import { getHTMLProps, isOption } from './../helpers';
 
-export interface Icon<T> extends Bulma.Size, Bulma.Alignment,
+export interface Icon<T> extends Bulma.Size, Bulma.Alignment, Bulma.Tag,
     React.HTMLProps<T> {
     isAlign?: 'left' | 'right';
     icon?: string;
 }
 
-export function Icon(props: Icon<HTMLSpanElement>) {
-    const isAlignOption = isOption(isLeft, isRight);
+const isAlignOption = isOption(isLeft, isRight);
+
+export function Icon({ tag = 'span', ...props }: Icon<HTMLElement>) {
     const className = classNames(
         'icon',
         {
@@ -27,15 +28,19 @@ export function Icon(props: Icon<HTMLSpanElement>) {
     );
 
     const { icon, children, ...rest } = props;
+
     const HTMLProps = getHTMLProps(rest, removeAlignmentProps, removeSizeProps);
 
     const withIcon = (
-        <span {...HTMLProps} className={className}>
-            <span className={`fa fa-${icon}`} aria-hidden="true"></span>
-        </span>
-    )
+        React.createElement(
+            'span',
+            { ...HTMLProps, className },
+            React.createElement(tag, { className: `fa fa-${icon}`, 'aria-hidden': 'true' })
+        )
+    );
 
-    return icon ? withIcon : <span {...HTMLProps} children={children} className={className} />
+    return icon ? withIcon : React.createElement(tag, { ...HTMLProps, className, children });
 }
 
-export default withHelpersModifiers(Icon);
+const HOC = /*@__PURE__*/withHelpersModifiers(Icon);
+export default HOC;

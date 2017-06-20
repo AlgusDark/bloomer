@@ -3,11 +3,11 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export interface Level<T> extends React.HTMLProps<T> {
+export interface Level<T> extends Bulma.Tag, React.HTMLProps<T> {
     isMobile?: boolean,
 }
 
-export function Level(props: Level<HTMLElement>) {
+export function Level({ tag = 'nav', ...props }: Level<HTMLElement>) {
     const className = classNames(
         'level',
         {
@@ -21,9 +21,8 @@ export function Level(props: Level<HTMLElement>) {
         ...HTMLProps
     } = props;
 
-    return (
-        <nav {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Level);
+const HOC = /*@__PURE__*/withHelpersModifiers(Level);
+export default HOC;

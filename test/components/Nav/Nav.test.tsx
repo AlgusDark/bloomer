@@ -9,6 +9,11 @@ describe('Nav', () => {
         expect(component.contains(<nav className='nav'>My Nav</nav>)).toBe(true);
     });
 
+    it('should render a div with .nav', () => {
+        const component = shallow(<Nav tag='div'>My Nav</Nav>);
+        expect(component.contains(<div className='nav'>My Nav</div>)).toBe(true);
+    });
+
      it('should render a nav with .nav and modifiers', () => {
         const component = shallow(<Nav hasShadow><span>Any Content</span></Nav>);
         expect(component.hasClass('nav')).toBe(true);

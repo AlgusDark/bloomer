@@ -9,6 +9,11 @@ describe('Pagination', () => {
         expect(component.contains(<nav className='pagination'>My Pagination</nav>)).toBe(true);
     });
 
+    it('should render a div with .pagination', () => {
+        const component = shallow(<Pagination tag='div'>My Pagination</Pagination>);
+        expect(component.contains(<div className='pagination'>My Pagination</div>)).toBe(true);
+    });
+
     it('should render a nav with .pagination and modifiers', () => {
         const component = shallow(<Pagination isSize='medium'>My Pagination</Pagination>);
         expect(component.hasClass('pagination')).toBe(true);

@@ -3,11 +3,11 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export interface HeroVideo<T> extends React.HTMLProps<T> {
+export interface HeroVideo<T> extends Bulma.Tag, React.HTMLProps<T> {
     isTransparent?: boolean,
 }
 
-export function HeroVideo(props: HeroVideo<HTMLDivElement>) {
+export function HeroVideo({ tag = 'div', ...props }: HeroVideo<HTMLElement>) {
     const className = classNames(
         'hero-video',
         {
@@ -18,9 +18,8 @@ export function HeroVideo(props: HeroVideo<HTMLDivElement>) {
 
     const { isTransparent, ...HTMLProps } = props;
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(HeroVideo);
+const HOC = /*@__PURE__*/withHelpersModifiers(HeroVideo);
+export default HOC;

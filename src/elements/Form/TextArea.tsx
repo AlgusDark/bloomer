@@ -12,7 +12,7 @@ import { combineModifiers, getHTMLProps } from './../../helpers';
 export interface TextArea<T> extends Bulma.Size, Bulma.State, React.HTMLProps<T> {
 }
 
-export function TextArea(props: TextArea<HTMLTextAreaElement>) {
+export function TextArea(props: TextArea<HTMLElement>) {
     const className = classNames(
         'textarea',
         {
@@ -21,11 +21,12 @@ export function TextArea(props: TextArea<HTMLTextAreaElement>) {
         props.className
     );
 
-    const HTMLProps = getHTMLProps(props, removeSizeProps, removeStateProps)
+    const HTMLProps = getHTMLProps(props, removeSizeProps, removeStateProps);
 
     return (
         <textarea {...HTMLProps} className={className} />
-    )
+    );
 }
 
-export default withHelpersModifiers(TextArea);
+const HOC = /*@__PURE__*/withHelpersModifiers(TextArea);
+export default HOC;

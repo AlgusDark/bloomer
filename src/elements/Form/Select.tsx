@@ -13,7 +13,7 @@ export interface Select<T> extends Bulma.Color, Bulma.Size, Bulma.Loading,
     React.HTMLProps<T> {
 }
 
-export function Select(props: Select<HTMLSelectElement>) {
+export function Select(props: Select<HTMLElement>) {
     const wrapperClassName = classNames(
         'select',
         {
@@ -21,6 +21,7 @@ export function Select(props: Select<HTMLSelectElement>) {
             ...combineModifiers(props, getColorModifiers, getSizeModifiers, getLoadingModifiers),
         },
         props.className);
+
     const {
         children,
         className,
@@ -34,4 +35,5 @@ export function Select(props: Select<HTMLSelectElement>) {
     )
 }
 
-export default withHelpersModifiers(Select);
+const HOC = /*@__PURE__*/withHelpersModifiers(Select);
+export default HOC;

@@ -15,6 +15,17 @@ describe('NavToggle', () => {
         )).toBe(true);
     });
 
+    it('should render a p with .nav-toggle', () => {
+        const component = shallow(<NavToggle tag='p'/>);
+        expect(component.contains(
+            <p className='nav-toggle'>
+                <span />
+                <span />
+                <span />
+            </p>
+        )).toBe(true);
+    });
+
     it('should render a span with .nav-toggle and modifiers', () => {
         const component = shallow(<NavToggle isActive />);
         expect(component.hasClass('nav-toggle')).toBe(true);

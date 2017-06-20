@@ -10,10 +10,10 @@ import { Bulma, withHelpersModifiers } from './../bulma';
 import { getHTMLProps, combineModifiers } from './../helpers';
 
 export interface Column<T> extends
-    Grid.HorizontalSize, Grid.Offset,
+    Grid.HorizontalSize, Grid.Offset, Bulma.Tag,
     React.HTMLProps<T> { }
 
-export function Column(props: Column<HTMLDivElement>) {
+export function Column({ tag = 'div', ...props }: Column<HTMLElement>) {
     const className = classNames(
         'column',
         {
@@ -32,9 +32,8 @@ export function Column(props: Column<HTMLDivElement>) {
         removeOffsetProps,
     );
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Column);
+const HOC = /*@__PURE__*/withHelpersModifiers(Column);
+export default HOC;

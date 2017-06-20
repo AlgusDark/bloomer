@@ -3,12 +3,13 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export function PanelTabs(props: React.HTMLProps<HTMLDivElement>) {
+export interface PanelTabs<T> extends Bulma.Tag, React.HTMLProps<T> { }
+
+export function PanelTabs({ tag = 'div', ...props }: PanelTabs<HTMLElement>) {
     const className = classNames('panel-tabs', props.className, );
 
-    return (
-        <div {...props} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(PanelTabs);
+const HOC = /*@__PURE__*/withHelpersModifiers(PanelTabs);
+export default HOC;

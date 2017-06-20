@@ -9,6 +9,11 @@ describe('Control', () => {
         expect(component.contains(<div className='control'><span>Any Content</span></div>)).toBe(true);
     });
 
+    it('should render a p with .control', () => {
+        const component = shallow(<Control tag='p'><span>Any Content</span></Control>);
+        expect(component.contains(<p className='control'><span>Any Content</span></p>)).toBe(true);
+    });
+
     it('should render a div with .control and .has-icons-left.has-icons.right', () => {
         const component = shallow(<Control hasIcons />);
         expect(component.hasClass('control')).toBe(true);

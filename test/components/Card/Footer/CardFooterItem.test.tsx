@@ -21,13 +21,19 @@ describe('CardFooterItem', () => {
         expect(component.contains(customComponentRendered)).toBe(true);
     });
 
-    it('should render an anchor with .card-footer-item', () => {
+    it('should render a p with .card-footer-item', () => {
         const component = shallow(<CardFooterItem>My CardFooterItem</CardFooterItem>);
-        expect(component.contains(<a className='card-footer-item'>My CardFooterItem</a>)).toBe(true);
+        expect(component.contains(<p className='card-footer-item'>My CardFooterItem</p>)).toBe(true);
+    });
+
+    it('should render a div with .card-footer-item', () => {
+        const component = shallow(<CardFooterItem tag='div'>My CardFooterItem</CardFooterItem>);
+        expect(component.contains(<div className='card-footer-item'>My CardFooterItem</div>)).toBe(true);
     });
 
     it('should render an anchor with .card-footer-item and custom classNames', () => {
-        const component = shallow(<CardFooterItem className='custom'><span>Any CardFooterItem</span></CardFooterItem>);
+        const component = shallow(<CardFooterItem href='#' className='custom'><span>Any CardFooterItem</span></CardFooterItem>);
+        expect(component.is('a')).toBe(true);
         expect(component.hasClass('card-footer-item')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);
     });

@@ -3,12 +3,13 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export function ModalContent(props: React.HTMLProps<HTMLDivElement>) {
+export interface ModalContent<T> extends Bulma.Tag, React.HTMLProps<T> {}
+
+export function ModalContent({tag='div', ...props}: ModalContent<HTMLElement>) {
     const className = classNames('modal-content', props.className);
 
-    return (
-        <div {...props} className={className} />
-    )
+    return React.createElement(tag, { ...props, className });
 }
 
-export default withHelpersModifiers(ModalContent);
+const HOC = /*@__PURE__*/withHelpersModifiers(ModalContent);
+export default HOC;

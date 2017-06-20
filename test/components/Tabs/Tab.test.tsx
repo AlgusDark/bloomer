@@ -6,7 +6,12 @@ import { Tab } from './../../../src/components/Tabs/Tab';
 describe('Tab', () => {
     it('should render a li', () => {
         const component = shallow(<Tab>My Link</Tab>);
-        expect(component.contains(<li>My Link</li>)).toBe(true);
+        expect(component.is('li')).toBe(true);
+    });
+
+    it('should render a ol', () => {
+        const component = shallow(<Tab tag='ol'>My Link</Tab>);
+        expect(component.is('ol')).toBe(true);
     });
 
     it('should render a li with modifiers', () => {

@@ -26,6 +26,11 @@ describe('NavItem', () => {
         expect(component.contains(<a href='#' className='nav-item'>My NavItem</a>)).toBe(true);
     });
 
+    it('should render a button with .nav-item', () => {
+        const component = shallow(<NavItem tag='button'>My NavItem</NavItem>);
+        expect(component.contains(<button className='nav-item'>My NavItem</button>)).toBe(true);
+    });
+
     it('should render a div with .nav-item', () => {
         const component = shallow(<NavItem >My NavItem</NavItem>);
         expect(component.contains(<div className='nav-item'>My NavItem</div>)).toBe(true);

@@ -45,6 +45,14 @@ describe('Field', () => {
         expect(component.hasClass('is-grouped-lol')).toBe(false);
     });
 
+    it('should render a p with .field, modifiers and custom classNames', () => {
+        const component = shallow(<Field tag='p' isGrouped className='custom'><span>Any Content</span></Field>);
+        expect(component.is('p')).toBe(true);
+        expect(component.hasClass('field')).toBe(true);
+        expect(component.hasClass('is-grouped')).toBe(true);
+        expect(component.hasClass('custom')).toBe(true);
+    });
+
     it('should render a div with .field, modifiers and custom classNames', () => {
         const component = shallow(<Field isGrouped className='custom'><span>Any Content</span></Field>);
         expect(component.hasClass('field')).toBe(true);

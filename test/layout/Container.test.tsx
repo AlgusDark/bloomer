@@ -9,6 +9,11 @@ describe('Container', () => {
         expect(container.contains(<div className='container'>My Container</div>)).toBe(true)
     });
 
+    it('should render a p with .container', () => {
+        const container = shallow(<Container tag='p'>My Container</Container>);
+        expect(container.contains(<p className='container'>My Container</p>)).toBe(true)
+    });
+
     it('should render a div with .container with modifiers', () => {
         const container = shallow(<Container isFluid />);
         expect(container.hasClass('container')).toBe(true);

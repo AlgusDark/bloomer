@@ -9,6 +9,11 @@ describe('PanelIcon', () => {
         expect(component.contains(<span className='panel-icon'>My PanelIcon</span>)).toBe(true);
     });
 
+    it('should render a p with .panel-icon', () => {
+        const component = shallow(<PanelIcon tag='p'>My PanelIcon</PanelIcon>);
+        expect(component.contains(<p className='panel-icon'>My PanelIcon</p>)).toBe(true);
+    });
+
     it('should render a span with .panel-icon and custom classNames', () => {
         const component = shallow(<PanelIcon className='custom'><span>Any Content</span></PanelIcon>);
         expect(component.hasClass('panel-icon')).toBe(true);

@@ -8,11 +8,11 @@ import {
 } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
-export interface ModalClose<T> extends Bulma.Size, Bulma.Render, React.HTMLProps<T> {
+export interface ModalClose<T> extends Bulma.Size, Bulma.Render, Bulma.Tag, React.HTMLProps<T> {
 
 }
 
-export function ModalClose(props: ModalClose<HTMLButtonElement>) {
+export function ModalClose({tag='button', render, ...props}: ModalClose<HTMLElement>) {
     const className = classNames(
         'modal-close',
         {
@@ -21,15 +21,12 @@ export function ModalClose(props: ModalClose<HTMLButtonElement>) {
         props.className,
     );
 
-    const { render, ...rest } = props;
-
-    const HTMLProps = getHTMLProps(rest, removeSizeProps);
+    const HTMLProps = getHTMLProps(props, removeSizeProps);
 
     if (render) return render({ ...HTMLProps, className });
 
-    return (
-        <button {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(ModalClose);
+const HOC = /*@__PURE__*/withHelpersModifiers(ModalClose);
+export default HOC;

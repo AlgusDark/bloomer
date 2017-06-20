@@ -9,6 +9,11 @@ describe('Message', () => {
         expect(component.contains(<article className='message'>My Message</article>)).toBe(true);
     });
 
+    it('should render a div with .message', () => {
+        const component = shallow(<Message tag='div'>My Message</Message>);
+        expect(component.contains(<div className='message'>My Message</div>)).toBe(true);
+    });
+
     it('should render an article with .message and modifiers', () => {
         const component = shallow(<Message isColor='black'>My Message</Message>);
         expect(component.hasClass('message')).toBe(true);

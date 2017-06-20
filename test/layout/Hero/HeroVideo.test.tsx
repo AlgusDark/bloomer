@@ -9,6 +9,11 @@ describe('HeroVideo', () => {
         expect(container.contains(<div className='hero-video'>My HeroVideo</div>)).toBe(true)
     });
 
+    it('should render a p with .hero-video', () => {
+        const container = shallow(<HeroVideo tag='p'>My HeroVideo</HeroVideo>);
+        expect(container.contains(<p className='hero-video'>My HeroVideo</p>)).toBe(true)
+    });
+
     it('should render a div with .hero-video with modifiers', () => {
         const container = shallow(<HeroVideo isTransparent />);
         expect(container.hasClass('hero-video')).toBe(true);

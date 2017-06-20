@@ -9,14 +9,19 @@ describe('Nav', () => {
         expect(component.contains(<div className='nav-right'>My Nav</div>)).toBe(true);
     });
 
-     it('should render a div with .nav-right.nav-menu and modifiers', () => {
+    it('should render a p with .nav-right', () => {
+        const component = shallow(<NavRight tag='p'>My Nav</NavRight>);
+        expect(component.contains(<p className='nav-right'>My Nav</p>)).toBe(true);
+    });
+
+    it('should render a div with .nav-right.nav-menu and modifiers', () => {
         const component = shallow(<NavRight isActive isMenu><span>Any Content</span></NavRight>);
         expect(component.hasClass('nav-right')).toBe(true);
         expect(component.hasClass('nav-menu')).toBe(true);
         expect(component.hasClass('is-active')).toBe(true);
     });
 
-     it('should render a div with .nav-right, modifiers and custom classNames', () => {
+    it('should render a div with .nav-right, modifiers and custom classNames', () => {
         const component = shallow(<NavRight isActive className='custom'><span>Any Content</span></NavRight>);
         expect(component.hasClass('nav-right')).toBe(true);
         expect(component.hasClass('is-active')).toBe(true);

@@ -9,6 +9,11 @@ describe('Progress', () => {
         expect(component.contains(<progress className='progress'>My Progress</progress>)).toBe(true);
     });
 
+    it('should render a p with .progress', () => {
+        const component = shallow(<Progress tag='p'>My Progress</Progress>);
+        expect(component.contains(<p className='progress'>My Progress</p>)).toBe(true);
+    });
+
     it('should render a progress with .progress and modifiers', () => {
         const component = shallow(<Progress isColor='black' isSize='large'>My Progress</Progress>);
         expect(component.hasClass('progress')).toBe(true);

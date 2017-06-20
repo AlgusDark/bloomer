@@ -31,4 +31,5 @@ export function Delete(props: Delete<HTMLButtonElement | HTMLAnchorElement>) {
     return props.href ? anchor : button;
 }
 
-export default withHelpersModifiers(Delete);
+const HOC = /*@__PURE__*/withHelpersModifiers(Delete);
+export default HOC;

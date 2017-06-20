@@ -4,9 +4,9 @@ import * as classNames from 'classnames';
 import { Bulma, removeColorProps, getColorModifiers, withHelpersModifiers } from './../bulma';
 import { getHTMLProps } from './../helpers';
 
-export interface Notification<T> extends Bulma.Color, React.HTMLProps<T> { }
+export interface Notification<T> extends Bulma.Color, Bulma.Tag, React.HTMLProps<T> { }
 
-export function Notification(props: Notification<HTMLElement>) {
+export function Notification({ tag = 'div', ...props }: Notification<HTMLElement>) {
     const className = classNames(
         'notification',
         {
@@ -16,9 +16,8 @@ export function Notification(props: Notification<HTMLElement>) {
     );
     const HTMLProps = getHTMLProps(props, removeColorProps);
 
-    return (
-        <div {...HTMLProps} className={className} />
-    )
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default withHelpersModifiers(Notification);
+const HOC = /*@__PURE__*/withHelpersModifiers(Notification);
+export default HOC;
