@@ -124,9 +124,9 @@ const ColumnsDocs = (props) => (
         <Title>Column</Title>
         <TableDocs rows={ColumnRow} />
         <Subtitle>
-            When you choose the <strong>Object</strong> type, the default size for column on all platforms would be
-            <strong>1</strong>. If you want to change this behaviour, you should define a size with <strong>default</strong> key.
-            <strong>E.g.</strong> {"isSize={mobile: '2', default:'4' }"} all platforms would have a default size
+            When you choose the <strong>Object</strong> type, the default size for column (on all platforms) will fill
+            up the remaining space automatically. If you want to change this behaviour, you should define a size with <strong>default</strong> key.
+            <strong>E.g.</strong> <code>{"isSize={mobile: '2', default:'4' }"}</code> all platforms would have a default size
             of <strong>4</strong>. Meanwhile, mobile will be overwritten to size <strong>2</strong>.
         </Subtitle>
     </Container>
