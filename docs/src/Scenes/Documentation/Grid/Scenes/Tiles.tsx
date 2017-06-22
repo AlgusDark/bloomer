@@ -48,7 +48,7 @@ const tilesRow: Docs.Row[] = [
         prop: 'isVertical',
         type: 'bool',
     },
-    render('<Tile/>')
+    render('Tile')
 ]
 
 const TileExample = `<Tile isAncestor>
