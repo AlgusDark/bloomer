@@ -12,12 +12,13 @@ export declare namespace Grid {
         tablet?: AllSizes;
         desktop?: AllSizes;
         widescreen?: AllSizes;
+        default?: AllSizes;
     }
 
     type Platforms = 'mobile' | 'tablet' | 'desktop';
 
     export interface HorizontalSize {
-        isSize?: AllSizes | SizeObject,
+        isSize?: AllSizes | SizeObject;
     }
 
     export interface OffsetObject {
@@ -25,6 +26,7 @@ export declare namespace Grid {
         tablet?: Sizes | Fractions;
         desktop?: Sizes | Fractions;
         widescreen?: Sizes | Fractions;
+        default?: Sizes | Fractions;
     }
 
     export interface Offset {
@@ -40,7 +42,7 @@ const isValidSize = isBetween(1, 12);
 const isPlatform = isOption(isMobile, isTablet, isDesktop, isWidescreen);
 
 export function getGridSizesModifiers(isSize, isOffset = false, platform: boolean | string = false) {
-    return (Number.isInteger(isSize) && isValidSize(isSize)) ? { [`is-${isOffset ? 'offset-' : ''}${isSize}${isPlatform(platform) ? '-' + platform : ''}`]: true } : {}
+    return (Number.isInteger(isSize) && isValidSize(isSize)) ? { [`is-${isOffset ? 'offset-' : ''}${isSize}${isPlatform(platform) ? `-${platform}` : ''}`]: true } : {}
 }
 
 export function removeGridSizesProps(props) {
@@ -70,6 +72,7 @@ function getGridFractionsModifiers(size, isOffset, platform) {
 
 function getGridObjectSizeModifiers(size, isOffset) {
     return Object.keys(size).reduce((acc, key) => {
+        if (key === 'default') return { ...acc, ...getHorizontalSizeModifiers(size[key], isOffset) }
         return isPlatform(key) ? { ...acc, ...getHorizontalSizeModifiers(size[key], isOffset, key) } : acc;
     }, {});
 }
