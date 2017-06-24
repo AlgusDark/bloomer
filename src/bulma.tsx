@@ -61,6 +61,7 @@ export declare namespace Bulma {
     export type Platform = 'mobile' | 'tablet' | 'touch' | 'desktop' | 'widescreen';
     export type PlatformOnly = 'tablet-only' | 'desktop-only';
     export type AllPlatforms = Platform | PlatformOnly;
+    export type AllPlatformsWithDefault = AllPlatforms | 'default';
 
     export type FlexDisplay = 'flex' | 'flex-mobile' | 'flex-tablet' | 'flex-touch' | 'flex-desktop' | 'flex-widescreen' | 'flex-tablet-only' | 'flex-desktop-only';
     export type BlockDisplay = 'block' | 'block-mobile' | 'block-tablet' | 'block-touch' | 'block-desktop' | 'block-widescreen' | 'block-tablet-only' | 'block-desktop-only';
@@ -70,11 +71,11 @@ export declare namespace Bulma {
     export type Displays = FlexDisplay | BlockDisplay | InlineDisplay | InlineBlockDisplay | InlineFlexDisplay;
 
     export interface DisplayObject {
-        flex?: AllPlatforms | AllPlatforms[];
-        block?: AllPlatforms | AllPlatforms[];
-        inline?: AllPlatforms | AllPlatforms[];
-        'inline-block'?: AllPlatforms | AllPlatforms[];
-        'inline-flex'?: AllPlatforms | AllPlatforms[];
+        flex?: AllPlatformsWithDefault | AllPlatformsWithDefault[];
+        block?: AllPlatformsWithDefault | AllPlatformsWithDefault[];
+        inline?: AllPlatformsWithDefault | AllPlatformsWithDefault[];
+        'inline-block'?: AllPlatformsWithDefault | AllPlatformsWithDefault[];
+        'inline-flex'?: AllPlatformsWithDefault | AllPlatformsWithDefault[];
     }
 
     export interface Show {
@@ -291,10 +292,18 @@ const isInlineFlex = is({ 'inline-flex': true });
 const isDisplay = isOption(isFlex, isBlock, isInline, isInlineBlock, isInlineFlex);
 
 const getShowModifiers = (display: Bulma.Displays | Bulma.Displays[] | Bulma.DisplayObject) => {
+    const isDefault = str => str === 'default' ? true : false;
     if (typeof display === 'string') return { [`is-${display}`]: true };
     if (Array.isArray(display)) return display.reduce((acc, display) => ({ ...acc, [`is-${display}`]: true }), {});
     if (typeof display === 'object') {
         return Object.keys(display).reduce((acc, key) => {
+            if (Array.isArray(display[key])) {
+                return display[key].reduce((acc, display) => {
+                    if (isDefault(display)) return { ...acc, [`is-${key}`]: true };
+                    return { ...acc, [`is-${key}-${display}`]: true };
+                }, acc);
+            }
+            if (isDefault(display[key])) return { ...acc, [`is-${key}`]: true };
             return (isDisplay(key) && isAllPlatforms(display[key])) ? { ...acc, [`is-${key}-${display[key]}`]: true } : acc;
         }, {});
     }

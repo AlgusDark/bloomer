@@ -119,9 +119,11 @@ const showDescription = (
         <Subtitle style={{marginBottom: 0}}>Object</Subtitle>
         <strong>keys</strong> <code>flex</code> | <code>block</code> | <code>inline</code> | <code>inline-block</code> | <code>inline-flex</code>
         <br/>
-        <strong>values</strong> <code>mobile</code> | <code>tablet</code> | <code>touch</code> | <code>desktop</code> | <code>widescreen</code> | <code>tablet-only</code> | <code>desktop-only</code>
+        <strong>values</strong> <code>default</code> | <code>mobile</code> | <code>tablet</code> | <code>touch</code> | <code>desktop</code> | <code>widescreen</code> | <code>tablet-only</code> | <code>desktop-only</code>
         <br/>
-        <small>You can pass an Array as value with any of the strings above</small>
+        <small>default will target all platforms, so make sure to use it if you need it.</small>
+        <br/>
+        <small>You can pass an Array as value with any of the above strings.</small>
     </td>
 )
 
