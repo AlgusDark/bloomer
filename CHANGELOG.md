@@ -1,5 +1,14 @@
 # Bloomer Changelog
 
+## 1.0.0 - 2017-06-23
+### Added
+- Bloomer has Tree-shaking, try it :)
+- New API for Columns, we removed a lot of props.
+- Refactor Icon element, now with a new `icon` prop to use favicon easily.
+- Refactor isRatio prop from Image.
+- Introduction of `tag` prop, now you can define in almost any bloomer component the HTML tag you want to use.
+- New API for Responsive Helpers, it's behaviour is similar than the new Column API.
+
 ## 0.5.5 - 2017-06-10
 ### Changed
 - `Level` now can be a `div` (default) or an `anchor` if has `href` prop.
