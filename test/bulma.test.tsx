@@ -231,8 +231,6 @@ describe('withHelpersModifiers', () => {
         const renderedComponent = <WithHelpersModifiersComponent isDisplay={{flex: 'default', block: ['default', 'tablet-only']}} className='custom' />
         const shallowedComponent = shallow(renderedComponent);
 
-        console.log(shallowedComponent.debug());
-
         expect(shallowedComponent.prop('isDisplay')).toBe(undefined);
         expect(shallowedComponent.hasClass('is-flex')).toBe(true);
         expect(shallowedComponent.hasClass('is-block')).toBe(true);
