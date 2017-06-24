@@ -10,6 +10,12 @@ Bloomer
 
 A set of React Stateless components for Bulma v0.4.2
 
+<p align="center">
+    <a href='http://bloomer.js.org'>
+        <img src='https://github.com/AlgusDark/bloomer/blob/master/docs/07990594.png' width=400>
+    </a>
+</p>
+
 ## NPM
 ```sh
 $ npm install bloomer --save
@@ -17,7 +23,7 @@ $ npm install bloomer --save
 
 ## Yarn
 ```sh
-$ yarn add bloomer-jsx
+$ yarn add bloomer
 ```
 
 ## Usage
@@ -34,49 +40,6 @@ ReactDOM.render(
     document.getElementById('root')
 )
 ```
-
-## Set ofComponents
-
-#### Grid
-
-- [x] Columns
-- [x] Tile
-
-#### Elements
-
-- [x] Box
-- [x] Button
-- [x] Content
-- [x] Delete
-- [x] Form
-- [x] Icon
-- [x] Image
-- [x] Notification
-- [x] Progress 
-- [x] Table
-    - `<tr>` has a `.is-selected` modifier, since **bloomer** doesn't provide table rows, you should use this modifier manually.
-- [x] Tag
-- [x] Title / SubTitle
-
-#### Components
-
-- [x] Card
-- [x] Level
-- [x] Media object
-- [x] Menu
-- [x] Message
-- [x] Modal
-- [x] Nav
-- [x] Pagination
-- [x] Panel
-- [x] Tabs
-
-#### Layout
-
-- [x] Container
-- [x] Hero
-- [x] Section
-- [x] Footer
 
 ## Buy me a beer
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/algusdark)
