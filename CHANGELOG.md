@@ -2,7 +2,7 @@
 
 ## 0.6.0 - 2017-06-23
 ### Added
-- Bloomer has Tree-shaking, try it :)
+- /*@__PURE__*/ to HOC files for Tree-shaking.
 - New API for Columns, we removed a lot of props.
 - Refactor Icon element, now with a new `icon` prop to use favicon easily.
 - Refactor isRatio prop from Image.
