@@ -1,6 +1,6 @@
 # Bloomer Changelog
 
-## 1.0.0 - 2017-06-23
+## 0.6.0 - 2017-06-23
 ### Added
 - Bloomer has Tree-shaking, try it :)
 - New API for Columns, we removed a lot of props.
