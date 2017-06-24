@@ -205,6 +205,41 @@ describe('withHelpersModifiers', () => {
         expect(shallowedComponent.hasClass('custom')).toBe(true);
     });
 
+    it('should render a Component with isDisplay with Object Array', () => {
+        const Component: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
+            return (
+                <div>Hello World</div>
+            )
+        }
+        const WithHelpersModifiersComponent = Bulma.withHelpersModifiers(Component);
+        const renderedComponent = <WithHelpersModifiersComponent isDisplay={{flex: ['default', 'mobile']}} className='custom' />
+        const shallowedComponent = shallow(renderedComponent);
+
+        expect(shallowedComponent.prop('isDisplay')).toBe(undefined);
+        expect(shallowedComponent.hasClass('is-flex')).toBe(true);
+        expect(shallowedComponent.hasClass('is-flex-mobile')).toBe(true);
+        expect(shallowedComponent.hasClass('custom')).toBe(true);
+    });
+
+    it('should render a Component with isDisplay with Object String', () => {
+        const Component: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
+            return (
+                <div>Hello World</div>
+            )
+        }
+        const WithHelpersModifiersComponent = Bulma.withHelpersModifiers(Component);
+        const renderedComponent = <WithHelpersModifiersComponent isDisplay={{flex: 'default', block: ['default', 'tablet-only']}} className='custom' />
+        const shallowedComponent = shallow(renderedComponent);
+
+        console.log(shallowedComponent.debug());
+
+        expect(shallowedComponent.prop('isDisplay')).toBe(undefined);
+        expect(shallowedComponent.hasClass('is-flex')).toBe(true);
+        expect(shallowedComponent.hasClass('is-block')).toBe(true);
+        expect(shallowedComponent.hasClass('is-block-tablet-only')).toBe(true);
+        expect(shallowedComponent.hasClass('custom')).toBe(true);
+    });
+
     it('should render a Component with flex modifiers', () => {
         const Component: React.SFC<React.HTMLProps<HTMLDivElement>> = (props) => {
             return (
@@ -212,12 +247,13 @@ describe('withHelpersModifiers', () => {
             )
         }
         const WithHelpersModifiersComponent = Bulma.withHelpersModifiers(Component);
-        const renderedComponent = <WithHelpersModifiersComponent isDisplay={['block-mobile', 'flex-desktop-only']} className='custom' />
+        const renderedComponent = <WithHelpersModifiersComponent isDisplay={['block-mobile', 'flex-desktop-only', 'flex']} className='custom' />
         const shallowedComponent = shallow(renderedComponent);
 
         expect(shallowedComponent.prop('isDisplay')).toBe(undefined);
         expect(shallowedComponent.hasClass('is-block-mobile')).toBe(true);
         expect(shallowedComponent.hasClass('is-flex-desktop-only')).toBe(true);
+        expect(shallowedComponent.hasClass('is-flex')).toBe(true);
         expect(shallowedComponent.hasClass('custom')).toBe(true);
     });
 
