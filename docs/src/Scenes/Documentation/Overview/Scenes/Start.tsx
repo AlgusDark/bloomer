@@ -39,12 +39,12 @@ const Start = (props) => (
         
         <Subtitle>You're done!</Subtitle>
         <p>
-            Since <strong>Bloomer</strong> is written with Typescript, the library is ship with typings.
-            That means that you have the benefit of IntelliSense in your editor.
+            Since <strong>Bloomer</strong> is written with Typescript, the library is shipped with typings.
+            It means that you have the benefit of IntelliSense in your editor.
         </p>
         <p>
-            Bloomer has <a href="https://webpack.js.org/guides/tree-shaking/">Tree-Shaking</a> in mind, if your bundle handle this, then you can
-            get the bennefit with Bloomer.
+            Bloomer has <a href="https://webpack.js.org/guides/tree-shaking/">Tree-Shaking</a> in mind, if your bundle can handle this, then you can
+            get the benefit of Bloomer and Tree-Shaking.
         </p>
         <br/>
         <p>Remember, with great power comes great responsibility.</p>
