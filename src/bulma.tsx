@@ -17,7 +17,7 @@ export declare namespace Bulma {
     }
 
     export interface Tag {
-        tag?: string;
+        tag?: keyof React.ReactHTML;
     }
 
     export interface FullWidth {
