@@ -5,7 +5,7 @@
     ],
     "jsRules": {},
     "rules": {
-        "array-type": [true, "generic"],
+        "array-type": [true, "array"],
         "ban-types": [true, ["Object", "Use {} instead."]],
         "curly": [true, "ignore-same-line"],
         "interface-name": [true, "never-prefix"],
