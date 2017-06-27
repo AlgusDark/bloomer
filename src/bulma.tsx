@@ -382,10 +382,8 @@ export function withHelpersModifiers<T>(Component: Bulma.Component<T>) {
             },
             props.className,
         );
-
-        // TODO: spread operator isn't fully supported (yet)
-        // should refactor when this is fixed in another ts release 
-        const rest: any = getHTMLProps(
+        
+        const rest = getHTMLProps(
             props,
             removeHelpersProps,
             removeFullWidthProps,
