@@ -1,0 +1,18 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "array-type": [true, "generic"],
+        "ban-types": [true, ["Object", "Use {} instead."]],
+        "curly": [true, "ignore-same-line"],
+        "interface-name": [true, "never-prefix"],
+        "no-namespace": [true, "allow-declarations"],
+        "no-shadowed-variable": false,
+        "quotemark": [true, "single", "jsx-single"]
+
+    },
+    "rulesDirectory": []
+}
