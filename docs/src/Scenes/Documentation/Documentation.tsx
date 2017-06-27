@@ -2,6 +2,7 @@ import * as React from 'react';
 import { withRouter, Route, Link, Redirect, Switch } from 'react-router-dom';
 
 import { isActive } from './../../utils';
+import { NoMatch } from './../../Components/NavRoutes';
 
 import { Hero, HeroBody as Body, HeroFooter as Footer } from './../../../../src/';
 import { Section, Container } from './../../../../src';
@@ -100,6 +101,7 @@ const Documentation = ({ match }) => (
                 {pages.map((page, key) => (
                     <Route key={key} path={`${match.url}${page.to}`} component={page.component} />
                 ))}
+                <Route render={() => <Container children={<NoMatch/>} />} />
             </Switch>
         </Section>
     </div>
