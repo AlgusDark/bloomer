@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './app.css';
 
@@ -15,8 +15,11 @@ const App = () => (
         <div>
             <NavBar />
             <div>
-                <Route exact path="/" component={Home} />
-                <Route path="/documentation" component={Documentation} />
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/documentation" component={Documentation} />
+                    <Route component={Home}/>
+                </Switch>
             </div>
             <Footer />
         </div>
