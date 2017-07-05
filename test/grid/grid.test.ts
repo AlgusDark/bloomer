@@ -44,6 +44,12 @@ describe('get*Modifiers functions', () => {
         expect(
             Grid.getSizeModifiers({ isSize: { mobile: 'narrow', s: 12, desktop: 10 } })
         ).toEqual({ 'is-narrow-mobile': true, 'is-10-desktop': true, });
+        expect(
+            Grid.getSizeModifiers({ isSize: { touch: 'narrow', s: 12, desktop: 10 } })
+        ).toEqual({ 'is-narrow-touch': true, 'is-10-desktop': true, });
+        expect(
+            Grid.getSizeModifiers({ isSize: { touch: 'narrow', s: 12, fullhd: 'narrow' } })
+        ).toEqual({ 'is-narrow-touch': true, 'is-narrow-fullhd': true, });
 
         expect(Grid.getSizeModifiers({ isSize: false })).toEqual({});
         expect(Grid.getSizeModifiers({ isSize: true })).toEqual({});
@@ -59,6 +65,12 @@ describe('get*Modifiers functions', () => {
         expect(
             Grid.getOffsetModifiers({ isOffset: { mobile: 'narrow', s: 12, desktop: 10 } })
         ).toEqual({ 'is-offset-10-desktop': true, });
+        expect(
+            Grid.getOffsetModifiers({ isOffset: { mobile: 'narrow', s: 12, touch: 10 } })
+        ).toEqual({ 'is-offset-10-touch': true, });
+        expect(
+            Grid.getOffsetModifiers({ isOffset: { mobile: 'narrow', s: 12, fullhd: 10 } })
+        ).toEqual({ 'is-offset-10-fullhd': true, });
 
         expect(Grid.getOffsetModifiers({ isOffset: false })).toEqual({});
         expect(Grid.getOffsetModifiers({ isOffset: true })).toEqual({});
