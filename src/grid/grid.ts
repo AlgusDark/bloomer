@@ -1,4 +1,4 @@
-import { isMobile, isTablet, isDesktop, isWidescreen } from './../bulma';
+import { isMobile, isTablet, isTouch, isDesktop, isWidescreen, isFullHD } from './../bulma';
 import { isBetween, isOption } from './../helpers';
 
 export declare namespace Grid {
@@ -10,8 +10,10 @@ export declare namespace Grid {
     export interface SizeObject {
         mobile?: AllSizes;
         tablet?: AllSizes;
+        touch?: AllSizes;
         desktop?: AllSizes;
         widescreen?: AllSizes;
+        fullhd?: AllSizes;
         default?: AllSizes;
     }
 
@@ -24,8 +26,10 @@ export declare namespace Grid {
     export interface OffsetObject {
         mobile?: Sizes | Fractions;
         tablet?: Sizes | Fractions;
+        touch?: Sizes | Fractions;
         desktop?: Sizes | Fractions;
         widescreen?: Sizes | Fractions;
+        fullhd?: Sizes | Fractions;
         default?: Sizes | Fractions;
     }
 
@@ -39,7 +43,7 @@ export declare namespace Grid {
 }
 
 const isValidSize = isBetween(1, 12);
-const isPlatform = isOption(isMobile, isTablet, isDesktop, isWidescreen);
+const isPlatform = isOption(isMobile, isTablet, isTouch, isDesktop, isWidescreen, isFullHD);
 
 export function getGridSizesModifiers(isSize, isOffset = false, platform: boolean | string = false) {
     return (Number.isInteger(isSize) && isValidSize(isSize)) ? { [`is-${isOffset ? 'offset-' : ''}${isSize}${isPlatform(platform) ? `-${platform}` : ''}`]: true } : {}

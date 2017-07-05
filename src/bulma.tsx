@@ -127,9 +127,10 @@ export declare namespace Bulma {
 
 export const isMobile = is({ mobile: true, });
 export const isTablet = is({ tablet: true, });
-const isTouch = is({ touch: true, });
+export const isTouch = is({ touch: true, });
 export const isDesktop = is({ desktop: true, });
 export const isWidescreen = is({ widescreen: true, });
+export const isFullHD = is({ fullhd: true, });
 
 const isTabletOnly = is({ 'tablet-only': true, });
 const isDesktopOnly = is({ 'desktop-only': true, });
