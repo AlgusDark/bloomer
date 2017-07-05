@@ -32,6 +32,10 @@ export { default as Field } from './elements/Form/Field/Field';
 export { default as FieldBody } from './elements/Form/Field/FieldBody';
 export { default as FieldLabel } from './elements/Form/Field/FieldLabel';
 
+// Breadcrumb
+export {default as Breadcrumb} from './components/Breadcrumb/Breadcrumb';
+export {default as BreadcrumbItem} from './components/Breadcrumb/BreadcrumbItem';
+
 // Card
 export { default as Card } from './components/Card/Card';
 export { default as CardImage } from './components/Card/CardImage';
