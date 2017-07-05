@@ -83,13 +83,17 @@ export { default as ModalCardTitle } from './components/Modal/Card/ModalCardTitl
 export { default as ModalCardBody } from './components/Modal/Card/ModalCardBody';
 export { default as ModalCardFooter } from './components/Modal/Card/ModalCardFooter';
 
-// Nav
-export { default as Nav } from './components/Nav/Nav';
-export { default as NavLeft } from './components/Nav/NavLeft';
-export { default as NavCenter } from './components/Nav/NavCenter';
-export { default as NavRight } from './components/Nav/NavRight';
-export { default as NavToggle } from './components/Nav/NavToggle';
-export { default as NavItem } from './components/Nav/NavItem';
+// Navbar
+export { default as Navbar } from './components/Navbar/Navbar';
+export { default as NavbarBrand } from './components/Navbar/NavbarBrand';
+export { default as NavbarBurger } from './components/Navbar/NavbarBurger';
+export { default as NavbarMenu } from './components/Navbar/NavbarMenu';
+export { default as NavbarStart } from './components/Navbar/NavbarStart';
+export { default as NavbarEnd } from './components/Navbar/NavbarEnd';
+export { default as NavbarItem } from './components/Navbar/NavbarItem';
+export { default as NavbarLink } from './components/Navbar/NavbarLink';
+export { default as NavbarDropdown } from './components/Navbar/NavbarDropdown';
+export { default as NavbarDivider } from './components/Navbar/NavbarDivider';
 
 // Pagination
 export { default as Pagination } from './components/Pagination/Pagination';
