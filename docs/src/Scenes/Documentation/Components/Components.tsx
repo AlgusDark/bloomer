@@ -3,6 +3,7 @@ import * as React from 'react';
 import NavDocs from './../../../Components/NavDocs';
 import NavRoutes from './../../../Components/NavRoutes';
 
+import Breadcrumb from './Scenes/Breadcrumb';
 import Card from './Scenes/Card';
 import Level from './Scenes/Level';
 import Media from './Scenes/Media';
@@ -15,6 +16,11 @@ import Panel from './Scenes/Panel';
 import Tabs from './Scenes/Tabs';
 
 const pages = [
+    {
+        title: 'Breadcrumb',
+        to: '/breadcrumb',
+        component: Breadcrumb,
+    },
     {
         title: 'Card',
         to: '/card',
