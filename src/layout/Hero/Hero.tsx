@@ -10,8 +10,9 @@ import {
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Hero<T> extends Bulma.Color, Bulma.Size, Bulma.Tag, React.HTMLProps<T> {
-    isBold?: boolean,
-    isFullHeight?: boolean
+    isBold?: boolean;
+    isFullHeight?: boolean;
+    isHalfHeight?: boolean;
 }
 
 export function Hero({ tag = 'section', ...props }: Hero<HTMLElement>) {
@@ -20,6 +21,7 @@ export function Hero({ tag = 'section', ...props }: Hero<HTMLElement>) {
         {
             'is-bold': props.isBold,
             'is-fullheight': props.isFullHeight,
+            'is-halfheight': props.isFullHeight,
             ...combineModifiers(props, getColorModifiers, getSizeModifiers)
         },
         props.className
