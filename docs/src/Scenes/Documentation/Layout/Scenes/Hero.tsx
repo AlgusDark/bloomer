@@ -20,6 +20,10 @@ const HeroRows: Docs.Row[] = [
         prop: 'isFullHeight',
         type: 'bool',
     },
+    {
+        prop: 'isHalfHeight',
+        type: 'bool',
+    },
 ]
 
 const HeroVideoRows: Docs.Row[] = [
