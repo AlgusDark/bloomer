@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Route, Redirect, Link } from 'react-router-dom';
+import { Route, Redirect, Link, Switch } from 'react-router-dom';
 
 import { Container, Title } from './../../../src';
 
@@ -12,11 +12,13 @@ export const NoMatch = () => (
 
 const NavRoutes = ({ location, match, pages }) => (
     <Container>
-        <Route exact path={match.url} render={() => <Redirect to={`${match.url}${pages[0].to}`} />} />
-        {pages.map((page, i) => (
-            <Route key={i} path={`${match.url}${page.to}`} component={page.component} />
-        ))}
-        <Route component={NoMatch} />
+        <Switch>
+            <Route exact path={match.url} render={() => <Redirect to={`${match.url}${pages[0].to}`} />} />
+            {pages.map((page, i) => (
+                <Route key={i} path={`${match.url}${page.to}`} component={page.component} />
+            ))}
+            <Route component={NoMatch} />
+        </Switch>
     </Container>
 )
 
