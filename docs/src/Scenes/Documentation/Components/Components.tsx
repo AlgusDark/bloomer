@@ -11,6 +11,7 @@ import Menu from './Scenes/Menu';
 import Message from './Scenes/Message';
 import Modal from './Scenes/Modal';
 import Nav from './Scenes/Nav';
+import Navbar from './Scenes/Navbar';
 import Pagination from './Scenes/Pagination';
 import Panel from './Scenes/Panel';
 import Tabs from './Scenes/Tabs';
@@ -55,6 +56,12 @@ const pages = [
         title: 'Nav',
         to: '/nav',
         component: Nav,
+        deprecated: true,
+    },
+    {
+        title: 'Navbar',
+        to: '/navbar',
+        component: Navbar,
     },
     {
         title: 'Pagination',
