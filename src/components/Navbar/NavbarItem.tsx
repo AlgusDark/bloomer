@@ -17,7 +17,7 @@ export function NavbarItem({ tag = 'div', render, isHoverable, hasDropdown, ...p
     const className = classNames(
         'navbar-item',
         {
-            'is-tab': isHoverable,
+            'is-hoverable': isHoverable,
             'has-dropdown': hasDropdown,
             ...getActiveModifiers(props),
         },
