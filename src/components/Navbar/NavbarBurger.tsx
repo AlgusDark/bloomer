@@ -6,7 +6,7 @@ import {
     getActiveModifiers, removeActiveModifiers,
     withHelpersModifiers,
 } from './../../bulma';
-import { getHTMLProps, combineModifiers } from './../../helpers';
+import { getHTMLProps } from './../../helpers';
 
 export interface NavbarBurger<T> extends Bulma.Active, Bulma.Tag, React.HTMLProps<T> {
 }

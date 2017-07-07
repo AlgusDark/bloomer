@@ -6,6 +6,7 @@ import {
     getActiveModifiers, removeActiveModifiers,
     withHelpersModifiers,
 } from './../../bulma';
+import { getHTMLProps } from './../../helpers';
 
 export interface NavbarLink<T> extends Bulma.Render, Bulma.Tag, Bulma.Active, React.HTMLProps<T> {
 }
@@ -21,7 +22,9 @@ export function NavbarLink({ tag = 'a', render, ...props }: NavbarLink<HTMLEleme
 
     if (render) return render({ ...props });
 
-    return React.createElement(tag, { ...props, className });
+    const HTMLProps = getHTMLProps(props, removeActiveModifiers);
+
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
 const HOC = /*@__PURE__*/withHelpersModifiers(NavbarLink);

@@ -6,6 +6,7 @@ import {
     getActiveModifiers, removeActiveModifiers,
     withHelpersModifiers,
 } from './../../bulma';
+import { getHTMLProps } from './../../helpers';
 
 export interface NavbarMenu<T> extends Bulma.Tag, Bulma.Active, React.HTMLProps<T> {
 }
@@ -19,7 +20,9 @@ export function NavbarMenu({ tag = 'div', ...props }: NavbarMenu<HTMLElement>) {
         props.className,
     );
 
-    return React.createElement(tag, { ...props, className });
+    const HTMLProps = getHTMLProps(props, removeActiveModifiers);
+
+    return React.createElement(tag, { ...HTMLProps, className });
 }
 
 const HOC = /*@__PURE__*/withHelpersModifiers(NavbarMenu);
