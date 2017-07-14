@@ -14,13 +14,13 @@ describe('Nav', () => {
         expect(component.contains(<div className='nav'>My Nav</div>)).toBe(true);
     });
 
-     it('should render a nav with .nav and modifiers', () => {
+    it('should render a nav with .nav and modifiers', () => {
         const component = shallow(<Nav hasShadow><span>Any Content</span></Nav>);
         expect(component.hasClass('nav')).toBe(true);
         expect(component.hasClass('has-shadow')).toBe(true);
     });
 
-     it('should render a nav with .nav, modifiers and custom classNames', () => {
+    it('should render a nav with .nav, modifiers and custom classNames', () => {
         const component = shallow(<Nav hasShadow className='custom'><span>Any Content</span></Nav>);
         expect(component.hasClass('nav')).toBe(true);
         expect(component.hasClass('has-shadow')).toBe(true);

@@ -7,7 +7,7 @@ export interface NavbarDropdown<T> extends Bulma.Tag, React.HTMLProps<T> {
     isBoxed?: boolean;
 }
 
-export function NavbarDropdown({tag='div', isBoxed, ...props}:NavbarDropdown<HTMLElement>) {
+export function NavbarDropdown({ tag = 'div', isBoxed, ...props }: NavbarDropdown<HTMLElement>) {
     const className = classNames(
         'navbar-dropdown',
         {

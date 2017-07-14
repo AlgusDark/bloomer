@@ -3,9 +3,9 @@ import * as classNames from 'classnames';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export interface NavbarStart<T> extends Bulma.Tag, React.HTMLProps<T> {}
+export interface NavbarStart<T> extends Bulma.Tag, React.HTMLProps<T> { }
 
-export function NavbarStart({tag='div', ...props}: NavbarStart<HTMLElement>) {
+export function NavbarStart({ tag = 'div', ...props }: NavbarStart<HTMLElement>) {
     const className = classNames('navbar-start', props.className);
 
     return React.createElement(tag, { ...props, className });

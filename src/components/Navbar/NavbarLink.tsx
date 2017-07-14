@@ -20,7 +20,7 @@ export function NavbarLink({ tag = 'a', render, ...props }: NavbarLink<HTMLEleme
         props.className,
     );
 
-    if (render) return render({ ...props });
+    if (render) return render({ ...props, className });
 
     const HTMLProps = getHTMLProps(props, removeActiveModifiers);
 
