@@ -11,102 +11,232 @@ import { Container, Title, Subtitle } from './../../../../../../src';
 import { Navbar, NavbarBrand, NavbarBurger, NavbarDivider, NavbarDropdown, NavbarEnd, NavbarItem, NavbarLink, NavbarMenu, NavbarStart } from './../../../../../../src';
 import { Icon, Field, Control, Button, Message, MessageBody } from './../../../../../../src';
 
-const NavRows: Docs.Row[] = [
+const NavbarRows: Docs.Row[] = [
     {
-        prop: 'hasShadow',
+        prop: 'isTransparent',
         type: 'bool',
+        description: <td>This will remove any hover or active background from the navbar items.</td>,
     },
 ];
 
-const NavRightRows: Docs.Row[] = [
-    {
-        prop: 'isActive',
-        type: 'bool',
-    },
-    {
-        prop: 'isMenu',
-        type: 'bool',
-        description: <td>Append <code>.nav-menu</code> for collapsable menu on mobile</td>,
-    },
-];
-
-const NavToggleRows: Docs.Row[] = [
+const NavbarBurgerRows: Docs.Row[] = [
     {
         prop: 'isActive',
         type: 'bool',
     },
 ];
 
-const NavItemRows: Docs.Row[] = [
+const NavbarMenuRows: Docs.Row[] = [
+    {
+        prop: 'isActive',
+        type: 'bool',
+    },
+];
+
+const NavbarItemRows: Docs.Row[] = [
     {
         prop: 'isActive',
         type: 'bool',
     },
     {
-        prop: 'isTab',
+        prop: 'isHoverable',
         type: 'bool',
     },
     {
-        prop: 'isBrand',
+        prop: 'hasDropdown',
         type: 'bool',
     },
-    render('NavItem'),
+    render('NavbarItem'),
 ];
 
-const NavExample = ``;
+const NavbarLinkRows: Docs.Row[] = [
+    {
+        prop: 'isActive',
+        type: 'bool',
+    },
+    render('NavbarLink'),
+];
 
-const NavDocs = (props) => (
-    <Container>
-        <Title>Navbar</Title>
-        <Message isColor='success'>
-            <MessageBody>
-                The new <code>Navbar</code> replaces the deprecated <code>Nav</code> component, whose documentation you can still access temporaly <Link to={`/documentation/components/nav`}>here</Link>
-            </MessageBody>
-        </Message>
-        <Navbar style={{ border: 'solid 1px #00D1B2', margin: '0' }} isTransparent>
-            <NavbarBrand>
-                <NavbarItem href='http://bloomer.js.org'>
-                    <img src={brand} style={{ marginRight: 5 }} /> Bloomer
-                    </NavbarItem>
-            </NavbarBrand>
-        </Navbar>
-        <Highlight>{NavExample}</Highlight>
+const NavbarDropdownRows: Docs.Row[] = [
+    {
+        prop: 'isBoxed',
+        type: 'bool',
+    },
+]
 
-        <hr />
+const NavExample = `<Navbar style={{ border: 'solid 1px #00D1B2', margin: '0' }}>
+<NavbarBrand>
+    <NavbarItem>
+        <img src={brand} style={{ marginRight: 5 }} /> Bloomer
+    </NavbarItem>
+    <NavbarItem isHidden='desktop'>
+        <Icon icon='github' />
+    </NavbarItem>
+    <NavbarItem isHidden='desktop'>
+        <Icon icon='twitter' style={{ color: '#55acee' }} />
+    </NavbarItem>
+    <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav} />
+</NavbarBrand>
+<NavbarMenu isActive={this.state.isActive} onClick={this.onClickNav}>
+    <NavbarStart>
+        <NavbarItem href='#/'>Home</NavbarItem>
+        <NavbarItem hasDropdown isHoverable>
+            <NavbarLink href='#/documentation'>Documentation</NavbarLink>
+            <NavbarDropdown>
+                <NavbarItem href='#/'>One A</NavbarItem>
+                <NavbarItem href='#/'>Two B</NavbarItem>
+                <NavbarDivider />
+                <NavbarItem href='#/'>Two A</NavbarItem>
+            </NavbarDropdown>
+        </NavbarItem>
+    </NavbarStart>
+    <NavbarEnd>
+        <NavbarItem href="https://github.com/AlgusDark/bloomer" isHidden='touch'>
+            <Icon icon='github' />
+        </NavbarItem>
+        <NavbarItem href="https://twitter.com/AlgusDark" isHidden='touch'>
+            <Icon icon='twitter' style={{ color: '#55acee' }} />
+        </NavbarItem>
+        <NavbarItem>
+            <Field isGrouped>
+                <Control>
+                    <Button id="twitter" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://bloomer.js.org" target="_blank" href="https://twitter.com/intent/tweet?text=bloomer: a set of React Stateless Components for bulma.io&amp;url=http://bloomer.js.org&amp;via=AlgusDark">
+                        <Icon>
+                            <span className="fa fa-twitter" aria-hidden="true" />
+                        </Icon>
+                        <span>Tweet</span>
+                    </Button>
+                </Control>
+            </Field>
+        </NavbarItem>
+    </NavbarEnd>
+</NavbarMenu>
+</Navbar>
+`;
 
-        <Title>Nav</Title>
-        <TableDocs rows={NavRows} />
+class NavDocs extends React.Component<{}, { isActive: boolean }> {
+    state = { isActive: false };
 
-        <hr />
+    onClickNav = () => {
+        this.setState(state => ({ isActive: !state.isActive }));
+    }
 
-        <Title>NavLeft</Title>
-        <Subtitle>{noModifiers}</Subtitle>
+    render() {
+        return (
+            <Container>
+                <Title>Navbar</Title>
+                <Message isColor='success'>
+                    <MessageBody>
+                        The new <code>Navbar</code> replaces the deprecated <code>Nav</code> component, whose documentation you can still access temporaly <Link to={`/documentation/components/nav`}>here</Link>
+                    </MessageBody>
+                </Message>
+                <Navbar style={{ border: 'solid 1px #00D1B2', margin: '0' }}>
+                    <NavbarBrand>
+                        <NavbarItem>
+                            <img src={brand} style={{ marginRight: 5 }} /> Bloomer
+                        </NavbarItem>
+                        <NavbarItem isHidden='desktop'>
+                            <Icon icon='github' />
+                        </NavbarItem>
+                        <NavbarItem isHidden='desktop'>
+                            <Icon icon='twitter' style={{ color: '#55acee' }} />
+                        </NavbarItem>
+                        <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav} />
+                    </NavbarBrand>
+                    <NavbarMenu isActive={this.state.isActive} onClick={this.onClickNav}>
+                        <NavbarStart>
+                            <NavbarItem href='#/'>Home</NavbarItem>
+                            <NavbarItem hasDropdown isHoverable>
+                                <NavbarLink href='#/documentation'>Documentation</NavbarLink>
+                                <NavbarDropdown>
+                                    <NavbarItem href='#/'>One A</NavbarItem>
+                                    <NavbarItem href='#/'>Two B</NavbarItem>
+                                    <NavbarDivider />
+                                    <NavbarItem href='#/'>Two A</NavbarItem>
+                                </NavbarDropdown>
+                            </NavbarItem>
+                        </NavbarStart>
+                        <NavbarEnd>
+                            <NavbarItem href="https://github.com/AlgusDark/bloomer" isHidden='touch'>
+                                <Icon icon='github' />
+                            </NavbarItem>
+                            <NavbarItem href="https://twitter.com/AlgusDark" isHidden='touch'>
+                                <Icon icon='twitter' style={{ color: '#55acee' }} />
+                            </NavbarItem>
+                            <NavbarItem>
+                                <Field isGrouped>
+                                    <Control>
+                                        <Button id="twitter" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://bloomer.js.org" target="_blank" href="https://twitter.com/intent/tweet?text=bloomer: a set of React Stateless Components for bulma.io&amp;url=http://bloomer.js.org&amp;via=AlgusDark">
+                                            <Icon>
+                                                <span className="fa fa-twitter" aria-hidden="true" />
+                                            </Icon>
+                                            <span>Tweet</span>
+                                        </Button>
+                                    </Control>
+                                </Field>
+                            </NavbarItem>
+                        </NavbarEnd>
+                    </NavbarMenu>
+                </Navbar>
+                <Highlight>{NavExample}</Highlight>
 
-        <hr />
+                <hr />
 
-        <Title>NavCenter</Title>
-        <Subtitle>{noModifiers}</Subtitle>
+                <Title>Navbar</Title>
+                <TableDocs rows={NavbarRows} />
 
-        <hr />
+                <hr />
 
-        <Title>NavToggle</Title>
-        <TableDocs rows={NavToggleRows} />
+                <Title>NavbarBrand</Title>
+                <Subtitle>{noModifiers}</Subtitle>
 
-        <hr />
+                <hr />
 
-        <Title>NavRight</Title>
-        <TableDocs rows={NavRightRows} />
+                <Title>NavbarBurger</Title>
+                <TableDocs rows={NavbarBurgerRows} />
 
-        <hr />
+                <hr />
 
-        <Title>NavItem</Title>
-        <Subtitle>
-            By default, <strong>{'<NavItem />'}</strong> renders a <strong>{'<div />'}</strong> element,
+                <Title>NavbarMenu</Title>
+                <TableDocs rows={NavbarMenuRows} />
+
+                 <hr />
+
+                <Title>NavbarStart</Title>
+                <Subtitle>{noModifiers}</Subtitle>
+
+                 <hr />
+
+                <Title>NavbarEnd</Title>
+                <Subtitle>{noModifiers}</Subtitle>
+
+                <hr />
+
+                <Title>NavbarItem</Title>
+                <Subtitle>
+                    By default, <strong>{'<NavbarItem />'}</strong> renders a <strong>{'<div />'}</strong> element,
             but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
-            <strong>E.g.</strong> <em><strong>{"<NavItem href='#'/>"}</strong></em>.
+            <strong>E.g.</strong> <em><strong>{"<NavbarItem href='#'/>"}</strong></em>.
         </Subtitle>
-        <TableDocs rows={NavItemRows} />
-    </Container>
-)
+                <TableDocs rows={NavbarItemRows} />
+
+                <hr />
+
+                <Title>NavbarLink</Title>
+                <TableDocs rows={NavbarLinkRows} />
+
+                <hr />
+
+                <Title>NavbarDropdown</Title>
+                <TableDocs rows={NavbarDropdownRows} />
+
+                <hr />
+
+                <Title>NavbarDivider</Title>
+                <Subtitle>{noModifiers}</Subtitle>
+            </Container>
+        )
+    }
+}
 
 export default NavDocs;
