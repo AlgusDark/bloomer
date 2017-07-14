@@ -11,7 +11,7 @@ import { getHTMLProps } from './../../helpers';
 export interface NavbarBurger<T> extends Bulma.Active, Bulma.Tag, React.HTMLProps<T> {
 }
 
-export function NavbarBurger({ tag = 'span', ...props }: NavbarBurger<HTMLElement>) {
+export function NavbarBurger({ tag = 'div', ...props }: NavbarBurger<HTMLElement>) {
     const className = classNames(
         'navbar-burger',
         {
