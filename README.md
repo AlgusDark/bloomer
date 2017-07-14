@@ -8,7 +8,7 @@ Bloomer
 [![Coverage Status](https://coveralls.io/repos/github/AlgusDark/bloomer/badge.svg?branch=master)](https://coveralls.io/github/AlgusDark/bloomer?branch=master)
 ![Gluten Status](https://img.shields.io/badge/Gluten-Free-green.svg)
 
-A set of React Stateless components for Bulma v0.4.2
+A set of React Stateless components for Bulma v0.4.3
 
 <p align="center">
     <a href='http://bloomer.js.org'>
