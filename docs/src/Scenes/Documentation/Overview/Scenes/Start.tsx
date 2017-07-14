@@ -29,6 +29,12 @@ const Start = (props) => (
         <hr />
 
         <Subtitle>2. Make sure to import <a href='http://bulma.io/documentation/overview/start/'>Bulma</a> in your project.</Subtitle>
+        <div className='npm' style={{marginBottom: '1.5rem'}}><code><span className='is-unselectable'>$ </span>npm install bulma</code></div>
+        <Subtitle>
+            <p>Or use the CDN</p>
+            <p><a href="https://cdnjs.com/libraries/bulma">https://cdnjs.com/libraries/bulma</a></p>
+        </Subtitle>
+        <Subtitle>Don't forget to include <a href="http://fontawesome.io/">Font Awesome</a> if you want to use icons.</Subtitle>
 
         <hr/>
 
