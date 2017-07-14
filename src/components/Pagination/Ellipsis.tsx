@@ -23,7 +23,7 @@ export function Ellipsis({ tag = 'span', ...props }: Ellipsis<HTMLElement>) {
 
     const { children, ...HTMLProps } = getHTMLProps(props, removeActiveModifiers, removeFocusedModifiers);
 
-    return React.createElement(tag, { ...HTMLProps, className }, '&hellip;');
+    return React.createElement(tag, { ...HTMLProps, className }, '\u2026');
 }
 
 const HOC = /*@__PURE__*/withHelpersModifiers(Ellipsis);

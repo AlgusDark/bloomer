@@ -1,5 +1,13 @@
 # Bloomer Changelog
 
+## 0.6.2 - 2017-07-14
+### Fixed
+- Bug with htmlentities at `Pagination/Ellipsis`.
+
+## 0.6.1 - 2017-07-13
+### Added
+- New Navbar & Breadcrumb components
+
 ## 0.6.0 - 2017-06-23
 ### Added
 - /*@__PURE__*/ to HOC files for Tree-shaking.
