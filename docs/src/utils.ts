@@ -1,6 +1,4 @@
-export const isActive = (location, url) => {
-    return location.pathname.includes(url) ? true : false;
-}
+export const isActive = (location, url) => !!location.pathname.includes(url);
 
 export declare namespace Docs {
     export interface Row {
