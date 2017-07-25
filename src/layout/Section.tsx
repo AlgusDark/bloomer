@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
@@ -9,7 +9,7 @@ import {
 import { getHTMLProps, isOption } from './../helpers';
 
 export interface Section<T> extends Bulma.Size, Bulma.Tag, React.HTMLProps<T> {
-    isSize?: 'medium' | 'large',
+    isSize?: 'medium' | 'large';
 }
 
 export function Section({ tag = 'section', ...props }: Section<HTMLElement>) {

@@ -1,10 +1,10 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface HeroVideo<T> extends Bulma.Tag, React.HTMLProps<T> {
-    isTransparent?: boolean,
+    isTransparent?: boolean;
 }
 
 export function HeroVideo({ tag = 'div', ...props }: HeroVideo<HTMLElement>) {
@@ -13,7 +13,7 @@ export function HeroVideo({ tag = 'div', ...props }: HeroVideo<HTMLElement>) {
         {
             'is-transparent': props.isTransparent,
         },
-        props.className
+        props.className,
     );
 
     const { isTransparent, ...HTMLProps } = props;

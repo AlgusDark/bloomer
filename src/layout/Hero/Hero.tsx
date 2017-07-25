@@ -1,10 +1,10 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
-    removeColorProps, removeSizeProps,
     getColorModifiers, getSizeModifiers,
+    removeColorProps, removeSizeProps,
     withHelpersModifiers,
 } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';
@@ -22,9 +22,9 @@ export function Hero({ tag = 'section', ...props }: Hero<HTMLElement>) {
             'is-bold': props.isBold,
             'is-fullheight': props.isFullHeight,
             'is-halfheight': props.isFullHeight,
-            ...combineModifiers(props, getColorModifiers, getSizeModifiers)
+            ...combineModifiers(props, getColorModifiers, getSizeModifiers),
         },
-        props.className
+        props.className,
     );
 
     const { isBold, isFullHeight, ...rest } = props;

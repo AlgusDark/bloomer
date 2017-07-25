@@ -1,13 +1,13 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
-import {
-    Grid,
-    getSizeModifiers, removeSizeProps,
-    getOffsetModifiers, removeOffsetProps,
-} from './grid';
 import { Bulma, withHelpersModifiers } from './../bulma';
-import { getHTMLProps, combineModifiers } from './../helpers';
+import { combineModifiers, getHTMLProps } from './../helpers';
+import {
+    getOffsetModifiers, getSizeModifiers,
+    Grid,
+    removeOffsetProps, removeSizeProps,
+} from './grid';
 
 export interface Column<T> extends
     Grid.HorizontalSize, Grid.Offset, Bulma.Tag,
@@ -21,9 +21,9 @@ export function Column({ tag = 'div', ...props }: Column<HTMLElement>) {
                 props,
                 getSizeModifiers,
                 getOffsetModifiers,
-            )
+            ),
         },
-        props.className
+        props.className,
     );
 
     const HTMLProps = getHTMLProps(

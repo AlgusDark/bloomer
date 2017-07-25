@@ -12,6 +12,13 @@
         "max-line-length": [true, 135],
         "no-namespace": [true, "allow-declarations"],
         "no-shadowed-variable": false,
+        "ordered-imports": [
+          true,
+          {
+            "import-sources-order": "case-insensitive",
+            "named-imports-order": "case-insensitive"
+          }
+        ],
         "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
         "quotemark": [true, "single", "jsx-double"]
     },

@@ -1,4 +1,4 @@
-import { isMobile, isTablet, isTouch, isDesktop, isWidescreen, isFullHD } from './../bulma';
+import { isDesktop, isFullHD, isMobile, isTablet, isTouch, isWidescreen } from './../bulma';
 import { isBetween, isOption } from './../helpers';
 
 export declare namespace Grid {
@@ -34,7 +34,7 @@ export declare namespace Grid {
     }
 
     export interface Offset {
-        isOffset?: Sizes | Fractions | OffsetObject,
+        isOffset?: Sizes | Fractions | OffsetObject;
     }
 
     export interface NonHTMLProps extends HorizontalSize, Offset {
@@ -46,7 +46,8 @@ const isValidSize = isBetween(1, 12);
 const isPlatform = isOption(isMobile, isTablet, isTouch, isDesktop, isWidescreen, isFullHD);
 
 export function getGridSizesModifiers(isSize, isOffset = false, platform: boolean | string = false) {
-    return (Number.isInteger(isSize) && isValidSize(isSize)) ? { [`is-${isOffset ? 'offset-' : ''}${isSize}${isPlatform(platform) ? `-${platform}` : ''}`]: true } : {}
+    return (Number.isInteger(isSize) && isValidSize(isSize)) ? {
+      [`is-${isOffset ? 'offset-' : ''}${isSize}${isPlatform(platform) ? `-${platform}` : ''}`]: true } : {};
 }
 
 export function removeGridSizesProps(props) {
@@ -57,26 +58,26 @@ export function removeGridSizesProps(props) {
 }
 
 const fractions = {
-    '3/4': 'three-quarters',
-    '2/3': 'two-thirds',
     '1/2': 'half',
     '1/3': 'one-third',
     '1/4': 'one-quarter',
-}
+    '2/3': 'two-thirds',
+    '3/4': 'three-quarters',
+};
 const width = {
-    'full': 'full',
-    'narrow': 'narrow',
-}
+    full: 'full',
+    narrow: 'narrow',
+};
 
 function getGridFractionsModifiers(size, isOffset, platform) {
     const sizes = !isOffset ? { ...fractions, ...width } : fractions;
 
-    return sizes[size] ? { [`is-${isOffset ? 'offset-' : ''}${sizes[size]}${isPlatform(platform) ? '-' + platform : ''}`]: true } : {}
+    return sizes[size] ? { [`is-${isOffset ? 'offset-' : ''}${sizes[size]}${isPlatform(platform) ? '-' + platform : ''}`]: true } : {};
 }
 
 function getGridObjectSizeModifiers(size, isOffset) {
     return Object.keys(size).reduce((acc, key) => {
-        if (key === 'default') return { ...acc, ...getHorizontalSizeModifiers(size[key], isOffset) }
+        if (key === 'default') return { ...acc, ...getHorizontalSizeModifiers(size[key], isOffset) };
         return isPlatform(key) ? { ...acc, ...getHorizontalSizeModifiers(size[key], isOffset, key) } : acc;
     }, {});
 }
