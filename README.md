@@ -1,4 +1,4 @@
-Bloomer
+# Bloomer
 ==================================
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/AlgusDark/bloomer/blob/master/LICENSE.md)
@@ -8,38 +8,64 @@ Bloomer
 [![Coverage Status](https://coveralls.io/repos/github/AlgusDark/bloomer/badge.svg?branch=master)](https://coveralls.io/github/AlgusDark/bloomer?branch=master)
 ![Gluten Status](https://img.shields.io/badge/Gluten-Free-green.svg)
 
-A set of React Stateless components for Bulma v0.4.3
+A cool set of React Stateless components for Bulma v0.4.3
 
 <p align="center">
-    <a href='http://bloomer.js.org'>
-        <img src='https://github.com/AlgusDark/bloomer/blob/master/docs/07990594.png' width=400>
+    <a href='http://bloomer.js.org' title='Check Bloomer page'>
+        <img src='https://github.com/AlgusDark/bloomer/blob/master/docs/07990594.png' width=400 role="presentation">
     </a>
 </p>
 
-## NPM
+## Install
+
+[Bulma](https://www.npmjs.com/package/bulma) should be included in your project.
+
+## Using NPM
 ```sh
 $ npm install bloomer --save
+
 ```
 
-## Yarn
+## Using Yarn
 ```sh
 $ yarn add bloomer
 ```
 
+## Using CDN
+```
+<html>
+  <head>
+    ...
+  </head>
+  <body>
+    Other libraries
+    <script type="text/javascript" src="https://unpkg.com/bloomer/bundles/bloomer.min.js">
+    Cutom code
+  </body>
+</html>
+```
+
 ## Usage
 ```javascript
-// you should have bulma in your project
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Container, Box  } from 'bloomer';
 
 ReactDOM.render(
-    <Container>
-        <Box>Hello World!</Box>
-    </Container>,
-    document.getElementById('root')
-)
+  <Container>
+    <Box>Hello World!</Box>
+  </Container>,
+  document.getElementById('root')
+);
 ```
+## Documentation
+The online documentation resides in [bloomer page](https://bloomer.js.org/#/documentation/overview/start), you can find all the different topics related to this library.
+### Sections
+- [Overview](https://bloomer.js.org/#/documentation/overview/start)
+- [Grid](https://bloomer.js.org/#/documentation/grid/)
+- [Elements](https://bloomer.js.org/#/documentation/elements/)
+- [Components](https://bloomer.js.org/#/documentation/components)
+- [Layout](https://bloomer.js.org/#/documentation/layout)
 
 ## Buy me a beer
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/algusdark)
