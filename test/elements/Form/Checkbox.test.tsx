@@ -7,17 +7,8 @@ describe('Checkbox', () => {
     it('should render a label.checkbox with input[type="checkbox"]', () => {
         const component = shallow(<Checkbox>My Checkbox</Checkbox>);
         expect(component.contains(
-            <label className='checkbox' disabled={undefined}>
+            <label className='checkbox'>
                 <input type='checkbox'/>My Checkbox
-            </label>
-        )).toBe(true);
-    });
-
-    it('should render a label.checkbox:disabled with input[type="checkbox"]:disabled', () => {
-        const component = shallow(<Checkbox disabled>My Checkbox</Checkbox>);
-        expect(component.contains(
-            <label className='checkbox' disabled>
-                <input type='checkbox' disabled/>My Checkbox
             </label>
         )).toBe(true);
     });

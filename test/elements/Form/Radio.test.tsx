@@ -7,17 +7,8 @@ describe('Radio', () => {
     it('should render a label.radio with input[type="radio"]', () => {
         const component = shallow(<Radio>My Radio</Radio>);
         expect(component.contains(
-            <label className='radio' disabled={undefined}>
+            <label className='radio'>
                 <input type='radio'/>My Radio
-            </label>
-        )).toBe(true);
-    });
-
-    it('should render a label.radio:disabled with input[type="radio"]:disabled', () => {
-        const component = shallow(<Radio disabled>My Radio</Radio>);
-        expect(component.contains(
-            <label className='radio' disabled>
-                <input type='radio' disabled/>My Radio
             </label>
         )).toBe(true);
     });
