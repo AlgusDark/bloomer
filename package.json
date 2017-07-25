@@ -23,6 +23,7 @@
     "bulma": "^0.4.1",
     "clean-webpack-plugin": "^0.1.16",
     "coveralls": "^2.13.1",
+    "cross-env": "^5.0.1",
     "css-loader": "^0.28.1",
     "enzyme": "^2.8.2",
     "extract-text-webpack-plugin": "^2.1.2",
@@ -43,12 +44,12 @@
     "webpack-dev-server": "^2.4.5"
   },
   "scripts": {
-    "docs": "NODE_ENV=development webpack-dev-server --config webpack.docs.js --env.dev",
-    "deploy": "NODE_ENV=production webpack --config webpack.docs.js --env.prod",
+    "docs": "cross-env NODE_ENV=development webpack-dev-server --config webpack.docs.js --env.dev",
+    "deploy": "cross-env NODE_ENV=production webpack --config webpack.docs.js --env.prod",
     "test": "jest",
     "test:ci": "jest --coverage && cat ./reports/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage": "jest --coverage",
-    "build": "npm run clean && tsc && tsc -m es6 --outDir esm --removeComments false && NODE_ENV=production webpack",
+    "build": "npm run clean && tsc && tsc -m es6 --outDir esm --removeComments false && cross-env NODE_ENV=production webpack",
     "clean": "shx rm -rf lib esm bundles",
     "prepublish": "npm run build"
   },
