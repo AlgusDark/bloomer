@@ -1,9 +1,8 @@
-/// <reference types="react" />
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import { Grid } from './grid/grid';
-import { combineModifiers, getHTMLProps, isBetween, is, isOption } from './helpers';
+import { combineModifiers, getHTMLProps, is, isBetween, isOption } from './helpers';
 
 export declare namespace Bulma {
     // Modifiers
@@ -17,7 +16,7 @@ export declare namespace Bulma {
     }
 
     export interface Tag {
-        tag?: string;
+        tag?: keyof React.ReactHTML;
     }
 
     export interface FullWidth {
@@ -43,7 +42,7 @@ export declare namespace Bulma {
         isLoading?: boolean;
     }
 
-    export type Colors = 'white' | 'light' | 'dark' | 'black' | 'primary' | 'info' | 'success' | 'warning' | 'danger'
+    export type Colors = 'white' | 'light' | 'dark' | 'black' | 'primary' | 'info' | 'success' | 'warning' | 'danger';
     export interface Color {
         isColor?: Colors;
     }
@@ -63,11 +62,17 @@ export declare namespace Bulma {
     export type AllPlatforms = Platform | PlatformOnly;
     export type AllPlatformsWithDefault = AllPlatforms | 'default';
 
-    export type FlexDisplay = 'flex' | 'flex-mobile' | 'flex-tablet' | 'flex-touch' | 'flex-desktop' | 'flex-widescreen' | 'flex-tablet-only' | 'flex-desktop-only';
-    export type BlockDisplay = 'block' | 'block-mobile' | 'block-tablet' | 'block-touch' | 'block-desktop' | 'block-widescreen' | 'block-tablet-only' | 'block-desktop-only';
-    export type InlineDisplay = 'inline' | 'inline-mobile' | 'inline-tablet' | 'inline-touch' | 'inline-desktop' | 'inline-widescreen' | 'inline-tablet-only' | 'inline-desktop-only';
-    export type InlineBlockDisplay = 'inline-block' | 'inline-block-mobile' | 'inline-block-tablet' | 'inline-block-touch' | 'inline-block-desktop' | 'inline-block-widescreen' | 'inline-block-tablet-only' | 'inline-block-desktop-only';
-    export type InlineFlexDisplay = 'inline-flex' | 'inline-flex-mobile' | 'inline-flex-tablet' | 'inline-flex-touch' | 'inline-flex-desktop' | 'inline-flex-widescreen' | 'inline-flex-tablet-only' | 'inline-flex-desktop-only';
+    export type FlexDisplay = 'flex' | 'flex-mobile' | 'flex-tablet' | 'flex-touch' | 'flex-desktop' |
+        'flex-widescreen' | 'flex-tablet-only' | 'flex-desktop-only';
+    export type BlockDisplay = 'block' | 'block-mobile' | 'block-tablet' | 'block-touch' | 'block-desktop' |
+        'block-widescreen' | 'block-tablet-only' | 'block-desktop-only';
+    export type InlineDisplay = 'inline' | 'inline-mobile' | 'inline-tablet' | 'inline-touch' | 'inline-desktop' |
+        'inline-widescreen' | 'inline-tablet-only' | 'inline-desktop-only';
+    export type InlineBlockDisplay = 'inline-block' | 'inline-block-mobile' | 'inline-block-tablet' |
+        'inline-block-touch' | 'inline-block-desktop' | 'inline-block-widescreen' | 'inline-block-tablet-only' |
+        'inline-block-desktop-only';
+    export type InlineFlexDisplay = 'inline-flex' | 'inline-flex-mobile' | 'inline-flex-tablet' | 'inline-flex-touch' |
+        'inline-flex-desktop' | 'inline-flex-widescreen' | 'inline-flex-tablet-only' | 'inline-flex-desktop-only';
     export type Displays = FlexDisplay | BlockDisplay | InlineDisplay | InlineBlockDisplay | InlineFlexDisplay;
 
     export interface DisplayObject {
@@ -122,40 +127,41 @@ export declare namespace Bulma {
         Modifiers, Render {
     }
 
-    export type Component<T> = React.ComponentClass<T & React.HTMLProps<HTMLElement>> | React.SFC<T & React.HTMLProps<HTMLElement>>;
+    export type Component<T> = React.ComponentClass<T & React.HTMLProps<HTMLElement>> |
+        React.SFC<T & React.HTMLProps<HTMLElement>>;
 }
 
-export const isMobile = is({ mobile: true, });
-export const isTablet = is({ tablet: true, });
-const isTouch = is({ touch: true, });
-export const isDesktop = is({ desktop: true, });
-export const isWidescreen = is({ widescreen: true, });
+export const isMobile = is({ mobile: true });
+export const isTablet = is({ tablet: true });
+const isTouch = is({ touch: true });
+export const isDesktop = is({ desktop: true });
+export const isWidescreen = is({ widescreen: true });
 
-const isTabletOnly = is({ 'tablet-only': true, });
-const isDesktopOnly = is({ 'desktop-only': true, });
+const isTabletOnly = is({ 'tablet-only': true });
+const isDesktopOnly = is({ 'desktop-only': true });
 
-export const isLeft = is({ left: true, });
-export const isRight = is({ right: true, });
-export const isCentered = is({ centered: true, });
+export const isLeft = is({ left: true });
+export const isRight = is({ right: true });
+export const isCentered = is({ centered: true });
 
-export const isCenter = is({ center: true, });
-export const isFullWidth = is({ fullwidth: true, });
+export const isCenter = is({ center: true });
+export const isFullWidth = is({ fullwidth: true });
 
 const isColor = is({
-    white: true,
-    light: true,
-    dark: true,
     black: true,
-    primary: true,
+    danger: true,
+    dark: true,
     info: true,
+    light: true,
+    primary: true,
     success: true,
     warning: true,
-    danger: true,
+    white: true,
 });
 
-const isSmall = is({ small: true, });
-const isMedium = is({ medium: true, });
-const isLarge = is({ large: true, });
+const isSmall = is({ small: true });
+const isMedium = is({ medium: true });
+const isLarge = is({ large: true });
 
 const isAllPlatforms = isOption(isMobile, isTablet, isDesktop, isTouch, isWidescreen, isTabletOnly, isDesktopOnly);
 const isAlign = isOption(isLeft, isCentered, isRight);
@@ -186,7 +192,7 @@ export function removeSizeProps(props: Bulma.Size) {
 function getFullWidthModifiers(props: Bulma.FullWidth) {
     return {
         'is-fullwidth': props.isFullWidth,
-    }
+    };
 }
 
 function removeFullWidthProps(props: Bulma.FullWidth) {
@@ -228,7 +234,7 @@ export function getStateModifiers(props: Bulma.State) {
         ...getActiveModifiers(props),
         ...getFocusedModifiers(props),
         ...getHoveredModifiers(props),
-    }
+    };
 }
 
 export function removeStateProps(props: Bulma.State) {
@@ -243,7 +249,7 @@ export function removeStateProps(props: Bulma.State) {
 export function getLoadingModifiers(props: Bulma.Loading) {
     return {
         'is-loading': props.isLoading,
-    }
+    };
 }
 
 export function removeLoadingProps(props: Bulma.Loading) {
@@ -254,7 +260,7 @@ export function removeLoadingProps(props: Bulma.Loading) {
 }
 
 export function getColorModifiers({ isColor: color }: Bulma.Color) {
-    return isColor(color) ? { [`is-${color}`]: true } : {}
+    return isColor(color) ? { [`is-${color}`]: true } : {};
 }
 
 export function removeColorProps(props: Bulma.Color) {
@@ -272,7 +278,7 @@ export function getHeadingModifiers({ isSpaced, isSize: size }: Bulma.Heading) {
     return {
         ...isSize,
         'is-spaced': isSpaced,
-    }
+    };
 }
 
 export function removeHeadingProps(props: Bulma.Heading) {
@@ -292,7 +298,7 @@ const isInlineFlex = is({ 'inline-flex': true });
 const isDisplay = isOption(isFlex, isBlock, isInline, isInlineBlock, isInlineFlex);
 
 const getShowModifiers = (display: Bulma.Displays | Bulma.Displays[] | Bulma.DisplayObject) => {
-    const isDefault = str => str === 'default' ? true : false;
+    const isDefault = (str) => str === 'default';
     if (typeof display === 'string') return { [`is-${display}`]: true };
     if (Array.isArray(display)) return display.reduce((acc, display) => ({ ...acc, [`is-${display}`]: true }), {});
     if (typeof display === 'object') {
@@ -304,26 +310,30 @@ const getShowModifiers = (display: Bulma.Displays | Bulma.Displays[] | Bulma.Dis
                 }, acc);
             }
             if (isDefault(display[key])) return { ...acc, [`is-${key}`]: true };
-            return (isDisplay(key) && isAllPlatforms(display[key])) ? { ...acc, [`is-${key}-${display[key]}`]: true } : acc;
+            return (isDisplay(key) && isAllPlatforms(display[key])) ?
+                { ...acc, [`is-${key}-${display[key]}`]: true } : acc;
         }, {});
     }
     return {};
-}
+};
 
 const getHideModifiers = (platform: boolean | Bulma.AllPlatforms | Bulma.AllPlatforms[]) => {
     if (typeof platform === 'boolean') return platform ? { 'is-hidden': true } : {};
     if (typeof platform === 'string') return isAllPlatforms(platform) ? { [`is-hidden-${platform}`]: true } : {};
-    if (Array.isArray(platform)) return platform.reduce((acc, platform) => isAllPlatforms(platform) ? { ...acc, [`is-hidden-${platform}`]: true } : acc, {});
+    if (Array.isArray(platform)) {
+        return platform.reduce((acc, platform) => isAllPlatforms(platform) ?
+            { ...acc, [`is-hidden-${platform}`]: true } : acc, {});
+    }
     return {};
-}
+};
 
 const getAlignModifier = (modifier: string, helper: string) => {
     return isAlign(modifier) ? { [`${helper}-${modifier}`]: true } : {};
-}
+};
 
 const getColorModifier = (modifier: string) => {
-    return isColor(modifier) ? { [`has-text-${modifier}`]: true } : {}
-}
+    return isColor(modifier) ? { [`has-text-${modifier}`]: true } : {};
+};
 
 function getHelpersModifiers(
     {
@@ -345,11 +355,11 @@ function getHelpersModifiers(
         ...getAlignModifier(hasTextAlign, 'has-text'),
         ...getColorModifier(hasTextColor),
         'is-clearfix': isClearfix,
-        'is-overlay': isOverlay,
         'is-marginless': isMarginless,
+        'is-overlay': isOverlay,
         'is-paddingless': isPaddingless,
         'is-unselectable': isUnselectable,
-    }
+    };
 }
 
 function removeHelpersProps(props: Bulma.Helpers) {
@@ -364,7 +374,7 @@ function removeHelpersProps(props: Bulma.Helpers) {
         isUnselectable,
         hasTextAlign,
         hasTextColor,
-        ...rest
+        ...rest,
     } = props;
 
     return rest;
@@ -383,18 +393,16 @@ export function withHelpersModifiers<T>(Component: Bulma.Component<T>) {
             props.className,
         );
 
-        // TODO: spread operator isn't fully supported (yet)
-        // should refactor when this is fixed in another ts release 
-        const rest: any = getHTMLProps(
+        const rest = getHTMLProps(
             props,
             removeHelpersProps,
             removeFullWidthProps,
         );
 
-        return className ? <Component {...rest} className={className} /> : <Component {...rest} />
-    }
+        return className ? <Component {...rest} className={className} /> : <Component {...rest} />;
+    };
 
-    SFC.displayName = `withHelpersModifiers(${getDisplayName(Component)})`
+    SFC.displayName = `withHelpersModifiers(${getDisplayName(Component)})`;
 
     return SFC;
 }

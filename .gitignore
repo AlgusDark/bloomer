@@ -1,6 +1,7 @@
 .DS_Store
 *debug.log
 
+.idea
 bundles
 lib
 esm
