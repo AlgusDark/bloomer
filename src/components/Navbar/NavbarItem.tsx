@@ -1,12 +1,12 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
     getActiveModifiers, removeActiveModifiers,
     withHelpersModifiers,
 } from './../../bulma';
-import { getHTMLProps, combineModifiers } from './../../helpers';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface NavbarItem<T> extends Bulma.Tag, Bulma.Render, Bulma.Active, React.HTMLProps<T> {
     isHoverable?: boolean;
@@ -17,11 +17,11 @@ export function NavbarItem({ tag = 'div', render, isHoverable, hasDropdown, ...p
     const className = classNames(
         'navbar-item',
         {
-            'is-hoverable': isHoverable,
             'has-dropdown': hasDropdown,
+            'is-hoverable': isHoverable,
             ...getActiveModifiers(props),
         },
-        props.className
+        props.className,
     );
 
     const HTMLProps = getHTMLProps(props, removeActiveModifiers);

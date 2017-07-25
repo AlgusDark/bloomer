@@ -1,15 +1,15 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
     getActiveModifiers, removeActiveModifiers,
     withHelpersModifiers,
 } from './../../bulma';
-import { getHTMLProps, combineModifiers } from './../../helpers';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface NavRight<T> extends Bulma.Active, Bulma.Tag, React.HTMLProps<T> {
-    isMenu?: boolean,
+    isMenu?: boolean;
 }
 
 export function NavRight({ tag = 'div', ...props }: NavRight<HTMLElement>) {

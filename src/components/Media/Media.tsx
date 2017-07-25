@@ -1,15 +1,15 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
     getSizeModifiers, removeSizeProps,
     withHelpersModifiers,
 } from './../../bulma';
-import { getHTMLProps } from './../../helpers'
+import { getHTMLProps } from './../../helpers';
 
 export interface Media<T> extends Bulma.Size, Bulma.Tag, React.HTMLProps<T> {
-    isSize?: 'large',
+    isSize?: 'large';
 }
 
 export function Media({ tag = 'article', ...props }: Media<HTMLElement>) {

@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
@@ -9,7 +9,7 @@ import {
 import { getHTMLProps } from './../../helpers';
 
 export interface PanelBlock<T> extends Bulma.Render, Bulma.Tag, Bulma.Active, React.HTMLProps<T> {
-    isWrapped?: boolean,
+    isWrapped?: boolean;
 }
 
 export function PanelBlock({ tag = 'div', render, ...props }: PanelBlock<HTMLElement>) {
@@ -24,7 +24,7 @@ export function PanelBlock({ tag = 'div', render, ...props }: PanelBlock<HTMLEle
 
     const {
         isWrapped,
-        ...rest
+        ...rest,
     } = props;
 
     const HTMLProps = getHTMLProps(rest, removeActiveModifiers);

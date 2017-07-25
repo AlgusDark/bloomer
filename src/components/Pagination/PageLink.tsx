@@ -1,17 +1,17 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
-    getActiveModifiers, removeActiveModifiers,
-    getFocusedModifiers, removeFocusedModifiers,
+    getActiveModifiers, getFocusedModifiers,
+    removeActiveModifiers, removeFocusedModifiers,
     withHelpersModifiers,
 } from './../../bulma';
-import { getHTMLProps, combineModifiers } from './../../helpers';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface PageLink<T> extends Bulma.Render, Bulma.Tag, Bulma.Active, Bulma.Focused,
     React.HTMLProps<T> {
-    isCurrent?: boolean,
+    isCurrent?: boolean;
 }
 
 export function PageLink({ tag = 'a', render, ...props }: PageLink<HTMLElement>) {
@@ -21,12 +21,12 @@ export function PageLink({ tag = 'a', render, ...props }: PageLink<HTMLElement>)
             'is-current': props.isCurrent,
             ...combineModifiers(props, getActiveModifiers, getFocusedModifiers),
         },
-        props.className
+        props.className,
     );
 
     const {
         isCurrent,
-        ...rest
+        ...rest,
     } = props;
 
     const HTMLProps = getHTMLProps(rest, removeActiveModifiers, removeFocusedModifiers);

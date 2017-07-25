@@ -1,10 +1,10 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface LevelItem<T> extends Bulma.Tag, React.HTMLProps<T> {
-    isFlexible?: boolean,
+    isFlexible?: boolean;
 }
 
 export function LevelItem({ tag = 'div', ...props }: LevelItem<HTMLElement>) {
@@ -18,7 +18,7 @@ export function LevelItem({ tag = 'div', ...props }: LevelItem<HTMLElement>) {
 
     const {
         isFlexible,
-        ...HTMLProps
+        ...HTMLProps,
     } = props;
 
     return React.createElement((props.href ? 'a' : tag), { ...HTMLProps, className });

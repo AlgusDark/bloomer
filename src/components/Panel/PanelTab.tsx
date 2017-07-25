@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
@@ -14,9 +14,9 @@ export interface PanelTab<T> extends Bulma.Render, Bulma.Tag, Bulma.Active, Reac
 export function PanelTab({ tag = 'p', render, ...props }: PanelTab<HTMLElement>) {
     const className = classNames(
         {
-            ...getActiveModifiers(props)
+            ...getActiveModifiers(props),
         },
-        props.className
+        props.className,
     ) || undefined;
 
     const HTMLProps = getHTMLProps(props, removeActiveModifiers);

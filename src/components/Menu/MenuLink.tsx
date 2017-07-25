@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
@@ -17,7 +17,7 @@ export function MenuLink({ tag = 'a', render, ...props }: MenuLink<HTMLElement>)
         {
             ...getActiveModifiers(props),
         },
-        props.className
+        props.className,
     ) || undefined;
 
     const HTMLProps = getHTMLProps(props, removeActiveModifiers);

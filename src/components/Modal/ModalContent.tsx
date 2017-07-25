@@ -1,11 +1,11 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface ModalContent<T> extends Bulma.Tag, React.HTMLProps<T> {}
 
-export function ModalContent({tag='div', ...props}: ModalContent<HTMLElement>) {
+export function ModalContent({tag= 'div', ...props}: ModalContent<HTMLElement>) {
     const className = classNames('modal-content', props.className);
 
     return React.createElement(tag, { ...props, className });

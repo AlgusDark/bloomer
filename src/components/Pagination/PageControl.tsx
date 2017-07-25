@@ -1,33 +1,33 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
-    getActiveModifiers, removeActiveModifiers,
-    getFocusedModifiers, removeFocusedModifiers,
+    getActiveModifiers, getFocusedModifiers,
+    removeActiveModifiers, removeFocusedModifiers,
     withHelpersModifiers,
 } from './../../bulma';
-import { getHTMLProps, combineModifiers } from './../../helpers';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface PageControl<T> extends Bulma.Render, Bulma.Tag, Bulma.Active, Bulma.Focused, React.HTMLProps<T> {
-    isPrevious?: boolean,
-    isNext?: boolean,
+    isPrevious?: boolean;
+    isNext?: boolean;
 }
 
 export function PageControl({ tag = 'a', render, ...props }: PageControl<HTMLElement>) {
     const className = classNames(
         {
-            'pagination-previous': !props.isNext,
             'pagination-next': !props.isPrevious && props.isNext,
+            'pagination-previous': !props.isNext,
             ...combineModifiers(props, getActiveModifiers, getFocusedModifiers),
         },
-        props.className
+        props.className,
     );
 
     const {
         isNext,
         isPrevious,
-        ...rest
+        ...rest,
     } = props;
 
     const HTMLProps = getHTMLProps(rest, removeActiveModifiers, removeFocusedModifiers);
