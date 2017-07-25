@@ -1,16 +1,16 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
     getSizeModifiers, removeSizeProps,
     withHelpersModifiers,
 } from './../../../bulma';
-import { getHTMLProps } from './../../../helpers'
+import { getHTMLProps } from './../../../helpers';
 
 export interface FieldLabel<T> extends Bulma.Size, Bulma.Tag,
     React.HTMLProps<T> {
-    isNormal?: boolean,
+    isNormal?: boolean;
 }
 
 export function FieldLabel({ tag = 'div', ...props }: FieldLabel<HTMLElement>) {
@@ -18,13 +18,13 @@ export function FieldLabel({ tag = 'div', ...props }: FieldLabel<HTMLElement>) {
         'field-label',
         {
             'is-normal': props.isNormal,
-            ...getSizeModifiers(props)
+            ...getSizeModifiers(props),
         },
         props.className);
 
     const {
         isNormal,
-        ...rest
+        ...rest,
     } = props;
 
     const HTMLProps = getHTMLProps(rest, removeSizeProps);

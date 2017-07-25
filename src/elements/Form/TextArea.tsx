@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
@@ -18,7 +18,7 @@ export function TextArea(props: TextArea<HTMLElement>) {
         {
             ...combineModifiers(props, getSizeModifiers, getStateModifiers),
         },
-        props.className
+        props.className,
     );
 
     const HTMLProps = getHTMLProps(props, removeSizeProps, removeStateProps);

@@ -1,10 +1,10 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
-    removeStateProps, removeColorProps, removeLoadingProps, removeSizeProps,
-    getStateModifiers, getColorModifiers, getLoadingModifiers, getSizeModifiers,
+    getColorModifiers, getLoadingModifiers, getSizeModifiers, getStateModifiers,
+    removeColorProps, removeLoadingProps, removeSizeProps, removeStateProps,
     withHelpersModifiers,
 } from './../bulma';
 import { combineModifiers, getHTMLProps } from './../helpers';
@@ -12,21 +12,21 @@ import { combineModifiers, getHTMLProps } from './../helpers';
 export interface Button<T> extends
     Bulma.Render, Bulma.State, Bulma.Color, Bulma.Loading, Bulma.Size,
     React.HTMLProps<T> {
-    isLink?: boolean,
-    isOutlined?: boolean,
-    isInverted?: boolean,
-    isStatic?: boolean,
+    isLink?: boolean;
+    isOutlined?: boolean;
+    isInverted?: boolean;
+    isStatic?: boolean;
 }
 
 export function Button(props: Button<HTMLButtonElement | HTMLAnchorElement>) {
     const className = classNames(
         'button',
         {
+            'is-inverted': props.isInverted,
             'is-link': props.isLink,
             'is-outlined': props.isOutlined,
-            'is-inverted': props.isInverted,
             'is-static': props.isStatic,
-            ...combineModifiers(props, getStateModifiers, getColorModifiers, getLoadingModifiers, getSizeModifiers)
+            ...combineModifiers(props, getStateModifiers, getColorModifiers, getLoadingModifiers, getSizeModifiers),
         },
         props.className,
     );
@@ -42,12 +42,12 @@ export function Button(props: Button<HTMLButtonElement | HTMLAnchorElement>) {
     if (render) return render({ ...HTMLProps, className });
 
     const anchor = (
-        <a {...HTMLProps} role='button' className={className} />
-    )
+        <a {...HTMLProps} role="button" className={className} />
+    );
 
     const button = (
         <button {...HTMLProps} type={props.type || 'button'} className={className} />
-    )
+    );
 
     return props.href ? anchor : button;
 }

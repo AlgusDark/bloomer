@@ -1,12 +1,12 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import { Bulma, withHelpersModifiers } from './../bulma';
 
 export interface Table<T> extends React.HTMLProps<T> {
-    isBordered?: boolean,
-    isStriped?: boolean,
-    isNarrow?: boolean,
+    isBordered?: boolean;
+    isStriped?: boolean;
+    isNarrow?: boolean;
 }
 
 export function Table(props: Table<HTMLElement>) {
@@ -14,9 +14,8 @@ export function Table(props: Table<HTMLElement>) {
         'table',
         {
             'is-bordered': props.isBordered,
-            'is-striped': props.isStriped,
             'is-narrow': props.isNarrow,
-
+            'is-striped': props.isStriped,
         },
         props.className,
     );
@@ -24,12 +23,12 @@ export function Table(props: Table<HTMLElement>) {
         isBordered,
         isStriped,
         isNarrow,
-        ...HTMLProps
+        ...HTMLProps,
     } = props;
 
     return (
         <table {...HTMLProps} className={className} />
-    )
+    );
 }
 
 const HOC = /*@__PURE__*/withHelpersModifiers(Table);

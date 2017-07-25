@@ -1,41 +1,40 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
-    getLoadingModifiers, removeLoadingProps,
+    getLoadingModifiers,
     isLeft, isRight,
+    removeLoadingProps,
     withHelpersModifiers,
 } from './../../bulma';
 
 import {
-    is, isOption,
     getHTMLProps,
+    is, isOption,
 } from './../../helpers';
 
 export type Directions = 'left' | 'right';
 
 export interface Control<T> extends Bulma.Loading, Bulma.Tag, React.HTMLProps<T> {
-    hasIcons?: boolean | Directions | Directions[],
-    isExpanded?: boolean,
+    hasIcons?: boolean | Directions | Directions[];
+    isExpanded?: boolean;
 }
 
 const isDirection = isOption(isLeft, isRight);
 
 const getModifier = (modifier) => {
     if (modifier === true) {
-        return { 'has-icons-left has-icons-right': true }
-    }
-    else if (typeof modifier === 'string') {
+        return { 'has-icons-left has-icons-right': true };
+    } else if (typeof modifier === 'string') {
         return isDirection(modifier) ? { [`has-icons-${modifier}`]: true } : {};
-    }
-    else if (Array.isArray(modifier)) {
-        return modifier.map(str => str.toLowerCase().trim())
+    } else if (Array.isArray(modifier)) {
+        return modifier.map((str) => str.toLowerCase().trim())
             .reduce((init, option) => isDirection(option) ? { ...init, [`has-icons-${option}`]: true } : init, {});
     }
 
     return {};
-}
+};
 
 export function Control({ tag = 'div', ...props }: Control<HTMLElement>) {
     const className = classNames(
@@ -49,7 +48,7 @@ export function Control({ tag = 'div', ...props }: Control<HTMLElement>) {
     const {
         hasIcons,
         isExpanded,
-        ...rest
+        ...rest,
     } = props;
 
     const HTMLProps = getHTMLProps(rest, removeLoadingProps);

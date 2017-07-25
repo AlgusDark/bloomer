@@ -1,10 +1,10 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
     getColorModifiers, removeColorProps,
-    withHelpersModifiers
+    withHelpersModifiers,
 } from './../../bulma';
 import { getHTMLProps } from './../../helpers';
 

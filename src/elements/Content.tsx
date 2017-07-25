@@ -1,7 +1,7 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, removeSizeProps, getSizeModifiers, withHelpersModifiers } from './../bulma';
+import { Bulma, getSizeModifiers, removeSizeProps, withHelpersModifiers } from './../bulma';
 import { getHTMLProps } from './../helpers';
 
 export interface Content<T> extends Bulma.Size, Bulma.Tag,  React.HTMLProps<T> { }
@@ -10,7 +10,7 @@ export function Content({ tag = 'div', ...props }: Content<HTMLElement>) {
     const className = classNames(
         'content',
         {
-            ...getSizeModifiers(props)
+            ...getSizeModifiers(props),
         },
         props.className,
     );
