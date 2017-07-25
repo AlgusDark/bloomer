@@ -1,11 +1,12 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
-    getSizeModifiers, removeSizeProps,
-    isLeft, isRight, removeAlignmentProps,
-    withHelpersModifiers
+    getSizeModifiers,
+    isLeft, isRight,
+    removeAlignmentProps, removeSizeProps,
+    withHelpersModifiers,
 } from './../bulma';
 import { getHTMLProps, isOption } from './../helpers';
 

@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
@@ -25,7 +25,7 @@ export function Label(props: Label<HTMLElement>) {
 
     return (
         <label {...HTMLProps} className={className} />
-    )
+    );
 }
 
 const HOC = /*@__PURE__*/withHelpersModifiers(Label);

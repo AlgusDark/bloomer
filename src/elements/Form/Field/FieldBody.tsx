@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
@@ -11,7 +11,7 @@ export interface FieldBody<T> extends Bulma.Tag, React.HTMLProps<T> { }
 export function FieldBody({ tag = 'div', ...props }: FieldBody<HTMLElement>) {
     const className = classNames(
         'field-body',
-        props.className
+        props.className,
     );
 
     return React.createElement(tag, { ...props, className });

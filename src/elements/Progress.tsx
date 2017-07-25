@@ -1,10 +1,10 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
-    getSizeModifiers, getColorModifiers,
-    removeSizeProps, removeColorProps,
+    getColorModifiers, getSizeModifiers,
+    removeColorProps, removeSizeProps,
     withHelpersModifiers,
 } from './../bulma';
 import { combineModifiers, getHTMLProps } from './../helpers';
@@ -16,7 +16,7 @@ export function Progress({ tag = 'progress', ...props }: Progress<HTMLElement>) 
     const className = classNames(
         'progress',
         {
-            ...combineModifiers(props, getSizeModifiers, getColorModifiers)
+            ...combineModifiers(props, getSizeModifiers, getColorModifiers),
         },
         props.className,
     );

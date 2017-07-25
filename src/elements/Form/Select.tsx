@@ -1,11 +1,11 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
-    getColorModifiers, getSizeModifiers, getLoadingModifiers,
-    removeColorProps, removeSizeProps, removeLoadingProps,
-    withHelpersModifiers
+    getColorModifiers, getLoadingModifiers, getSizeModifiers,
+    removeColorProps, removeLoadingProps, removeSizeProps,
+    withHelpersModifiers,
 } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
@@ -25,14 +25,14 @@ export function Select(props: Select<HTMLElement>) {
     const {
         children,
         className,
-        ...HTMLProps
+        ...HTMLProps,
     } = getHTMLProps(props, removeColorProps, removeSizeProps, removeLoadingProps);
 
     return (
         <div className={wrapperClassName}>
             <select {...HTMLProps}>{children}</select>
         </div>
-    )
+    );
 }
 
 const HOC = /*@__PURE__*/withHelpersModifiers(Select);
