@@ -1,0 +1,19 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "array-type": [true, "array"],
+        "ban-types": [true, ["Object", "Use {} instead."]],
+        "curly": [true, "ignore-same-line"],
+        "interface-name": [true, "never-prefix"],
+        "max-line-length": [true, 135],
+        "no-namespace": [true, "allow-declarations"],
+        "no-shadowed-variable": false,
+        "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
+        "quotemark": [true, "single", "jsx-single"]
+    },
+    "rulesDirectory": []
+}
