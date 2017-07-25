@@ -1,33 +1,33 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
     getActiveModifiers, removeActiveModifiers,
     withHelpersModifiers,
 } from './../../bulma';
-import { getHTMLProps, combineModifiers } from './../../helpers';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface NavItem<T> extends Bulma.Tag, Bulma.Render, Bulma.Active, React.HTMLProps<T> {
-    isTab?: boolean,
-    isBrand?: boolean,
+    isTab?: boolean;
+    isBrand?: boolean;
 }
 
 export function NavItem({ tag = 'div', render, ...props }: NavItem<HTMLElement>) {
     const className = classNames(
         'nav-item',
         {
-            'is-tab': props.isTab,
             'is-brand': props.isBrand,
+            'is-tab': props.isTab,
             ...getActiveModifiers(props),
         },
-        props.className
+        props.className,
     );
 
     const {
         isTab,
         isBrand,
-        ...rest
+        ...rest,
      } = props;
 
     const HTMLProps = getHTMLProps(rest, removeActiveModifiers);

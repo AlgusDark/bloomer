@@ -1,13 +1,13 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
-    getActiveModifiers, removeActiveModifiers,
-    getFocusedModifiers, removeFocusedModifiers,
+    getActiveModifiers, getFocusedModifiers,
+    removeActiveModifiers, removeFocusedModifiers,
     withHelpersModifiers,
 } from './../../bulma';
-import { getHTMLProps, combineModifiers } from './../../helpers';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Ellipsis<T> extends Bulma.Active, Bulma.Focused, Bulma.Tag, React.HTMLProps<T> {
 }
@@ -18,7 +18,7 @@ export function Ellipsis({ tag = 'span', ...props }: Ellipsis<HTMLElement>) {
         {
             ...combineModifiers(props, getActiveModifiers, getFocusedModifiers),
         },
-        props.className
+        props.className,
     );
 
     const { children, ...HTMLProps } = getHTMLProps(props, removeActiveModifiers, removeFocusedModifiers);

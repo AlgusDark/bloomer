@@ -1,19 +1,19 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
-    removeAlignmentProps, removeSizeProps,
     getAlignmentModifiers, getSizeModifiers,
+    removeAlignmentProps, removeSizeProps,
     withHelpersModifiers,
 } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Tabs<T> extends Bulma.Alignment, Bulma.Size, Bulma.Tag,
     React.HTMLProps<T> {
-    isAlign?: 'left' | 'centered' | 'right',
-    isBoxed?: boolean,
-    isToggle?: boolean,
+    isAlign?: 'left' | 'centered' | 'right';
+    isBoxed?: boolean;
+    isToggle?: boolean;
 }
 
 export function Tabs({ tag = 'div', ...props }: Tabs<HTMLElement>) {

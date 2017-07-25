@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
@@ -16,7 +16,7 @@ export function PanelIcon({ children, icon, ...props }: PanelIcon<HTMLElement>) 
         </span>
     );
 
-    return icon ? withIcon : <span {...props} children={children} className={className} />
+    return icon ? withIcon : <span {...props} children={children} className={className} />;
 }
 
 const HOC = /*@__PURE__*/withHelpersModifiers(PanelIcon);

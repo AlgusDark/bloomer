@@ -13,7 +13,7 @@
         "no-namespace": [true, "allow-declarations"],
         "no-shadowed-variable": false,
         "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
-        "quotemark": [true, "single", "jsx-single"]
+        "quotemark": [true, "single", "jsx-double"]
     },
     "rulesDirectory": []
 }

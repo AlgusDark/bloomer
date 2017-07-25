@@ -1,24 +1,24 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface Level<T> extends Bulma.Tag, React.HTMLProps<T> {
-    isMobile?: boolean,
+    isMobile?: boolean;
 }
 
 export function Level({ tag = 'nav', ...props }: Level<HTMLElement>) {
     const className = classNames(
         'level',
         {
-            'is-mobile': props.isMobile
+            'is-mobile': props.isMobile,
         },
         props.className,
     );
 
     const {
         isMobile,
-        ...HTMLProps
+        ...HTMLProps,
     } = props;
 
     return React.createElement(tag, { ...HTMLProps, className });

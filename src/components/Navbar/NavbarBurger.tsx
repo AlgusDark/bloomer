@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
@@ -17,7 +17,7 @@ export function NavbarBurger({ tag = 'div', ...props }: NavbarBurger<HTMLElement
         {
             ...getActiveModifiers(props),
         },
-        props.className
+        props.className,
     );
 
     const { children, ...HTMLProps } = getHTMLProps(props, removeActiveModifiers);
@@ -26,7 +26,7 @@ export function NavbarBurger({ tag = 'div', ...props }: NavbarBurger<HTMLElement
         tag, { ...HTMLProps, className },
         React.createElement('span', null),
         React.createElement('span', null),
-        React.createElement('span', null)
+        React.createElement('span', null),
     );
 }
 

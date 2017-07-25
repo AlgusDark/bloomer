@@ -1,10 +1,10 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
-    removeAlignmentProps, removeSizeProps,
     getAlignmentModifiers, getSizeModifiers,
+    removeAlignmentProps, removeSizeProps,
     withHelpersModifiers,
 } from './../../bulma';
 import { combineModifiers, getHTMLProps } from './../../helpers';

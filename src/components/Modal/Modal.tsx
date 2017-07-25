@@ -1,12 +1,12 @@
-import * as React from 'react';
 import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
     Bulma,
     getActiveModifiers, removeActiveModifiers,
     withHelpersModifiers,
 } from './../../bulma';
-import { getHTMLProps } from './../../helpers'
+import { getHTMLProps } from './../../helpers';
 
 export interface Modal<T> extends Bulma.Active, Bulma.Tag, React.HTMLProps<T> {
 }
