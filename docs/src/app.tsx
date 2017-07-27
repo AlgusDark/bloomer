@@ -4,11 +4,11 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './app.css';
 
-import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
+import NavBar from './Components/NavBar';
 
-import Home from './Scenes/Home/Home';
 import Documentation from './Scenes/Documentation/Documentation';
+import Home from './Scenes/Home/Home';
 
 const App = () => (
     <Router>
@@ -24,6 +24,6 @@ const App = () => (
             <Footer />
         </div>
     </Router>
-)
+);
 
 ReactDOM.render(<App />, document.getElementById('root'));
