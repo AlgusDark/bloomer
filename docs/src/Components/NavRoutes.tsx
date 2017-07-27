@@ -1,14 +1,15 @@
 import * as React from 'react';
-import { Route, Redirect, Link, Switch } from 'react-router-dom';
+import { Link, Redirect, Route, Switch } from 'react-router-dom';
 
 import { Container, Title } from './../../../src';
 
 export const NoMatch = () => (
     <div>
         <Title>Page Not Found</Title>
-        Oops! Something has gone wrong and the page you were looking for could not be displayed! Try the <Link to='/documentation'>documentation home page</Link>.
+        Oops! Something has gone wrong and the page you were looking for could not be displayed!
+        Try the <Link to="/documentation">documentation home page</Link>.
     </div>
-)
+);
 
 const NavRoutes = ({ location, match, pages }) => (
     <Container>
@@ -20,6 +21,6 @@ const NavRoutes = ({ location, match, pages }) => (
             <Route component={NoMatch} />
         </Switch>
     </Container>
-)
+);
 
 export default NavRoutes;

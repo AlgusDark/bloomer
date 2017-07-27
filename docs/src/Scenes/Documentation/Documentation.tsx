@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { withRouter, Route, Link, Redirect, Switch } from 'react-router-dom';
+import { Link, Redirect, Route, Switch, withRouter } from 'react-router-dom';
 
-import { isActive } from './../../utils';
 import { NoMatch } from './../../Components/NavRoutes';
+import { isActive } from './../../utils';
 
 import { Hero, HeroBody as Body, HeroFooter as Footer } from './../../../../src/';
 import { Section, Container } from './../../../../src';
@@ -55,16 +55,18 @@ const NavBar = withRouter(({ match, location }) => {
             <Tabs isBoxed>
                 <List>
                     {pages.map((page, i) => (
-                        <Tab key={i} isActive={isActive(location, `${match.url}${page.to}`)}><Link to={`${match.url}${page.to}`}>{page.title}</Link></Tab>
+                        <Tab key={i} isActive={isActive(location, `${match.url}${page.to}`)}>
+                            <Link to={`${match.url}${page.to}`}>{page.title}</Link>
+                        </Tab>
                     ))}
                 </List>
             </Tabs>
         </Container>
-    )
+    );
 });
 
 const DocHero = () => (
-    <Hero isColor='primary'>
+    <Hero isColor="primary">
         <Body>
             <Container>
                 <Columns isVCentered>
@@ -79,7 +81,7 @@ const DocHero = () => (
             <NavBar />
         </Footer>
     </Hero>
-)
+);
 
 const Menu = withRouter(({ match }) => (
     <Nav hasShadow>
@@ -90,21 +92,21 @@ const Menu = withRouter(({ match }) => (
             ))}
         </Container>
     </Nav>
-))
+));
 
-const Documentation = ({ match }) => (
+const Documentation = (props) => (
     <div>
         <DocHero />
         <Menu />
         <Section>
             <Switch>
                 {pages.map((page, key) => (
-                    <Route key={key} path={`${match.url}${page.to}`} component={page.component} />
+                    <Route key={key} path={`${props.match.url}${page.to}`} component={page.component} />
                 ))}
-                <Route render={() => <Container children={<NoMatch/>} />} />
+                <Route render={() => <Container children={<NoMatch />} />} />
             </Switch>
         </Section>
     </div>
-)
+);
 
 export default Documentation;
