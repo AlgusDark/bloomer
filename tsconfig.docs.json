@@ -16,7 +16,8 @@
     "jsx": "react",
     "importHelpers": true,
     "noImplicitAny": false,
-    "noEmit": true
+    "noEmit": true,
+    "typeRoots": ["node_modules/@types"]
   },
   "include": [
     "docs"
