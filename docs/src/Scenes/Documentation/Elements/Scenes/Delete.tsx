@@ -4,8 +4,8 @@ import * as Highlight from 'react-highlight';
 import TableDocs from './../../../../Components/TableDocs';
 import { Docs } from './../../../../utils';
 
-import { Container, Delete, Columns, Column, Tag, Notification,
-  Message, MessageBody, MessageHeader, Subtitle, Title } from './../../../../../../src';
+import { Column, Columns, Container, Delete, Message, MessageBody,
+   MessageHeader, Notification, Subtitle, Tag, Title } from './../../../../../../src';
 import { isSize, render } from './../../Overview/Scenes/Helpers';
 
 const DeleteRows: Docs.Row[] = [

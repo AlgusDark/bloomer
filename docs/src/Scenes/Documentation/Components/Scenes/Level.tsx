@@ -91,8 +91,8 @@ const LevelDocs = (props) => (
         <Title>LevelItem</Title>
         <Subtitle>
             By default, <strong>{'<LevelItem />'}</strong> renders a <strong>{'<div />'}</strong> element,
-            but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop. 
-            <strong>E.g.</strong> <em><strong>{'<LevelItem href="#"/>'}</strong></em>.
+             but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
+             <strong>E.g.</strong> <em><strong>{'<LevelItem href="#"/>'}</strong></em>.
         </Subtitle>
         <TableDocs rows={LevelItemRows} />
 
