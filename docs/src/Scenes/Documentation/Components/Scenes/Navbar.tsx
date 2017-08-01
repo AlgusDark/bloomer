@@ -170,8 +170,8 @@ class NavDocs extends React.Component<{}, { isActive: boolean }> {
                             <NavbarItem>
                                 <Field isGrouped>
                                     <Control>
-                                        <Button id="twitter" data-social-network="Twitter" data-social-action="tweet"
-                                        data-social-target="http://bloomer.js.org" target="_blank"
+                                        { /*tslint:disable-next-line*/ }
+                                        <Button id="twitter" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://bloomer.js.org" target="_blank"
                                         href="https://twitter.com/intent/tweet?text=bloomer: a set of React Stateless Components for bulma.io&amp;url=http://bloomer.js.org&amp;via=AlgusDark">
                                             <Icon>
                                                 <span className="fa fa-twitter" aria-hidden="true" />

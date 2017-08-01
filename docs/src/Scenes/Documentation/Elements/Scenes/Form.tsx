@@ -328,6 +328,7 @@ const FormDocs = (props) => (
                     <FieldBody>
                         <Field>
                             <Control>
+                                {/* tslint:disable-next-line */ }
                                 <TextArea placeholder="Explain why 42 is the answer to the Ultimate Question of Life, the Universe and Everything" />
                             </Control>
                         </Field>
