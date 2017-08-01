@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
-import { noModifiers, isSize, isAlign, render } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle } from './../../../../../../src';
-import { Pagination, Page, PageControl, PageEllipsis, PageLink, PageList } from './../../../../../../src';
+import { Container, Subtitle, Title } from './../../../../../../src';
+import { Page, PageControl, PageEllipsis, PageLink, PageList, Pagination } from './../../../../../../src';
+import { isAlign, isSize, noModifiers, render } from './../../Overview/Scenes/Helpers';
 
 const PaginationRows: Docs.Row[] = [
     isSize,
@@ -15,21 +15,21 @@ const PaginationRows: Docs.Row[] = [
 
 const PageControlRows: Docs.Row[] = [
     {
+        description: <td>This is the default prop if you don't provide <code>isPrevious</code> or <code>isNext</code></td>,
         prop: 'isPrevious',
         type: 'bool',
-        description: <td>This is the default prop if you don't provide <code>isPrevious</code> or <code>isNext</code></td>,
     },
     {
         prop: 'isNext',
-        type: 'bool'
+        type: 'bool',
     },
     {
         prop: 'isActive',
-        type: 'bool'
+        type: 'bool',
     },
     {
         prop: 'isFocused',
-        type: 'bool'
+        type: 'bool',
     },
     render('PageControl'),
 ];
@@ -37,15 +37,15 @@ const PageControlRows: Docs.Row[] = [
 const PageLinkRows: Docs.Row[] = [
     {
         prop: 'isCurrent',
-        type: 'bool'
+        type: 'bool',
     },
     {
         prop: 'isActive',
-        type: 'bool'
+        type: 'bool',
     },
     {
         prop: 'isFocused',
-        type: 'bool'
+        type: 'bool',
     },
     render('PageLink'),
 ];
@@ -56,11 +56,11 @@ const PaginationExample = `<Pagination>
     <PageList>
         <Page><PageLink>1</PageLink></Page>
         <Page><PageEllipsis /></Page>
-        <Page><PageLink>45</PageLink></Page>                
-        <Page><PageLink isCurrent>46</PageLink></Page>                
-        <Page><PageLink >47</PageLink></Page>                
+        <Page><PageLink>45</PageLink></Page>
+        <Page><PageLink isCurrent>46</PageLink></Page>
+        <Page><PageLink >47</PageLink></Page>
         <Page><PageEllipsis /></Page>
-        <Page><PageLink >86</PageLink></Page>                                
+        <Page><PageLink >86</PageLink></Page>
     </PageList>
 </Pagination>
 `;
@@ -74,11 +74,11 @@ const PaginationDocs = (props) => (
             <PageList>
                 <Page><PageLink>1</PageLink></Page>
                 <Page><PageEllipsis /></Page>
-                <Page><PageLink>45</PageLink></Page>                
-                <Page><PageLink isCurrent>46</PageLink></Page>                
-                <Page><PageLink >47</PageLink></Page>                
+                <Page><PageLink>45</PageLink></Page>
+                <Page><PageLink isCurrent>46</PageLink></Page>
+                <Page><PageLink >47</PageLink></Page>
                 <Page><PageEllipsis /></Page>
-                <Page><PageLink >86</PageLink></Page>                                
+                <Page><PageLink >86</PageLink></Page>
             </PageList>
         </Pagination>
         <Highlight>{PaginationExample}</Highlight>
@@ -113,6 +113,6 @@ const PaginationDocs = (props) => (
         <Title>Ellipsis</Title>
         <Subtitle>{noModifiers}</Subtitle>
     </Container>
-)
+);
 
 export default PaginationDocs;

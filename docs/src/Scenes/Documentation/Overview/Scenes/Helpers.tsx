@@ -2,48 +2,51 @@ import * as React from 'react';
 import * as Highlight from 'react-highlight';
 import { Link } from 'react-router-dom';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
 import { Container } from './../../../../../../src';
-import { Title, Subtitle } from './../../../../../../src';
+import { Subtitle, Title } from './../../../../../../src';
 
-export const noModifiers = <span>No modifiers, only those inherited by the <Link to='/documentation/overview/helpers'>Helpers</Link> modifiers</span>;
+export const noModifiers = <span>No modifiers, only those inherited by the <Link to="/documentation/overview/helpers">Helpers
+</Link> modifiers</span>;
 
 export const Tag = {
+    description: <td>A valid <strong>HTML</strong> tag to be rendered instead of the default one.</td>,
     prop: 'tag',
     type: 'string',
-    description: <td>A valid <strong>HTML</strong> tag to be rendered instead of the default one.</td>
-}
+};
 
 const Platforms = {
+    description: <td><code>mobile</code> | <code>tablet</code> | <code>touch</code> |
+     <code>desktop</code> | <code>widescreen</code> | <code>tablet-only</code> | <code>desktop-only</code></td>,
     type: 'bool | string | string[]',
-    description: <td><code>mobile</code> | <code>tablet</code> | <code>touch</code> | <code>desktop</code> | <code>widescreen</code> | <code>tablet-only</code> | <code>desktop-only</code></td>
-}
+};
 
-export const colors = <td><code>white</code> | <code>light</code> | <code>dark</code> | <code>black</code> | <code>primary</code> | <code>info</code> | <code>success</code> | <code>warning</code> | <code>danger</code></td>
+export const colors = <td><code>white</code> | <code>light</code> | <code>dark</code> | <code>black</code> |
+ <code>primary</code> | <code>info</code> | <code>success</code> | <code>warning</code> | <code>danger</code></td>;
 export const isColor = {
+    description: colors,
     prop: 'isColor',
     type: 'string',
-    description: colors
-}
+};
 
 export const isSize = {
+    description: <td><code>large</code> | <code>medium</code> | <code>small</code></td>,
     prop: 'isSize',
     type: 'string',
-    description: <td><code>large</code> | <code>medium</code> | <code>small</code></td>,
 };
 
 export const isAlign = {
+    description: <td><code>left</code> | <code>centered</code> | <code>right</code></td>,
     prop: 'isAlign',
     type: 'string',
-    description: <td><code>left</code> | <code>centered</code> | <code>right</code></td>,
 };
 
 export const render = (component: string) => ({
+    description: <td>Allows inline rendering of other element. The render prop receives all the props from {`<${component}>`}.</td>,
     prop: 'render',
     type: 'func',
-    description: <td>Allows inline rendering of other element. The render prop receives all the props from {`<${component}>`}.</td>,
 });
 
 export const states = [
@@ -58,7 +61,7 @@ export const states = [
     {
         prop: 'isFocused',
         type: 'bool',
-    }
+    },
 ];
 
 export const isLoading = {
@@ -72,9 +75,9 @@ const helpersRows: Docs.Row[] = [
         type: 'bool',
     },
     {
+        description: <td><code>left</code> | <code>right</code></td>,
         prop: 'isPulled',
         type: 'string',
-        description: <td><code>left</code> | <code>right</code></td>,
     },
     {
         prop: 'isOverlay',
@@ -85,14 +88,14 @@ const helpersRows: Docs.Row[] = [
         type: 'bool',
     },
     {
+        description: <td><code>left</code> | <code>centered</code> | <code>right</code></td>,
         prop: 'hasTextAlign',
         type: 'string',
-        description: <td><code>left</code> | <code>centered</code> | <code>right</code></td>,
     },
     {
+        description: colors,
         prop: 'hasTextColor',
         type: 'string',
-        description: colors,
     },
     {
         prop: 'isMarginless',
@@ -112,36 +115,39 @@ const helpersRows: Docs.Row[] = [
 const showDescription = (
     <td>
         <code>flex</code> | <code>block</code> | <code>inline</code> | <code>inline-block</code> | <code>inline-flex</code> <br/>
-        <code>*-mobile</code> | <code>*-tablet</code> | <code>*-touch</code> | <code>*-desktop</code> | <code>*-widescreen</code> | <code>*-tablet-only</code> | <code>*-desktop-only</code>
+        <code>*-mobile</code> | <code>*-tablet</code> | <code>*-touch</code> | <code>*-desktop</code> |
+         <code>*-widescreen</code> | <code>*-tablet-only</code> | <code>*-desktop-only</code>
         <br/>
         <small>Replace <strong>*</strong> with any of the above values</small>
         <br/><br/>
         <Subtitle style={{marginBottom: 0}}>Object</Subtitle>
-        <strong>keys</strong> <code>flex</code> | <code>block</code> | <code>inline</code> | <code>inline-block</code> | <code>inline-flex</code>
+        <strong>keys</strong> <code>flex</code> | <code>block</code> | <code>inline</code> | <code>inline-block</code> |
+         <code>inline-flex</code>
         <br/>
-        <strong>values</strong> <code>default</code> | <code>mobile</code> | <code>tablet</code> | <code>touch</code> | <code>desktop</code> | <code>widescreen</code> | <code>tablet-only</code> | <code>desktop-only</code>
+        <strong>values</strong> <code>default</code> | <code>mobile</code> | <code>tablet</code> | <code>touch</code> |
+         <code>desktop</code> | <code>widescreen</code> | <code>tablet-only</code> | <code>desktop-only</code>
         <br/>
         <small>default will target all platforms, so make sure to use it if you need it.</small>
         <br/>
         <small>You can pass an Array as value with any of the above strings.</small>
     </td>
-)
+);
 
 const showRows: Docs.Row[] = [
     {
+        description: showDescription,
         prop: 'isDisplay',
         type: 'string | string[] | object',
-        description: showDescription,
     },
-]
+];
 
 const hiddenRows: Docs.Row[] = [
     {
+        description: Platforms.description,
         prop: 'isHidden',
         type: Platforms.type,
-        description: Platforms.description,
     },
-]
+];
 
 const Helpers = (props) => (
     <Container>
@@ -151,35 +157,36 @@ const Helpers = (props) => (
 
         <hr />
 
-        <Title tag='h2' isSpaced>Responsive Helpers</Title>
-        <Subtitle tag='h3' isSize={5}>Show</Subtitle>
+        <Title tag="h2" isSpaced>Responsive Helpers</Title>
+        <Subtitle tag="h3" isSize={5}>Show</Subtitle>
         <TableDocs rows={showRows} />
 
         <hr />
 
-        <Subtitle isSpaced tag='h3' isSize={5}>Hide</Subtitle>
+        <Subtitle isSpaced tag="h3" isSize={5}>Hide</Subtitle>
         <TableDocs rows={hiddenRows} />
 
         <hr />
 
-        <Title tag='h2'>Tag</Title>
-        <Subtitle tag='h3' isSize={5}>
-            Although it is not a helper modifier, <strong>tag</strong> prop is in almost every component and is used to render a different
-            HTML tag than the default one. For example, a <strong>{'<Footer/>'}</strong> component render into a <strong>{'<footer/>'}</strong> tag, but it could
-            be changed to <strong>{'<div/>'}</strong> with <strong>{"<Footer tag='div'/>"}</strong>. Most of the times you should be following the default tag,
-            but this prop can be handy in some cases.
+        <Title tag="h2">Tag</Title>
+        <Subtitle tag="h3" isSize={5}>
+            Although it is not a helper modifier, <strong>tag</strong> prop is in almost every component and is used to
+             render a different HTML tag than the default one. For example, a <strong>{'<Footer/>'}</strong> component
+             render into a <strong>{'<footer/>'}</strong> tag, but it could be changed to <strong>{'<div/>'}</strong>
+             with <strong>{'<Footer tag="div"/>'}</strong>. Most of the times you should be following the default tag,
+             but this prop can be handy in some cases.
         </Subtitle>
 
         <hr />
 
-        <Title tag='h2'>withHelpersModifiers(Component)</Title>
-        <Subtitle tag='h3' isSize={5}>
+        <Title tag="h2">withHelpersModifiers(Component)</Title>
+        <Subtitle tag="h3" isSize={5}>
             You can compose all helpers in your own custom components,
             just pass your component to the <strong>withHelpersModifiers</strong> <em>Higher Order Component</em>.
         </Subtitle>
 
         <p>MyComponent.jsx</p>
-        <Highlight className='javascript'>
+        <Highlight className="javascript">
             {`import * as React from 'react';
 import { withHelpersModifiers  } from 'bloomer';
 
@@ -192,7 +199,7 @@ export default withHelpersModifiers(MyComponent);
         </Highlight>
 
         <p>Other.jsx</p>
-        <Highlight className='javascript'>
+        <Highlight className="javascript">
             {`import * as React from 'react';
 import MyComponent from './MyComponent.jsx'
 
@@ -206,6 +213,6 @@ const Other = (props) => (
 
         <p>If you're using Typescript, you can have the benefit of IntelliSense in your custom components.</p>
     </Container>
-)
+);
 
 export default Helpers;

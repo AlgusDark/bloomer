@@ -4,48 +4,48 @@ import { Link, Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { NoMatch } from './../../Components/NavRoutes';
 import { isActive } from './../../utils';
 
+import { Column, Columns, Subtitle, Title } from './../../../../src';
+import { Container, Section } from './../../../../src';
+import { Tab, TabList as List, Tabs } from './../../../../src';
 import { Hero, HeroBody as Body, HeroFooter as Footer } from './../../../../src/';
-import { Section, Container } from './../../../../src';
-import { Columns, Column, Title, Subtitle } from './../../../../src';
-import { Tabs, TabList as List, Tab } from './../../../../src';
-import { Nav, NavLeft as Left, NavItem as Item } from './../../../../src/';
+import { Nav, NavItem as Item, NavLeft as Left } from './../../../../src/';
 
-import { Overview, OverviewMenu } from './Overview/Overview';
-import { Grid, GridMenu } from './Grid/Grid';
-import { Elements, ElementsMenu } from './Elements/Elements';
 import { Components, ComponentsMenu } from './Components/Components';
+import { Elements, ElementsMenu } from './Elements/Elements';
+import { Grid, GridMenu } from './Grid/Grid';
 import { Layout, LayoutMenu } from './Layout/Layout';
+import { Overview, OverviewMenu } from './Overview/Overview';
 
 const pages: any = [
     {
-        title: 'Overview',
-        to: '/overview',
         component: Overview,
         menu: OverviewMenu,
+        title: 'Overview',
+        to: '/overview',
     },
     {
-        title: 'Grid',
-        to: '/grid',
         component: Grid,
         menu: GridMenu,
+        title: 'Grid',
+        to: '/grid',
     },
     {
-        title: 'Elements',
-        to: '/elements',
         component: Elements,
         menu: ElementsMenu,
+        title: 'Elements',
+        to: '/elements',
     },
     {
-        title: 'Components',
-        to: '/components',
         component: Components,
         menu: ComponentsMenu,
+        title: 'Components',
+        to: '/components',
     },
     {
-        title: 'Layout',
-        to: '/layout',
         component: Layout,
         menu: LayoutMenu,
+        title: 'Layout',
+        to: '/layout',
     },
 ];
 

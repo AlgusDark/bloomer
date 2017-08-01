@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
+import { Box, Container, Subtitle, Title } from './../../../../../../src';
 import { noModifiers } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle, Box } from './../../../../../../src';
 
 const BoxDocs = (props) => (
     <Container>
@@ -15,6 +15,6 @@ const BoxDocs = (props) => (
         <Title>API</Title>
         <Subtitle>{noModifiers}</Subtitle>
     </Container>
-)
+);
 
 export default BoxDocs;

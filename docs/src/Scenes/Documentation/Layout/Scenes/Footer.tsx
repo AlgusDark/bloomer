@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
+import { Column, Columns, Container, Content, Footer, Icon, Subtitle, Title } from './../../../../../../src';
 import { noModifiers } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle, Footer, Content, Columns, Column, Icon } from './../../../../../../src';
 
 const FooterExample = `<Footer id='footer'>
     <Container>
@@ -11,7 +11,8 @@ const FooterExample = `<Footer id='footer'>
             <Columns>
                 <Column isFull>
                     <p>
-                        Made with <Icon hasTextColor='danger'><span className="fa fa-heart" aria-hidden="true" /></Icon>  by <a>Algus Dark</a>
+                        Made with <Icon hasTextColor='danger'><span className="fa fa-heart" aria-hidden="true" />
+                        </Icon>  by <a>Algus Dark</a>
                     </p>
                 </Column>
             </Columns>
@@ -30,13 +31,14 @@ const FooterDocs = (props) => (
             <Container>
                 <Content>
                     <Columns>
-                        <Column isSize='full'>
+                        <Column isSize="full">
                             <p>
-                                Made with <Icon hasTextColor='danger'><span className="fa fa-heart" aria-hidden="true" /></Icon>  by <a>Algus Dark</a>
+                                Made with <Icon hasTextColor="danger"><span className="fa fa-heart"
+                                 aria-hidden="true" /></Icon>  by <a>Algus Dark</a>
                             </p>
                         </Column>
                     </Columns>
-                    <Content isSize='small'>
+                    <Content isSize="small">
                         <p>The source code is licensed under <a target="_blank">MIT</a>.</p>
                         <p>The website content is licensed under <a target="_blank">CC ANS 4.0</a>.</p>
                     </Content>
@@ -49,6 +51,6 @@ const FooterDocs = (props) => (
         <Title>API</Title>
         <Subtitle>{noModifiers}</Subtitle>
     </Container>
-)
+);
 
 export default FooterDocs;

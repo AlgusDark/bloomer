@@ -1,15 +1,15 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
+import { Column, Columns, Container, Delete, Notification, Title } from './../../../../../../src';
 import { isColor } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Notification, Delete, Columns, Column } from './../../../../../../src';
 
 const NotificationRows: Docs.Row[] = [
     isColor,
-]
+];
 
 const NotificationExample = `<Notification>
     <Delete />
@@ -42,13 +42,13 @@ const NotificationDocs = (props) => (
                     adipiscing elit lorem ipsum dolor sit amet,
                     consectetur adipiscing elit
                 </Notification>
-                <Notification isColor='primary'>
+                <Notification isColor="primary">
                     <Delete />
                     Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit lorem ipsum dolor sit amet,
                     consectetur adipiscing elit
                 </Notification>
-                <Notification isColor='info'>
+                <Notification isColor="info">
                     <Delete />
                     Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit lorem ipsum dolor sit amet,
@@ -61,10 +61,9 @@ const NotificationDocs = (props) => (
         </Columns>
 
         <hr />
-        
         <Title>API</Title>
         <TableDocs rows={NotificationRows} />
     </Container>
-)
+);
 
 export default NotificationDocs;

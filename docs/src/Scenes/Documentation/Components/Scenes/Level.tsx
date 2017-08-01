@@ -1,19 +1,19 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
-import { noModifiers, render } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle } from './../../../../../../src';
+import { Container, Subtitle, Title } from './../../../../../../src';
 import { Level, LevelItem, LevelLeft, LevelRight } from './../../../../../../src';
-import { Field, Control, Input, Button } from './../../../../../../src';
+import { Button, Control, Field, Input } from './../../../../../../src';
+import { noModifiers, render } from './../../Overview/Scenes/Helpers';
 
 const LevelRows: Docs.Row[] = [
     {
         prop: 'isMobile',
         type: 'bool',
-    }
+    },
 ];
 
 const LevelItemRows: Docs.Row[] = [
@@ -22,10 +22,11 @@ const LevelItemRows: Docs.Row[] = [
         type: 'bool',
     },
     {
+        description: <td>When you provide a <code>href</code> prop
+        , it will render <code>{'<a>'}</code> instead of <code>{'<div>'}</code></td>,
         prop: 'href',
         type: 'string',
-        description: <td>When you provide a <code>href</code> prop, it will render <code>{'<a>'}</code> instead of <code>{'<div>'}</code></td>,
-    }
+    },
 ];
 
 const LevelExample = `<LevelLeft>
@@ -58,12 +59,12 @@ const LevelDocs = (props) => (
         <Level>
             <LevelLeft>
                 <LevelItem>
-                    <Subtitle tag='p' isSize={5}><strong>123</strong> posts</Subtitle>
+                    <Subtitle tag="p" isSize={5}><strong>123</strong> posts</Subtitle>
                 </LevelItem>
                 <LevelItem>
                     <Field hasAddons>
                         <Control>
-                            <Input placeholder='Find a post' />
+                            <Input placeholder="Find a post" />
                         </Control>
                         <Control>
                             <Button>Search</Button>
@@ -76,7 +77,7 @@ const LevelDocs = (props) => (
                 <LevelItem><a>Published</a></LevelItem>
                 <LevelItem><a>Draft</a></LevelItem>
                 <LevelItem><a>Deleted</a></LevelItem>
-                <LevelItem><Button isColor='success'>New</Button></LevelItem>
+                <LevelItem><Button isColor="success">New</Button></LevelItem>
             </LevelRight>
         </Level>
         <Highlight>{LevelExample}</Highlight>
@@ -90,8 +91,8 @@ const LevelDocs = (props) => (
         <Title>LevelItem</Title>
         <Subtitle>
             By default, <strong>{'<LevelItem />'}</strong> renders a <strong>{'<div />'}</strong> element,
-            but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
-            <strong>E.g.</strong> <em><strong>{"<LevelItem href='#'/>"}</strong></em>.
+            but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop. 
+            <strong>E.g.</strong> <em><strong>{'<LevelItem href="#"/>'}</strong></em>.
         </Subtitle>
         <TableDocs rows={LevelItemRows} />
 
@@ -105,6 +106,6 @@ const LevelDocs = (props) => (
         <Title>LevelRight</Title>
         <Subtitle>{noModifiers}</Subtitle>
     </Container>
-)
+);
 
 export default LevelDocs;

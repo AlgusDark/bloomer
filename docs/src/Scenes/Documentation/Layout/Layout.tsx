@@ -4,33 +4,33 @@ import NavDocs from './../../../Components/NavDocs';
 import NavRoutes from './../../../Components/NavRoutes';
 
 import Container from './Scenes/Container';
+import Footer from './Scenes/Footer';
 import Hero from './Scenes/Hero';
 import Section from './Scenes/Section';
-import Footer from './Scenes/Footer';
 
 const pages = [
     {
+        component: Container,
         title: 'Container',
         to: '/container',
-        component: Container,
     },
     {
+        component: Hero,
         title: 'Hero',
         to: '/hero',
-        component: Hero,
     },
     {
+        component: Section,
         title: 'Section',
         to: '/section',
-        component: Section,
     },
     {
+        component: Footer,
         title: 'Footer',
         to: '/footer',
-        component: Footer,
     },
 ];
 
-export const Layout = props => <NavRoutes {...props} pages={pages} />
+export const Layout = (props) => <NavRoutes {...props} pages={pages} />;
 
-export const LayoutMenu = (props) => <NavDocs {...props} pages={pages} />
+export const LayoutMenu = (props) => <NavDocs {...props} pages={pages} />;

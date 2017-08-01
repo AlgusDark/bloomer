@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
+import { Container, Content, Title } from './../../../../../../src';
 import { isSize } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Content } from './../../../../../../src';
 
 const ContentRows: Docs.Row[] = [
     isSize,
@@ -30,6 +30,6 @@ const ContentDocs = (props) => (
         <Title>API</Title>
         <TableDocs rows={ContentRows} />
     </Container>
-)
+);
 
 export default ContentDocs;

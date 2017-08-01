@@ -1,13 +1,13 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
+import { Column, Columns } from './../../../../../../src';
+import { Container, Subtitle, Title } from './../../../../../../src';
+import { Menu, MenuLabel, MenuLink, MenuList } from './../../../../../../src';
 import { noModifiers, render } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle } from './../../../../../../src';
-import { Menu, MenuLabel, MenuList, MenuLink, } from './../../../../../../src';
-import { Columns, Column, } from './../../../../../../src';
 
 const MenuLinkRows: Docs.Row[] = [
     {
@@ -97,6 +97,6 @@ const MenuDocs = (props) => (
         <Title>MenuLink</Title>
         <TableDocs rows={MenuLinkRows} />
     </Container>
-)
+);
 
 export default MenuDocs;

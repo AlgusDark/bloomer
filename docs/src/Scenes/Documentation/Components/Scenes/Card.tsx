@@ -1,21 +1,30 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
+import {
+    Card,
+    CardContent,
+    CardFooter,
+    CardFooterItem,
+    CardHeader,
+    CardHeaderIcon,
+    CardHeaderTitle,
+    CardImage,
+  } from './../../../../../../src';
+import { Column, Columns, Container, Subtitle, Title } from './../../../../../../src';
+import { Content, Icon, Image, Media, MediaContent, MediaLeft } from './../../../../../../src';
 import { noModifiers, render } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle, Columns, Column } from './../../../../../../src';
-import { Card, CardHeader, CardHeaderTitle, CardHeaderIcon, CardContent, CardImage, CardFooter, CardFooterItem, } from './../../../../../../src';
-import { Image, Media, MediaLeft, MediaContent, Content, Icon } from './../../../../../../src';
 
 const cardHeaderIconRows: Docs.Row[] = [
-    render('CardHeaderIcon')
+    render('CardHeaderIcon'),
 ];
 
 const cardFooterItemRows: Docs.Row[] = [
-    render('CardFooterItem')
-]
+    render('CardFooterItem'),
+];
 
 const CardExample = `<Card>
     <CardHeader>
@@ -59,16 +68,16 @@ const CardDocs = (props) => (
                             Component
                         </CardHeaderTitle>
                         <CardHeaderIcon>
-                            <Icon><span className='fa fa-angle-down' /></Icon>
+                            <Icon><span className="fa fa-angle-down" /></Icon>
                         </CardHeaderIcon>
                     </CardHeader>
                     <CardImage>
-                        <Image isRatio='4:3' src='https://via.placeholder.com/1280x960' />
+                        <Image isRatio="4:3" src="https://via.placeholder.com/1280x960" />
                     </CardImage>
                     <CardContent>
                         <Media>
                             <MediaLeft>
-                                <Image isSize='48x48' src='https://via.placeholder.com/96x96' />
+                                <Image isSize="48x48" src="https://via.placeholder.com/96x96" />
                             </MediaLeft>
                             <MediaContent>
                                 <Title isSize={4}>John Wick</Title>
@@ -130,10 +139,10 @@ const CardDocs = (props) => (
         <Subtitle>
             By default, <strong>{'<CardFooterItem />'}</strong> renders a <strong>{'<p />'}</strong> element,
             but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
-            <strong>E.g.</strong> <em><strong>{"<CardFooterItem href='#'/>"}</strong></em>.
+            <strong>E.g.</strong> <em><strong>{'<CardFooterItem href="#""/>'}</strong></em>.
         </Subtitle>
         <TableDocs rows={cardFooterItemRows} />
     </Container>
-)
+);
 
 export default CardDocs;

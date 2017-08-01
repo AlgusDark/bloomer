@@ -2,15 +2,27 @@ import * as React from 'react';
 import * as Highlight from 'react-highlight';
 import { Link } from 'react-router-dom';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
-import { noModifiers, render, isSize } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle } from './../../../../../../src';
-import { Button, Columns, Column, Box, Media, MediaContent, MediaLeft, MediaRight, Icon, Delete, Image } from './../../../../../../src';
-import { Level, LevelItem, LevelLeft, LevelRight, Content } from './../../../../../../src';
-import { Modal, ModalBackground, ModalContent, ModalClose } from './../../../../../../src';
-import { ModalCardHeader, ModalCardTitle, ModalCardBody, ModalCardFooter, ModalCard } from './../../../../../../src';
+import {
+    Box,
+    Button,
+    Column,
+    Columns,
+    Delete,
+    Icon,
+    Image,
+    Media,
+    MediaContent,
+    MediaLeft,
+    MediaRight,
+  } from './../../../../../../src';
+import { Container, Subtitle, Title } from './../../../../../../src';
+import { Content, Level, LevelItem, LevelLeft, LevelRight } from './../../../../../../src';
+import { Modal, ModalBackground, ModalClose, ModalContent } from './../../../../../../src';
+import { ModalCard, ModalCardBody, ModalCardFooter, ModalCardHeader, ModalCardTitle } from './../../../../../../src';
+import { isSize, noModifiers, render } from './../../Overview/Scenes/Helpers';
 
 const ModalRows: Docs.Row[] = [
     {
@@ -31,26 +43,27 @@ const ModalBasic = ({ isActive, launchModal }) => (
             <Box>
                 <Media style={{ marginBottom: 15 }}>
                     <MediaLeft>
-                        <Image isSize='64x64' src='https://via.placeholder.com/128x128' />
+                        <Image isSize="64x64" src="https://via.placeholder.com/128x128" />
                     </MediaLeft>
                     <MediaContent>
                         <Content>
                             <p>
                                 <strong>John Wick</strong> <small>@JohnWick</small> <small>31m</small>
                                 <br />
-                                People Keep Asking If I’m Back, And I Haven’t Really Had An Answer, But Now, Yeah, I’m Thinking I’m Back.
-                                        </p>
+                                People Keep Asking If I’m Back, And I Haven’t Really Had An Answer,
+                                But Now, Yeah, I’m Thinking I’m Back.
+                            </p>
                         </Content>
                         <Level isMobile>
                             <LevelLeft>
-                                <LevelItem href='#documentation/components/media'>
-                                    <Icon isSize='small'><span className="fa fa-reply" aria-hidden="true" /></Icon>
+                                <LevelItem href="#documentation/components/media">
+                                    <Icon isSize="small"><span className="fa fa-reply" aria-hidden="true" /></Icon>
                                 </LevelItem>
-                                <LevelItem href='#documentation/components/media'>
-                                    <Icon isSize='small'><span className="fa fa-retweet" aria-hidden="true" /></Icon>
+                                <LevelItem href="#documentation/components/media">
+                                    <Icon isSize="small"><span className="fa fa-retweet" aria-hidden="true" /></Icon>
                                 </LevelItem>
-                                <LevelItem href='#documentation/components/media'>
-                                    <Icon isSize='small'><span className="fa fa-heart" aria-hidden="true" /></Icon>
+                                <LevelItem href="#documentation/components/media">
+                                    <Icon isSize="small"><span className="fa fa-heart" aria-hidden="true" /></Icon>
                                 </LevelItem>
                             </LevelLeft>
                         </Level>
@@ -83,12 +96,12 @@ const ModalCardBasic = ({ isActive, launchModal }) => (
                 </Content>
             </ModalCardBody>
             <ModalCardFooter>
-                <Button isColor='success'>Save</Button>
-                <Button isColor='warning' onClick={launchModal}>Cancel</Button>
+                <Button isColor="success">Save</Button>
+                <Button isColor="warning" onClick={launchModal}>Cancel</Button>
             </ModalCardFooter>
         </ModalCard>
     </Modal>
-)
+);
 
 const ModalBasicExample = `<Modal>
     <ModalBackground />
@@ -117,20 +130,20 @@ const ModalCardExample = `<Modal>
 </Modal>
 `;
 
-class ModalDocs extends React.Component<{}, { isActive: boolean, isActiveCard: boolean }>{
+class ModalDocs extends React.Component<{}, { isActive: boolean, isActiveCard: boolean }> {
     state = {
         isActive: false,
         isActiveCard: false,
-    }
+    };
 
-    launchModal = () => this.setState(state => ({ ...state, isActive: !state.isActive }))
-    launchModalCard = () => this.setState(state => ({ ...state, isActiveCard: !state.isActiveCard }))
+    launchModal = () => this.setState((state) => ({ ...state, isActive: !state.isActive }));
+    launchModalCard = () => this.setState((state) => ({ ...state, isActiveCard: !state.isActiveCard }));
 
     render() {
         return (
             <Container>
                 <Title>Modal</Title>
-                <Button style={{ marginBottom: 15 }} onClick={this.launchModal} isColor='primary'>Launch Modal Example</Button>
+                <Button style={{ marginBottom: 15 }} onClick={this.launchModal} isColor="primary">Launch Modal Example</Button>
                 <Highlight>{ModalBasicExample}</Highlight>
                 <Content>
                     <p>To activate the {'<Modal>'}, just add <code>isActive</code> prop on {'<Modal>'}</p>
@@ -158,7 +171,7 @@ class ModalDocs extends React.Component<{}, { isActive: boolean, isActiveCard: b
                 <hr />
 
                 <Title>Modal Card</Title>
-                <Button style={{ marginBottom: 15 }} onClick={this.launchModalCard} isColor='success'>Launch ModalCard Example</Button>
+                <Button style={{ marginBottom: 15 }} onClick={this.launchModalCard} isColor="success">Launch ModalCard Example</Button>
                 <Highlight>{ModalCardExample}</Highlight>
                 <hr />
 
@@ -190,7 +203,7 @@ class ModalDocs extends React.Component<{}, { isActive: boolean, isActiveCard: b
                 <ModalCardBasic isActive={this.state.isActiveCard} launchModal={this.launchModalCard} />
                 {/* Modals */}
             </Container>
-        )
+        );
     }
 }
 

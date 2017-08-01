@@ -20,67 +20,67 @@ import Title from './Scenes/Title';
 
 const pages = [
     {
+        component: Box,
         title: 'Box',
         to: '/box',
-        component: Box,
     },
     {
+        component: Button,
         title: 'Button',
         to: '/button',
-        component: Button,
     },
     {
+        component: Content,
         title: 'Content',
         to: '/content',
-        component: Content,
     },
     {
+        component: Delete,
         title: 'Delete',
         to: '/delete',
-        component: Delete,
     },
     {
+        component: Form,
         title: 'Form',
         to: '/form',
-        component: Form,
     },
     {
+        component: Icon,
         title: 'Icon',
         to: '/icon',
-        component: Icon,
     },
     {
+        component: Image,
         title: 'Image',
         to: '/image',
-        component: Image,
     },
     {
+        component: Notification,
         title: 'Notification',
         to: '/notification',
-        component: Notification,
     },
     {
+        component: Progress,
         title: 'Progress',
         to: '/Progress',
-        component: Progress,
     },
     {
+        component: Table,
         title: 'Table',
         to: '/table',
-        component: Table,
     },
     {
+        component: Tag,
         title: 'Tag',
         to: '/tag',
-        component: Tag,
     },
     {
+        component: Title,
         title: 'Title',
         to: '/title',
-        component: Title,
     },
 ];
 
-export const Elements = props => <NavRoutes {...props} pages={pages} />
+export const Elements = (props) => <NavRoutes {...props} pages={pages} />;
 
-export const ElementsMenu = props => <NavDocs {...props} pages={pages} />
+export const ElementsMenu = (props) => <NavDocs {...props} pages={pages} />;

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Table } from './../../../src';
 
 const TableDocs = ({ rows }) => (
-    <Table isStriped className='docs'>
+    <Table isStriped className="docs">
         <tbody>
             <tr>
                 <th>Prop</th>
@@ -19,6 +19,6 @@ const TableDocs = ({ rows }) => (
             ))}
         </tbody>
     </Table>
-)
+);
 
 export default TableDocs;

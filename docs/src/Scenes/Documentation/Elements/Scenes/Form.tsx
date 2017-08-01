@@ -2,12 +2,13 @@ import * as React from 'react';
 import * as Highlight from 'react-highlight';
 import { Link } from 'react-router-dom';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
-import { isSize, isColor, states, isLoading, noModifiers } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle, Column, Columns } from './../../../../../../src';
-import { Checkbox, Radio, Help, Field, Label, Control, Input, Icon, TextArea, Select, Button, FieldLabel, FieldBody } from './../../../../../../src';
+import { Button, Checkbox, Control, Field, FieldBody, FieldLabel, Help, Icon, Input, Label,
+  Radio, Select, TextArea } from './../../../../../../src';
+import { Column, Columns, Container, Subtitle, Title } from './../../../../../../src';
+import { isColor, isLoading, isSize, noModifiers, states } from './../../Overview/Scenes/Helpers';
 
 const LabelRows: Docs.Row[] = [
     isSize,
@@ -37,9 +38,9 @@ const HelpRows: Docs.Row[] = [
 const ControlRows: Docs.Row[] = [
     isLoading,
     {
+        description: <td><code>left</code> | <code>right</code></td>,
         prop: 'hasIcons',
         type: 'bool | string | string[]',
-        description: <td><code>left</code> | <code>right</code></td>,
     },
     {
         prop: 'isExpanded',
@@ -49,14 +50,14 @@ const ControlRows: Docs.Row[] = [
 
 const FieldRows: Docs.Row[] = [
     {
+        description: <td><code>right</code> | <code>centered</code></td>,
         prop: 'isGrouped',
         type: 'bool | string',
-        description: <td><code>right</code> | <code>centered</code></td>,
     },
     {
+        description: <td><code>right</code> | <code>centered</code> | <code>fullwidth</code></td>,
         prop: 'hasAddons',
         type: 'bool | string',
-        description: <td><code>right</code> | <code>centered</code> | <code>fullwidth</code></td>,
     },
     {
         prop: 'isHorizontal',
@@ -183,26 +184,26 @@ const FormDocs = (props) => (
     <Container>
         <Title>Form</Title>
         <Columns>
-            <Column isSize='1/2'>
+            <Column isSize="1/2">
                 <Field>
                     <Label>Name</Label>
                     <Control>
-                        <Input type="text" placeholder='Text Input' />
+                        <Input type="text" placeholder="Text Input" />
                     </Control>
                 </Field>
 
                 <Field>
                     <Label>Username</Label>
                     <Control hasIcons>
-                        <Input isColor='success' placeholder='Text Input' value='bloomer' />
-                        <Icon isSize='small' isAlign='left'>
+                        <Input isColor="success" placeholder="Text Input" value="bloomer" />
+                        <Icon isSize="small" isAlign="left">
                             <span className="fa fa-user" aria-hidden="true"/>
                         </Icon>
-                        <Icon isSize='small' isAlign='right'>
+                        <Icon isSize="small" isAlign="right">
                             <span className="fa fa-check" aria-hidden="true"/>
                         </Icon>
                     </Control>
-                    <Help isColor='success'>This username is available</Help>
+                    <Help isColor="success">This username is available</Help>
                 </Field>
 
                 <Field>
@@ -237,14 +238,14 @@ const FormDocs = (props) => (
 
                 <Field isGrouped>
                     <Control>
-                        <Button isColor='primary'>Submit</Button>
+                        <Button isColor="primary">Submit</Button>
                     </Control>
                     <Control>
                         <Button isLink>Cancel</Button>
                     </Control>
                 </Field>
             </Column>
-            <Column isSize='1/2'>
+            <Column isSize="1/2">
                 <Highlight>{FormExample}</Highlight>
             </Column>
         </Columns>
@@ -277,7 +278,7 @@ const FormDocs = (props) => (
         <hr />
 
         <Title>Radio</Title>
-        <Radio name='option'> {noModifiers} </Radio>
+        <Radio name="option"> {noModifiers} </Radio>
 
         <hr />
 
@@ -305,16 +306,16 @@ const FormDocs = (props) => (
                     </FieldLabel>
                     <FieldBody>
                         <Field isGrouped>
-                            <Control isExpanded hasIcons='left'>
-                                <Input placeholder='Name' />
-                                <Icon isSize='small' isAlign='left'><span className="fa fa-user" aria-hidden="true" /></Icon>
+                            <Control isExpanded hasIcons="left">
+                                <Input placeholder="Name" />
+                                <Icon isSize="small" isAlign="left"><span className="fa fa-user" aria-hidden="true" /></Icon>
                             </Control>
                         </Field>
                         <Field>
                             <Control hasIcons={['left', 'right']}>
-                                <Input isColor='success' placeholder='Email' value='john@wick.com' />
-                                <Icon isSize='small' isAlign='left'><span className='fa fa-envelope' /></Icon>
-                                <Icon isSize='small' isAlign='right'><span className='fa fa-check' /></Icon>
+                                <Input isColor="success" placeholder="Email" value="john@wick.com" />
+                                <Icon isSize="small" isAlign="left"><span className="fa fa-envelope" /></Icon>
+                                <Icon isSize="small" isAlign="right"><span className="fa fa-check" /></Icon>
                             </Control>
                         </Field>
                     </FieldBody>
@@ -327,7 +328,7 @@ const FormDocs = (props) => (
                     <FieldBody>
                         <Field>
                             <Control>
-                                <TextArea placeholder='Explain why 42 is the answer to the Ultimate Question of Life, the Universe and Everything' />
+                                <TextArea placeholder="Explain why 42 is the answer to the Ultimate Question of Life, the Universe and Everything" />
                             </Control>
                         </Field>
                     </FieldBody>
@@ -359,6 +360,6 @@ const FormDocs = (props) => (
         <Title>FieldLabel</Title>
         <TableDocs rows={FieldLabelRows} />
     </Container>
-)
+);
 
 export default FormDocs;
