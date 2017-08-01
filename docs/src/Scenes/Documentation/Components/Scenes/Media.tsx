@@ -1,21 +1,21 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
+import { Container, Subtitle, Title } from './../../../../../../src';
+import { Content, Delete, Image } from './../../../../../../src';
+import { Icon, Level, LevelItem, LevelLeft } from './../../../../../../src';
+import { Media, MediaContent, MediaLeft, MediaRight } from './../../../../../../src';
 import { noModifiers, render } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle } from './../../../../../../src';
-import { Media, MediaContent, MediaLeft, MediaRight, } from './../../../../../../src';
-import { Image, Delete, Content, } from './../../../../../../src';
-import { Level, LevelLeft, LevelItem, Icon } from './../../../../../../src';
 
 const MediaRows: Docs.Row[] = [
     {
+        description: <td><code>large</code></td>,
         prop: 'isSize',
         type: 'string',
-        description: <td><code>large</code></td>,
-    }
+    },
 ];
 
 const MediaExample = `<Media>
@@ -53,7 +53,7 @@ const MediaDocs = (props) => (
         <Title>Media</Title>
         <Media style={{marginBottom: 15}}>
             <MediaLeft>
-                <Image isSize='64x64' src='https://via.placeholder.com/128x128' />
+                <Image isSize="64x64" src="https://via.placeholder.com/128x128" />
             </MediaLeft>
             <MediaContent>
                 <Content>
@@ -65,14 +65,14 @@ const MediaDocs = (props) => (
                 </Content>
                 <Level isMobile>
                     <LevelLeft>
-                        <LevelItem href='#documentation/components/media'>
-                            <Icon isSize='small'><span className="fa fa-reply" aria-hidden="true" /></Icon>
+                        <LevelItem href="#documentation/components/media">
+                            <Icon isSize="small"><span className="fa fa-reply" aria-hidden="true" /></Icon>
                         </LevelItem>
-                        <LevelItem href='#documentation/components/media'>
-                            <Icon isSize='small'><span className="fa fa-retweet" aria-hidden="true" /></Icon>
+                        <LevelItem href="#documentation/components/media">
+                            <Icon isSize="small"><span className="fa fa-retweet" aria-hidden="true" /></Icon>
                         </LevelItem>
-                        <LevelItem href='#documentation/components/media'>
-                            <Icon isSize='small'><span className="fa fa-heart" aria-hidden="true" /></Icon>
+                        <LevelItem href="#documentation/components/media">
+                            <Icon isSize="small"><span className="fa fa-heart" aria-hidden="true" /></Icon>
                         </LevelItem>
                     </LevelLeft>
                 </Level>
@@ -100,6 +100,6 @@ const MediaDocs = (props) => (
         <Title>MediaRight</Title>
         <Subtitle>{noModifiers}</Subtitle>
     </Container>
-)
+);
 
 export default MediaDocs;

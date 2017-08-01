@@ -10,8 +10,10 @@
         "curly": [true, "ignore-same-line"],
         "interface-name": [true, "never-prefix"],
         "max-line-length": [true, 135],
+        "member-access": false,
         "no-namespace": [true, "allow-declarations"],
         "no-shadowed-variable": false,
+        "no-var-requires": false,
         "ordered-imports": [
           true,
           {

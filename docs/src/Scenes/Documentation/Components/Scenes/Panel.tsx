@@ -1,13 +1,13 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
-import { noModifiers, isSize, isAlign, render } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle, Columns, Column, } from './../../../../../../src';
-import { Panel, PanelHeading, PanelBlock, PanelTabs, PanelTab, PanelIcon } from './../../../../../../src';
-import { Control, Icon, Input, Checkbox, Button } from './../../../../../../src';
+import { Column, Columns, Container, Subtitle, Title} from './../../../../../../src';
+import { Button, Checkbox, Control, Icon, Input } from './../../../../../../src';
+import { Panel, PanelBlock, PanelHeading, PanelIcon, PanelTab, PanelTabs } from './../../../../../../src';
+import { isAlign, isSize, noModifiers, render } from './../../Overview/Scenes/Helpers';
 
 const PanelRows: Docs.Row[] = [
     isSize,
@@ -17,19 +17,19 @@ const PanelRows: Docs.Row[] = [
 const PageControlRows: Docs.Row[] = [
     {
         prop: 'isPrevious',
-        type: 'bool'
+        type: 'bool',
     },
     {
         prop: 'isNext',
-        type: 'bool'
+        type: 'bool',
     },
     {
         prop: 'isActive',
-        type: 'bool'
+        type: 'bool',
     },
     {
         prop: 'isFocused',
-        type: 'bool'
+        type: 'bool',
     },
     render('PageControl'),
 ];
@@ -37,11 +37,11 @@ const PageControlRows: Docs.Row[] = [
 const PanelBlockRows: Docs.Row[] = [
     {
         prop: 'isWrapped',
-        type: 'bool'
+        type: 'bool',
     },
     {
         prop: 'isActive',
-        type: 'bool'
+        type: 'bool',
     },
     render('PageLink'),
 ];
@@ -49,7 +49,7 @@ const PanelBlockRows: Docs.Row[] = [
 const PanelTabRows: Docs.Row[] = [
     {
         prop: 'isActive',
-        type: 'bool'
+        type: 'bool',
     },
     render('PageLink'),
 ];
@@ -112,10 +112,10 @@ const PanelDocs = (props) => (
                 <Panel>
                     <PanelHeading>Repositories</PanelHeading>
                     <PanelBlock>
-                        <Control hasIcons='left'>
-                            <Input isSize='small' placeholder='Search' />
-                            <Icon isSize='small' isAlign='left'>
-                                <span className='fa fa-search' aria-hidden='true' />
+                        <Control hasIcons="left">
+                            <Input isSize="small" placeholder="Search" />
+                            <Icon isSize="small" isAlign="left">
+                                <span className="fa fa-search" aria-hidden="true" />
                             </Icon>
                         </Control>
                     </PanelBlock>
@@ -126,35 +126,35 @@ const PanelDocs = (props) => (
                         <PanelTab>Sources</PanelTab>
                         <PanelTab>Fork</PanelTab>
                     </PanelTabs>
-                    <PanelBlock href='#' isActive>
+                    <PanelBlock href="#" isActive>
                         <PanelIcon>
-                            <span className='fa fa-book' aria-hidden='true' />
+                            <span className="fa fa-book" aria-hidden="true" />
                         </PanelIcon>
                         Bloomer
                     </PanelBlock>
-                    <PanelBlock href='#'>
+                    <PanelBlock href="#">
                         <PanelIcon>
-                            <span className='fa fa-code-fork' aria-hidden='true' />
+                            <span className="fa fa-code-fork" aria-hidden="true" />
                         </PanelIcon>
                         RxJS
                     </PanelBlock>
-                    <PanelBlock href='#'>
+                    <PanelBlock href="#">
                         <PanelIcon>
-                            <span className='fa fa-code-fork' aria-hidden='true' />
+                            <span className="fa fa-code-fork" aria-hidden="true" />
                         </PanelIcon>
                         Webpack
                     </PanelBlock>
-                    <PanelBlock href='#'>
+                    <PanelBlock href="#">
                         <PanelIcon>
-                            <span className='fa fa-code-fork' aria-hidden='true' />
+                            <span className="fa fa-code-fork" aria-hidden="true" />
                         </PanelIcon>
                         Typescript
                     </PanelBlock>
-                    <PanelBlock tag='label'>
+                    <PanelBlock tag="label">
                         <Checkbox> Remember me</Checkbox>
                     </PanelBlock>
                     <PanelBlock>
-                        <Button isOutlined isFullWidth isColor='primary'> Reset all filters</Button>
+                        <Button isOutlined isFullWidth isColor="primary"> Reset all filters</Button>
                     </PanelBlock>
                 </Panel>
             </Column>
@@ -178,7 +178,7 @@ const PanelDocs = (props) => (
         <Subtitle>
             By default, <strong>{'<PanelBlock />'}</strong> renders a <strong>{'<div />'}</strong> element,
             but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
-            <strong>E.g.</strong> <em><strong>{"<PanelBlock href='#'/>"}</strong></em>.
+            <strong>E.g.</strong> <em><strong>{'<PanelBlock href="#"/>'}</strong></em>.
         </Subtitle>
         <TableDocs rows={PanelBlockRows} />
 
@@ -193,7 +193,7 @@ const PanelDocs = (props) => (
         <Subtitle>
             By default, <strong>{'<PanelTab />'}</strong> renders a <strong>{'<p />'}</strong> element,
             but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
-            <strong>E.g.</strong> <em><strong>{"<PanelTab href='#'/>"}</strong></em>.
+            <strong>E.g.</strong> <em><strong>{'<PanelTab href="#"/>'}</strong></em>.
         </Subtitle>
         <TableDocs rows={PanelTabRows} />
 
@@ -202,6 +202,6 @@ const PanelDocs = (props) => (
         <Title>PanelIcon</Title>
         <Subtitle>{noModifiers}</Subtitle>
     </Container>
-)
+);
 
 export default PanelDocs;

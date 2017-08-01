@@ -1,13 +1,13 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
+import { Button, Container, Control, Field, Icon, Subtitle, Title } from './../../../../../../src';
+import { Hero,  HeroBody, HeroFooter, HeroHeader } from './../../../../../../src';
+import { Nav, NavCenter, NavItem, NavLeft, NavRight, Tab, TabLink, TabList, Tabs } from './../../../../../../src';
 import { isColor, isSize, noModifiers } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle, Icon, Field, Control, Button, } from './../../../../../../src';
-import { Hero, HeroHeader, HeroBody, HeroFooter } from './../../../../../../src';
-import { Nav, NavLeft, NavCenter, NavRight, NavItem, Tabs, TabList, Tab, TabLink } from './../../../../../../src';
 
 const HeroRows: Docs.Row[] = [
     isColor,
@@ -24,14 +24,14 @@ const HeroRows: Docs.Row[] = [
         prop: 'isHalfHeight',
         type: 'bool',
     },
-]
+];
 
 const HeroVideoRows: Docs.Row[] = [
     {
         prop: 'isTransparent',
         type: 'bool',
     },
-]
+];
 
 const HeroExample = `<Hero isColor='info' isSize='medium'>
 <HeroHeader>
@@ -83,7 +83,7 @@ const HeroExample = `<Hero isColor='info' isSize='medium'>
 const ContainerDocs = (props) => (
     <Container>
         <Title>Hero</Title>
-        <Hero isColor='info' isSize='medium'>
+        <Hero isColor="info" isSize="medium">
             <HeroHeader>
                 <Nav>
                     <NavLeft>
@@ -109,7 +109,7 @@ const ContainerDocs = (props) => (
             </HeroHeader>
 
             <HeroBody>
-                <Container hasTextAlign='centered'>
+                <Container hasTextAlign="centered">
                     <Title>Title</Title>
                 </Container>
             </HeroBody>
@@ -153,6 +153,6 @@ const ContainerDocs = (props) => (
         <Title>HeroFooter</Title>
         <Subtitle>{noModifiers}</Subtitle>
     </Container>
-)
+);
 
 export default ContainerDocs;

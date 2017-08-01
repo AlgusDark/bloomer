@@ -18,68 +18,68 @@ import Tabs from './Scenes/Tabs';
 
 const pages = [
     {
+        component: Breadcrumb,
         title: 'Breadcrumb',
         to: '/breadcrumb',
-        component: Breadcrumb,
     },
     {
+        component: Card,
         title: 'Card',
         to: '/card',
-        component: Card,
     },
     {
+        component: Level,
         title: 'Level',
         to: '/level',
-        component: Level,
     },
     {
+        component: Media,
         title: 'Media',
         to: '/media',
-        component: Media,
     },
     {
+        component: Menu,
         title: 'Menu',
         to: '/menu',
-        component: Menu,
     },
     {
+        component: Message,
         title: 'Message',
         to: '/message',
-        component: Message,
     },
     {
+        component: Modal,
         title: 'Modal',
         to: '/modal',
-        component: Modal,
     },
     {
-        title: 'Nav',
-        to: '/nav',
         component: Nav,
         deprecated: true,
+        title: 'Nav',
+        to: '/nav',
     },
     {
+        component: Navbar,
         title: 'Navbar',
         to: '/navbar',
-        component: Navbar,
     },
     {
+        component: Pagination,
         title: 'Pagination',
         to: '/pagination',
-        component: Pagination,
     },
     {
+        component: Panel,
         title: 'Panel',
         to: '/panel',
-        component: Panel,
     },
     {
+        component: Tabs,
         title: 'Tabs',
         to: '/tabs',
-        component: Tabs,
     },
 ];
 
-export const Components = props => <NavRoutes {...props} pages={pages} />
+export const Components = (props) => <NavRoutes {...props} pages={pages} />;
 
-export const ComponentsMenu = (props) => <NavDocs {...props} pages={pages} />
+export const ComponentsMenu = (props) => <NavDocs {...props} pages={pages} />;

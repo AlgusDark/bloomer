@@ -1,24 +1,24 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
-import { noModifiers, isSize, isAlign } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle, Icon } from './../../../../../../src';
 import { Breadcrumb, BreadcrumbItem } from './../../../../../../src';
+import { Container, Icon, Subtitle, Title } from './../../../../../../src';
+import { isAlign, isSize, noModifiers } from './../../Overview/Scenes/Helpers';
 
 const BreadcrumbRows: Docs.Row[] = [
     {
+        description: <td><code>centered</code> | <code>right</code></td>,
         prop: 'isAlign',
         type: 'string',
-        description: <td><code>centered</code> | <code>right</code></td>,
     },
     isSize,
     {
+        description: <td><code>arrow</code> | <code>bullet</code> | <code>dot</code> | <code>succeeds</code></td>,
         prop: 'hasSeparator',
         type: 'string',
-        description: <td><code>arrow</code> | <code>bullet</code> | <code>dot</code> | <code>succeeds</code></td>
     },
 ];
 
@@ -58,6 +58,6 @@ const PanelDocs = (props) => (
         <Title>BreadcrumbItem</Title>
         <TableDocs rows={BreadcrumbItemRows} />
     </Container>
-)
+);
 
 export default PanelDocs;

@@ -8,17 +8,17 @@ import Tiles from './Scenes/Tiles';
 
 const pages = [
         {
+            component: Columns,
             title: 'Columns',
             to: '/columns',
-            component: Columns,
         },
         {
+            component: Tiles,
             title: 'Tiles',
             to: '/tiles',
-            component: Tiles,
         },
     ];
 
-export const Grid = props => <NavRoutes {...props} pages={pages} /> ;
+export const Grid = (props) => <NavRoutes {...props} pages={pages} /> ;
 
-export const GridMenu = props => <NavDocs {...props} pages={pages} /> ;
+export const GridMenu = (props) => <NavDocs {...props} pages={pages} /> ;

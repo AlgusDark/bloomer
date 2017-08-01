@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
-import { isColor, isSize, render, states, isLoading } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle, Button, Columns, Column } from './../../../../../../src';
+import { Button, Column, Columns, Container, Subtitle, Title } from './../../../../../../src';
+import { isColor, isLoading, isSize, render, states } from './../../Overview/Scenes/Helpers';
 
 const ButtonRows: Docs.Row[] = [
     ...states,
@@ -29,7 +29,7 @@ const ButtonRows: Docs.Row[] = [
         type: 'bool',
     },
     render('Button'),
-]
+];
 
 const ButtonExample = `<Columns>
     <Button isColor='info' render={
@@ -48,17 +48,17 @@ const ButtonDocs = (props) => (
     <Container>
         <Title>Button</Title>
         <Columns>
-            <Button isColor='info' render={
-                props => <Column hasTextAlign='centered'><p {...props}>Button</p></Column>
+            <Button isColor="info" render={
+                (props) => <Column hasTextAlign="centered"><p {...props}>Button</p></Column>
             } />
-            <Column hasTextAlign='centered'>
-                <Button isColor='warning' isLoading>isLoading</Button>
+            <Column hasTextAlign="centered">
+                <Button isColor="warning" isLoading>isLoading</Button>
             </Column>
-            <Column hasTextAlign='centered'>
-                <Button isColor='success' isOutlined>isOutlined</Button>
+            <Column hasTextAlign="centered">
+                <Button isColor="success" isOutlined>isOutlined</Button>
             </Column>
         </Columns>
-        <Highlight className='javascript'>
+        <Highlight className="javascript">
             {ButtonExample}
         </Highlight>
 
@@ -66,12 +66,12 @@ const ButtonDocs = (props) => (
 
         <Title>API</Title>
         <Subtitle>
-            By default, <strong>{'<Button />'}</strong> renders a <strong>{'<button />'}</strong> element, 
+            By default, <strong>{'<Button />'}</strong> renders a <strong>{'<button />'}</strong> element,
             but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
-            <strong>E.g.</strong> <em><strong>{"<Button href='#'/>"}</strong></em>.
+            <strong>E.g.</strong> <em><strong>{'<Button href="#"/>'}</strong></em>.
         </Subtitle>
         <TableDocs rows={ButtonRows} />
     </Container>
-)
+);
 
 export default ButtonDocs;

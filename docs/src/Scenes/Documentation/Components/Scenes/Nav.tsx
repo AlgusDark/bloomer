@@ -1,13 +1,13 @@
 import * as React from 'react';
 import * as Highlight from 'react-highlight';
 
-import { Docs } from './../../../../utils';
 import TableDocs from './../../../../Components/TableDocs';
+import { Docs } from './../../../../utils';
 
-import { noModifiers, render } from './../../Overview/Scenes/Helpers';
-import { Container, Title, Subtitle } from './../../../../../../src';
+import { Container, Subtitle, Title } from './../../../../../../src';
+import { Button, Control, Field, Icon } from './../../../../../../src';
 import { Nav, NavCenter, NavItem, NavLeft, NavRight, NavToggle } from './../../../../../../src';
-import { Icon, Field, Control, Button, } from './../../../../../../src';
+import { noModifiers, render } from './../../Overview/Scenes/Helpers';
 
 const NavRows: Docs.Row[] = [
     {
@@ -22,9 +22,9 @@ const NavRightRows: Docs.Row[] = [
         type: 'bool',
     },
     {
+        description: <td>Append <code>.nav-menu</code> for collapsable menu on mobile</td>,
         prop: 'isMenu',
         type: 'bool',
-        description: <td>Append <code>.nav-menu</code> for collapsable menu on mobile</td>,
     },
 ];
 
@@ -157,10 +157,10 @@ const NavDocs = (props) => (
         <Subtitle>
             By default, <strong>{'<NavItem />'}</strong> renders a <strong>{'<div />'}</strong> element,
             but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
-            <strong>E.g.</strong> <em><strong>{"<NavItem href='#'/>"}</strong></em>.
+            <strong>E.g.</strong> <em><strong>{'<NavItem href="#"/>'}</strong></em>.
         </Subtitle>
         <TableDocs rows={NavItemRows} />
     </Container>
-)
+);
 
 export default NavDocs;
