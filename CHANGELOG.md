@@ -1,5 +1,12 @@
 # Bloomer Changelog
 
+## 0.6.3 - 2017-08-01
+### Added
+- Added tslint.json configuration.
+
+### Changed
+- Linted the src and docs Typescript files with TSLint.
+
 ## 0.6.2 - 2017-07-14
 ### Fixed
 - Bug with htmlentities at `Pagination/Ellipsis`.
@@ -61,10 +68,10 @@
         - Now you only need `hasIcons`
     - Image
         - Now you only need `isSize` and `isRatio`
-    
+
 ### Breaking
 - Removed shortcuts on helpers (for example, you should write 'mobile' instead of 'm') to be more expresive with the API.
-- Refactor Bulma.Size to use only one prop `isSize` with desired size (small, medium, large) as string 
+- Refactor Bulma.Size to use only one prop `isSize` with desired size (small, medium, large) as string
 
 ## 0.4.1 - 2017-06-02
 ### Breaking
