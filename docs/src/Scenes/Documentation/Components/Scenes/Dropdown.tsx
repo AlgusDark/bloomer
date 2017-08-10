@@ -13,13 +13,18 @@ import { noModifiers } from './../../Overview/Scenes/Helpers';
 
 const DropdownRows: Docs.Row[] = [
     {
-        description: <td><code>right</code></td>,
+        description: <td><code>right</code> can be used to have a <strong>right-aligned dropdown</strong></td>,
         prop: 'isAlign',
         type: 'string',
     },
     {
-        description: '',
+        description: <td>The dropdown will show up <strong>all the time</strong></td>,
         prop: 'isActive',
+        type: 'boolean',
+    },
+    {
+        description: <td>The dropdown will show up when hovering the dropdown trigger</td>,
+        prop: 'isHoverable',
         type: 'boolean',
     },
 ];
@@ -108,11 +113,11 @@ class DropdownDocs extends React.Component<{}, { isDropdownOpen: boolean }> {
             <Subtitle>{noModifiers}</Subtitle>
 
             <hr />
-            <Title>DropdownItemRows</Title>
+            <Title>DropdownItem</Title>
             <Subtitle>
                 By default, <strong>{'<DropdownItem />'}</strong> renders a <strong>{'<div />'}</strong> element,
                 but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
-                 <strong>E.g.</strong> <em><strong>{'<DropdownItem href="#""/>'}</strong></em>.
+                 <strong>E.g.</strong> <em><strong>{'<DropdownItem href="#" />'}</strong></em>.
             </Subtitle>
         </Container>
       );

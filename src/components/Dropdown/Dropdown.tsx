@@ -12,12 +12,14 @@ import { combineModifiers, getHTMLProps } from './../../helpers';
 export interface Dropdown<T> extends Bulma.Active, Bulma.Alignment, Bulma.Tag, React.HTMLProps<T> {
   isActive?: boolean;
   isAlign?: 'right';
+  isHoverable?: boolean;
 }
 
-export function Dropdown({ tag = 'div', ...props }: Dropdown<HTMLElement>) {
+export function Dropdown({ tag = 'div', isHoverable, ...props }: Dropdown<HTMLElement>) {
     const className = classNames(
         'dropdown',
         {
+            'is-hoverable': isHoverable,
             ...combineModifiers(props, getActiveModifiers, getAlignmentModifiers),
         },
         props.className,
