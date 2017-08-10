@@ -5,6 +5,7 @@ import NavRoutes from './../../../Components/NavRoutes';
 
 import Breadcrumb from './Scenes/Breadcrumb';
 import Card from './Scenes/Card';
+import Dropdown from './Scenes/Dropdown';
 import Level from './Scenes/Level';
 import Media from './Scenes/Media';
 import Menu from './Scenes/Menu';
@@ -26,6 +27,11 @@ const pages = [
         component: Card,
         title: 'Card',
         to: '/card',
+    },
+    {
+        component: Dropdown,
+        title: 'Dropdown',
+        to: '/dropdown',
     },
     {
         component: Level,
