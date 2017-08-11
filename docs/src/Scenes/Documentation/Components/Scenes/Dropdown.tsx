@@ -29,6 +29,14 @@ const DropdownRows: Docs.Row[] = [
     },
 ];
 
+const DropdownItemRows: Docs.Row[] = [
+  {
+      description: <td>Highlights the row</td>,
+      prop: 'isActive',
+      type: 'boolean',
+  },
+];
+
 const DropdownBasic = ({ isDropdownOpen, openDropdown }) => (
   <Dropdown>
     <DropdownTrigger onClick={openDropdown}>
@@ -119,6 +127,7 @@ class DropdownDocs extends React.Component<{}, { isDropdownOpen: boolean }> {
                 but it will render an <strong>{'<a/>'}</strong> element if you provide <strong>href</strong> prop.
                  <strong>E.g.</strong> <em><strong>{'<DropdownItem href="#" />'}</strong></em>.
             </Subtitle>
+            <TableDocs rows={DropdownItemRows} />
         </Container>
       );
     }

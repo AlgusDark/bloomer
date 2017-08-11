@@ -5,7 +5,7 @@ import {
   Bulma,
   getActiveModifiers,
   removeActiveModifiers,
-  withHelpersModifiers
+  withHelpersModifiers,
 } from './../../../bulma';
 import { getHTMLProps } from './../../../helpers';
 
@@ -20,11 +20,11 @@ export function DropdownItem({ tag = 'div', render, ...props }: DropdownItem<HTM
       props.className,
   ) || undefined;
 
-    const HTMLProps = getHTMLProps(props, removeActiveModifiers);
+  const HTMLProps = getHTMLProps(props, removeActiveModifiers);
 
-    if (render) return render({ ...HTMLProps, className });
+  if (render) return render({ ...HTMLProps, className });
 
-    return React.createElement((props.href ? 'a' : tag), { ...HTMLProps, className });
+  return React.createElement((props.href ? 'a' : tag), { ...HTMLProps, className });
 }
 
 const HOC = /*@__PURE__*/withHelpersModifiers(DropdownItem);
