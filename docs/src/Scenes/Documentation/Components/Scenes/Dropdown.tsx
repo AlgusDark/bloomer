@@ -62,7 +62,7 @@ const DropdownBasic = ({ isDropdownOpen, openDropdown }) => (
 );
 
 const DropdownExample = `<Dropdown>
-  <DropdownTrigger onClick={openDropdown}>
+  <DropdownTrigger>
     <Button isOutlined aria-haspopup="true" aria-controls="dropdown-menu">
       <span>Dropdown button</span>
       <Icon icon="angle-down" isSize="small" />
