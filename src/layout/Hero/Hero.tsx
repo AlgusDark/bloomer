@@ -21,7 +21,7 @@ export function Hero({ tag = 'section', ...props }: Hero<HTMLElement>) {
         {
             'is-bold': props.isBold,
             'is-fullheight': props.isFullHeight,
-            'is-halfheight': props.isFullHeight,
+            'is-halfheight': props.isHalfHeight,
             ...combineModifiers(props, getColorModifiers, getSizeModifiers),
         },
         props.className,
