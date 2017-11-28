@@ -3,6 +3,10 @@
 ## 0.6.3 - 2017-08-01
 ### Added
 - Added tslint.json configuration.
+- Added Dropdown Component
+
+### Fixed
+- [Fixed Hero is-halfheight className](https://github.com/AlgusDark/bloomer/commit/4fd145828b56d7bdd7565ab8e74ff4894f674090).
 
 ### Changed
 - Linted the src and docs Typescript files with TSLint.
