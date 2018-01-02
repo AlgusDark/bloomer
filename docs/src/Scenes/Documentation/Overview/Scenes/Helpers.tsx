@@ -43,6 +43,11 @@ export const isAlign = {
     type: 'string',
 };
 
+export const isFullWidth = {
+    prop: 'isFullWidth',
+    type: 'bool',
+};
+
 export const render = (component: string) => ({
     description: <td>Allows inline rendering of other element. The render prop receives all the props from {`<${component}>`}.</td>,
     prop: 'render',
@@ -83,10 +88,7 @@ const helpersRows: Docs.Row[] = [
         prop: 'isOverlay',
         type: 'bool',
     },
-    {
-        prop: 'isFullWidth',
-        type: 'bool',
-    },
+    isFullWidth,
     {
         description: <td><code>left</code> | <code>centered</code> | <code>right</code></td>,
         prop: 'hasTextAlign',

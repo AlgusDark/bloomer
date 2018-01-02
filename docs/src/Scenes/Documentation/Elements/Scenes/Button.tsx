@@ -5,13 +5,14 @@ import TableDocs from './../../../../Components/TableDocs';
 import { Docs } from './../../../../utils';
 
 import { Button, Column, Columns, Container, Subtitle, Title } from './../../../../../../src';
-import { isColor, isLoading, isSize, render, states } from './../../Overview/Scenes/Helpers';
+import { isColor, isFullWidth, isLoading, isSize, render, states } from './../../Overview/Scenes/Helpers';
 
 const ButtonRows: Docs.Row[] = [
     ...states,
     isColor,
     isLoading,
     isSize,
+    isFullWidth,
     {
         prop: 'isLink',
         type: 'bool',
