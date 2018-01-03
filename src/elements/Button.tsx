@@ -10,7 +10,7 @@ import {
 import { combineModifiers, getHTMLProps } from './../helpers';
 
 export interface Button<T> extends
-    Bulma.Render, Bulma.State, Bulma.Color, Bulma.Loading, Bulma.Size,
+    Bulma.Render, Bulma.State, Bulma.Color, Bulma.Loading, Bulma.Size, Bulma.FullWidth,
     React.HTMLProps<T> {
     isLink?: boolean;
     isOutlined?: boolean;
