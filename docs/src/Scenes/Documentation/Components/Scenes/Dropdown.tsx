@@ -38,14 +38,14 @@ const DropdownItemRows: Docs.Row[] = [
 ];
 
 const DropdownBasic = ({ isDropdownOpen, openDropdown }) => (
-  <Dropdown>
+  <Dropdown isActive={isDropdownOpen}>
     <DropdownTrigger onClick={openDropdown}>
       <Button isOutlined aria-haspopup="true" aria-controls="dropdown-menu">
         <span>Dropdown button</span>
         <Icon icon="angle-down" isSize="small" />
       </Button>
     </DropdownTrigger>
-    <DropdownMenu className={isDropdownOpen ? 'is-block' : ''}>
+    <DropdownMenu>
       <DropdownContent>
         <DropdownItem href="#">First item</DropdownItem>
         <DropdownItem href="#" isActive>Second item</DropdownItem>
