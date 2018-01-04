@@ -7,16 +7,14 @@ export interface PanelIcon<T> extends React.HTMLProps<T> {
     icon?: string;
 }
 
-export function PanelIcon({ children, icon, ...props }: PanelIcon<HTMLElement>) {
-    const className = classNames('panel-icon', props.className);
-
-    const withIcon = (
-        <span {...props} className={className}>
-            <span className={`fa fa-${icon}`} aria-hidden="true"></span>
+export function PanelIcon({ children, ...props }: PanelIcon<HTMLElement>) {
+    const icon = (
+        <span {...props} className="panel-icon">
+            <i className={`${props.className}`} aria-hidden="true"></i>
         </span>
     );
 
-    return icon ? withIcon : <span {...props} children={children} className={className} />;
+    return icon;
 }
 
 const HOC = /*@__PURE__*/withHelpersModifiers(PanelIcon);
