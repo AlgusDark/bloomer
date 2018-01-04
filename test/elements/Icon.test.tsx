@@ -5,36 +5,43 @@ import { Icon } from './../../src/elements/Icon';
 
 describe('Icon', () => {
     it('should render a span with .icon', () => {
-        const component = shallow(<Icon>My Icon</Icon>);
-        expect(component.contains(<span className='icon'>My Icon</span>)).toBe(true);
+        const component = shallow(<Icon />);
+        expect(component.hasClass('icon')).toBe(true);
     });
 
-    it('should render a span.icon with span.fa.fa-home', () => {
-        const component = shallow(<Icon icon='home' />);
+    it('should render a span.icon with i.fa.fa-home', () => {
+        const component = shallow(<Icon className='fa fa-home' />);
         expect(component.contains(
             <span className='icon'>
-                <span className='fa fa-home' aria-hidden="true">
-                </span>
+                <i className='fa fa-home' aria-hidden="true">
+                </i>
             </span>
         )).toBe(true);
     });
 
     it('should render a span with .icon and modifiers', () => {
-        const component = shallow(<Icon isAlign='left'>My Icon</Icon>);
+        const component = shallow(<Icon isAlign='left' />);
         expect(component.hasClass('icon')).toBe(true);
         expect(component.hasClass('is-left')).toBe(true);
     });
 
-    it('should render a span with .icon, modifiers and classNames', () => {
-        const component = shallow(<Icon isSize='large' className='custom'>My Icon</Icon>);
-        expect(component.hasClass('icon')).toBe(true);
-        expect(component.hasClass('is-large')).toBe(true);
-        expect(component.hasClass('custom')).toBe(true);
+    it('should render a span with .icon, modifiers and i with classNames', () => {
+        const component = shallow(<Icon isSize='large' className='custom' />);
+        expect(component.contains(
+            <span className='icon is-large'>
+                <i className='custom' aria-hidden="true">
+                </i>
+            </span>
+        )).toBe(true);
     });
 
-    it('should render a span with .icon and custom classNames', () => {
-        const component = shallow(<Icon className='custom'>My Icon</Icon>);
-        expect(component.hasClass('icon')).toBe(true);
-        expect(component.hasClass('custom')).toBe(true);
+    it('should render a span with .icon and i with custom classNames', () => {
+        const component = shallow(<Icon className='custom' />);
+        expect(component.contains(
+            <span className='icon'>
+                <i className='custom' aria-hidden="true">
+                </i>
+            </span>
+        )).toBe(true);
     });
 });

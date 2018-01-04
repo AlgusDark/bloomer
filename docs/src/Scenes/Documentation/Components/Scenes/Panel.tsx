@@ -72,27 +72,19 @@ const PanelExample = `<Panel>
         <PanelTab>Fork</PanelTab>
     </PanelTabs>
     <PanelBlock isActive>
-        <PanelIcon>
-            <span className='fa fa-book' aria-hidden='true' />
-        </PanelIcon>
+        <PanelIcon className="fa fa-book" />
         Bloomer
     </PanelBlock>
     <PanelBlock>
-        <PanelIcon>
-            <span className='fa fa-code-fork' aria-hidden='true' />
-        </PanelIcon>
+        <PanelIcon className="fa fa-code-fork" />
         RxJS
     </PanelBlock>
     <PanelBlock>
-        <PanelIcon>
-            <span className='fa fa-code-fork' aria-hidden='true' />
-        </PanelIcon>
+        <PanelIcon className="fa fa-code-fork" />
         Webpack
     </PanelBlock>
     <PanelBlock>
-        <PanelIcon>
-            <span className='fa fa-code-fork' aria-hidden='true' />
-        </PanelIcon>
+        <PanelIcon className="fa fa-code-fork" />
         Typescript
     </PanelBlock>
     <PanelBlock tag='label'>
@@ -114,9 +106,7 @@ const PanelDocs = (props) => (
                     <PanelBlock>
                         <Control hasIcons="left">
                             <Input isSize="small" placeholder="Search" />
-                            <Icon isSize="small" isAlign="left">
-                                <span className="fa fa-search" aria-hidden="true" />
-                            </Icon>
+                            <Icon isSize="small" isAlign="left" className="fa fa-search" />
                         </Control>
                     </PanelBlock>
                     <PanelTabs>
@@ -127,27 +117,19 @@ const PanelDocs = (props) => (
                         <PanelTab>Fork</PanelTab>
                     </PanelTabs>
                     <PanelBlock href="#" isActive>
-                        <PanelIcon>
-                            <span className="fa fa-book" aria-hidden="true" />
-                        </PanelIcon>
+                        <PanelIcon className="fa fa-book" />
                         Bloomer
                     </PanelBlock>
                     <PanelBlock href="#">
-                        <PanelIcon>
-                            <span className="fa fa-code-fork" aria-hidden="true" />
-                        </PanelIcon>
+                        <PanelIcon className="fa fa-code-fork" />
                         RxJS
                     </PanelBlock>
                     <PanelBlock href="#">
-                        <PanelIcon>
-                            <span className="fa fa-code-fork" aria-hidden="true" />
-                        </PanelIcon>
+                        <PanelIcon className="fa fa-code-fork" />
                         Webpack
                     </PanelBlock>
                     <PanelBlock href="#">
-                        <PanelIcon>
-                            <span className="fa fa-code-fork" aria-hidden="true" />
-                        </PanelIcon>
+                        <PanelIcon className="fa fa-code-fork" />
                         Typescript
                     </PanelBlock>
                     <PanelBlock tag="label">
