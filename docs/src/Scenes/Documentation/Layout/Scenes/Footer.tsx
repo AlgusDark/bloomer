@@ -11,8 +11,8 @@ const FooterExample = `<Footer id='footer'>
             <Columns>
                 <Column isFull>
                     <p>
-                        Made with <Icon hasTextColor='danger'><span className="fa fa-heart" aria-hidden="true" />
-                        </Icon>  by <a>Algus Dark</a>
+                        Made with<Icon hasTextColor="danger" className="fa fa-heart"></Icon> 
+                        by <a>Algus Dark</a>
                     </p>
                 </Column>
             </Columns>
@@ -33,8 +33,8 @@ const FooterDocs = (props) => (
                     <Columns>
                         <Column isSize="full">
                             <p>
-                                Made with <Icon hasTextColor="danger"><span className="fa fa-heart"
-                                 aria-hidden="true" /></Icon>  by <a>Algus Dark</a>
+                                Made with<Icon hasTextColor="danger" className="fa fa-heart"></Icon> 
+                                by <a>Algus Dark</a>
                             </p>
                         </Column>
                     </Columns>

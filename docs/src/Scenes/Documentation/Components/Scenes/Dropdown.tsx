@@ -42,7 +42,7 @@ const DropdownBasic = ({ isDropdownOpen, openDropdown }) => (
     <DropdownTrigger onClick={openDropdown}>
       <Button isOutlined aria-haspopup="true" aria-controls="dropdown-menu">
         <span>Dropdown button</span>
-        <Icon icon="angle-down" isSize="small" />
+        <Icon className="fa fa-angle-down" isSize="small" />
       </Button>
     </DropdownTrigger>
     <DropdownMenu>
