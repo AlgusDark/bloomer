@@ -62,10 +62,10 @@ class NavBar extends React.Component<RouteComponentProps<{}>, { isActive: boolea
                             <img src={brand} style={{ marginRight: 5 }} /> Bloomer
                         </NavbarItem>
                         <NavbarItem href="https://github.com/AlgusDark/bloomer" isHidden="desktop">
-                            <Icon icon="github" />
+                            <Icon className="fa fa-github" />
                         </NavbarItem>
                         <NavbarItem href="https://twitter.com/AlgusDark" isHidden="desktop">
-                            <Icon icon="twitter" style={{ color: '#55acee' }} />
+                            <Icon className="fa fa-twitter" style={{ color: '#55acee' }} />
                         </NavbarItem>
                         <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav} />
                     </NavbarBrand>
@@ -87,10 +87,10 @@ class NavBar extends React.Component<RouteComponentProps<{}>, { isActive: boolea
                         </NavbarStart>
                         <NavbarEnd>
                             <NavbarItem href="https://github.com/AlgusDark/bloomer" isHidden="touch">
-                                <Icon icon="github" />
+                                <Icon className="fa fa-github" />
                             </NavbarItem>
                             <NavbarItem href="https://twitter.com/AlgusDark" isHidden="touch">
-                                <Icon icon="twitter" style={{ color: '#55acee' }} />
+                                <Icon className="fa fa-twitter" style={{ color: '#55acee' }} />
                             </NavbarItem>
                             <NavbarItem>
                                 <Field isGrouped>
@@ -98,9 +98,7 @@ class NavBar extends React.Component<RouteComponentProps<{}>, { isActive: boolea
                                         {/* tslint:disable-next-line */ }
                                         <Button id="twitter" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://bloomer.js.org" target="_blank"
                                          href="https://twitter.com/intent/tweet?text=bloomer: a set of React Stateless Components for bulma.io&amp;url=http://bloomer.js.org&amp;via=AlgusDark">
-                                            <Icon>
-                                                <span className="fa fa-twitter" aria-hidden="true" />
-                                            </Icon>
+                                            <Icon className="fa fa-twitter" />
                                             <span>Tweet</span>
                                         </Button>
                                     </Control>

@@ -71,10 +71,10 @@ const NavExample = `<Navbar style={{ border: 'solid 1px #00D1B2', margin: '0' }}
         <img src={brand} style={{ marginRight: 5 }} /> Bloomer
     </NavbarItem>
     <NavbarItem isHidden='desktop'>
-        <Icon icon='github' />
+        <Icon className='fa fa-github' />
     </NavbarItem>
     <NavbarItem isHidden='desktop'>
-        <Icon icon='twitter' style={{ color: '#55acee' }} />
+        <Icon className='fa fa-twitter' style={{ color: '#55acee' }} />
     </NavbarItem>
     <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav} />
 </NavbarBrand>
@@ -93,10 +93,10 @@ const NavExample = `<Navbar style={{ border: 'solid 1px #00D1B2', margin: '0' }}
     </NavbarStart>
     <NavbarEnd>
         <NavbarItem href="https://github.com/AlgusDark/bloomer" isHidden='touch'>
-            <Icon icon='github' />
+            <Icon className='fa fa-github' />
         </NavbarItem>
         <NavbarItem href="https://twitter.com/AlgusDark" isHidden='touch'>
-            <Icon icon='twitter' style={{ color: '#55acee' }} />
+            <Icon className='fa fa-twitter' style={{ color: '#55acee' }} />
         </NavbarItem>
         <NavbarItem>
             <Field isGrouped>
@@ -104,9 +104,7 @@ const NavExample = `<Navbar style={{ border: 'solid 1px #00D1B2', margin: '0' }}
                     <Button id="twitter" data-social-network="Twitter" data-social-action="tweet"
                     data-social-target="http://bloomer.js.org" target="_blank" href="https://twitter.com/intent/tweet?text=bloomer:
                     a set of React Stateless Components for bulma.io&amp;url=http://bloomer.js.org&amp;via=AlgusDark">
-                        <Icon>
-                            <span className="fa fa-twitter" aria-hidden="true" />
-                        </Icon>
+                        <Icon className="fa fa-twitter" />
                         <span>Tweet</span>
                     </Button>
                 </Control>
@@ -140,10 +138,10 @@ class NavDocs extends React.Component<{}, { isActive: boolean }> {
                             <img src={brand} style={{ marginRight: 5 }} /> Bloomer
                         </NavbarItem>
                         <NavbarItem isHidden="desktop">
-                            <Icon icon="github" />
+                            <Icon className="fa fa-github" />
                         </NavbarItem>
                         <NavbarItem isHidden="desktop">
-                            <Icon icon="twitter" style={{ color: '#55acee' }} />
+                            <Icon className="fa fa-twitter" style={{ color: '#55acee' }} />
                         </NavbarItem>
                         <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav} />
                     </NavbarBrand>
@@ -162,10 +160,10 @@ class NavDocs extends React.Component<{}, { isActive: boolean }> {
                         </NavbarStart>
                         <NavbarEnd>
                             <NavbarItem href="https://github.com/AlgusDark/bloomer" isHidden="touch">
-                                <Icon icon="github" />
+                                <Icon className="fa fa-github" />
                             </NavbarItem>
                             <NavbarItem href="https://twitter.com/AlgusDark" isHidden="touch">
-                                <Icon icon="twitter" style={{ color: '#55acee' }} />
+                                <Icon className="fa fa-twitter" style={{ color: '#55acee' }} />
                             </NavbarItem>
                             <NavbarItem>
                                 <Field isGrouped>
@@ -173,9 +171,7 @@ class NavDocs extends React.Component<{}, { isActive: boolean }> {
                                         { /*tslint:disable-next-line*/ }
                                         <Button id="twitter" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://bloomer.js.org" target="_blank"
                                         href="https://twitter.com/intent/tweet?text=bloomer: a set of React Stateless Components for bulma.io&amp;url=http://bloomer.js.org&amp;via=AlgusDark">
-                                            <Icon>
-                                                <span className="fa fa-twitter" aria-hidden="true" />
-                                            </Icon>
+                                            <Icon className="fa fa-twitter" />
                                             <span>Tweet</span>
                                         </Button>
                                     </Control>
