@@ -57,14 +57,10 @@ const NavExample = `<Nav>
     </NavLeft>
     <NavCenter>
         <NavItem>
-            <Icon>
-                <span className="fa fa-github" aria-hidden="true" />
-            </Icon>
+            <Icon className="fa fa-github" />
         </NavItem>
         <NavItem>
-            <Icon>
-                <span className="fa fa-twitter" aria-hidden="true" />
-            </Icon>
+            <Icon className="fa fa-twitter" />
         </NavItem>
     </NavCenter>
     <NavToggle />
@@ -75,9 +71,7 @@ const NavExample = `<Nav>
             <Field isGrouped>
                 <Control>
                     <Button id="twitter">
-                        <Icon>
-                            <span className="fa fa-twitter" aria-hidden="true" />
-                        </Icon>
+                        <Icon className="fa fa-twitter" />
                         <span>Tweet</span>
                     </Button>
                 </Control>
@@ -96,14 +90,10 @@ const NavDocs = (props) => (
             </NavLeft>
             <NavCenter>
                 <NavItem>
-                    <Icon>
-                        <span className="fa fa-github" aria-hidden="true" />
-                    </Icon>
+                    <Icon className="fa fa-github" />
                 </NavItem>
                 <NavItem>
-                    <Icon>
-                        <span className="fa fa-twitter" aria-hidden="true" />
-                    </Icon>
+                    <Icon className="fa fa-twitter" />
                 </NavItem>
             </NavCenter>
             <NavToggle />
@@ -114,9 +104,7 @@ const NavDocs = (props) => (
                     <Field isGrouped>
                         <Control>
                             <Button id="twitter">
-                                <Icon>
-                                    <span className="fa fa-twitter" aria-hidden="true" />
-                                </Icon>
+                                <Icon className="fa fa-twitter" />
                                 <span>Tweet</span>
                             </Button>
                         </Control>

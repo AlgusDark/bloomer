@@ -32,7 +32,7 @@ const CardExample = `<Card>
             Component
         </CardHeaderTitle>
         <CardHeaderIcon>
-            <Icon><span className='fa fa-angle-down'/></Icon>
+            <Icon className="fa fa-angle-down" />
         </CardHeaderIcon>
     </CardHeader>
     <CardImage>
@@ -68,7 +68,7 @@ const CardDocs = (props) => (
                             Component
                         </CardHeaderTitle>
                         <CardHeaderIcon>
-                            <Icon><span className="fa fa-angle-down" /></Icon>
+                            <Icon className="fa fa-angle-down" />
                         </CardHeaderIcon>
                     </CardHeader>
                     <CardImage>
