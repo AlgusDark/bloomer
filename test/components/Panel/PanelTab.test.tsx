@@ -36,9 +36,9 @@ describe('PanelTab', () => {
         expect(component.contains(<a href='#' className='is-active'>My PanelTab</a>)).toBe(true);
     });
 
-    it('should render a p and custom classNames', () => {
+    it('should render an a and custom classNames', () => {
         const component = shallow(<PanelTab className='custom'><span>Any Content</span></PanelTab>);
-        expect(component.is('p')).toBe(true);
+        expect(component.is('a')).toBe(true);
         expect(component.hasClass('custom')).toBe(true);
     });
 });
