@@ -3,9 +3,7 @@ import * as React from 'react';
 
 import { Bulma, withHelpersModifiers } from './../../bulma';
 
-export interface PanelIcon<T> extends React.HTMLProps<T> {
-    icon?: string;
-}
+export interface PanelIcon<T> extends React.HTMLProps<T> { }
 
 export function PanelIcon({ children, ...props }: PanelIcon<HTMLElement>) {
     const icon = (
