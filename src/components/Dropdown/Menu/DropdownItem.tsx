@@ -18,7 +18,7 @@ export function DropdownItem({ tag = 'div', render, ...props }: DropdownItem<HTM
           ...getActiveModifiers(props),
       },
       props.className,
-  ) || undefined;
+  );
 
   const HTMLProps = getHTMLProps(props, removeActiveModifiers);
 

@@ -10,6 +10,12 @@ describe('Dropdown', () => {
         expect(component.hasClass('is-active')).toBe(true);
     });
 
+    it('should render p with .dropdown', () => {
+        const component = shallow(<Dropdown tag="p">My Dropdown</Dropdown>);
+        expect(component.is('p')).toBe(true);
+        expect(component.hasClass('dropdown')).toBe(true);
+    });
+
     it('should show a div with .dropdown and modifiers', () => {
         const component = shallow(<Dropdown isAlign="right" isHoverable>My Dropdown</Dropdown>);
         expect(component.hasClass('dropdown')).toBe(true);
