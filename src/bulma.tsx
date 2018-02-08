@@ -43,6 +43,7 @@ export declare namespace Bulma {
     }
 
     export interface Color {
+        isColor?: string
     }
 
     export type HeadingSizes = 1 | 2 | 3 | 4 | 5 | 6;
@@ -245,12 +246,15 @@ export function removeLoadingProps(props: Bulma.Loading) {
     return rest;
 }
 
-export function getColorModifiers(color: Bulma.Color) {
-    return { [`is-${color}`]: true };
+export function getColorModifiers({ isColor: color }: Bulma.Color) {
+    return color ? { [`is-${color}`]: true } : {};
 }
 
 export function removeColorProps(props: Bulma.Color) {
-    return props;
+    const {
+        isColor,
+        ...rest } = props;
+    return rest;
 }
 
 const isValidHeading = isBetween(1, 6);
