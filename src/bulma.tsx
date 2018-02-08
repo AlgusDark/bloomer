@@ -317,7 +317,7 @@ const getAlignModifier = (modifier: string, helper: string) => {
 };
 
 const getColorModifier = (modifier: string) => {
-    return  { [`has-text-${modifier}`]: true };
+    return modifier ? { [`has-text-${modifier}`]: true } : {};
 };
 
 function getHelpersModifiers(
