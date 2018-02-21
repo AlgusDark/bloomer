@@ -42,9 +42,8 @@ export declare namespace Bulma {
         isLoading?: boolean;
     }
 
-    export type Colors = 'white' | 'light' | 'dark' | 'black' | 'primary' | 'info' | 'success' | 'warning' | 'danger';
     export interface Color {
-        isColor?: Colors;
+        isColor?: string
     }
 
     export type HeadingSizes = 1 | 2 | 3 | 4 | 5 | 6;
@@ -107,7 +106,7 @@ export declare namespace Bulma {
         isUnselectable?: boolean;
 
         hasTextAlign?: Alignments | 'centered';
-        hasTextColor?: Colors;
+        hasTextColor?: string;
     }
 
     export interface Modifiers extends
@@ -146,18 +145,6 @@ export const isCentered = is({ centered: true });
 
 export const isCenter = is({ center: true });
 export const isFullWidth = is({ fullwidth: true });
-
-const isColor = is({
-    black: true,
-    danger: true,
-    dark: true,
-    info: true,
-    light: true,
-    primary: true,
-    success: true,
-    warning: true,
-    white: true,
-});
 
 const isSmall = is({ small: true });
 const isMedium = is({ medium: true });
@@ -260,7 +247,7 @@ export function removeLoadingProps(props: Bulma.Loading) {
 }
 
 export function getColorModifiers({ isColor: color }: Bulma.Color) {
-    return isColor(color) ? { [`is-${color}`]: true } : {};
+    return color ? { [`is-${color}`]: true } : {};
 }
 
 export function removeColorProps(props: Bulma.Color) {
@@ -330,7 +317,7 @@ const getAlignModifier = (modifier: string, helper: string) => {
 };
 
 const getColorModifier = (modifier: string) => {
-    return isColor(modifier) ? { [`has-text-${modifier}`]: true } : {};
+    return modifier ? { [`has-text-${modifier}`]: true } : {};
 };
 
 function getHelpersModifiers(
