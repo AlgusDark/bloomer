@@ -6,7 +6,7 @@
 
 ### Changed
 - setupFiles at jest in package.json
-- upgraded versions of react, react-dom and jest in package.json
+- upgraded versions of react, react-dom, typescript and jest in package.json
 - peerDependencies react and react-dom in package.json
 - added prop-types and react-create-class to dependencies in package.json
 - added enzmye-adapter-react-16 to devDependencies
