@@ -1,5 +1,16 @@
 # Bloomer Changelog
 
+## 0.6.4 - 2017-22-02
+### Added
+- Added jestsetup.config.ts
+
+### Changed
+- setupFiles at jest in package.json
+- upgraded versions of react, react-dom and jest in package.json
+- peerDependencies react and react-dom in package.json
+- added prop-types and react-create-class to dependencies in package.json
+- added enzmye-adapter-react-16 to devDependencies
+
 ## 0.6.3 - 2017-08-01
 ### Added
 - Added tslint.json configuration.
