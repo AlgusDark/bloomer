@@ -55,7 +55,7 @@
   "scripts": {
     "clean": "shx rm -rf lib esm bundles",
     "test": "jest",
-    "test:ci": "jest --coverage && cat ./reports/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:ci": "jest --runInBand --coverage && cat ./reports/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage": "jest --coverage",
     "docs": "cross-env NODE_ENV=development webpack-dev-server --config webpack.docs.js --env.dev",
     "deploy": "cross-env NODE_ENV=production webpack --config webpack.docs.js --env.prod",
