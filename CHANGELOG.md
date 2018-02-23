@@ -1,4 +1,12 @@
 # Bloomer Changelog
+## 0.6.4 - 2017-22-02
+### Added
+- Added jest.config.ts
+
+### Changed
+- Include a set up file for jest
+- Upgrade dependencies
+- include react and react-dom peerDependencies
 
 ## 0.6.3 - 2017-08-01
 ### Added
