@@ -1,17 +1,20 @@
-import * as classNames from 'classnames';
-import * as React from 'react';
+import * as classNames from "classnames";
+import * as React from "react";
 
-import { Bulma, withHelpersModifiers } from './../../bulma';
+import { Bulma, withHelpersModifiers } from "./../../bulma";
 
-export interface ModalBackground<T> extends Bulma.Tag, React.HTMLProps<T> { }
+export interface ModalBackground<T> extends Bulma.Tag, React.HTMLProps<T> {}
 
-export function ModalBackground({tag= 'div', ...props}: ModalBackground<HTMLElement>) {
-    const className = classNames('modal-background', props.className);
+export function ModalBackground({
+  tag = "div",
+  ...props
+}: ModalBackground<HTMLElement>) {
+  const className = classNames("modal-background", props.className);
 
-    const { children, ...HTMLProps } = props;
+  const { children, ...HTMLProps } = props;
 
-    return React.createElement(tag, { ...props, className });
+  return React.createElement(tag, { ...props, className });
 }
 
-const HOC = /*@__PURE__*/withHelpersModifiers(ModalBackground);
+const HOC = /*@__PURE__*/ withHelpersModifiers(ModalBackground);
 export default HOC;

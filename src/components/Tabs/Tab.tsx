@@ -1,29 +1,30 @@
-import * as classNames from 'classnames';
-import * as React from 'react';
+import * as classNames from "classnames";
+import * as React from "react";
 
 import {
-    Bulma,
-    getActiveModifiers, removeActiveModifiers,
-    withHelpersModifiers,
-} from './../../bulma';
+  Bulma,
+  getActiveModifiers,
+  removeActiveModifiers,
+  withHelpersModifiers
+} from "./../../bulma";
 
-import { getHTMLProps } from './../../helpers';
+import { getHTMLProps } from "./../../helpers";
 
-export interface Tab<T> extends Bulma.Active, Bulma.Tag, React.HTMLProps<T> {
-}
+export interface Tab<T> extends Bulma.Active, Bulma.Tag, React.HTMLProps<T> {}
 
-export function Tab({ tag = 'li', ...props }: Tab<HTMLElement>) {
-    const className = classNames(
-        {
-            ...getActiveModifiers(props),
-        },
-        props.className,
+export function Tab({ tag = "li", ...props }: Tab<HTMLElement>) {
+  const className =
+    classNames(
+      {
+        ...getActiveModifiers(props)
+      },
+      props.className
     ) || undefined;
 
-    const HTMLProps = getHTMLProps(props, removeActiveModifiers);
+  const HTMLProps = getHTMLProps(props, removeActiveModifiers);
 
-    return React.createElement(tag, { ...HTMLProps, className });
+  return React.createElement(tag, { ...HTMLProps, className });
 }
 
-const HOC = /*@__PURE__*/withHelpersModifiers(Tab);
+const HOC = /*@__PURE__*/ withHelpersModifiers(Tab);
 export default HOC;

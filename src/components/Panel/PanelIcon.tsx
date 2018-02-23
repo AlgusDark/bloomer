@@ -1,19 +1,19 @@
-import * as classNames from 'classnames';
-import * as React from 'react';
+import * as classNames from "classnames";
+import * as React from "react";
 
-import { Bulma, withHelpersModifiers } from './../../bulma';
+import { Bulma, withHelpersModifiers } from "./../../bulma";
 
-export interface PanelIcon<T> extends React.HTMLProps<T> { }
+export interface PanelIcon<T> extends React.HTMLProps<T> {}
 
 export function PanelIcon({ children, ...props }: PanelIcon<HTMLElement>) {
-    const icon = (
-        <span {...props} className="panel-icon">
-            <i className={`${props.className}`} aria-hidden="true"></i>
-        </span>
-    );
+  const icon = (
+    <span {...props} className="panel-icon">
+      <i className={`${props.className}`} aria-hidden="true" />
+    </span>
+  );
 
-    return icon;
+  return icon;
 }
 
-const HOC = /*@__PURE__*/withHelpersModifiers(PanelIcon);
+const HOC = /*@__PURE__*/ withHelpersModifiers(PanelIcon);
 export default HOC;
