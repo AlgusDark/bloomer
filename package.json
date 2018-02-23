@@ -32,6 +32,7 @@
     "inline-manifest-webpack-plugin": "^3.0.1",
     "jest": "^20.0.3",
     "parallelshell": "^3.0.1",
+    "prettier": "1.10.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-highlight": "^0.10.0",
@@ -47,16 +48,18 @@
   },
   "scripts": {
     "clean": "shx rm -rf lib esm bundles",
+    "coverage": "npm run test --coverage", 
     "test": "jest",
-    "test:ci": "jest --coverage && cat ./reports/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "coverage": "jest --coverage",
+    "test:ci": "npm run test --coverage && cat ./reports/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:format": "prettier --config ./config/.prettierrc --write \"{src,test}/**/*.{ts,tsx}\"",
     "docs": "cross-env NODE_ENV=development webpack-dev-server --config webpack.docs.js --env.dev",
     "deploy": "cross-env NODE_ENV=production webpack --config webpack.docs.js --env.prod",
     "build": "npm run clean && tsc && tsc -m es6 --outDir esm --removeComments false && cross-env NODE_ENV=production webpack",
     "watch:lib": "watch \"npm run deploy\" src/ --wait=2000 --ignoreUnreadable",
     "watch:docs": "watch \"npm run docs\" docs/ --wait=2000 --ignoreUnreadable",
     "watch:all": "parallelshell \"npm run watch:lib\" \"npm run watch:docs\"",
-    "prepublish": "npm run build"
+    "pretest": "npm run test:format",
+    "prepublish": "npm run test:all && npm run build"
   },
   "jest": {
     "transform": {
