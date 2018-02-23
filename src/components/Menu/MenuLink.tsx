@@ -1,13 +1,13 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getActiveModifiers,
   removeActiveModifiers,
   withHelpersModifiers
-} from "./../../bulma";
-import { getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { getHTMLProps } from './../../helpers';
 
 export interface MenuLink<T>
   extends Bulma.Tag,
@@ -16,7 +16,7 @@ export interface MenuLink<T>
     React.HTMLProps<T> {}
 
 export function MenuLink({
-  tag = "a",
+  tag = 'a',
   render,
   ...props
 }: MenuLink<HTMLElement>) {

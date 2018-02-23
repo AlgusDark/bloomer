@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -12,8 +12,8 @@ import {
   removeSizeProps,
   removeStateProps,
   withHelpersModifiers
-} from "./../bulma";
-import { combineModifiers, getHTMLProps } from "./../helpers";
+} from './../bulma';
+import { combineModifiers, getHTMLProps } from './../helpers';
 
 export interface Button<T>
   extends Bulma.Render,
@@ -30,12 +30,12 @@ export interface Button<T>
 
 export function Button(props: Button<HTMLButtonElement | HTMLAnchorElement>) {
   const className = classNames(
-    "button",
+    'button',
     {
-      "is-inverted": props.isInverted,
-      "is-link": props.isLink,
-      "is-outlined": props.isOutlined,
-      "is-static": props.isStatic,
+      'is-inverted': props.isInverted,
+      'is-link': props.isLink,
+      'is-outlined': props.isOutlined,
+      'is-static': props.isStatic,
       ...combineModifiers(
         props,
         getStateModifiers,
@@ -62,7 +62,7 @@ export function Button(props: Button<HTMLButtonElement | HTMLAnchorElement>) {
   const button = (
     <button
       {...HTMLProps}
-      type={props.type || "button"}
+      type={props.type || 'button'}
       className={className}
     />
   );

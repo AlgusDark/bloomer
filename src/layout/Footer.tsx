@@ -1,12 +1,12 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../bulma";
+import { Bulma, withHelpersModifiers } from './../bulma';
 
 export interface Footer<T> extends Bulma.Tag, React.HTMLProps<T> {}
 
-export function Footer({ tag = "footer", ...props }: Footer<HTMLElement>) {
-  const className = classNames("footer", props.className);
+export function Footer({ tag = 'footer', ...props }: Footer<HTMLElement>) {
+  const className = classNames('footer', props.className);
 
   return React.createElement(tag, { ...props, className });
 }

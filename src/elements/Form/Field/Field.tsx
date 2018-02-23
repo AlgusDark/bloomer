@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -7,26 +7,26 @@ import {
   isFullWidth,
   isRight,
   withHelpersModifiers
-} from "./../../../bulma";
+} from './../../../bulma';
 
-import { isOption } from "./../../../helpers";
+import { isOption } from './../../../helpers';
 
-export type Directions = "right" | "centered";
+export type Directions = 'right' | 'centered';
 
 export interface Field<T> extends Bulma.Tag, React.HTMLProps<T> {
   isGrouped?: boolean | Directions;
-  hasAddons?: boolean | Directions | "fullwidth";
+  hasAddons?: boolean | Directions | 'fullwidth';
   isHorizontal?: boolean;
 }
 
 const getModifier = (
-  modifier: boolean | Directions | "fullwidth",
+  modifier: boolean | Directions | 'fullwidth',
   helper: string,
   isDirection: Function
 ): object => {
   if (modifier === true) {
     return { [`${helper}`]: true };
-  } else if (typeof modifier === "string") {
+  } else if (typeof modifier === 'string') {
     return isDirection(modifier)
       ? { [`${helper} ${helper}-${modifier}`]: true }
       : {};
@@ -35,21 +35,21 @@ const getModifier = (
   return {};
 };
 
-export function Field({ tag = "div", ...props }: Field<HTMLElement>) {
+export function Field({ tag = 'div', ...props }: Field<HTMLElement>) {
   const className = classNames(
-    "field",
+    'field',
     {
       ...getModifier(
         props.isGrouped,
-        "is-grouped",
+        'is-grouped',
         isOption(isRight, isCentered)
       ),
       ...getModifier(
         props.hasAddons,
-        "has-addons",
+        'has-addons',
         isOption(isRight, isCentered, isFullWidth)
       ),
-      "is-horizontal": props.isHorizontal
+      'is-horizontal': props.isHorizontal
     },
     props.className
   );

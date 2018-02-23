@@ -1,22 +1,22 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getActiveModifiers,
   removeActiveModifiers,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface NavToggle<T>
   extends Bulma.Active,
     Bulma.Tag,
     React.HTMLProps<T> {}
 
-export function NavToggle({ tag = "span", ...props }: NavToggle<HTMLElement>) {
+export function NavToggle({ tag = 'span', ...props }: NavToggle<HTMLElement>) {
   const className = classNames(
-    "nav-toggle",
+    'nav-toggle',
     {
       ...getActiveModifiers(props)
     },
@@ -28,9 +28,9 @@ export function NavToggle({ tag = "span", ...props }: NavToggle<HTMLElement>) {
   return React.createElement(
     tag,
     { ...HTMLProps, className },
-    React.createElement("span", null),
-    React.createElement("span", null),
-    React.createElement("span", null)
+    React.createElement('span', null),
+    React.createElement('span', null),
+    React.createElement('span', null)
   );
 }
 

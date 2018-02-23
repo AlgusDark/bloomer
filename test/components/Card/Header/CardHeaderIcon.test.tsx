@@ -1,10 +1,10 @@
-import * as React from "react";
-import { shallow } from "enzyme";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-import { CardHeaderIcon } from "./../../../../src/components/Card/Header/CardHeaderIcon";
+import { CardHeaderIcon } from './../../../../src/components/Card/Header/CardHeaderIcon';
 
-describe("CardHeaderIcon", () => {
-  it("should render a custom component with CardHeaderIcon props", () => {
+describe('CardHeaderIcon', () => {
+  it('should render a custom component with CardHeaderIcon props', () => {
     const customComponent = props => (
       <div>
         My Link <a {...props} />
@@ -23,7 +23,7 @@ describe("CardHeaderIcon", () => {
     expect(component.contains(customComponentRendered)).toBe(true);
   });
 
-  it("should render an anchor with .card-header-icon", () => {
+  it('should render an anchor with .card-header-icon', () => {
     const component = shallow(
       <CardHeaderIcon>My CardHeaderIcon</CardHeaderIcon>
     );
@@ -32,7 +32,7 @@ describe("CardHeaderIcon", () => {
     ).toBe(true);
   });
 
-  it("should render a div with .card-header-icon", () => {
+  it('should render a div with .card-header-icon', () => {
     const component = shallow(
       <CardHeaderIcon tag="div">My CardHeaderIcon</CardHeaderIcon>
     );
@@ -43,13 +43,13 @@ describe("CardHeaderIcon", () => {
     ).toBe(true);
   });
 
-  it("should render an anchor with .card-header-icon and custom classNames", () => {
+  it('should render an anchor with .card-header-icon and custom classNames', () => {
     const component = shallow(
       <CardHeaderIcon className="custom">
         <span>Any CardHeaderIcon</span>
       </CardHeaderIcon>
     );
-    expect(component.hasClass("card-header-icon")).toBe(true);
-    expect(component.hasClass("custom")).toBe(true);
+    expect(component.hasClass('card-header-icon')).toBe(true);
+    expect(component.hasClass('custom')).toBe(true);
   });
 });

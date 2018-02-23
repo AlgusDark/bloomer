@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -9,20 +9,20 @@ import {
   removeAlignmentProps,
   removeSizeProps,
   withHelpersModifiers
-} from "./../bulma";
-import { getHTMLProps, isOption } from "./../helpers";
+} from './../bulma';
+import { getHTMLProps, isOption } from './../helpers';
 
 export interface Icon<T>
   extends Bulma.Size,
     Bulma.Alignment,
     React.HTMLProps<T> {
-  isAlign?: "left" | "right";
+  isAlign?: 'left' | 'right';
 }
 
 const isAlignOption = isOption(isLeft, isRight);
 
 export function Icon({ children, ...props }: Icon<HTMLElement>) {
-  const className = classNames("icon", {
+  const className = classNames('icon', {
     ...(isAlignOption(props.isAlign) ? { [`is-${props.isAlign}`]: true } : {}),
     ...getSizeModifiers(props)
   });

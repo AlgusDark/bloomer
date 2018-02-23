@@ -1,24 +1,24 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../../bulma";
+import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface LevelItem<T> extends Bulma.Tag, React.HTMLProps<T> {
   isFlexible?: boolean;
 }
 
-export function LevelItem({ tag = "div", ...props }: LevelItem<HTMLElement>) {
+export function LevelItem({ tag = 'div', ...props }: LevelItem<HTMLElement>) {
   const className = classNames(
-    "level-item",
+    'level-item',
     {
-      "is-flexible": props.isFlexible
+      'is-flexible': props.isFlexible
     },
     props.className
   );
 
   const { isFlexible, ...HTMLProps } = props;
 
-  return React.createElement(props.href ? "a" : tag, {
+  return React.createElement(props.href ? 'a' : tag, {
     ...HTMLProps,
     className
   });

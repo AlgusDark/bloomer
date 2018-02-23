@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -8,19 +8,19 @@ import {
   isRight,
   removeAlignmentProps,
   withHelpersModifiers
-} from "./../../bulma";
-import { getHTMLProps, isOption } from "./../../helpers";
+} from './../../bulma';
+import { getHTMLProps, isOption } from './../../helpers';
 
 export interface TabList<T>
   extends Bulma.Alignment,
     Bulma.Tag,
     React.HTMLProps<T> {
-  isAlign?: "left" | "center" | "right";
+  isAlign?: 'left' | 'center' | 'right';
 }
 
 const isAlignOption = isOption(isLeft, isCenter, isRight);
 
-export function TabList({ tag = "ul", ...props }: TabList<HTMLElement>) {
+export function TabList({ tag = 'ul', ...props }: TabList<HTMLElement>) {
   const className =
     classNames(
       {

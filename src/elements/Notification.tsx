@@ -1,13 +1,13 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getColorModifiers,
   removeColorProps,
   withHelpersModifiers
-} from "./../bulma";
-import { getHTMLProps } from "./../helpers";
+} from './../bulma';
+import { getHTMLProps } from './../helpers';
 
 export interface Notification<T>
   extends Bulma.Color,
@@ -15,11 +15,11 @@ export interface Notification<T>
     React.HTMLProps<T> {}
 
 export function Notification({
-  tag = "div",
+  tag = 'div',
   ...props
 }: Notification<HTMLElement>) {
   const className = classNames(
-    "notification",
+    'notification',
     {
       ...getColorModifiers(props)
     },

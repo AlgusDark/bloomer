@@ -1,15 +1,15 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../../bulma";
+import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface MessageHeader<T> extends Bulma.Tag, React.HTMLProps<T> {}
 
 export function MessageHeader({
-  tag = "div",
+  tag = 'div',
   ...props
 }: MessageHeader<HTMLElement>) {
-  const className = classNames("message-header", props.className);
+  const className = classNames('message-header', props.className);
 
   return React.createElement(tag, { ...props, className });
 }

@@ -1,9 +1,9 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../bulma";
-import { getHTMLProps } from "./../helpers";
-import { getGridSizesModifiers, Grid, removeGridSizesProps } from "./grid";
+import { Bulma, withHelpersModifiers } from './../bulma';
+import { getHTMLProps } from './../helpers';
+import { getGridSizesModifiers, Grid, removeGridSizesProps } from './grid';
 
 export interface Tile<T> extends Bulma.Render, Bulma.Tag, React.HTMLProps<T> {
   isSize?: Grid.Sizes;
@@ -13,14 +13,14 @@ export interface Tile<T> extends Bulma.Render, Bulma.Tag, React.HTMLProps<T> {
   isVertical?: boolean;
 }
 
-export function Tile({ tag = "div", render, ...props }: Tile<HTMLElement>) {
+export function Tile({ tag = 'div', render, ...props }: Tile<HTMLElement>) {
   const className = classNames(
-    "tile",
+    'tile',
     {
-      "is-ancestor": props.isAncestor,
-      "is-child": props.isChild,
-      "is-parent": props.isParent,
-      "is-vertical": props.isVertical,
+      'is-ancestor': props.isAncestor,
+      'is-child': props.isChild,
+      'is-parent': props.isParent,
+      'is-vertical': props.isVertical,
       ...getGridSizesModifiers(props.isSize)
     },
     props.className

@@ -1,15 +1,15 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../../../bulma";
+import { Bulma, withHelpersModifiers } from './../../../bulma';
 
 export interface ModalCardBody<T> extends Bulma.Tag, React.HTMLProps<T> {}
 
 export function ModalCardBody({
-  tag = "section",
+  tag = 'section',
   ...props
 }: ModalCardBody<HTMLElement>) {
-  const className = classNames("modal-card-body", props.className);
+  const className = classNames('modal-card-body', props.className);
 
   return React.createElement(tag, { ...props, className });
 }

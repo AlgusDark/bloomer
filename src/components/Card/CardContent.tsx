@@ -1,15 +1,15 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../../bulma";
+import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface CardContent<T> extends Bulma.Tag, React.HTMLProps<T> {}
 
 export function CardContent({
-  tag = "div",
+  tag = 'div',
   ...props
 }: CardContent<HTMLElement>) {
-  const className = classNames("card-content", props.className);
+  const className = classNames('card-content', props.className);
 
   return React.createElement(tag, { ...props, className });
 }

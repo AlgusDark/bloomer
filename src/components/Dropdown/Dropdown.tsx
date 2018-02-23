@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -8,8 +8,8 @@ import {
   removeActiveModifiers,
   removeAlignmentProps,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Dropdown<T>
   extends Bulma.Active,
@@ -17,19 +17,19 @@ export interface Dropdown<T>
     Bulma.Tag,
     React.HTMLProps<T> {
   isActive?: boolean;
-  isAlign?: "right";
+  isAlign?: 'right';
   isHoverable?: boolean;
 }
 
 export function Dropdown({
-  tag = "div",
+  tag = 'div',
   isHoverable,
   ...props
 }: Dropdown<HTMLElement>) {
   const className = classNames(
-    "dropdown",
+    'dropdown',
     {
-      "is-hoverable": isHoverable,
+      'is-hoverable': isHoverable,
       ...combineModifiers(props, getActiveModifiers, getAlignmentModifiers)
     },
     props.className

@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -8,25 +8,25 @@ import {
   removeAlignmentProps,
   removeSizeProps,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Tabs<T>
   extends Bulma.Alignment,
     Bulma.Size,
     Bulma.Tag,
     React.HTMLProps<T> {
-  isAlign?: "left" | "centered" | "right";
+  isAlign?: 'left' | 'centered' | 'right';
   isBoxed?: boolean;
   isToggle?: boolean;
 }
 
-export function Tabs({ tag = "div", ...props }: Tabs<HTMLElement>) {
+export function Tabs({ tag = 'div', ...props }: Tabs<HTMLElement>) {
   const className = classNames(
-    "tabs",
+    'tabs',
     {
-      "is-boxed": props.isBoxed,
-      "is-toggle": props.isToggle,
+      'is-boxed': props.isBoxed,
+      'is-toggle': props.isToggle,
       ...combineModifiers(props, getAlignmentModifiers, getSizeModifiers)
     },
     props.className

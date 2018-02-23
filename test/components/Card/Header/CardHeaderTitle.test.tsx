@@ -1,10 +1,10 @@
-import * as React from "react";
-import { shallow } from "enzyme";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-import { CardHeaderTitle } from "./../../../../src/components/Card/Header/CardHeaderTitle";
+import { CardHeaderTitle } from './../../../../src/components/Card/Header/CardHeaderTitle';
 
-describe("CardHeaderTitle", () => {
-  it("should render a paragraph with .card-header-title", () => {
+describe('CardHeaderTitle', () => {
+  it('should render a paragraph with .card-header-title', () => {
     const component = shallow(
       <CardHeaderTitle>My CardHeaderTitle</CardHeaderTitle>
     );
@@ -15,7 +15,7 @@ describe("CardHeaderTitle", () => {
     ).toBe(true);
   });
 
-  it("should render a div with .card-header-title", () => {
+  it('should render a div with .card-header-title', () => {
     const component = shallow(
       <CardHeaderTitle tag="div">My CardHeaderTitle</CardHeaderTitle>
     );
@@ -26,13 +26,13 @@ describe("CardHeaderTitle", () => {
     ).toBe(true);
   });
 
-  it("should render a paragraph with .card-header-title and custom classNames", () => {
+  it('should render a paragraph with .card-header-title and custom classNames', () => {
     const component = shallow(
       <CardHeaderTitle className="custom">
         <span>Any CardHeaderTitle</span>
       </CardHeaderTitle>
     );
-    expect(component.hasClass("card-header-title")).toBe(true);
-    expect(component.hasClass("custom")).toBe(true);
+    expect(component.hasClass('card-header-title')).toBe(true);
+    expect(component.hasClass('custom')).toBe(true);
   });
 });

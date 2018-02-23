@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -8,8 +8,8 @@ import {
   removeActiveModifiers,
   removeFocusedModifiers,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Ellipsis<T>
   extends Bulma.Active,
@@ -17,9 +17,9 @@ export interface Ellipsis<T>
     Bulma.Tag,
     React.HTMLProps<T> {}
 
-export function Ellipsis({ tag = "span", ...props }: Ellipsis<HTMLElement>) {
+export function Ellipsis({ tag = 'span', ...props }: Ellipsis<HTMLElement>) {
   const className = classNames(
-    "pagination-ellipsis",
+    'pagination-ellipsis',
     {
       ...combineModifiers(props, getActiveModifiers, getFocusedModifiers)
     },
@@ -32,7 +32,7 @@ export function Ellipsis({ tag = "span", ...props }: Ellipsis<HTMLElement>) {
     removeFocusedModifiers
   );
 
-  return React.createElement(tag, { ...HTMLProps, className }, "\u2026");
+  return React.createElement(tag, { ...HTMLProps, className }, '\u2026');
 }
 
 const HOC = /*@__PURE__*/ withHelpersModifiers(Ellipsis);

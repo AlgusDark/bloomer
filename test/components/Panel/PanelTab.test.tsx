@@ -1,10 +1,10 @@
-import * as React from "react";
-import { shallow } from "enzyme";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-import { PanelTab } from "./../../../src/components/Panel/PanelTab";
+import { PanelTab } from './../../../src/components/Panel/PanelTab';
 
-describe("PanelTab", () => {
-  it("should render a custom component with PanelTab props", () => {
+describe('PanelTab', () => {
+  it('should render a custom component with PanelTab props', () => {
     const customComponent = props => (
       <div>
         My Button <a {...props} />
@@ -23,17 +23,17 @@ describe("PanelTab", () => {
     expect(component.contains(customComponentRendered)).toBe(true);
   });
 
-  it("should render an anchor", () => {
+  it('should render an anchor', () => {
     const component = shallow(<PanelTab href="#">My PanelTab</PanelTab>);
-    expect(component.is("a")).toBe(true);
+    expect(component.is('a')).toBe(true);
   });
 
-  it("should render a button", () => {
+  it('should render a button', () => {
     const component = shallow(<PanelTab tag="button">My PanelTab</PanelTab>);
-    expect(component.is("button")).toBe(true);
+    expect(component.is('button')).toBe(true);
   });
 
-  it("should render an anchor.is-active", () => {
+  it('should render an anchor.is-active', () => {
     const component = shallow(
       <PanelTab isActive href="#">
         My PanelTab
@@ -48,13 +48,13 @@ describe("PanelTab", () => {
     ).toBe(true);
   });
 
-  it("should render an a and custom classNames", () => {
+  it('should render an a and custom classNames', () => {
     const component = shallow(
       <PanelTab className="custom">
         <span>Any Content</span>
       </PanelTab>
     );
-    expect(component.is("a")).toBe(true);
-    expect(component.hasClass("custom")).toBe(true);
+    expect(component.is('a')).toBe(true);
+    expect(component.hasClass('custom')).toBe(true);
   });
 });

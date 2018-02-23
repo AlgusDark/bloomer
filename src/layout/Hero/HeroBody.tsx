@@ -1,12 +1,12 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../../bulma";
+import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface HeroBody<T> extends Bulma.Tag, React.HTMLProps<T> {}
 
-export function HeroBody({ tag = "div", ...props }: HeroBody<HTMLElement>) {
-  const className = classNames("hero-body", props.className);
+export function HeroBody({ tag = 'div', ...props }: HeroBody<HTMLElement>) {
+  const className = classNames('hero-body', props.className);
 
   return React.createElement(tag, { ...props, className });
 }

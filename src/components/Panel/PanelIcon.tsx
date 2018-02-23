@@ -1,7 +1,7 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../../bulma";
+import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface PanelIcon<T> extends React.HTMLProps<T> {}
 

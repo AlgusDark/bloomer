@@ -1,13 +1,13 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getSizeModifiers,
   removeSizeProps,
   withHelpersModifiers
-} from "./../bulma";
-import { getHTMLProps } from "./../helpers";
+} from './../bulma';
+import { getHTMLProps } from './../helpers';
 
 export interface Delete<T>
   extends Bulma.Render,
@@ -16,7 +16,7 @@ export interface Delete<T>
 
 export function Delete(props: Delete<HTMLButtonElement | HTMLAnchorElement>) {
   const className = classNames(
-    "delete",
+    'delete',
     {
       ...getSizeModifiers(props)
     },
@@ -31,7 +31,7 @@ export function Delete(props: Delete<HTMLButtonElement | HTMLAnchorElement>) {
 
   const button = (
     <button
-      type={props.type || "button"}
+      type={props.type || 'button'}
       {...HTMLProps}
       className={className}
     />

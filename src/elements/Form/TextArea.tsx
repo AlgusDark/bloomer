@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -8,8 +8,8 @@ import {
   removeSizeProps,
   removeStateProps,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface TextArea<T>
   extends Bulma.Size,
@@ -18,7 +18,7 @@ export interface TextArea<T>
 
 export function TextArea(props: TextArea<HTMLElement>) {
   const className = classNames(
-    "textarea",
+    'textarea',
     {
       ...combineModifiers(props, getSizeModifiers, getStateModifiers)
     },

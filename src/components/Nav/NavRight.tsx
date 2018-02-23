@@ -1,13 +1,13 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getActiveModifiers,
   removeActiveModifiers,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface NavRight<T>
   extends Bulma.Active,
@@ -16,11 +16,11 @@ export interface NavRight<T>
   isMenu?: boolean;
 }
 
-export function NavRight({ tag = "div", ...props }: NavRight<HTMLElement>) {
+export function NavRight({ tag = 'div', ...props }: NavRight<HTMLElement>) {
   const className = classNames(
-    "nav-right",
+    'nav-right',
     {
-      "nav-menu": props.isMenu,
+      'nav-menu': props.isMenu,
       ...getActiveModifiers(props)
     },
     props.className

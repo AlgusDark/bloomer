@@ -1,13 +1,13 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getActiveModifiers,
   removeActiveModifiers,
   withHelpersModifiers
-} from "./../../bulma";
-import { getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { getHTMLProps } from './../../helpers';
 
 export interface NavbarBurger<T>
   extends Bulma.Active,
@@ -15,11 +15,11 @@ export interface NavbarBurger<T>
     React.HTMLProps<T> {}
 
 export function NavbarBurger({
-  tag = "div",
+  tag = 'div',
   ...props
 }: NavbarBurger<HTMLElement>) {
   const className = classNames(
-    "navbar-burger",
+    'navbar-burger',
     {
       ...getActiveModifiers(props)
     },
@@ -31,9 +31,9 @@ export function NavbarBurger({
   return React.createElement(
     tag,
     { ...HTMLProps, className },
-    React.createElement("span", null),
-    React.createElement("span", null),
-    React.createElement("span", null)
+    React.createElement('span', null),
+    React.createElement('span', null),
+    React.createElement('span', null)
   );
 }
 

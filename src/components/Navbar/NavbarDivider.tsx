@@ -1,18 +1,18 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../../bulma";
+import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface NavbarDivider<T> extends Bulma.Tag, React.HTMLProps<T> {
   isBoxed?: boolean;
 }
 
 export function NavbarDivider({
-  tag = "hr",
+  tag = 'hr',
   isBoxed,
   ...props
 }: NavbarDivider<HTMLElement>) {
-  const className = classNames("navbar-divider", props.className);
+  const className = classNames('navbar-divider', props.className);
 
   return React.createElement(tag, { ...props, className });
 }

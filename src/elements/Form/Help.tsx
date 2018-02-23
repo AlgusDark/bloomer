@@ -1,19 +1,19 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getColorModifiers,
   removeColorProps,
   withHelpersModifiers
-} from "./../../bulma";
-import { getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { getHTMLProps } from './../../helpers';
 
 export interface Help<T> extends Bulma.Color, Bulma.Tag, React.HTMLProps<T> {}
 
-export function Help({ tag = "p", ...props }: Help<HTMLElement>) {
+export function Help({ tag = 'p', ...props }: Help<HTMLElement>) {
   const className = classNames(
-    "help",
+    'help',
     {
       ...getColorModifiers(props)
     },

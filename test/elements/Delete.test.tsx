@@ -1,10 +1,10 @@
-import * as React from "react";
-import { shallow } from "enzyme";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-import { Delete } from "./../../src/elements/Delete";
+import { Delete } from './../../src/elements/Delete';
 
-describe("Delete", () => {
-  it("should render a custom component with delete props", () => {
+describe('Delete', () => {
+  it('should render a custom component with delete props', () => {
     const customComponent = props => (
       <div>
         Delete <a {...props} />
@@ -21,24 +21,24 @@ describe("Delete", () => {
     expect(component.contains(customComponentRendered)).toBe(true);
   });
 
-  it("should render an anchor with .delete", () => {
+  it('should render an anchor with .delete', () => {
     const component = shallow(<Delete href="#" />);
     expect(
       component.contains(<a role="button" href="#" className="delete" />)
     ).toBe(true);
   });
 
-  it("should render a button with .delete", () => {
+  it('should render a button with .delete', () => {
     const component = shallow(<Delete />);
     expect(
       component.contains(<button type="button" className="delete" />)
     ).toBe(true);
   });
 
-  it("should render a button with .delete and custom classNames", () => {
+  it('should render a button with .delete and custom classNames', () => {
     const component = shallow(<Delete className="custom loader" />);
-    expect(component.hasClass("delete")).toBe(true);
-    expect(component.hasClass("custom")).toBe(true);
-    expect(component.hasClass("loader")).toBe(true);
+    expect(component.hasClass('delete')).toBe(true);
+    expect(component.hasClass('custom')).toBe(true);
+    expect(component.hasClass('loader')).toBe(true);
   });
 });

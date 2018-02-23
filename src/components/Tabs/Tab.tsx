@@ -1,18 +1,18 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getActiveModifiers,
   removeActiveModifiers,
   withHelpersModifiers
-} from "./../../bulma";
+} from './../../bulma';
 
-import { getHTMLProps } from "./../../helpers";
+import { getHTMLProps } from './../../helpers';
 
 export interface Tab<T> extends Bulma.Active, Bulma.Tag, React.HTMLProps<T> {}
 
-export function Tab({ tag = "li", ...props }: Tab<HTMLElement>) {
+export function Tab({ tag = 'li', ...props }: Tab<HTMLElement>) {
   const className =
     classNames(
       {

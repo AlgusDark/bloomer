@@ -1,4 +1,4 @@
-import { Bulma } from "./bulma";
+import { Bulma } from './bulma';
 
 export function getHTMLProps(
   props: object,

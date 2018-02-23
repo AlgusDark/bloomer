@@ -1,17 +1,17 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../bulma";
+import { Bulma, withHelpersModifiers } from './../bulma';
 
 export interface Container<T> extends Bulma.Tag, React.HTMLProps<T> {
   isFluid?: boolean;
 }
 
-export function Container({ tag = "div", ...props }: Container<HTMLElement>) {
+export function Container({ tag = 'div', ...props }: Container<HTMLElement>) {
   const className = classNames(
-    "container",
+    'container',
     {
-      "is-fluid": props.isFluid
+      'is-fluid': props.isFluid
     },
     props.className
   );

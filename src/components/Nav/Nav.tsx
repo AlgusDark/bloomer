@@ -1,17 +1,17 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../../bulma";
+import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface Nav<T> extends Bulma.Tag, React.HTMLProps<T> {
   hasShadow?: boolean;
 }
 
-export function Nav({ tag = "nav", ...props }: Nav<HTMLElement>) {
+export function Nav({ tag = 'nav', ...props }: Nav<HTMLElement>) {
   const className = classNames(
-    "nav",
+    'nav',
     {
-      "has-shadow": props.hasShadow
+      'has-shadow': props.hasShadow
     },
     props.className
   );

@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -8,8 +8,8 @@ import {
   removeColorProps,
   removeSizeProps,
   withHelpersModifiers
-} from "./../bulma";
-import { combineModifiers, getHTMLProps } from "./../helpers";
+} from './../bulma';
+import { combineModifiers, getHTMLProps } from './../helpers';
 
 export interface Progress<T>
   extends Bulma.Size,
@@ -18,11 +18,11 @@ export interface Progress<T>
     React.HTMLProps<T> {}
 
 export function Progress({
-  tag = "progress",
+  tag = 'progress',
   ...props
 }: Progress<HTMLElement>) {
   const className = classNames(
-    "progress",
+    'progress',
     {
       ...combineModifiers(props, getSizeModifiers, getColorModifiers)
     },

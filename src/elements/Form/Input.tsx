@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -10,8 +10,8 @@ import {
   removeSizeProps,
   removeStateProps,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Input<T>
   extends Bulma.Color,
@@ -21,7 +21,7 @@ export interface Input<T>
 
 export function Input(props: Input<HTMLElement>) {
   const className = classNames(
-    "input",
+    'input',
     {
       ...combineModifiers(
         props,
@@ -41,7 +41,7 @@ export function Input(props: Input<HTMLElement>) {
   );
 
   return (
-    <input {...HTMLProps} className={className} type={props.type || "text"} />
+    <input {...HTMLProps} className={className} type={props.type || 'text'} />
   );
 }
 

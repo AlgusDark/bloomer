@@ -1,7 +1,7 @@
-import * as React from "react";
-import * as classNames from "classnames";
+import * as React from 'react';
+import * as classNames from 'classnames';
 
-import { Bulma, withHelpersModifiers } from "./../../../bulma";
+import { Bulma, withHelpersModifiers } from './../../../bulma';
 
 export interface CardHeaderIcon<T>
   extends Bulma.Render,
@@ -9,11 +9,11 @@ export interface CardHeaderIcon<T>
     React.HTMLProps<T> {}
 
 export function CardHeaderIcon({
-  tag = "a",
+  tag = 'a',
   render,
   ...props
 }: CardHeaderIcon<HTMLElement>) {
-  const className = classNames("card-header-icon", props.className);
+  const className = classNames('card-header-icon', props.className);
 
   if (render) return render({ ...props, className });
 

@@ -1,13 +1,13 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getActiveModifiers,
   removeActiveModifiers,
   withHelpersModifiers
-} from "./../../../bulma";
-import { getHTMLProps } from "./../../../helpers";
+} from './../../../bulma';
+import { getHTMLProps } from './../../../helpers';
 
 export interface DropdownItem<T>
   extends Bulma.Active,
@@ -16,12 +16,12 @@ export interface DropdownItem<T>
     React.HTMLProps<T> {}
 
 export function DropdownItem({
-  tag = "div",
+  tag = 'div',
   render,
   ...props
 }: DropdownItem<HTMLElement>) {
   const className = classNames(
-    "dropdown-item",
+    'dropdown-item',
     {
       ...getActiveModifiers(props)
     },
@@ -32,7 +32,7 @@ export function DropdownItem({
 
   if (render) return render({ ...HTMLProps, className });
 
-  return React.createElement(props.href ? "a" : tag, {
+  return React.createElement(props.href ? 'a' : tag, {
     ...HTMLProps,
     className
   });

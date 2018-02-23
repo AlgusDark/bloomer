@@ -1,22 +1,22 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getActiveModifiers,
   removeActiveModifiers,
   withHelpersModifiers
-} from "./../../bulma";
-import { getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { getHTMLProps } from './../../helpers';
 
 export interface NavbarMenu<T>
   extends Bulma.Tag,
     Bulma.Active,
     React.HTMLProps<T> {}
 
-export function NavbarMenu({ tag = "div", ...props }: NavbarMenu<HTMLElement>) {
+export function NavbarMenu({ tag = 'div', ...props }: NavbarMenu<HTMLElement>) {
   const className = classNames(
-    "navbar-menu",
+    'navbar-menu',
     {
       ...getActiveModifiers(props)
     },

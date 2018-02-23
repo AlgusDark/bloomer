@@ -1,13 +1,13 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getActiveModifiers,
   removeActiveModifiers,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface NavbarItem<T>
   extends Bulma.Tag,
@@ -19,17 +19,17 @@ export interface NavbarItem<T>
 }
 
 export function NavbarItem({
-  tag = "div",
+  tag = 'div',
   render,
   isHoverable,
   hasDropdown,
   ...props
 }: NavbarItem<HTMLElement>) {
   const className = classNames(
-    "navbar-item",
+    'navbar-item',
     {
-      "has-dropdown": hasDropdown,
-      "is-hoverable": isHoverable,
+      'has-dropdown': hasDropdown,
+      'is-hoverable': isHoverable,
       ...getActiveModifiers(props)
     },
     props.className
@@ -39,7 +39,7 @@ export function NavbarItem({
 
   if (render) return render({ ...HTMLProps, className });
 
-  return React.createElement(props.href ? "a" : tag, {
+  return React.createElement(props.href ? 'a' : tag, {
     ...HTMLProps,
     className
   });

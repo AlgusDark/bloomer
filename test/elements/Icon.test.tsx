@@ -1,15 +1,15 @@
-import * as React from "react";
-import { shallow } from "enzyme";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-import { Icon } from "./../../src/elements/Icon";
+import { Icon } from './../../src/elements/Icon';
 
-describe("Icon", () => {
-  it("should render a span with .icon", () => {
+describe('Icon', () => {
+  it('should render a span with .icon', () => {
     const component = shallow(<Icon />);
-    expect(component.hasClass("icon")).toBe(true);
+    expect(component.hasClass('icon')).toBe(true);
   });
 
-  it("should render a span.icon with i.fa.fa-home", () => {
+  it('should render a span.icon with i.fa.fa-home', () => {
     const component = shallow(<Icon className="fa fa-home" />);
     expect(
       component.contains(
@@ -20,13 +20,13 @@ describe("Icon", () => {
     ).toBe(true);
   });
 
-  it("should render a span with .icon and modifiers", () => {
+  it('should render a span with .icon and modifiers', () => {
     const component = shallow(<Icon isAlign="left" />);
-    expect(component.hasClass("icon")).toBe(true);
-    expect(component.hasClass("is-left")).toBe(true);
+    expect(component.hasClass('icon')).toBe(true);
+    expect(component.hasClass('is-left')).toBe(true);
   });
 
-  it("should render a span with .icon, modifiers and i with classNames", () => {
+  it('should render a span with .icon, modifiers and i with classNames', () => {
     const component = shallow(<Icon isSize="large" className="custom" />);
     expect(
       component.contains(
@@ -37,7 +37,7 @@ describe("Icon", () => {
     ).toBe(true);
   });
 
-  it("should render a span with .icon and i with custom classNames", () => {
+  it('should render a span with .icon and i with custom classNames', () => {
     const component = shallow(<Icon className="custom" />);
     expect(
       component.contains(

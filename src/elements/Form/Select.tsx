@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -10,8 +10,8 @@ import {
   removeLoadingProps,
   removeSizeProps,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Select<T>
   extends Bulma.Color,
@@ -21,9 +21,9 @@ export interface Select<T>
 
 export function Select(props: Select<HTMLElement>) {
   const wrapperClassName = classNames(
-    "select",
+    'select',
     {
-      "is-disabled": props.disabled,
+      'is-disabled': props.disabled,
       ...combineModifiers(
         props,
         getColorModifiers,

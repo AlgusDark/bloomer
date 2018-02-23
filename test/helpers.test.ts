@@ -1,18 +1,18 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { getHTMLProps, combineModifiers } from "./../src/helpers";
+import { getHTMLProps, combineModifiers } from './../src/helpers';
 
-describe("getHTMLProps", () => {
+describe('getHTMLProps', () => {
   const props = {
-    href: "#",
+    href: '#',
     onClick: f => f
   };
 
-  it("should return props when no removeFunctions are passed", () => {
+  it('should return props when no removeFunctions are passed', () => {
     expect(getHTMLProps(props)).toEqual(props);
   });
 
-  it("should remove props with more than one function as parameter", () => {
+  it('should remove props with more than one function as parameter', () => {
     const removeHref = props => {
       const { href, ...rest } = props;
       return rest;
@@ -27,8 +27,8 @@ describe("getHTMLProps", () => {
   });
 });
 
-describe("combineModifiers", () => {
-  it("should return an empty object when only props are passed", () => {
+describe('combineModifiers', () => {
+  it('should return an empty object when only props are passed', () => {
     const props = {
       testAny: true,
       testSome: true,
@@ -37,16 +37,16 @@ describe("combineModifiers", () => {
     expect(combineModifiers(props)).toEqual({});
   });
 
-  it("should return combined Object when get*ModifiersFunctions are passed", () => {
+  it('should return combined Object when get*ModifiersFunctions are passed', () => {
     const props = {
       testAny: true,
       testSome: true,
       testNothing: false
     };
 
-    const getTestAnyModifiers = props => ({ "test-any": props.testAny });
-    const getTestSomeModifiers = props => ({ "test-some": props.testSome });
-    const getFailModifiers = props => ({ "test-fail": props.testFail });
+    const getTestAnyModifiers = props => ({ 'test-any': props.testAny });
+    const getTestSomeModifiers = props => ({ 'test-some': props.testSome });
+    const getFailModifiers = props => ({ 'test-fail': props.testFail });
 
     const combined = combineModifiers(
       props,
@@ -54,6 +54,6 @@ describe("combineModifiers", () => {
       getTestSomeModifiers,
       getFailModifiers
     );
-    expect(combined).toEqual({ "test-any": true, "test-some": true });
+    expect(combined).toEqual({ 'test-any': true, 'test-some': true });
   });
 });

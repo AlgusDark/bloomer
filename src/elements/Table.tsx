@@ -1,7 +1,7 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../bulma";
+import { Bulma, withHelpersModifiers } from './../bulma';
 
 export interface Table<T> extends React.HTMLProps<T> {
   isBordered?: boolean;
@@ -11,11 +11,11 @@ export interface Table<T> extends React.HTMLProps<T> {
 
 export function Table(props: Table<HTMLElement>) {
   const className = classNames(
-    "table",
+    'table',
     {
-      "is-bordered": props.isBordered,
-      "is-narrow": props.isNarrow,
-      "is-striped": props.isStriped
+      'is-bordered': props.isBordered,
+      'is-narrow': props.isNarrow,
+      'is-striped': props.isStriped
     },
     props.className
   );

@@ -1,15 +1,15 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../../bulma";
+import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface DropdownTrigger<T> extends Bulma.Tag, React.HTMLProps<T> {}
 
 export function DropdownTrigger({
-  tag = "div",
+  tag = 'div',
   ...props
 }: DropdownTrigger<HTMLElement>) {
-  const className = classNames("dropdown-trigger", props.className);
+  const className = classNames('dropdown-trigger', props.className);
 
   return React.createElement(tag, { ...props, className });
 }

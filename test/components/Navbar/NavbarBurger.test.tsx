@@ -1,10 +1,10 @@
-import * as React from "react";
-import { shallow } from "enzyme";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-import { NavbarBurger } from "./../../../src/components/Navbar/NavbarBurger";
+import { NavbarBurger } from './../../../src/components/Navbar/NavbarBurger';
 
-describe("NavbarBurger", () => {
-  it("should render a div with .navbar-burger", () => {
+describe('NavbarBurger', () => {
+  it('should render a div with .navbar-burger', () => {
     const component = shallow(<NavbarBurger />);
     expect(
       component.contains(
@@ -17,7 +17,7 @@ describe("NavbarBurger", () => {
     ).toBe(true);
   });
 
-  it("should render a p with .navbar-burger", () => {
+  it('should render a p with .navbar-burger', () => {
     const component = shallow(<NavbarBurger tag="p" />);
     expect(
       component.contains(
@@ -30,9 +30,9 @@ describe("NavbarBurger", () => {
     ).toBe(true);
   });
 
-  it("should render a div with .navbar-burger and custom classNames", () => {
+  it('should render a div with .navbar-burger and custom classNames', () => {
     const component = shallow(<NavbarBurger className="custom" />);
-    expect(component.hasClass("navbar-burger")).toBe(true);
-    expect(component.hasClass("custom")).toBe(true);
+    expect(component.hasClass('navbar-burger')).toBe(true);
+    expect(component.hasClass('custom')).toBe(true);
   });
 });

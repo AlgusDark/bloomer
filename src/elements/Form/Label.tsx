@@ -1,19 +1,19 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getSizeModifiers,
   removeSizeProps,
   withHelpersModifiers
-} from "./../../bulma";
-import { getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { getHTMLProps } from './../../helpers';
 
 export interface Label<T> extends Bulma.Size, React.HTMLProps<T> {}
 
 export function Label(props: Label<HTMLElement>) {
   const className = classNames(
-    "label",
+    'label',
     {
       ...getSizeModifiers(props)
     },

@@ -1,15 +1,15 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../../bulma";
+import { Bulma, withHelpersModifiers } from './../../bulma';
 
 export interface NavbarBrand<T> extends Bulma.Tag, React.HTMLProps<T> {}
 
 export function NavbarBrand({
-  tag = "div",
+  tag = 'div',
   ...props
 }: NavbarBrand<HTMLElement>) {
-  const className = classNames("navbar-brand", props.className);
+  const className = classNames('navbar-brand', props.className);
 
   return React.createElement(tag, { ...props, className });
 }

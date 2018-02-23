@@ -1,14 +1,14 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getActiveModifiers,
   removeActiveModifiers,
   withHelpersModifiers
-} from "./../../bulma";
+} from './../../bulma';
 
-import { getHTMLProps } from "./../../helpers";
+import { getHTMLProps } from './../../helpers';
 
 export interface BreadcrumbItem<T>
   extends Bulma.Active,
@@ -16,7 +16,7 @@ export interface BreadcrumbItem<T>
     React.HTMLProps<T> {}
 
 export function BreadcrumbItem({
-  tag = "li",
+  tag = 'li',
   ...props
 }: BreadcrumbItem<HTMLElement>) {
   const className =

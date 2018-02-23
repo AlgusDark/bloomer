@@ -1,15 +1,15 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Bulma, withHelpersModifiers } from "./../bulma";
-import { combineModifiers, getHTMLProps } from "./../helpers";
+import { Bulma, withHelpersModifiers } from './../bulma';
+import { combineModifiers, getHTMLProps } from './../helpers';
 import {
   getOffsetModifiers,
   getSizeModifiers,
   Grid,
   removeOffsetProps,
   removeSizeProps
-} from "./grid";
+} from './grid';
 
 export interface Column<T>
   extends Grid.HorizontalSize,
@@ -17,9 +17,9 @@ export interface Column<T>
     Bulma.Tag,
     React.HTMLProps<T> {}
 
-export function Column({ tag = "div", ...props }: Column<HTMLElement>) {
+export function Column({ tag = 'div', ...props }: Column<HTMLElement>) {
   const className = classNames(
-    "column",
+    'column',
     {
       ...combineModifiers(props, getSizeModifiers, getOffsetModifiers)
     },

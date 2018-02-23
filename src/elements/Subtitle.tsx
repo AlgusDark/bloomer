@@ -1,22 +1,22 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getHeadingModifiers,
   removeHeadingProps,
   withHelpersModifiers
-} from "./../bulma";
-import { getHTMLProps } from "./../helpers";
+} from './../bulma';
+import { getHTMLProps } from './../helpers';
 
 export interface Subtitle<T>
   extends Bulma.Heading,
     Bulma.Tag,
     React.HTMLProps<T> {}
 
-export function Subtitle({ tag = "h2", ...props }: Subtitle<HTMLElement>) {
+export function Subtitle({ tag = 'h2', ...props }: Subtitle<HTMLElement>) {
   const className = classNames(
-    "subtitle",
+    'subtitle',
     {
       ...getHeadingModifiers(props)
     },

@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -8,8 +8,8 @@ import {
   removeColorProps,
   removeSizeProps,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Hero<T>
   extends Bulma.Color,
@@ -21,13 +21,13 @@ export interface Hero<T>
   isHalfHeight?: boolean;
 }
 
-export function Hero({ tag = "section", ...props }: Hero<HTMLElement>) {
+export function Hero({ tag = 'section', ...props }: Hero<HTMLElement>) {
   const className = classNames(
-    "hero",
+    'hero',
     {
-      "is-bold": props.isBold,
-      "is-fullheight": props.isFullHeight,
-      "is-halfheight": props.isHalfHeight,
+      'is-bold': props.isBold,
+      'is-fullheight': props.isFullHeight,
+      'is-halfheight': props.isHalfHeight,
       ...combineModifiers(props, getColorModifiers, getSizeModifiers)
     },
     props.className

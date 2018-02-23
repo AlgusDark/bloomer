@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -8,20 +8,20 @@ import {
   removeColorProps,
   removeSizeProps,
   withHelpersModifiers
-} from "./../bulma";
-import { combineModifiers, getHTMLProps } from "./../helpers";
+} from './../bulma';
+import { combineModifiers, getHTMLProps } from './../helpers';
 
 export interface Tag<T>
   extends Bulma.Color,
     Bulma.Size,
     Bulma.Tag,
     React.HTMLProps<T> {
-  isSize?: "medium" | "large";
+  isSize?: 'medium' | 'large';
 }
 
-export function Tag({ tag = "span", ...props }: Tag<HTMLElement>) {
+export function Tag({ tag = 'span', ...props }: Tag<HTMLElement>) {
   const className = classNames(
-    "tag",
+    'tag',
     {
       ...combineModifiers(props, getColorModifiers, getSizeModifiers)
     },

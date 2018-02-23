@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -8,8 +8,8 @@ import {
   removeActiveModifiers,
   removeFocusedModifiers,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface PageLink<T>
   extends Bulma.Render,
@@ -21,14 +21,14 @@ export interface PageLink<T>
 }
 
 export function PageLink({
-  tag = "a",
+  tag = 'a',
   render,
   ...props
 }: PageLink<HTMLElement>) {
   const className = classNames(
-    "pagination-link",
+    'pagination-link',
     {
-      "is-current": props.isCurrent,
+      'is-current': props.isCurrent,
       ...combineModifiers(props, getActiveModifiers, getFocusedModifiers)
     },
     props.className

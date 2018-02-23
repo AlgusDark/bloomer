@@ -1,14 +1,14 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
-import { Grid } from "./grid/grid";
+import { Grid } from './grid/grid';
 import {
   combineModifiers,
   getHTMLProps,
   is,
   isBetween,
   isOption
-} from "./helpers";
+} from './helpers';
 
 export declare namespace Bulma {
   // Modifiers
@@ -16,7 +16,7 @@ export declare namespace Bulma {
     isAlign?: string;
   }
 
-  export type Sizes = "large" | "medium" | "small";
+  export type Sizes = 'large' | 'medium' | 'small';
   export interface Size {
     isSize?: Sizes;
   }
@@ -61,60 +61,60 @@ export declare namespace Bulma {
   export interface Grid extends Grid.HorizontalSize, Grid.Offset {}
 
   export type Platform =
-    | "mobile"
-    | "tablet"
-    | "touch"
-    | "desktop"
-    | "widescreen";
-  export type PlatformOnly = "tablet-only" | "desktop-only";
+    | 'mobile'
+    | 'tablet'
+    | 'touch'
+    | 'desktop'
+    | 'widescreen';
+  export type PlatformOnly = 'tablet-only' | 'desktop-only';
   export type AllPlatforms = Platform | PlatformOnly;
-  export type AllPlatformsWithDefault = AllPlatforms | "default";
+  export type AllPlatformsWithDefault = AllPlatforms | 'default';
 
   export type FlexDisplay =
-    | "flex"
-    | "flex-mobile"
-    | "flex-tablet"
-    | "flex-touch"
-    | "flex-desktop"
-    | "flex-widescreen"
-    | "flex-tablet-only"
-    | "flex-desktop-only";
+    | 'flex'
+    | 'flex-mobile'
+    | 'flex-tablet'
+    | 'flex-touch'
+    | 'flex-desktop'
+    | 'flex-widescreen'
+    | 'flex-tablet-only'
+    | 'flex-desktop-only';
   export type BlockDisplay =
-    | "block"
-    | "block-mobile"
-    | "block-tablet"
-    | "block-touch"
-    | "block-desktop"
-    | "block-widescreen"
-    | "block-tablet-only"
-    | "block-desktop-only";
+    | 'block'
+    | 'block-mobile'
+    | 'block-tablet'
+    | 'block-touch'
+    | 'block-desktop'
+    | 'block-widescreen'
+    | 'block-tablet-only'
+    | 'block-desktop-only';
   export type InlineDisplay =
-    | "inline"
-    | "inline-mobile"
-    | "inline-tablet"
-    | "inline-touch"
-    | "inline-desktop"
-    | "inline-widescreen"
-    | "inline-tablet-only"
-    | "inline-desktop-only";
+    | 'inline'
+    | 'inline-mobile'
+    | 'inline-tablet'
+    | 'inline-touch'
+    | 'inline-desktop'
+    | 'inline-widescreen'
+    | 'inline-tablet-only'
+    | 'inline-desktop-only';
   export type InlineBlockDisplay =
-    | "inline-block"
-    | "inline-block-mobile"
-    | "inline-block-tablet"
-    | "inline-block-touch"
-    | "inline-block-desktop"
-    | "inline-block-widescreen"
-    | "inline-block-tablet-only"
-    | "inline-block-desktop-only";
+    | 'inline-block'
+    | 'inline-block-mobile'
+    | 'inline-block-tablet'
+    | 'inline-block-touch'
+    | 'inline-block-desktop'
+    | 'inline-block-widescreen'
+    | 'inline-block-tablet-only'
+    | 'inline-block-desktop-only';
   export type InlineFlexDisplay =
-    | "inline-flex"
-    | "inline-flex-mobile"
-    | "inline-flex-tablet"
-    | "inline-flex-touch"
-    | "inline-flex-desktop"
-    | "inline-flex-widescreen"
-    | "inline-flex-tablet-only"
-    | "inline-flex-desktop-only";
+    | 'inline-flex'
+    | 'inline-flex-mobile'
+    | 'inline-flex-tablet'
+    | 'inline-flex-touch'
+    | 'inline-flex-desktop'
+    | 'inline-flex-widescreen'
+    | 'inline-flex-tablet-only'
+    | 'inline-flex-desktop-only';
   export type Displays =
     | FlexDisplay
     | BlockDisplay
@@ -126,8 +126,8 @@ export declare namespace Bulma {
     flex?: AllPlatformsWithDefault | AllPlatformsWithDefault[];
     block?: AllPlatformsWithDefault | AllPlatformsWithDefault[];
     inline?: AllPlatformsWithDefault | AllPlatformsWithDefault[];
-    "inline-block"?: AllPlatformsWithDefault | AllPlatformsWithDefault[];
-    "inline-flex"?: AllPlatformsWithDefault | AllPlatformsWithDefault[];
+    'inline-block'?: AllPlatformsWithDefault | AllPlatformsWithDefault[];
+    'inline-flex'?: AllPlatformsWithDefault | AllPlatformsWithDefault[];
   }
 
   export interface Show {
@@ -140,7 +140,7 @@ export declare namespace Bulma {
 
   export interface Responsive extends Show, Hide {}
 
-  export type Alignments = "left" | "right";
+  export type Alignments = 'left' | 'right';
 
   export interface Helpers extends FullWidth, Responsive {
     isClearfix?: boolean;
@@ -152,7 +152,7 @@ export declare namespace Bulma {
     isPaddingless?: boolean;
     isUnselectable?: boolean;
 
-    hasTextAlign?: Alignments | "centered";
+    hasTextAlign?: Alignments | 'centered';
     hasTextColor?: string;
   }
 
@@ -182,8 +182,8 @@ export const isDesktop = is({ desktop: true });
 export const isWidescreen = is({ widescreen: true });
 export const isFullHD = is({ fullhd: true });
 
-const isTabletOnly = is({ "tablet-only": true });
-const isDesktopOnly = is({ "desktop-only": true });
+const isTabletOnly = is({ 'tablet-only': true });
+const isDesktopOnly = is({ 'desktop-only': true });
 
 export const isLeft = is({ left: true });
 export const isRight = is({ right: true });
@@ -228,7 +228,7 @@ export function removeSizeProps(props: Bulma.Size) {
 
 function getFullWidthModifiers(props: Bulma.FullWidth) {
   return {
-    "is-fullwidth": props.isFullWidth
+    'is-fullwidth': props.isFullWidth
   };
 }
 
@@ -238,7 +238,7 @@ function removeFullWidthProps(props: Bulma.FullWidth) {
 }
 
 export function getActiveModifiers(props: Bulma.Active) {
-  return { "is-active": props.isActive };
+  return { 'is-active': props.isActive };
 }
 
 export function removeActiveModifiers(props: Bulma.Active) {
@@ -247,7 +247,7 @@ export function removeActiveModifiers(props: Bulma.Active) {
 }
 
 export function getFocusedModifiers(props: Bulma.Focused) {
-  return { "is-focused": props.isFocused };
+  return { 'is-focused': props.isFocused };
 }
 
 export function removeFocusedModifiers(props: Bulma.Focused) {
@@ -256,7 +256,7 @@ export function removeFocusedModifiers(props: Bulma.Focused) {
 }
 
 export function getHoveredModifiers(props: Bulma.Hovered) {
-  return { "is-hovered": props.isHovered };
+  return { 'is-hovered': props.isHovered };
 }
 
 export function removeHoveredModifiers(props: Bulma.Hovered) {
@@ -279,7 +279,7 @@ export function removeStateProps(props: Bulma.State) {
 
 export function getLoadingModifiers(props: Bulma.Loading) {
   return {
-    "is-loading": props.isLoading
+    'is-loading': props.isLoading
   };
 }
 
@@ -304,7 +304,7 @@ export function getHeadingModifiers({ isSpaced, isSize: size }: Bulma.Heading) {
 
   return {
     ...isSize,
-    "is-spaced": isSpaced
+    'is-spaced': isSpaced
   };
 }
 
@@ -316,8 +316,8 @@ export function removeHeadingProps(props: Bulma.Heading) {
 const isFlex = is({ flex: true });
 const isBlock = is({ block: true });
 const isInline = is({ inline: true });
-const isInlineBlock = is({ "inline-block": true });
-const isInlineFlex = is({ "inline-flex": true });
+const isInlineBlock = is({ 'inline-block': true });
+const isInlineFlex = is({ 'inline-flex': true });
 
 const isDisplay = isOption(
   isFlex,
@@ -330,14 +330,14 @@ const isDisplay = isOption(
 const getShowModifiers = (
   display: Bulma.Displays | Bulma.Displays[] | Bulma.DisplayObject
 ) => {
-  const isDefault = str => (str === "default" ? true : false);
-  if (typeof display === "string") return { [`is-${display}`]: true };
+  const isDefault = str => (str === 'default' ? true : false);
+  if (typeof display === 'string') return { [`is-${display}`]: true };
   if (Array.isArray(display))
     return display.reduce(
       (acc, display) => ({ ...acc, [`is-${display}`]: true }),
       {}
     );
-  if (typeof display === "object") {
+  if (typeof display === 'object') {
     return Object.keys(display).reduce((acc, key) => {
       if (Array.isArray(display[key])) {
         return display[key].reduce((acc, display) => {
@@ -357,9 +357,9 @@ const getShowModifiers = (
 const getHideModifiers = (
   platform: boolean | Bulma.AllPlatforms | Bulma.AllPlatforms[]
 ) => {
-  if (typeof platform === "boolean")
-    return platform ? { "is-hidden": true } : {};
-  if (typeof platform === "string")
+  if (typeof platform === 'boolean')
+    return platform ? { 'is-hidden': true } : {};
+  if (typeof platform === 'string')
     return isAllPlatforms(platform) ? { [`is-hidden-${platform}`]: true } : {};
   if (Array.isArray(platform)) {
     return platform.reduce(
@@ -396,14 +396,14 @@ function getHelpersModifiers({
   return {
     ...getShowModifiers(isDisplay),
     ...getHideModifiers(isHidden),
-    ...getAlignModifier(isPulled, "is-pulled"),
-    ...getAlignModifier(hasTextAlign, "has-text"),
+    ...getAlignModifier(isPulled, 'is-pulled'),
+    ...getAlignModifier(hasTextAlign, 'has-text'),
     ...getColorModifier(hasTextColor),
-    "is-clearfix": isClearfix,
-    "is-marginless": isMarginless,
-    "is-overlay": isOverlay,
-    "is-paddingless": isPaddingless,
-    "is-unselectable": isUnselectable
+    'is-clearfix': isClearfix,
+    'is-marginless': isMarginless,
+    'is-overlay': isOverlay,
+    'is-paddingless': isPaddingless,
+    'is-unselectable': isUnselectable
   };
 }
 

@@ -1,22 +1,22 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getColorModifiers,
   removeColorProps,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Message<T>
   extends Bulma.Color,
     Bulma.Tag,
     React.HTMLProps<T> {}
 
-export function Message({ tag = "article", ...props }: Message<HTMLElement>) {
+export function Message({ tag = 'article', ...props }: Message<HTMLElement>) {
   const className = classNames(
-    "message",
+    'message',
     {
       ...getColorModifiers(props)
     },

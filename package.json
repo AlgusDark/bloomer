@@ -59,7 +59,7 @@
     "watch:docs": "watch \"npm run docs\" docs/ --wait=2000 --ignoreUnreadable",
     "watch:all": "parallelshell \"npm run watch:lib\" \"npm run watch:docs\"",
     "pretest": "npm run test:format",
-    "prepublish": "npm run test:all && npm run build"
+    "prepublish": "npm run build"
   },
   "jest": {
     "transform": {

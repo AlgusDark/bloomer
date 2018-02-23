@@ -1,10 +1,10 @@
-import * as React from "react";
-import { shallow } from "enzyme";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-import { FieldBody } from "./../../../../src/elements/Form/Field/FieldBody";
+import { FieldBody } from './../../../../src/elements/Form/Field/FieldBody';
 
-describe("FieldBody", () => {
-  it("should render a div with .field-body", () => {
+describe('FieldBody', () => {
+  it('should render a div with .field-body', () => {
     const component = shallow(
       <FieldBody>
         <span>Any Content</span>
@@ -19,7 +19,7 @@ describe("FieldBody", () => {
     ).toBe(true);
   });
 
-  it("should render a p with .field-body", () => {
+  it('should render a p with .field-body', () => {
     const component = shallow(
       <FieldBody tag="p">
         <span>Any Content</span>
@@ -34,13 +34,13 @@ describe("FieldBody", () => {
     ).toBe(true);
   });
 
-  it("should render a div with .field-body and custom classNames", () => {
+  it('should render a div with .field-body and custom classNames', () => {
     const component = shallow(
       <FieldBody className="custom">
         <span>Any Content</span>
       </FieldBody>
     );
-    expect(component.hasClass("field-body")).toBe(true);
-    expect(component.hasClass("custom")).toBe(true);
+    expect(component.hasClass('field-body')).toBe(true);
+    expect(component.hasClass('custom')).toBe(true);
   });
 });

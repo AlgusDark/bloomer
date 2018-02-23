@@ -1,10 +1,10 @@
-import * as React from "react";
-import { shallow } from "enzyme";
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-import { NavbarLink } from "./../../../src/components/Navbar/NavbarLink";
+import { NavbarLink } from './../../../src/components/Navbar/NavbarLink';
 
-describe("NavbarLink", () => {
-  it("should render a custom component with NavbarLink props", () => {
+describe('NavbarLink', () => {
+  it('should render a custom component with NavbarLink props', () => {
     const customComponent = props => (
       <div>
         My Button <a {...props} />
@@ -21,7 +21,7 @@ describe("NavbarLink", () => {
     expect(component.contains(customComponentRendered)).toBe(true);
   });
 
-  it("should render an anchor with .navbar-link", () => {
+  it('should render an anchor with .navbar-link', () => {
     const component = shallow(<NavbarLink href="#">My NavbarLink</NavbarLink>);
     expect(
       component.contains(
@@ -32,7 +32,7 @@ describe("NavbarLink", () => {
     ).toBe(true);
   });
 
-  it("should render a button with .navbar-link", () => {
+  it('should render a button with .navbar-link', () => {
     const component = shallow(
       <NavbarLink tag="button">My NavbarLink</NavbarLink>
     );
@@ -41,25 +41,25 @@ describe("NavbarLink", () => {
     ).toBe(true);
   });
 
-  it("should render a a with .navbar-link and modifiers", () => {
+  it('should render a a with .navbar-link and modifiers', () => {
     const component = shallow(<NavbarLink isActive />);
-    expect(component.is("a")).toBe(true);
-    expect(component.hasClass("navbar-link")).toBe(true);
-    expect(component.hasClass("is-active")).toBe(true);
+    expect(component.is('a')).toBe(true);
+    expect(component.hasClass('navbar-link')).toBe(true);
+    expect(component.hasClass('is-active')).toBe(true);
   });
 
-  it("should render a a with .navbar-link, modifiers and custom classNames", () => {
+  it('should render a a with .navbar-link, modifiers and custom classNames', () => {
     const component = shallow(<NavbarLink isActive className="custom" />);
-    expect(component.is("a")).toBe(true);
-    expect(component.hasClass("navbar-link")).toBe(true);
-    expect(component.hasClass("is-active")).toBe(true);
-    expect(component.hasClass("custom")).toBe(true);
+    expect(component.is('a')).toBe(true);
+    expect(component.hasClass('navbar-link')).toBe(true);
+    expect(component.hasClass('is-active')).toBe(true);
+    expect(component.hasClass('custom')).toBe(true);
   });
 
-  it("should render a a with .navbar-link and custom classNames", () => {
+  it('should render a a with .navbar-link and custom classNames', () => {
     const component = shallow(<NavbarLink className="custom" />);
-    expect(component.is("a")).toBe(true);
-    expect(component.hasClass("navbar-link")).toBe(true);
-    expect(component.hasClass("custom")).toBe(true);
+    expect(component.is('a')).toBe(true);
+    expect(component.hasClass('navbar-link')).toBe(true);
+    expect(component.hasClass('custom')).toBe(true);
   });
 });

@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -8,20 +8,20 @@ import {
   removeAlignmentProps,
   removeSizeProps,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Pagination<T>
   extends Bulma.Alignment,
     Bulma.Tag,
     Bulma.Size,
     React.HTMLProps<T> {
-  isAlign?: "left" | "centered" | "right";
+  isAlign?: 'left' | 'centered' | 'right';
 }
 
-export function Pagination({ tag = "nav", ...props }: Pagination<HTMLElement>) {
+export function Pagination({ tag = 'nav', ...props }: Pagination<HTMLElement>) {
   const className = classNames(
-    "pagination",
+    'pagination',
     {
       ...combineModifiers(props, getAlignmentModifiers, getSizeModifiers)
     },

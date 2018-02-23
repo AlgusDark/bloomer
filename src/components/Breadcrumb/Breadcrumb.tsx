@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -8,28 +8,28 @@ import {
   removeAlignmentProps,
   removeSizeProps,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface Breadcrumb<T>
   extends Bulma.Alignment,
     Bulma.Size,
     Bulma.Tag,
     React.HTMLProps<T> {
-  hasSeparator?: "arrow" | "bullet" | "dot" | "succeeds";
-  isAlign?: "centered" | "right";
+  hasSeparator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
+  isAlign?: 'centered' | 'right';
 }
 
 const separatorClassname = separator =>
   separator ? { [`has-${separator}-separator`]: true } : {};
 
 export function Breadcrumb({
-  tag = "nav",
+  tag = 'nav',
   hasSeparator,
   ...props
 }: Breadcrumb<HTMLElement>) {
   const className = classNames(
-    "breadcrumb",
+    'breadcrumb',
     {
       ...separatorClassname(hasSeparator),
       ...combineModifiers(props, getAlignmentModifiers, getSizeModifiers)

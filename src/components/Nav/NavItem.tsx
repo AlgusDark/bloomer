@@ -1,13 +1,13 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getActiveModifiers,
   removeActiveModifiers,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface NavItem<T>
   extends Bulma.Tag,
@@ -19,15 +19,15 @@ export interface NavItem<T>
 }
 
 export function NavItem({
-  tag = "div",
+  tag = 'div',
   render,
   ...props
 }: NavItem<HTMLElement>) {
   const className = classNames(
-    "nav-item",
+    'nav-item',
     {
-      "is-brand": props.isBrand,
-      "is-tab": props.isTab,
+      'is-brand': props.isBrand,
+      'is-tab': props.isTab,
       ...getActiveModifiers(props)
     },
     props.className
@@ -39,7 +39,7 @@ export function NavItem({
 
   if (render) return render({ ...HTMLProps, className });
 
-  return React.createElement(props.href ? "a" : tag, {
+  return React.createElement(props.href ? 'a' : tag, {
     ...HTMLProps,
     className
   });

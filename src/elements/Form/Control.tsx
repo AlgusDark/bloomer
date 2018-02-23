@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -8,11 +8,11 @@ import {
   isRight,
   removeLoadingProps,
   withHelpersModifiers
-} from "./../../bulma";
+} from './../../bulma';
 
-import { getHTMLProps, is, isOption } from "./../../helpers";
+import { getHTMLProps, is, isOption } from './../../helpers';
 
-export type Directions = "left" | "right";
+export type Directions = 'left' | 'right';
 
 export interface Control<T>
   extends Bulma.Loading,
@@ -26,8 +26,8 @@ const isDirection = isOption(isLeft, isRight);
 
 const getModifier = modifier => {
   if (modifier === true) {
-    return { "has-icons-left has-icons-right": true };
-  } else if (typeof modifier === "string") {
+    return { 'has-icons-left has-icons-right': true };
+  } else if (typeof modifier === 'string') {
     return isDirection(modifier) ? { [`has-icons-${modifier}`]: true } : {};
   } else if (Array.isArray(modifier)) {
     return modifier
@@ -44,12 +44,12 @@ const getModifier = modifier => {
   return {};
 };
 
-export function Control({ tag = "div", ...props }: Control<HTMLElement>) {
+export function Control({ tag = 'div', ...props }: Control<HTMLElement>) {
   const className = classNames(
-    "control",
+    'control',
     {
       ...getModifier(props.hasIcons),
-      "is-expanded": props.isExpanded,
+      'is-expanded': props.isExpanded,
       ...getLoadingModifiers(props)
     },
     props.className

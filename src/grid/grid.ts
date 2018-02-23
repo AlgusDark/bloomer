@@ -5,13 +5,13 @@ import {
   isTablet,
   isTouch,
   isWidescreen
-} from "./../bulma";
-import { isBetween, isOption } from "./../helpers";
+} from './../bulma';
+import { isBetween, isOption } from './../helpers';
 
 export declare namespace Grid {
   export type Sizes = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-  type Fractions = "3/4" | "2/3" | "1/2" | "1/3" | "1/4";
-  type Width = "full" | "narrow";
+  type Fractions = '3/4' | '2/3' | '1/2' | '1/3' | '1/4';
+  type Width = 'full' | 'narrow';
   type AllSizes = Sizes | Fractions | Width;
 
   export interface SizeObject {
@@ -24,7 +24,7 @@ export declare namespace Grid {
     default?: AllSizes;
   }
 
-  type Platforms = "mobile" | "tablet" | "desktop";
+  type Platforms = 'mobile' | 'tablet' | 'desktop';
 
   export interface HorizontalSize {
     isSize?: AllSizes | SizeObject;
@@ -64,8 +64,8 @@ export function getGridSizesModifiers(
 ) {
   return Number.isInteger(isSize) && isValidSize(isSize)
     ? {
-        [`is-${isOffset ? "offset-" : ""}${isSize}${
-          isPlatform(platform) ? `-${platform}` : ""
+        [`is-${isOffset ? 'offset-' : ''}${isSize}${
+          isPlatform(platform) ? `-${platform}` : ''
         }`]: true
       }
     : {};
@@ -77,15 +77,15 @@ export function removeGridSizesProps(props) {
 }
 
 const fractions = {
-  "1/2": "half",
-  "1/3": "one-third",
-  "1/4": "one-quarter",
-  "2/3": "two-thirds",
-  "3/4": "three-quarters"
+  '1/2': 'half',
+  '1/3': 'one-third',
+  '1/4': 'one-quarter',
+  '2/3': 'two-thirds',
+  '3/4': 'three-quarters'
 };
 const width = {
-  full: "full",
-  narrow: "narrow"
+  full: 'full',
+  narrow: 'narrow'
 };
 
 function getGridFractionsModifiers(size, isOffset, platform) {
@@ -93,8 +93,8 @@ function getGridFractionsModifiers(size, isOffset, platform) {
 
   return sizes[size]
     ? {
-        [`is-${isOffset ? "offset-" : ""}${sizes[size]}${
-          isPlatform(platform) ? "-" + platform : ""
+        [`is-${isOffset ? 'offset-' : ''}${sizes[size]}${
+          isPlatform(platform) ? '-' + platform : ''
         }`]: true
       }
     : {};
@@ -102,7 +102,7 @@ function getGridFractionsModifiers(size, isOffset, platform) {
 
 function getGridObjectSizeModifiers(size, isOffset) {
   return Object.keys(size).reduce((acc, key) => {
-    if (key === "default")
+    if (key === 'default')
       return { ...acc, ...getHorizontalSizeModifiers(size[key], isOffset) };
     return isPlatform(key)
       ? { ...acc, ...getHorizontalSizeModifiers(size[key], isOffset, key) }
@@ -115,11 +115,11 @@ function getHorizontalSizeModifiers(
   isOffset = false,
   platform: boolean | string = false
 ) {
-  if (typeof size === "number")
+  if (typeof size === 'number')
     return getGridSizesModifiers(size, isOffset, platform);
-  if (typeof size === "string")
+  if (typeof size === 'string')
     return getGridFractionsModifiers(size, isOffset, platform);
-  if (typeof size === "object")
+  if (typeof size === 'object')
     return getGridObjectSizeModifiers(size, isOffset);
   return {};
 }

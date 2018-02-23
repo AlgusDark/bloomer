@@ -1,13 +1,13 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getActiveModifiers,
   removeActiveModifiers,
   withHelpersModifiers
-} from "./../../bulma";
-import { getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { getHTMLProps } from './../../helpers';
 
 export interface NavbarLink<T>
   extends Bulma.Render,
@@ -16,12 +16,12 @@ export interface NavbarLink<T>
     React.HTMLProps<T> {}
 
 export function NavbarLink({
-  tag = "a",
+  tag = 'a',
   render,
   ...props
 }: NavbarLink<HTMLElement>) {
   const className = classNames(
-    "navbar-link",
+    'navbar-link',
     {
       ...getActiveModifiers(props)
     },

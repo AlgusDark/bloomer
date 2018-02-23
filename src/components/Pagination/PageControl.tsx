@@ -1,5 +1,5 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
@@ -8,8 +8,8 @@ import {
   removeActiveModifiers,
   removeFocusedModifiers,
   withHelpersModifiers
-} from "./../../bulma";
-import { combineModifiers, getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { combineModifiers, getHTMLProps } from './../../helpers';
 
 export interface PageControl<T>
   extends Bulma.Render,
@@ -22,14 +22,14 @@ export interface PageControl<T>
 }
 
 export function PageControl({
-  tag = "a",
+  tag = 'a',
   render,
   ...props
 }: PageControl<HTMLElement>) {
   const className = classNames(
     {
-      "pagination-next": !props.isPrevious && props.isNext,
-      "pagination-previous": !props.isNext,
+      'pagination-next': !props.isPrevious && props.isNext,
+      'pagination-previous': !props.isNext,
       ...combineModifiers(props, getActiveModifiers, getFocusedModifiers)
     },
     props.className

@@ -1,13 +1,13 @@
-import * as classNames from "classnames";
-import * as React from "react";
+import * as classNames from 'classnames';
+import * as React from 'react';
 
 import {
   Bulma,
   getActiveModifiers,
   removeActiveModifiers,
   withHelpersModifiers
-} from "./../../bulma";
-import { getHTMLProps } from "./../../helpers";
+} from './../../bulma';
+import { getHTMLProps } from './../../helpers';
 
 export interface PanelBlock<T>
   extends Bulma.Render,
@@ -18,14 +18,14 @@ export interface PanelBlock<T>
 }
 
 export function PanelBlock({
-  tag = "div",
+  tag = 'div',
   render,
   ...props
 }: PanelBlock<HTMLElement>) {
   const className = classNames(
-    "panel-block",
+    'panel-block',
     {
-      "is-wrapped": props.isWrapped,
+      'is-wrapped': props.isWrapped,
       ...getActiveModifiers(props)
     },
     props.className
@@ -37,7 +37,7 @@ export function PanelBlock({
 
   if (render) return render({ ...HTMLProps, className });
 
-  return React.createElement(props.href ? "a" : tag, {
+  return React.createElement(props.href ? 'a' : tag, {
     ...HTMLProps,
     className
   });
