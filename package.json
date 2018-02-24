@@ -29,6 +29,7 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.28.0",
+    "husky": "^0.14.3",
     "inline-manifest-webpack-plugin": "^3.0.1",
     "jest": "^20.0.3",
     "parallelshell": "^3.0.1",
@@ -48,7 +49,7 @@
   },
   "scripts": {
     "clean": "shx rm -rf lib esm bundles",
-    "coverage": "npm run test --coverage", 
+    "coverage": "npm run test --coverage",
     "test": "jest",
     "test:ci": "npm run test --coverage && cat ./reports/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "test:format": "prettier --config ./config/.prettierrc --write \"{src,test}/**/*.{ts,tsx}\"",
@@ -58,7 +59,7 @@
     "watch:lib": "watch \"npm run deploy\" src/ --wait=2000 --ignoreUnreadable",
     "watch:docs": "watch \"npm run docs\" docs/ --wait=2000 --ignoreUnreadable",
     "watch:all": "parallelshell \"npm run watch:lib\" \"npm run watch:docs\"",
-    "pretest": "npm run test:format",
+    "prepush": "npm run test:format",
     "prepublish": "npm run build"
   },
   "jest": {
