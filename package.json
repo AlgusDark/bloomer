@@ -51,7 +51,7 @@
     "clean": "shx rm -rf lib esm bundles",
     "coverage": "npm run test --coverage",
     "test": "jest",
-    "test:ci": "npm run test --coverage && cat ./reports/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:ci": "npm run test --runInBand --coverage && cat ./reports/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "test:format": "prettier --config ./config/.prettierrc --write \"{src,test}/**/*.{ts,tsx}\"",
     "docs": "cross-env NODE_ENV=development webpack-dev-server --config webpack.docs.js --env.dev",
     "deploy": "cross-env NODE_ENV=production webpack --config webpack.docs.js --env.prod",
