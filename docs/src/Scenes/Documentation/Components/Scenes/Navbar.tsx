@@ -129,7 +129,7 @@ class NavDocs extends React.Component<{}, { isActive: boolean }> {
                 <Message isColor="success">
                     <MessageBody>
                         The new <code>Navbar</code> replaces the deprecated <code>Nav</code> component, whose
-                        documentation you can still access temporaly <Link to={`/documentation/components/nav`}>here</Link>
+                        documentation you can still access temporarily <Link to={`/documentation/components/nav`}>here</Link>
                     </MessageBody>
                 </Message>
                 <Navbar style={{ border: 'solid 1px #00D1B2', margin: '0' }}>
