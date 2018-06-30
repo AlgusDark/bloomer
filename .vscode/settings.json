@@ -10,7 +10,6 @@
         "**/reports/**"
     ],
     "typescript.tsdk": "node_modules/typescript/lib",
-    // Editor configuration for prettierOnSave - https://github.com/prettier/prettier-vscode
     "editor.formatOnSave": false,
     "[javascript]": {
         "editor.formatOnSave": true
