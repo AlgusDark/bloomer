@@ -1,40 +1,39 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "module": "commonjs",
     "target": "es5",
-    "removeComments": true,
+    "module": "es2015",
+    "jsx": "react",
     "lib": [
-      "es2015",
+      "es5",
+      "es6",
+      "es7",
+      "es2017",
       "dom"
     ],
-    "outDir": "lib",
-    "allowSyntheticDefaultImports": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
+    "strict": true,
     "sourceMap": true,
     "declaration": true,
-    "jsx": "react",
-    "importHelpers": true,
-    "noImplicitAny": false
+    "allowSyntheticDefaultImports": true,
+    "declarationDir": "dist/types",
+    "outDir": "dist/lib",
+    "typeRoots": [
+      "node_modules/@types",
+      "dist/types"
+    ],
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "rootDir": "src",
+    "noImplicitAny": true,
+    "strictNullChecks": true
   },
   "include": [
-    "src/**/*"
+    "src"
   ],
   "exclude": [
-    "node_modules",
-    "bundles",
-    "example",
-    "lib",
-    "esm",
-    "src/**/*.test.*"
-  ],
-  "compileOnSave": false,
-  "buildOnSave": false,
-  "rules": {
-    "indent": [
-      true,
-      2
-    ]
-  }
+    "src/**/*.test.ts",
+    "dist",
+    "node_modules"
+  ]
 }

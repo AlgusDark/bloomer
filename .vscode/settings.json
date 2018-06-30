@@ -1,4 +1,3 @@
-// Place your settings in this file to overwrite default and user settings.
 {
     "relativePath.ignore": [
         "**/node_modules/**",
@@ -9,5 +8,23 @@
         "**/esm/**",
         "**/bundles/**",
         "**/reports/**"
-    ]
+    ],
+    "typescript.tsdk": "node_modules/typescript/lib",
+    // Editor configuration for prettierOnSave - https://github.com/prettier/prettier-vscode
+    "editor.formatOnSave": false,
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
+    "[javascriptreact]": {
+        "editor.formatOnSave": true
+    },
+    "[css]": {
+        "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": true
+    }
 }

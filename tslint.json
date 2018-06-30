@@ -1,28 +1,61 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended"
+  "extends": [
+    "tslint-config-standard",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "class-name": true,
+    "comment-format": [
+      true,
+      "check-space"
     ],
-    "jsRules": {},
-    "rules": {
-        "array-type": [true, "array"],
-        "ban-types": [true, ["Object", "Use {} instead."]],
-        "curly": [true, "ignore-same-line"],
-        "interface-name": [true, "never-prefix"],
-        "max-line-length": [true, 135],
-        "member-access": false,
-        "no-namespace": [true, "allow-declarations"],
-        "no-shadowed-variable": false,
-        "no-var-requires": false,
-        "ordered-imports": [
-          true,
-          {
-            "import-sources-order": "case-insensitive",
-            "named-imports-order": "case-insensitive"
-          }
-        ],
-        "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
-        "quotemark": [true, "single", "jsx-double"]
-    },
-    "rulesDirectory": []
+    "indent": [
+      true,
+      "spaces"
+    ],
+    "no-eval": true,
+    "no-internal-module": true,
+    "no-trailing-whitespace": true,
+    "no-unsafe-finally": true,
+    "no-var-keyword": true,
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-whitespace"
+    ],
+    "quotemark": [
+      true,
+      "double"
+    ],
+    "semicolon": [
+      true,
+      "always"
+    ],
+    "triple-equals": [
+      true,
+      "allow-null-check"
+    ],
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      }
+    ],
+    "variable-name": [
+      true,
+      "ban-keywords"
+    ],
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type"
+    ]
+  }
 }

@@ -1,14 +1,21 @@
 language: node_js
-
+sudo: required
+branches:
+  only: master
 node_js:
-  - "stable"
-
+  - 8
+script:
+  - node --version
+  - yarn --version
+  - yarn build
+  - yarn test:ci
+notifications:
+  email:
+    on_failure: change
 cache:
+  yarn: true
+  bundler: true
   directories:
     - node_modules
 
-install:
-  - npm install
-
-script:
-  - npm run test:ci
+language: node_js
