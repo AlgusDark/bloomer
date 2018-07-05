@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import TableDocs from './../../../../Components/TableDocs';
 import { Docs } from './../../../../utils';
 
-import { Button, Checkbox, Control, Field, FieldBody, FieldLabel, Help, Icon, Input, Label,
-  Radio, Select, TextArea } from './../../../../../../src';
+import { Button, Checkbox, Control, Field, FieldBody, FieldLabel, File, FileCTA, FileIcon, FileInput,
+  FileLabel, FileLabelText, FileName, Help, Icon, Input, Label, Radio, Select, TextArea } from './../../../../../../src';
 import { Column, Columns, Container, Subtitle, Title } from './../../../../../../src';
 import { isColor, isLoading, isSize, noModifiers, states } from './../../Overview/Scenes/Helpers';
 
@@ -132,6 +132,22 @@ const FormExample = `<Field>
         <Button isLink>Cancel</Button>
     </Control>
 </Field>
+
+<Field>
+    <Label>File Upload</Label>
+    <Control>
+        <File>
+            <FileLabel>
+                <FileInput />
+                <FileCTA>
+                    <FileIcon></FileIcon>
+                    <FileLabelText>Choose a file...</FileLabelText>
+                </FileCTA>
+                <FileName>hello-world.txt</FileName>
+            </FileLabel>
+        </File>
+    </Control>
+</Field>
 `;
 
 const FieldHorizontalExample = `<Field isHorizontal>
@@ -242,6 +258,22 @@ const FormDocs = (props) => (
                     </Control>
                     <Control>
                         <Button isLink>Cancel</Button>
+                    </Control>
+                </Field>
+
+                <Field>
+                    <Label>File Upload</Label>
+                    <Control>
+                        <File>
+                            <FileLabel>
+                                <FileInput />
+                                <FileCTA>
+                                    <FileIcon></FileIcon>
+                                    <FileLabelText>Choose a file...</FileLabelText>
+                                </FileCTA>
+                                <FileName>hello-world.txt</FileName>
+                            </FileLabel>
+                        </File>
                     </Control>
                 </Field>
             </Column>
