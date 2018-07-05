@@ -1,8 +1,10 @@
 .DS_Store
 *debug.log
 
-bundles
+dist
 lib
 esm
 node_modules
 reports
+yarn-error.log
+.rpt2_cache

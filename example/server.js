@@ -20,10 +20,12 @@ const hotBuild = function() {
   })
 }
 
-watch(srcPath, function(evt, filename) {
+watch(srcPath, { recursive: true }, function(evt, filename) {
   console.log(`${filename} file has changed`)
   hotBuild()
 })
+
+hotBuild()
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')

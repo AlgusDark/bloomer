@@ -16,12 +16,9 @@
     "sourceMap": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "declarationDir": "dist/types",
     "outDir": "dist/lib",
-    "typeRoots": [
-      "node_modules/@types",
-      "dist/types"
-    ],
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "rootDir": "src",
@@ -29,11 +26,10 @@
     "strictNullChecks": true
   },
   "include": [
-    "src"
+    "src/**/*"
   ],
   "exclude": [
-    "src/**/*.test.ts",
-    "dist",
-    "node_modules"
+    "node_modules",
+    "**/*.spec.ts"
   ]
 }
