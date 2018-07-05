@@ -140,7 +140,7 @@ const FormExample = `<Field>
             <FileLabel>
                 <FileInput />
                 <FileCTA>
-                    <FileIcon></FileIcon>
+                    <FileIcon className="fa fa-upload" />
                     <FileLabelText>Choose a file...</FileLabelText>
                 </FileCTA>
                 <FileName>hello-world.txt</FileName>
@@ -268,7 +268,7 @@ const FormDocs = (props) => (
                             <FileLabel>
                                 <FileInput />
                                 <FileCTA>
-                                    <FileIcon></FileIcon>
+                                    <FileIcon className="fa fa-upload" />
                                     <FileLabelText>Choose a file...</FileLabelText>
                                 </FileCTA>
                                 <FileName>hello-world.txt</FileName>
