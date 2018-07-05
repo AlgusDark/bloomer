@@ -31,6 +31,14 @@ export { default as TextArea } from './elements/Form/TextArea';
 export { default as Field } from './elements/Form/Field/Field';
 export { default as FieldBody } from './elements/Form/Field/FieldBody';
 export { default as FieldLabel } from './elements/Form/Field/FieldLabel';
+// Form - File
+export { default as File } from './elements/Form/File/File';
+export { default as FileCTA } from './elements/Form/File/FileCTA';
+export { default as FileIcon } from './elements/Form/File/FileIcon';
+export { default as FileInput } from './elements/Form/File/FileInput';
+export { default as FileLabel } from './elements/Form/File/FileLabel';
+export { default as FileLabelText } from './elements/Form/File/FileLabelText';
+export { default as FileName } from './elements/Form/File/FileName';
 
 // Breadcrumb
 export {default as Breadcrumb} from './components/Breadcrumb/Breadcrumb';
