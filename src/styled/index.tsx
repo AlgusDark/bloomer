@@ -1,6 +1,6 @@
-// import "sass/utilities/_all"
+import './utilities'
 import './base'
-// import "sass/elements/_all"
-// import "sass/components/_all"
-// import "sass/grid/_all"
-// import "sass/layout/_all"
+// import "./elements"
+// import "./components"
+// import "./grid"
+// import "./layout"
