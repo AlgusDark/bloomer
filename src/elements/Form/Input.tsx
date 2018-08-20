@@ -1,30 +1,55 @@
-import * as classNames from 'classnames';
-import * as React from 'react';
+import * as classNames from "classnames";
+import * as React from "react";
 
 import {
-    Bulma,
-    getColorModifiers, getSizeModifiers, getStateModifiers,
-    removeColorProps, removeSizeProps, removeStateProps,
-    withHelpersModifiers,
-} from './../../bulma';
-import { combineModifiers, getHTMLProps } from './../../helpers';
+  Bulma,
+  getColorModifiers,
+  getSizeModifiers,
+  getStateModifiers,
+  removeColorProps,
+  removeSizeProps,
+  removeStateProps,
+  withHelpersModifiers
+} from "./../../bulma";
+import { combineModifiers, getHTMLProps } from "./../../helpers";
 
-export interface Input<T> extends Bulma.Color, Bulma.Size, Bulma.State,
-    React.HTMLProps<T> {
-}
+export interface Input<T>
+  extends Bulma.Color,
+    Bulma.Size,
+    Bulma.State,
+    React.HTMLProps<T> {}
 
-export function Input(props: Input<HTMLElement>) {
+export class Input extends React.Component<Input<HTMLElement>, {}> {
+  render() {
     const className = classNames(
-        'input',
-        {
-            ...combineModifiers(props, getColorModifiers, getSizeModifiers, getStateModifiers),
-        },
-        props.className);
+      "input",
+      {
+        ...combineModifiers(
+          this.props,
+          getColorModifiers,
+          getSizeModifiers,
+          getStateModifiers
+        )
+      },
+      this.props.className
+    );
 
-    const HTMLProps = getHTMLProps(props, removeColorProps, removeSizeProps, removeStateProps);
+    const HTMLProps = getHTMLProps(
+      this.props,
+      removeColorProps,
+      removeSizeProps,
+      removeStateProps
+    );
 
-    return <input {...HTMLProps} className={className} type={props.type || 'text'} />;
+    return (
+      <input
+        {...HTMLProps}
+        className={className}
+        type={this.props.type || "text"}
+      />
+    );
+  }
 }
 
-const HOC = /*@__PURE__*/withHelpersModifiers(Input);
+const HOC = /*@__PURE__*/ withHelpersModifiers(Input);
 export default HOC;
