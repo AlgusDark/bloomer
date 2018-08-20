@@ -13,13 +13,13 @@ import {
 } from "./../../bulma";
 import { combineModifiers, getHTMLProps } from "./../../helpers";
 
-export interface Input<T>
+export interface InputProps<T>
   extends Bulma.Color,
     Bulma.Size,
     Bulma.State,
     React.HTMLProps<T> {}
 
-export class Input extends React.Component<Input<HTMLElement>, {}> {
+export class Input extends React.Component<InputProps<HTMLElement>, {}> {
   render() {
     const className = classNames(
       "input",
