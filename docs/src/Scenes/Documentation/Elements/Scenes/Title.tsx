@@ -48,7 +48,7 @@ const TitleHeadingSize = `<Title tag='h1'>tag='h1'</Title>
 <Title tag='h4'>tag='h4'</Title>
 <Title tag='h5'>tag='h5'</Title>
 <Title tag='h6'>tag='h6'</Title>
-{/* use developer tools to se the final render elements  */}
+{/* use developer tools to see the final render elements */}
 `;
 
 const SubtitleSizeExample = `<Subtitle isSize={1}>isSize={1}</Subtitle>
@@ -66,7 +66,7 @@ const SubtitleHeadingSize = `<Subtitle tag='h1'>tag='h1'</Subtitle>
 <Subtitle tag='h4'>tag='h4'</Subtitle>
 <Subtitle tag='h5'>tag='h5'</Subtitle>
 <Subtitle tag='h6'>tag='h6'</Subtitle>
-{/* use developer tools to se the final render elements  */}
+{/* use developer tools to see the final render elements */}
 `;
 
 const HeadingExample = `<Heading>Useful for <code>uppercase</code> font</Heading>`;
