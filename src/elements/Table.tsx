@@ -7,6 +7,7 @@ export interface Table<T> extends React.HTMLProps<T> {
     isBordered?: boolean;
     isStriped?: boolean;
     isNarrow?: boolean;
+    isHoverable?: boolean;
 }
 
 export function Table(props: Table<HTMLElement>) {
@@ -16,6 +17,7 @@ export function Table(props: Table<HTMLElement>) {
             'is-bordered': props.isBordered,
             'is-narrow': props.isNarrow,
             'is-striped': props.isStriped,
+            'is-hoverable': props.isHoverable,
         },
         props.className,
     );
@@ -23,6 +25,7 @@ export function Table(props: Table<HTMLElement>) {
         isBordered,
         isStriped,
         isNarrow,
+        isHoverable,
         ...HTMLProps,
     } = props;
 
