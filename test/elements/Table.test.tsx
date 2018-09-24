@@ -34,7 +34,7 @@ describe('Table', () => {
         expect(component.hasClass('custom')).toBe(true);
     });
 
-    it('should render a table with .table and .table-ishoverable', () => {
+    it('should render a table with .table and .is-hoverable', () => {
         const component = shallow(<Table isHoverable />);
         expect(component.hasClass('table')).toBe(true);
         expect(component.hasClass('is-hoverable')).toBe(true);
