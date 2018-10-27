@@ -23,7 +23,7 @@ export function Input(props: Input<HTMLElement>) {
 
     const HTMLProps = getHTMLProps(props, removeColorProps, removeSizeProps, removeStateProps);
 
-    return <input {...HTMLProps} className={className} type={props.type || 'text'} />;
+    return <input {...HTMLProps as React.HTMLProps<HTMLInputElement>} className={className} type={props.type || 'text'} />;
 }
 
 const HOC = /*@__PURE__*/withHelpersModifiers(Input);

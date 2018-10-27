@@ -24,7 +24,7 @@ export function TextArea(props: TextArea<HTMLElement>) {
     const HTMLProps = getHTMLProps(props, removeSizeProps, removeStateProps);
 
     return (
-        <textarea {...HTMLProps} className={className} />
+        <textarea {...HTMLProps as React.HTMLProps<HTMLTextAreaElement>} className={className} />
     );
 }
 

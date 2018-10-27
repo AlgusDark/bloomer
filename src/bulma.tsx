@@ -43,7 +43,7 @@ export declare namespace Bulma {
     }
 
     export interface Color {
-        isColor?: string
+        isColor?: string;
     }
 
     export type HeadingSizes = 1 | 2 | 3 | 4 | 5 | 6;
@@ -359,7 +359,7 @@ function removeHelpersProps(props: Bulma.Helpers) {
         isUnselectable,
         hasTextAlign,
         hasTextColor,
-        ...rest,
+        ...rest
     } = props;
 
     return rest;

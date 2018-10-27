@@ -27,7 +27,7 @@ export function NavItem({ tag = 'div', render, ...props }: NavItem<HTMLElement>)
     const {
         isTab,
         isBrand,
-        ...rest,
+        ...rest
      } = props;
 
     const HTMLProps = getHTMLProps(rest, removeActiveModifiers);

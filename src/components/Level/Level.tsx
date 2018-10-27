@@ -18,7 +18,7 @@ export function Level({ tag = 'nav', ...props }: Level<HTMLElement>) {
 
     const {
         isMobile,
-        ...HTMLProps,
+        ...HTMLProps
     } = props;
 
     return React.createElement(tag, { ...HTMLProps, className });

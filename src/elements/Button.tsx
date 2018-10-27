@@ -42,11 +42,11 @@ export function Button(props: Button<HTMLButtonElement | HTMLAnchorElement>) {
     if (render) return render({ ...HTMLProps, className });
 
     const anchor = (
-        <a {...HTMLProps} role="button" className={className} />
+        <a {...HTMLProps as React.HTMLProps<HTMLAnchorElement>} role="button" className={className} />
     );
 
     const button = (
-        <button {...HTMLProps} type={props.type || 'button'} className={className} />
+        <button {...HTMLProps as React.HTMLProps<HTMLButtonElement>} type={props.type || 'button'} className={className} />
     );
 
     return props.href ? anchor : button;

@@ -26,7 +26,7 @@ export function PageLink({ tag = 'a', render, ...props }: PageLink<HTMLElement>)
 
     const {
         isCurrent,
-        ...rest,
+        ...rest
     } = props;
 
     const HTMLProps = getHTMLProps(rest, removeActiveModifiers, removeFocusedModifiers);

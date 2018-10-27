@@ -17,7 +17,7 @@ export function Radio(props: React.HTMLProps<HTMLElement>) {
 
     return (
         <label className={wrapperClassName}>
-            <input {...HTMLProps} type="radio" />{children}
+            <input {...HTMLProps as React.Props<HTMLInputElement>} type="radio" />{children}
         </label>
     );
 }

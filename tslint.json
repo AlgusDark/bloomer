@@ -21,7 +21,7 @@
             "named-imports-order": "case-insensitive"
           }
         ],
-        "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
+        "trailing-comma": [true, {"multiline": "always", "singleline": "never", "esSpecCompliant": "true"}],
         "quotemark": [true, "single", "jsx-double"]
     },
     "rulesDirectory": []

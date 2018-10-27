@@ -6,7 +6,7 @@ import {
     withHelpersModifiers,
 } from './../../bulma';
 
-export function Checkbox(props: React.HTMLProps<HTMLElement>) {
+export function Checkbox(props: React.HTMLProps<HTMLInputElement>) {
     const wrapperClassName = classNames(
         'checkbox',
         props.className,

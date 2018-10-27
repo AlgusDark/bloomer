@@ -24,7 +24,7 @@ export function FieldLabel({ tag = 'div', ...props }: FieldLabel<HTMLElement>) {
 
     const {
         isNormal,
-        ...rest,
+        ...rest
     } = props;
 
     const HTMLProps = getHTMLProps(rest, removeSizeProps);

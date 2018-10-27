@@ -24,7 +24,7 @@ export function PanelBlock({ tag = 'div', render, ...props }: PanelBlock<HTMLEle
 
     const {
         isWrapped,
-        ...rest,
+        ...rest
     } = props;
 
     const HTMLProps = getHTMLProps(rest, removeActiveModifiers);
