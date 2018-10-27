@@ -18,7 +18,7 @@ export function Nav({tag= 'nav', ...props}: Nav<HTMLElement>) {
 
     const {
         hasShadow,
-        ...HTMLProps,
+        ...HTMLProps
     } = props;
 
     return React.createElement(tag, { ...HTMLProps, className });

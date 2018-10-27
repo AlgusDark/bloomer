@@ -27,7 +27,7 @@ export function PageControl({ tag = 'a', render, ...props }: PageControl<HTMLEle
     const {
         isNext,
         isPrevious,
-        ...rest,
+        ...rest
     } = props;
 
     const HTMLProps = getHTMLProps(rest, removeActiveModifiers, removeFocusedModifiers);

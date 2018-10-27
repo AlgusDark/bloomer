@@ -25,12 +25,12 @@ export function Select(props: Select<HTMLElement>) {
     const {
         children,
         className,
-        ...HTMLProps,
+        ...HTMLProps
     } = getHTMLProps(props, removeColorProps, removeSizeProps, removeLoadingProps);
 
     return (
         <div className={wrapperClassName}>
-            <select {...HTMLProps}>{children}</select>
+            <select {...HTMLProps as React.Props<HTMLSelectElement>}>{children}</select>
         </div>
     );
 }

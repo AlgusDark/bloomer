@@ -21,11 +21,11 @@ export function Delete(props: Delete<HTMLButtonElement | HTMLAnchorElement>) {
     if (render) return render({ ...HTMLProps, className });
 
     const anchor = (
-        <a role="button" {...HTMLProps} className={className}></a>
+        <a role="button" {...HTMLProps as React.HTMLProps<HTMLAnchorElement>} className={className}></a>
     );
 
     const button = (
-        <button type={props.type || 'button'} {...HTMLProps} className={className}></button>
+        <button type={props.type || 'button'} {...HTMLProps as React.HTMLProps<HTMLButtonElement>} className={className}></button>
     );
 
     return props.href ? anchor : button;

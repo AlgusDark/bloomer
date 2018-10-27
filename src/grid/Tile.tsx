@@ -32,7 +32,7 @@ export function Tile({ tag = 'div', render, ...props }: Tile<HTMLElement>) {
         isChild,
         isParent,
         isVertical,
-        ...rest,
+        ...rest
     } = props;
 
     const HTMLProps = getHTMLProps(rest, removeGridSizesProps);

@@ -24,7 +24,7 @@ export function Label(props: Label<HTMLElement>) {
     const HTMLProps = getHTMLProps(props, removeSizeProps);
 
     return (
-        <label {...HTMLProps} className={className} />
+        <label {...HTMLProps as React.Props<HTMLLabelElement>} className={className} />
     );
 }
 
