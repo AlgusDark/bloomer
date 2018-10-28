@@ -85,7 +85,8 @@
       "**/src/**/*.{ts,tsx}",
       "!**/src/**/index.ts",
       "!**/docs/**"
-    ]
+    ],
+    "testURL": "http://localhost"
   },
   "keywords": [
     "bulma",
