@@ -18,7 +18,7 @@ export function LevelItem({ tag = 'div', ...props }: LevelItem<HTMLElement>) {
 
     const {
         isFlexible,
-        ...HTMLProps,
+        ...HTMLProps
     } = props;
 
     return React.createElement((props.href ? 'a' : tag), { ...HTMLProps, className });

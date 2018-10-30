@@ -30,7 +30,7 @@ export function Table(props: Table<HTMLElement>) {
     } = props;
 
     return (
-        <table {...HTMLProps} className={className} />
+        <table {...HTMLProps as React.Props<HTMLTableElement>} className={className} />
     );
 }
 

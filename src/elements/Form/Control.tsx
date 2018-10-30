@@ -48,7 +48,7 @@ export function Control({ tag = 'div', ...props }: Control<HTMLElement>) {
     const {
         hasIcons,
         isExpanded,
-        ...rest,
+        ...rest
     } = props;
 
     const HTMLProps = getHTMLProps(rest, removeLoadingProps);
