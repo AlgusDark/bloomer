@@ -46,6 +46,13 @@ $ yarn add bloomer
 ```
 
 ## Usage
+
+### Import Bulma library into the `index.js`
+```javascript
+import 'bulma';
+```
+
+### Use the components
 ```javascript
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
