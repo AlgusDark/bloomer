@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as Grid from './../../src/grid/grid';
+import React from 'react';
+import Grid from './../../src/grid/grid';
 
 describe('removeProps functions', () => {
     const props = {

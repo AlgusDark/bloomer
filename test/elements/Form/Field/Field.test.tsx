@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { shallow } from 'enzyme';
 
 import { Field } from './../../../../src/elements/Form/Field/Field';

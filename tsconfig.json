@@ -10,13 +10,14 @@
     ],
     "outDir": "lib",
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "suppressImplicitAnyIndexErrors": true,
     "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
     "declaration": true,
     "jsx": "react",
     "importHelpers": true,
-    "noImplicitAny": false
+    "noImplicitAny": false  
   },
   "include": [
     "src/**/*"

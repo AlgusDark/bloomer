@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { shallow } from 'enzyme';
 
 import { ModalBackground } from './../../../src/components/Modal/ModalBackground';

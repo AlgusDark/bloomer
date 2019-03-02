@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { shallow } from 'enzyme';
 
 import { NavLeft } from './../../../src/components/Nav/NavLeft';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { shallow } from 'enzyme';
 
 import { HeroVideo } from './../../../src/layout/Hero/HeroVideo';

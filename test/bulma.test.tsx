@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import * as Bulma from './../src/bulma';
+import Bulma from './../src/bulma';
 
 describe('removeProps functions', () => {
     const props = {
