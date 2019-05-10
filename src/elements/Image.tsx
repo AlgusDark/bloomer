@@ -17,7 +17,7 @@ export interface Ratio {
 
 export interface Image<T> extends Size, Ratio,
     React.HTMLProps<T> {
-
+    isRounded: Boolean,
 }
 
 const isRatio = is({
@@ -68,11 +68,15 @@ export function Image(props: Image<HTMLElement>) {
         props.className,
     );
 
-    const { children, src, ...HTMLProps } = getHTMLProps(props, removeImageProps);
+    const imgClassName = classNames({
+        ['is-rounded']: props.isRounded,
+    });
+
+    const { children, src, alt, ...HTMLProps } = getHTMLProps(props, removeImageProps);
 
     return (
         <figure {...HTMLProps} className={className}>
-            <img src={src} />
+            <img alt={alt} src={src} className={imgClassName} />
         </figure>
     );
 }
