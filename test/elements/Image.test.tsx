@@ -9,7 +9,7 @@ describe('Image', () => {
         expect(component.is('figure')).toBe(true);
         expect(component.hasClass('image')).toBe(true);
         expect(component.children().is('img')).toBe(true);
-        expect(component.children().contains(<img src='something' />)).toBe(true);
+        expect(component.children().containsMatchingElement(<img />)).toBe(true);
     });
 
     it('should render a figure with .image and Square modifiers', () => {
