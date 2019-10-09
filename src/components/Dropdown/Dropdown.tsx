@@ -13,13 +13,15 @@ export interface Dropdown<T> extends Bulma.Active, Bulma.Alignment, Bulma.Tag, R
   isActive?: boolean;
   isAlign?: 'right';
   isHoverable?: boolean;
+  isDropup?: boolean;
 }
 
-export function Dropdown({ tag = 'div', isHoverable, ...props }: Dropdown<HTMLElement>) {
+export function Dropdown({ tag = 'div', isHoverable, isDropup, ...props }: Dropdown<HTMLElement>) {
     const className = classNames(
         'dropdown',
         {
             'is-hoverable': isHoverable,
+            'is-up': isDropup,
             ...combineModifiers(props, getActiveModifiers, getAlignmentModifiers),
         },
         props.className,
