@@ -22,4 +22,11 @@ describe('Dropdown', () => {
         expect(component.hasClass('is-hoverable')).toBe(true);
         expect(component.hasClass('is-right')).toBe(true);
     });
+
+    it('should make dropdown dropup', () => {
+        const component = shallow(<Dropdown isDropup isAlign="right" isHoverable>My Dropdown</Dropdown>);
+        expect(component.hasClass('dropdown')).toBe(true);
+        expect(component.hasClass('is-hoverable')).toBe(true);
+        expect(component.hasClass('is-up')).toBe(true);
+    });
 });
